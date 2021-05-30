@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="./img/terminal.png"></img>
+</div>
+
 # My Dotfiles
 
 Config files for my terminal utilities.
