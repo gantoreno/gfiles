@@ -45,6 +45,7 @@ Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 " }}}
 
 " Indentlines
@@ -199,6 +200,7 @@ map <right> <nop>
 map <silent> <leader>cc   :TComment<CR>
 map <silent> <leader>nn   :CocCommand explorer<CR>
 map <silent> <leader>ff   :Telescope find_files<CR>
+map <silent> <leader>pp   :MarkdownPreview<CR>
 map <silent> <leader>tt   :call ToggleTerminal(g:term_rows)<CR>
 map <silent> <leader>xp   :!expand<CR><CR>
 map <silent> <leader>wsus :!workspace up -s  2> /dev/null<CR><CR>
