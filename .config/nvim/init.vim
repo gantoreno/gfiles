@@ -47,6 +47,9 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'Vimjas/vim-python-pep8-indent'
 " }}}
 
+" Indentlines
+Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
+
 " Airline {{{
 Plug 'vim-airline/vim-airline'
 " }}}
@@ -78,7 +81,7 @@ filetype plugin indent on
 " }}}
 
 " Settings {{{
-set nolist
+set list
 set exrc
 set hidden
 set number
