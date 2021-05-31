@@ -105,6 +105,7 @@ set encoding=UTF-8
 set scrolloff=10
 set listchars=eol:↴,nbsp:·,space:·,trail:·
 set backspace=indent,eol,start
+set clipboard=unnamedplus
 set shiftwidth=2
 set laststatus=2
 set signcolumn=yes
