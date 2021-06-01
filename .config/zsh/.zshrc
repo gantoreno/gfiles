@@ -7,7 +7,7 @@
 # ZSH configuration file
 
 # Run TMUX {{{
-[[ -z "$TMUX" ]] && exec tmux
+[[ -z "$TMUX" ]] && exec tmux -f $HOME/.config/tmux/.tmux.conf
 # }}}
 
 # Config paths {{{
@@ -83,7 +83,7 @@ alias fastbrew="HOMEBREW_NO_AUTO_UPDATE=1 brew"
 
 alias zshconfig="$EDITOR $ZSHRC"
 alias vimconfig="$EDITOR $EDITORRC"
-alias tmuxconfig="$EDITOR ~/.tmux.conf"
+alias tmuxconfig="$EDITOR ~/.config/tmux/.tmux.conf"
 alias themeconfig="$EDITOR $ZSHDIR/themes/$THEME.zsh-theme"
 # }}}
 
