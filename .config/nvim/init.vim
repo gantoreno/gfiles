@@ -48,8 +48,9 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 " }}}
 
-" Indentlines
+" Indentlines {{{
 Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
+" }}}
 
 " Airline {{{
 Plug 'vim-airline/vim-airline'
