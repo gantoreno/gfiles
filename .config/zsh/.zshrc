@@ -7,7 +7,7 @@
 # ZSH configuration file
 
 # Run TMUX {{{
-[[ -z "$TMUX" ]] && exec tmux -f $HOME/.config/tmux/.tmux.conf
+[[ -z $TMUX ]] && exec tmux -f $HOME/.config/tmux/.tmux.conf
 # }}}
 
 # Config paths {{{
@@ -52,11 +52,11 @@ export CLICOLOR=1
 export LSCOLORS="GxGxBxDxCxEgEdxbxgxcxd"
 
 export EDITOR="nvim"
-export EDITORRC="$([ "$EDITOR" = "nvim" ] && printf %s "~/.config/nvim/init.vim" || printf %s "~/.vimrc")"
+export EDITORRC=$([[ $EDITOR == "nvim" ]] && echo "~/.config/nvim/init.vim" || echo "~/.vimrc")
 # }}}
 
 # Sources {{{
-[[ ! -z "$(brew --prefix nvm)" ]] && source "$(brew --prefix nvm)/nvm.sh"
+[[ ! -z $(brew --prefix nvm) ]] && source "$(brew --prefix nvm)/nvm.sh"
 # }}}
 
 # Aliases {{{
@@ -88,5 +88,7 @@ alias themeconfig="$EDITOR $ZSHDIR/themes/$THEME.zsh-theme"
 # }}}
 
 # Fetch {{{
-[[ $(tmux display-message -p "#P") -eq 1 ]] && fetch || true
+if [[ $(tmux display-message -p "#P") -eq 1 ]]; then 
+  fetch
+fi
 # }}}
