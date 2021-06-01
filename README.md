@@ -52,6 +52,14 @@ My everyday tools consist of the following:
 - [`openssh`](https://www.openssh.com/) - OpenSSH is the premier connectivity tool for remote login with the SSH protocol.
 - [`openssh`](https://www.openssl.org/) - OpenSSL is a robust, commercial-grade, and full-featured toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols.
 
+## Inspiration
+
+All my doftfiles have some bit of inspiration on other repos I've encountered throughout my days, you should definitely check out the following:
+
+- Kutsan Kaplan's [dotfiles](https://github.com/kutsan/dotfiles).
+- Lukas Reineke's [config files](https://github.com/lukas-reineke/dotfiles).
+- Luke Smith's [void rice](https://github.com/LukeSmithxyz).
+
 ## License
 
 Licensed under the [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.html) license.
