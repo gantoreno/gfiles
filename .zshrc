@@ -26,7 +26,9 @@ autoload -U promptinit  && promptinit
 # }}}
 
 # Theme loader {{{
-source "$HOME/powerlevel10k/powerlevel10k.zsh-theme"
+THEME="agnoster"
+
+[[ ! -z $THEME ]] && source "$ZSHDIR/themes/$THEME.zsh-theme"
 # }}}
 
 # Plugin loader {{{
@@ -44,6 +46,8 @@ end
 # }}}
 
 # Exports {{{
+export DEFAULT_USER="gabrielmoreno"
+
 export CLICOLOR=1
 export LSCOLORS="GxGxBxDxCxEgEdxbxgxcxd"
 
@@ -52,7 +56,6 @@ export EDITORRC="$([ "$EDITOR" = "nvim" ] && printf %s "~/.config/nvim/init.vim"
 # }}}
 
 # Sources {{{
-[[ ! -f "$HOME/.p10k.zsh"      ]] || source "$HOME/.p10k.zsh"
 [[ ! -z "$(brew --prefix nvm)" ]] && source "$(brew --prefix nvm)/nvm.sh"
 # }}}
 
