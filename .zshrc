@@ -64,6 +64,7 @@ alias la="ls -a"
 alias ll="ls -l"
 alias lla="ls -la"
 
+alias pc="peco"
 alias xp="expand"
 alias ws="workspace"
 
