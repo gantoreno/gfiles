@@ -29,7 +29,7 @@ My everyday tools consist of the following:
     - [`coc.nvim`](https://github.com/neoclide/coc.nvim) - Nodejs extension host for Vim & Neovim.
     - [`telescope.nvim`](https://github.com/nvim-telescope/telescope.nvim) - Find, Filter, Preview, Pick. All lua, all the time.
     - [`vim-devicons`](https://github.com/ryanoasis/vim-devicons) - Adds file type icons to Vim plugins such as: NERDTree, vim-airline, CtrlP, unite, Denite, lightline, vim-startify and many more.
-    - [`emmet-vim`](https://github.com/mattn/emmet-vim) - A a Vim plug-in which provides support for expanding abbreviations similar to emmet.
+    - [`emmet-vim`](https://github.com/mattn/emmet-vim) - A Vim plug-in which provides support for expanding abbreviations similar to emmet.
     - [`vim-signify`](https://github.com/mhinz/vim-signify) - Show a diff using Vim its sign column.
     - [`indent-blankline.nvim`](https://github.com/lukas-reineke/indent-blankline.nvim) - Indent guides for Neovim.
 - [`tmux`](http://www.sromero.org/wiki/linux/aplicaciones/tmux) - TMUX is a terminal multiplexer.
