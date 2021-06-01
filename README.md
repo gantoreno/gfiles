@@ -4,6 +4,8 @@
 
 # My Dotfiles
 
+![https://img.shields.io/github/issues/gantoreno/dotfiles](https://img.shields.io/github/issues/gantoreno/dotfiles) ![https://img.shields.io/github/forks/gantoreno/dotfiles](https://img.shields.io/github/forks/gantoreno/dotfiles) ![https://img.shields.io/github/stars/gantoreno/dotfiles](https://img.shields.io/github/stars/gantoreno/dotfiles) ![https://img.shields.io/github/license/gantoreno/dotfiles](https://img.shields.io/github/license/gantoreno/dotfiles) ![https://raw.githubusercontent.com/sindresorhus/awesome/main/media/badge.svg](https://raw.githubusercontent.com/sindresorhus/awesome/main/media/badge.svg)
+
 > Being in command means making tough decisions. Not being in command means shutting up and doing what you're told.
 >
 > \- Eoin Colfer, The Artemis Fowl Files.
