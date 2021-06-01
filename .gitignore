@@ -1,2 +1,6 @@
 # macOS
 **/.DS_Store
+
+# ZSH
+**/.zsh_history
+**/.zcompdump
