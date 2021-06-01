@@ -20,7 +20,7 @@ My everyday tools consist of the following:
 
 - [`iterm2`](https://iterm2.com/) - The macOS Terminal Replacement.
 - [`zsh`](https://www.zsh.org/) - Zsh is a shell designed for interactive use.
-  - [`powerlevel10k`](https://github.com/romkatv/powerlevel10k) - Powerlevel10k is a theme for Zsh. It emphasizes speed, flexibility and out-of-the-box experience.
+  - [`agnoster`](https://github.com/agnoster/agnoster-zsh-theme) - A Zsh theme designed to disclose information contextually, with a powerline aesthetic.
   - [`zsh-z`](https://github.com/agkozak/zsh-z) - Jump quickly to directories that you have visited "frecently".
   - [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like autosuggestions for Zsh.
   - [`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting) - Fish shell like syntax highlighting for Zsh.
