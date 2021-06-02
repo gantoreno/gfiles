@@ -37,11 +37,11 @@ warning() {
 # }}}
 
 # Execute commands {{{
-case "$1" in
+case $1 in
   up)
     tmux split-window -v -p 25 
 
-    case "$2" in
+    case $2 in
       -s)
         ;;
       -d)
@@ -60,7 +60,7 @@ case "$1" in
   down)
     panes=$(tmux list-panes | wc -l | xargs)
 
-    [[ $panes = 1 ]] && warning "Cannot teardown a workspace with only 1 pane!"
+    [[ $panes -eq 1 ]] && warning "Cannot teardown a workspace with only 1 pane!"
 
     for pane in $(seq $panes 2); do
       tmux kill-pane -t $pane
