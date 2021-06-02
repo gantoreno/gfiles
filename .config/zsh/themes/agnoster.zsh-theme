@@ -42,7 +42,7 @@ if [[ -z "$PRIMARY_FG" ]]; then
 fi
 
 # Characters
-SEGMENT_SEPARATOR="\ue0b0"
+SEGMENT_SEPARATOR="\ue0b4"
 PLUSMINUS="\uf111"
 BRANCH="\uf418"
 DETACHED="\u27a6"
