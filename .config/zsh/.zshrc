@@ -28,7 +28,7 @@ autoload -U promptinit  && promptinit
 # Theme loader {{{
 THEME="agnoster"
 
-[[ ! -z $THEME ]] && source "$ZSHDIR/themes/$THEME.zsh-theme"
+[[ ! -z $THEME ]] && source $ZSHDIR/themes/$THEME.zsh-theme
 # }}}
 
 # Plugin loader {{{
@@ -41,7 +41,7 @@ plugins=(
 )
 
 foreach plugin in $plugins
-  source "$ZSHDIR/plugins/$plugin.plugin.zsh"
+  [[ -e $ZSHDIR/plugins/$plugin.plugin.zsh ]] && source $ZSHDIR/plugins/$plugin.plugin.zsh
 end
 # }}}
 
@@ -56,7 +56,7 @@ export EDITORRC=$([[ $EDITOR == "nvim" ]] && echo "~/.config/nvim/init.vim" || e
 # }}}
 
 # Sources {{{
-[[ ! -z $(brew --prefix nvm) ]] && source "$(brew --prefix nvm)/nvm.sh"
+[[ ! -z $(brew --prefix nvm) ]] && source $(brew --prefix nvm)/nvm.sh
 # }}}
 
 # Aliases {{{
