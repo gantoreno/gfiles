@@ -1,5 +1,5 @@
 <div align="center">
-  <img src=".github/terminal.png"></img>
+  <img src=".github/main.png"></img>
 </div>
 
 # My Dotfiles
