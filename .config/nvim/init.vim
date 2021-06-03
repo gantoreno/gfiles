@@ -87,6 +87,7 @@ set nolist
 set exrc
 set hidden
 set number
+set nowrap
 set noshowcmd
 set expandtab
 set cursorline
