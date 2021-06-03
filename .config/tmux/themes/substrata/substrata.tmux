@@ -10,8 +10,8 @@ set -g  status-left        "#[bg=#a0b9d8]#[fg=#282a36,bold]#{?client_prefix,#[bg
 set -ga status-left        "#[fg=#2e313d,nobold]  #(whoami) #[fg=#8296b0]#[bg=#2e313d]"
 
 set -g window-status-separator      ""
-set -g window-status-format         "#[fg=#2e313d]#[bg=#2e313d]#[fg=#5b5f71,nobold]#[bg=#2e313d]  #I  #W #[bg=#2e313d]#[fg=#2e313d]"
-set -g window-status-current-format "#[fg=#2e313d,bold]#[bg=#a0b9d8]#[fg=#2e313d]#[bg=#a0b9d8]  #I  #W #[fg=#a0b9d8]#[bg=#2e313d]"
+set -g window-status-format         "#[fg=#2e313d]#[bg=#2e313d]#[fg=#5b5f71,nobold]#[bg=#2e313d]  #W #[bg=#2e313d]#[fg=#2e313d]"
+set -g window-status-current-format "#[fg=#2e313d,bold]#[bg=#a0b9d8]#[fg=#2e313d]#[bg=#a0b9d8]  #W #[fg=#a0b9d8]#[bg=#2e313d]"
 
 set -g  status-right-length 36
 set -g  status-right        "#[fg=#8296b0]#[bg=#2e313d]#[fg=#2e313d]#[bg=#8296b0]  %H:%M "
