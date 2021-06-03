@@ -83,7 +83,7 @@ filetype plugin indent on
 " }}}
 
 " Settings {{{
-set list
+set nolist
 set exrc
 set hidden
 set number
@@ -126,7 +126,7 @@ let g:minimap_auto_start=1
 let g:minimap_auto_start_win_enter=1
 
 let g:indentLine_char='│'
-let g:indent_blankline_space_char='·'
+let g:indent_blankline_space_char=' '
 let g:indent_blankline_filetype_exclude=[
       \ 'term',
       \ 'coc-explorer'
