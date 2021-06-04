@@ -203,11 +203,6 @@ let g:coc_explorer_global_presets={
 " }}}
 
 " Mappings {{{
-" map <up>    <nop>
-" map <down>  <nop>
-" map <left>  <nop>
-" map <right> <nop>
-
 map <silent> <leader>cc   :TComment<CR>
 map <silent> <leader>nn   :CocCommand explorer<CR>
 map <silent> <leader>ff   :Telescope find_files<CR>
@@ -228,11 +223,6 @@ nmap <leader>coc  :CocConfig<CR>
 nmap <leader>tw   :call ToggleWorkspace()<CR>
 
 nnoremap <silent> K :call ShowDocumentation()<CR>
-
-" inoremap <up>    <nop>
-" inoremap <down>  <nop>
-" inoremap <left>  <nop>
-" inoremap <right> <nop>
 " }}}
 
 " Autocommands {{{
