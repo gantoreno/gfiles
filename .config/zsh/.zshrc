@@ -46,6 +46,8 @@ end
 # }}}
 
 # Exports {{{
+export DEFAULT_USER="gabrielmoreno"
+
 export CLICOLOR=1
 export LSCOLORS="GxGxBxDxCxEgEdxbxgxcxd"
 
