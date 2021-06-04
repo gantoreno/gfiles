@@ -53,6 +53,8 @@ export LSCOLORS="GxGxBxDxCxEgEdxbxgxcxd"
 
 export EDITOR="nvim"
 export EDITORRC=$([[ $EDITOR == "nvim" ]] && echo "~/.config/nvim/init.vim" || echo "~/.vimrc")
+
+export PATH="$PATH:$HOME/.scripts"
 # }}}
 
 # Sources {{{
