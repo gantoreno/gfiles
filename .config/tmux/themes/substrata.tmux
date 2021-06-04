@@ -1,7 +1,7 @@
 #!/bin/sh
 
 set -g pane-border-style        fg="colour0"
-set -g pane-active-border-style bg="colour12"
+set -g pane-active-border-style fg="colour12"
 
 set -g status-style bg="colour0",fg="colour8"
 
