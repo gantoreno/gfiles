@@ -225,6 +225,10 @@ nmap <leader>tw   :call ToggleWorkspace()<CR>
 nnoremap <silent> K :call ShowDocumentation()<CR>
 " }}}
 
+" Highlight groups {{{
+highlight Normal guibg=none ctermbg=none
+" }}}
+
 " Autocommands {{{
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
