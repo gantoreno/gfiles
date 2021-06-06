@@ -32,6 +32,8 @@ Plug 'kyazdani42/nvim-web-devicons'
 " }}}
 
 " Fuzzy finding {{{
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nvim-telescope/telescope.nvim'
 " }}}
