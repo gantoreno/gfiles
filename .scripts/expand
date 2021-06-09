@@ -9,7 +9,7 @@
 # Expand script
 
 # Expansion script {{{
-osascript << EOF 
+osascript <<- EOF 
 tell application "iTerm2"
   set bounds of front window to {115, 50, 1322, 880}
 end tell
