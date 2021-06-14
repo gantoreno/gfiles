@@ -1,5 +1,5 @@
 {
-  "clangd.path": "/usr/local/Cellar/llvm/11.1.0_1/bin/clangd",
+  // "clangd.path": "/usr/local/Cellar/llvm/11.1.0_1/bin/clangd",
   "python.jediEnabled": false,
   "coc.preferences.formatOnSaveFiletypes": [
     "css",

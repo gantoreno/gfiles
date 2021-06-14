@@ -191,7 +191,6 @@ let g:coc_global_extensions=[
       \ 'coc-python',
       \ 'coc-eslint',
       \ 'coc-vimtex',
-      \ 'coc-clangd',
       \ 'coc-tsserver',
       \ 'coc-prettier',
       \ 'coc-snippets',
