@@ -79,7 +79,7 @@ alias gst="git status"
 alias glg="git log --graph"
 
 alias vim="$EDITOR"
-alias fetch="fm6000"
+alias fetch="afetch"
 alias pingtest="ping 8.8.8.8"
 alias fastbrew="HOMEBREW_NO_AUTO_UPDATE=1 brew"
 

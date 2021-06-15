@@ -45,7 +45,7 @@ My everyday tools consist of the following:
     - [`eslint`](https://eslint.org/) - ESLint is a static code analysis tool for identifying problematic patterns found in JavaScript code.
 - [`brew`](https://brew.sh/index_es) - Homebrew is the easiest and most flexible way to install the UNIX tools Apple didn’t include with macOS.
 - [`exa`](https://github.com/ogham/exa) - A modern replacement for `ls`.
-- [`fm6000`](https://github.com/anhsirk0/fetch-master-6000) - Simple Dilbert themed system info-fetching tool.
+- [`afetch`](https://github.com/anhsirk0/fetch-master-6000) - Simple system info written in C.
 - [`curl`](https://curl.se/) - command line tool and library for transferring data with URLs.
 - [`wget`](https://www.gnu.org/software/wget/) - GNU Wget is a free software package for retrieving files using HTTP, HTTPS, FTP and FTPS, the most widely used Internet protocols.
 - [`ngrok`](https://ngrok.com/) - Ngrok provides a real-time web UI where you can introspect all HTTP traffic running over your tunnels.
