@@ -48,6 +48,7 @@ Plug 'mhinz/vim-signify'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'chrisbra/Colorizer'
 " }}}
 
 " Indentlines {{{
