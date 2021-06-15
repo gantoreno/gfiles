@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env python3
 
 #    ______      __         _      __   Gabriel Moreno
 #   / ____/___ _/ /_  _____(_)__  / /   ==============
@@ -8,11 +8,23 @@
 # 
 # Expand script
 
+# Imports {{{
+import iterm2
+# }}}
+
 # Expansion script {{{
-osascript <<- EOF 
-tell application "iTerm2"
-  set bounds of front window to {115, 60, 1322, 860}
-end tell
-EOF
+async def main(connection):
+    app = await iterm2.async_get_app(connection)
+    window = app.current_window
+
+    if window is not None:
+        await window.async_set_frame(
+            iterm2.Frame(
+                origin=iterm2.Point(100, 30),
+                size=iterm2.Size(1215, 815)
+            )
+        ) 
+
+iterm2.run_until_complete(main)
 # }}}
 
