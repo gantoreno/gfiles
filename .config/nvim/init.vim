@@ -324,6 +324,7 @@ augroup substrata_settings
   autocmd BufEnter * 
         \ if exists('g:colors_name') && g:colors_name == 'substrata'
         \ | hi Normal guibg=none
+        \ | hi IndentBlanklineChar         guifg=#32343e gui=nocombine
         \ | hi link TelescopeBorder        comment 
         \ | hi link TelescopePromptBorder  comment 
         \ | hi link TelescopeResultsBorder comment 
