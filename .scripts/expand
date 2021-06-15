@@ -11,7 +11,7 @@
 # Expansion script {{{
 osascript <<- EOF 
 tell application "iTerm2"
-  set bounds of front window to {115, 50, 1322, 795}
+  set bounds of front window to {115, 50, 1322, 865}
 end tell
 EOF
 # }}}
