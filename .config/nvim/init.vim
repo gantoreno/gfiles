@@ -118,6 +118,7 @@ set backupcopy=yes
 set background=dark
 set foldmethod=marker
 set softtabstop=0
+set colorcolumn=9999 " Workaround for https://github.com/lukas-reineke/indent-blankline.nvim/issues/59
 " }}}
 
 " Variables {{{
