@@ -20,8 +20,8 @@ async def main(connection):
     if window is not None:
         await window.async_set_frame(
             iterm2.Frame(
-                origin=iterm2.Point(100, 30),
-                size=iterm2.Size(1215, 815)
+                origin=iterm2.Point(100, 100),
+                size=iterm2.Size(1215, 750)
             )
         ) 
 
