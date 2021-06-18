@@ -309,18 +309,6 @@ endfunction
 " }}}
 
 " Autogroups {{{
-augroup code_dark_settings
-  autocmd!
-  autocmd BufEnter * 
-        \ if exists('g:colors_name') && g:colors_name == 'codedark'
-        \ | hi link jsxComponentName xmlTag
-        \ | hi link jsxCloseString   htmlTag
-        \ | hi link jsxTagName       htmlTagName
-        \ | hi link jsxAttrib        htmlArg
-        \ | hi link jsxBraces        jsArrowFunction |
-        \ endif
-augroup end
-
 augroup substrata_settings
   autocmd!
   autocmd BufEnter * 
@@ -332,15 +320,6 @@ augroup substrata_settings
         \ | hi! link TelescopeResultsBorder comment 
         \ | hi! link TelescopePreviewBorder comment
         \ | hi! link CocExplorerIndentLine  comment |
-        \ endif
-augroup end
-
-augroup solarized_settings
-  autocmd!
-  autocmd BufEnter * 
-        \ if exists('g:colors_name') && g:colors_name == 'solarized'
-        \ | hi Normal     ctermbg=none |
-        \ | hi SignColumn ctermbg=black |
         \ endif
 augroup end
 
