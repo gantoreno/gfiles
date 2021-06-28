@@ -77,6 +77,7 @@ alias gaa="git add ."
 alias gcm="git commit"
 alias gst="git status"
 alias glg="git log --graph"
+alias gpm="git push origin main"
 
 alias vim="$EDITOR"
 alias fetch="afetch"
