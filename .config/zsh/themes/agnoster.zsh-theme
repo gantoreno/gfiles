@@ -101,10 +101,10 @@ prompt_git() {
   ref="$vcs_info_msg_0_"
   if [[ -n "$ref" ]]; then
     if is_dirty; then
-      color=yellow
+      color=11
       ref="${ref} $PLUSMINUS "
     else
-      color=green
+      color=10
       ref="${ref} "
     fi
     if [[ "${ref/.../}" == "$ref" ]]; then
@@ -121,7 +121,7 @@ prompt_git() {
 prompt_dir() {
   local symbol
   symbol=$([[ $(pwd) == "$HOME" ]] && echo $DIR_HOME || echo $DIR_OTHER)
-  prompt_segment 12 $PRIMARY_FG " $symbol $(shrink_path -f) "
+  prompt_segment 12 $PRIMARY_FG " $symbol %B$(shrink_path -f)%b "
 }
 
 # Status:
