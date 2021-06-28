@@ -11,14 +11,14 @@ call plug#begin('~/.vim/plugged')
 
 " Colorschemes {{{
 Plug 'gantoreno/vim-substrata'
-Plug 'altercation/vim-colors-solarized'
 " }}}
 
 " Syntax highlighters {{{
-Plug 'elzr/vim-json'
-Plug 'pangloss/vim-javascript'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'herringtondarkholme/yats.vim'
+Plug 'sheerun/vim-polyglot'
+" Plug 'elzr/vim-json'
+" Plug 'pangloss/vim-javascript'
+" Plug 'maxmellon/vim-jsx-pretty'
+" Plug 'herringtondarkholme/yats.vim'
 " }}}
 
 " Lua support {{{
@@ -32,9 +32,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 " }}}
 
 " Fuzzy finding {{{
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nvim-telescope/telescope.nvim'
 " }}}
 
