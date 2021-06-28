@@ -28,6 +28,7 @@ typeset -aHg AGNOSTER_PROMPT_SEGMENTS=(
   prompt_context
   prompt_virtualenv
   prompt_dir
+  prompt_user
   prompt_git
   prompt_status
   prompt_end
@@ -101,10 +102,10 @@ prompt_git() {
   ref="$vcs_info_msg_0_"
   if [[ -n "$ref" ]]; then
     if is_dirty; then
-      color=11
+      color=yellow
       ref="${ref} $PLUSMINUS "
     else
-      color=10
+      color=green
       ref="${ref} "
     fi
     if [[ "${ref/.../}" == "$ref" ]]; then
