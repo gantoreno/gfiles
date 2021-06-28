@@ -20,4 +20,4 @@ set -g window-status-current-format "#[fg=colour0,bold]#[bg=colour12]#{@left_sep
 
 set -g  status-right-length 36
 set -g  status-right        "#[fg=colour4]#[bg=colour0]#{@right_separator}#[fg=colour0]#[bg=colour4]  %H:%M "
-set -ga status-right        "#[fg=colour12]#[bg=colour4]#{@right_separator}#[fg=colour0,bold]#[bg=colour12]  #h "c
+set -ga status-right        "#[fg=colour12]#[bg=colour4]#{@right_separator}#[fg=colour0,bold]#[bg=colour12]  #h "
