@@ -121,7 +121,7 @@ prompt_git() {
 prompt_dir() {
   local symbol
   symbol=$([[ $(pwd) == "$HOME" ]] && echo $DIR_HOME || echo $DIR_OTHER)
-  prompt_segment 12 $PRIMARY_FG " $symbol %B$(shrink_path -f)%b "
+  prompt_segment 12 $PRIMARY_FG " $symbol %B%1~%b "
 }
 
 # Status:
