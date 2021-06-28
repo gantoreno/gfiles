@@ -10,15 +10,11 @@
 call plug#begin('~/.vim/plugged')
 
 " Colorschemes {{{
-Plug 'gantoreno/vim-substrata'
+Plug 'gantoreno/vim-startrail'
 " }}}
 
 " Syntax highlighters {{{
 Plug 'sheerun/vim-polyglot'
-" Plug 'elzr/vim-json'
-" Plug 'pangloss/vim-javascript'
-" Plug 'maxmellon/vim-jsx-pretty'
-" Plug 'herringtondarkholme/yats.vim'
 " }}}
 
 " Lua support {{{
@@ -72,10 +68,10 @@ syntax on
 " }}}
 
 " Colorscheme {{{
-let g:substrata_italic_comments=0
-let g:substrata_italic_functions=0
+let g:startrail_italic_comments=0
+let g:startrail_italic_functions=0
 
-colorscheme substrata
+colorscheme startrail
 " }}}
 
 " Filetype {{{
@@ -148,7 +144,8 @@ let g:ctrlp_user_command=[
       \ 'git --git-dir=%s/.git ls-files -oc --exclude-standard'
       \ ]
 
-let g:airline_theme='substrata'
+let g:airline_theme='startrail'
+let g:airline_powerline_fonts=1
 let g:airline_left_sep=''
 let g:airline_left_alt_sep=''
 let g:airline_right_sep=''
@@ -157,7 +154,6 @@ let g:airline#extensions#tabline#left_sep=''
 let g:airline#extensions#tabline#left_alt_sep=''
 let g:airline#extensions#tabline#right_sep=''
 let g:airline#extensions#tabline#right_alt_sep=''
-let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#show_splits=0 
 let g:airline#extensions#tabline#show_buffers=0
@@ -245,14 +241,6 @@ autocmd BufNewFile,BufRead *.html,*.css,*.js,*.jsx,*.ts,*.tsx
 " }}}
 
 " Functions {{{
-function! SynStack()
-  if !exists("*synstack")
-    return
-  endif
-
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
-
 function! ShowDocumentation()
   if index(['vim', 'help'], &filetype) >= 0
     execute "h ".expand('<cword>')
@@ -261,75 +249,6 @@ function! ShowDocumentation()
 
   call CocAction('doHover')
 endfunction
-
-function! SearchBuffer(pattern)
-  let window_num=bufnr('$')
-
-  for i in range(1, window_num)
-    let is_match=matchstr(bufname(i), a:pattern)
-
-    if !empty(is_match)
-      return i
-    endif
-  endfor
-
-  return -1
-endfunction
-
-function! ToggleTerminal(rows)
-  let term_buffer=SearchBuffer('term:\/\/.*')
-  
-  if term_buffer != -1 
-    execute term_buffer.'bd!'
-    return
-  endif
-
-  execute a:rows.'sp term://zsh'
-  
-  execute "setlocal nonu"
-  execute "setlocal nornu"
-  execute "setlocal nocursorline"
-  execute "setlocal nocursorcolumn"
-  execute "setlocal signcolumn=no"
-
-  silent autocmd BufLeave <buffer> stopinsert!
-  silent autocmd BufWinEnter,WinEnter <buffer> startinsert!
-
-  execute "tnoremap <buffer> <C-w><Up> <C-\\><C-n><C-w><C-k>"
-  execute "tnoremap <buffer> <C-n> <C-\\><C-n>"
-  execute "tnoremap <buffer> <esc> <C-\\><C-n>"
-  
-  execute "setlocal nobuflisted"
-
-  startinsert!
-endfunction
-" }}}
-
-" Autogroups {{{
-augroup substrata_settings
-  autocmd!
-  autocmd BufEnter * 
-        \ if exists('g:colors_name') && g:colors_name == 'substrata'
-        \ | hi! Normal guibg=none
-        \ | hi! link IndentBlanklineChar    comment
-        \ | hi! link TelescopeBorder        comment 
-        \ | hi! link TelescopePromptBorder  comment 
-        \ | hi! link TelescopeResultsBorder comment 
-        \ | hi! link TelescopePreviewBorder comment
-        \ | hi! link CocExplorerIndentLine  comment |
-        \ endif
-augroup end
-
-augroup terminal_settings
-  autocmd!
-
-  autocmd BufLeave             term://* stopinsert!
-  autocmd BufWinEnter,WinEnter term://* startinsert!
-  autocmd TermClose            term://*
-        \ if (expand('<afile>') !~ "fzf") && (expand('<afile>') !~ "ranger") && (expand('<afile>') !~ "coc")
-        \ | call nvim_input('<CR>') |
-        \ endif
-augroup end
 " }}}
 
 " Lua {{{

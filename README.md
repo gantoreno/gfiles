@@ -26,7 +26,7 @@ My everyday tools consist of the following:
   - [`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting) - Fish shell like syntax highlighting for Zsh.
 - [`nvim`](https://neovim.io/) - Drop-in Vim. Fully compatible with Vim's editing model and the Vimscript language.
   - [`vim-plug`](https://github.com/junegunn/vim-plug) - Minimalist Vim Plugin Manager.
-    - [`vim-substrata`](https://github.com/arzg/vim-substrata) - A cold, dark colourscheme for Vim.
+    - [`vim-startrail`](https://github.com/gantoreno/vim-startrail) - A dark & peaceful colorscheme for Vim & Neovim.
     - [`vim-airline`](https://github.com/vim-airline/vim-airline) - Lean & mean status/tabline for Vim that's light as air.
     - [`coc.nvim`](https://github.com/neoclide/coc.nvim) - Nodejs extension host for Vim & Neovim.
     - [`telescope.nvim`](https://github.com/nvim-telescope/telescope.nvim) - Find, Filter, Preview, Pick. All lua, all the time.
