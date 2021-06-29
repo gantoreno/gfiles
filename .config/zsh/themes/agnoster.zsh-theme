@@ -122,7 +122,7 @@ prompt_dir() {
   local symbol
   local segment
 
-  local dir=$(dirs | awk '{print $1}')
+  local dir=$(shrink_path -f)
 
   if [[ $dir == '~' || $dir == '/' ]]; then
     segment="%B$dir%b"
