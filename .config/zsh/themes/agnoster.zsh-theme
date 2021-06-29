@@ -120,8 +120,24 @@ prompt_git() {
 # Dir: current working directory
 prompt_dir() {
   local symbol
+  local segment
+
+  local dir=$(dirs | awk '{print $1}')
+
+  if [[ $dir == '~' || $dir == '/' ]]; then
+    segment="%B$dir%b"
+  else
+    local part1=$(dirname $dir)
+    local part2=$(basename $dir)
+
+    [[ $part1 != '/' ]] && part1+='/'
+
+    segment="$part1%B$part2%b"
+  fi
+
   symbol=$([[ $(pwd) == "$HOME" ]] && echo $DIR_HOME || echo $DIR_OTHER)
-  prompt_segment 12 $PRIMARY_FG " $symbol %B%1~%b "
+  
+  prompt_segment 12 $PRIMARY_FG " $symbol $segment "
 }
 
 # Status:
