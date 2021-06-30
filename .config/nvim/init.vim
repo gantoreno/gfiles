@@ -244,7 +244,6 @@ map <silent> <leader>nn   :NvimTreeToggle<CR>
 map <silent> <leader>ff   :Telescope find_files<CR>
 map <silent> <leader>pp   :MarkdownPreview<CR>
 map <silent> <leader>hh   :ColorHighlight<CR>
-map <silent> <leader>tt   :call ToggleTerminal(g:term_rows)<CR>
 map <silent> <leader>xp   :!expand<CR><CR>
 map <silent> <leader>wsus :!workspace up -s  2> /dev/null<CR><CR>
 map <silent> <leader>wsud :!workspace up -d  2> /dev/null<CR><CR>
