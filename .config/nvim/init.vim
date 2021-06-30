@@ -146,6 +146,7 @@ let g:ctrlp_user_command=[
       \ ]
 
 let g:nvim_tree_follow = 1
+let g:nvim_tree_auto_close = 1
 let g:nvim_tree_update_cwd = 1
 let g:nvim_tree_quit_on_open = 1
 let g:nvim_tree_indent_markers = 0
