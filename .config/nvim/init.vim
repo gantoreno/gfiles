@@ -42,6 +42,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'chrisbra/Colorizer'
+Plug 'kyazdani42/nvim-tree.lua'
 " }}}
 
 " Indentlines {{{
@@ -127,7 +128,7 @@ let g:indentLine_char='│'
 let g:indent_blankline_space_char=' '
 let g:indent_blankline_filetype_exclude=[
       \ 'term',
-      \ 'coc-explorer'
+      \ 'NvimTree'
       \ ]
 let g:indent_blankline_show_first_indent_level=v:true
 let g:indent_blankline_show_trailing_blankline_indent=v:false
@@ -143,6 +144,39 @@ let g:ctrlp_user_command=[
       \ '.git/', 
       \ 'git --git-dir=%s/.git ls-files -oc --exclude-standard'
       \ ]
+
+let g:nvim_tree_follow = 1
+let g:nvim_tree_update_cwd = 1
+let g:nvim_tree_indent_markers = 0
+let g:nvim_tree_icons = {
+    \ 'default': '',
+    \ 'symlink': '',
+    \ 'git': {
+    \   'unstaged': "✗",
+    \   'staged': "✓",
+    \   'unmerged': "",
+    \   'renamed': "➜",
+    \   'untracked': "★",
+    \   'deleted': "",
+    \   'ignored': "◌"
+    \ },
+    \ 'folder': {
+    \   'arrow_open': "",
+    \   'arrow_closed': "",
+    \   'default': "",
+    \   'open': "",
+    \   'empty': "",
+    \   'empty_open': "",
+    \   'symlink': "",
+    \   'symlink_open': "",
+    \ },
+    \ 'lsp': {
+    \   'hint': "",
+    \   'info': "",
+    \   'warning': "",
+    \   'error': "",
+    \ }
+    \ }
 
 let g:airline_theme='startrail'
 let g:airline_powerline_fonts=1
@@ -204,7 +238,7 @@ let g:coc_explorer_global_presets={
 
 " Mappings {{{
 map <silent> <leader>cc   :TComment<CR>
-map <silent> <leader>nn   :CocCommand explorer<CR>
+map <silent> <leader>nn   :NvimTreeToggle<CR>
 map <silent> <leader>ff   :Telescope find_files<CR>
 map <silent> <leader>pp   :MarkdownPreview<CR>
 map <silent> <leader>hh   :ColorHighlight<CR>
