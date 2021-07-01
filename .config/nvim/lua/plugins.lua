@@ -47,24 +47,28 @@ end
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
+  use 'gantoreno/vim-startrail'
+
   use 'ryanoasis/vim-devicons'
   use 'kyazdani42/nvim-web-devicons'
   
-  use {'nvim-lua/popup.nvim', as = 'popup'}
-  use {'nvim-lua/plenary.nvim', as = 'plenary'}
-  use {'nvim-telescope/telescope.nvim', as = 'telescope'}
+  use 'nvim-lua/popup.nvim'
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-telescope/telescope.nvim'
 
-  use {'tomtom/tcomment_vim', as = 'tcomment'}
-  use {'neovim/nvim-lspconfig', as = 'lspconfig'}
+  use 'tomtom/tcomment_vim'
 
-  use {'nvim-lua/completion-nvim', as = 'completion'}
-  use {'mattn/emmet-vim', as = 'emmet'}
-  use {'mhinz/vim-signify', as = 'signify'}
-  use {'gantoreno/vim-startrail', as = 'startrail'}
-  use {'kyazdani42/nvim-tree.lua', as = 'nvim-tree'}
-  use {'vim-airline/vim-airline', as = 'airline'}
-  use {'prettier/vim-prettier', run = 'yarn-install'}
-  use {'jiangmiao/auto-pairs', as = 'autopairs'}
+  use 'mattn/emmet-vim'
+  use 'prettier/vim-prettier'
+  use 'jiangmiao/auto-pairs'
+
+  use 'mhinz/vim-signify'
+  use 'kyazdani42/nvim-tree.lua'
+  use 'vim-airline/vim-airline'
+
+  use 'neovim/nvim-lspconfig'
+  use 'nvim-lua/completion-nvim'
+
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use {'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
 end)
