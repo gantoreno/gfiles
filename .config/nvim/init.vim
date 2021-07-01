@@ -107,7 +107,7 @@ set backspace=indent,eol,start
 set clipboard=unnamedplus
 set shiftwidth=2
 set laststatus=2
-set signcolumn=yes
+set signcolumn=number
 set backupcopy=yes
 set background=dark
 set foldmethod=marker
@@ -266,7 +266,7 @@ highlight Normal guibg=none ctermbg=none
 " }}}
 
 " Autocommands {{{
-autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+autocmd BufEnter * if &filetype == 'NvimTree' | setlocal signcolumn=no | endif
 
 autocmd BufNewFile,BufRead *.js,*.jsx set filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.tsx,*.ts set filetype=typescript.tsx
