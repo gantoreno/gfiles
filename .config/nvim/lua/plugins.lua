@@ -14,6 +14,15 @@ g.nvim_tree_update_cwd = 1
 g.nvim_tree_quit_on_open = 1
 g.nvim_tree_indent_markers = 0
 
+g.indentLine_char = '│'
+g.indent_blankline_space_char = ' '
+g.indent_blankline_filetype_exclude = {
+  'term',
+  'NvimTree'
+}
+g.indent_blankline_show_first_indent_level = true
+g.indent_blankline_show_trailing_blankline_indent = false
+
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -31,5 +40,6 @@ return require('packer').startup(function()
   use {'gantoreno/vim-startrail', as = 'startrail'}
   use {'kyazdani42/nvim-tree.lua', as = 'nvim-tree'}
   use {'vim-airline/vim-airline', as = 'airline'}
+  use {'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
 end)
 
