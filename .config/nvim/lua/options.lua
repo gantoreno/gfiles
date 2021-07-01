@@ -27,6 +27,7 @@ o.smartindent = true
 o.mouse = 'a'
 o.encoding = 'UTF-8'
 o.clipboard = 'unnamedplus'
+o.backspace = 'indent,eol,start'
 o.colorcolumn = '9999'
 
 wo.number = true
