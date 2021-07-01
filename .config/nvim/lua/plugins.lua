@@ -75,7 +75,7 @@ return require('packer').startup(function()
   use 'vim-airline/vim-airline'
 
   use 'neovim/nvim-lspconfig'
-  use 'nvim-lua/completion-nvim'
+  use 'hrsh7th/nvim-compe'
 
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use {'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
