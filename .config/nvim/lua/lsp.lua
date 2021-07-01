@@ -9,5 +9,3 @@
 require'lspconfig'.tsserver.setup{
   on_attach = require'compe'.on_attach
 }
-
-vim.lsp.callbacks["textDocument/publishDiagnostics"] = function() end
