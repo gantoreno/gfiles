@@ -60,6 +60,7 @@ return require('packer').startup(function()
   use {'kyazdani42/nvim-tree.lua', as = 'nvim-tree'}
   use {'vim-airline/vim-airline', as = 'airline'}
   use {'prettier/vim-prettier', run = 'yarn-install'}
+  use {'jiangmiao/auto-pairs', as = 'autopairs'}
   use {'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
 end)
 
