@@ -45,17 +45,15 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function()
-  -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
   use 'ryanoasis/vim-devicons'
   use 'kyazdani42/nvim-web-devicons'
   
-
-  use {'sheerun/vim-polyglot', as = 'polyglot'}
   use {'nvim-lua/popup.nvim', as = 'popup'}
   use {'nvim-lua/plenary.nvim', as = 'plenary'}
   use {'nvim-telescope/telescope.nvim', as = 'telescope'}
+
   use {'tomtom/tcomment_vim', as = 'tcomment'}
   use {'neovim/nvim-lspconfig', as = 'lspconfig'}
 
@@ -67,6 +65,7 @@ return require('packer').startup(function()
   use {'vim-airline/vim-airline', as = 'airline'}
   use {'prettier/vim-prettier', run = 'yarn-install'}
   use {'jiangmiao/auto-pairs', as = 'autopairs'}
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use {'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
 end)
 
