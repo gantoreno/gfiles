@@ -23,6 +23,13 @@ g.indent_blankline_filetype_exclude = {
 g.indent_blankline_show_first_indent_level = true
 g.indent_blankline_show_trailing_blankline_indent = false
 
+g.signify_sign_add='┃'
+g.signify_sign_delete='┃'
+g.signify_sign_change='┃'
+g.signify_sign_changedelete='┃'
+g.signify_sign_delete_first_line='┃'
+g.signify_sign_show_count=false
+
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -36,7 +43,9 @@ return require('packer').startup(function()
 
   use 'ryanoasis/vim-devicons'
   use 'kyazdani42/nvim-web-devicons'
-
+  
+  use {'mattn/emmet-vim', as = 'emmet'}
+  use {'mhinz/vim-signify', as = 'signify'}
   use {'gantoreno/vim-startrail', as = 'startrail'}
   use {'kyazdani42/nvim-tree.lua', as = 'nvim-tree'}
   use {'vim-airline/vim-airline', as = 'airline'}

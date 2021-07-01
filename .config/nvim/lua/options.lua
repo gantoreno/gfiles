@@ -20,7 +20,6 @@ o.hlsearch = false
 o.expandtab = true
 o.cursorline = true
 o.splitbelow = true
-o.splitright = true
 o.errorbells = false
 o.smartindent = true
 
@@ -33,4 +32,4 @@ o.colorcolumn = '9999'
 wo.number = true
 wo.relativenumber = true
 
-wo.signcolumn = 'yes'
+wo.signcolumn = 'number'
