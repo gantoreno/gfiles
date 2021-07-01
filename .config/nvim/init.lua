@@ -1,7 +1,11 @@
 require('plugins')
+require('colors')
+require('keymaps')
 
--- Map space to no-op
-vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
+vim.cmd('set number')
+vim.cmd('set relativenumber')
 
--- Set space as leader
-vim.g.mapleader = ' '
+vim.g.nvim_tree_auto_close = 1
+vim.g.nvim_tree_update_cwd = 1
+vim.g.nvim_tree_quit_on_open = 1
+vim.g.nvim_tree_indent_markers = 0

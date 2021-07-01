@@ -13,4 +13,5 @@ return require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
 
 	use {'gantoreno/vim-startrail', as = 'startrail'}
+	use {'kyazdani42/nvim-tree.lua', as = 'nvim-tree'}
 end)
