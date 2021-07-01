@@ -9,7 +9,7 @@ o.shiftwidth = 2
 o.laststatus = 2
 o.softtabstop = 0
 
-o.list = true
+o.list = false
 o.wrap = false
 o.hidden = true
 o.number = true
@@ -23,6 +23,7 @@ o.splitbelow = true
 o.errorbells = false
 o.smartindent = true
 
+o.listchars = 'eol:↴,nbsp:·,space:·,trail:·'
 o.mouse = 'a'
 o.encoding = 'UTF-8'
 o.clipboard = 'unnamedplus'
