@@ -53,6 +53,7 @@ return require('packer').startup(function()
   use {'nvim-lua/plenary.nvim', as = 'plenary'}
   use {'nvim-telescope/telescope.nvim', as = 'telescope'}
   use {'tomtom/tcomment_vim', as = 'tcomment'}
+  use {'neovim/nvim-lspconfig', as = 'lspconfig'}
 
   use {'mattn/emmet-vim', as = 'emmet'}
   use {'mhinz/vim-signify', as = 'signify'}
