@@ -17,6 +17,7 @@ g.nvim_tree_indent_markers = 0
 g.indentLine_char = '│'
 g.indent_blankline_space_char = ' '
 g.indent_blankline_filetype_exclude = {
+  'help',
   'term',
   'packer',
   'NvimTree'
@@ -32,6 +33,9 @@ g.signify_sign_delete_first_line='┃'
 g.signify_sign_show_count=false
 
 g['prettier#autoformat'] = true
+g['prettier#autoformat_require_pragma'] = false
+
+g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy'}
 
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
@@ -55,6 +59,7 @@ return require('packer').startup(function()
   use {'tomtom/tcomment_vim', as = 'tcomment'}
   use {'neovim/nvim-lspconfig', as = 'lspconfig'}
 
+  use {'nvim-lua/completion-nvim', as = 'completion'}
   use {'mattn/emmet-vim', as = 'emmet'}
   use {'mhinz/vim-signify', as = 'signify'}
   use {'gantoreno/vim-startrail', as = 'startrail'}

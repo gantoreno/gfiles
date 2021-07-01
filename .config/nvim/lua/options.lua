@@ -29,6 +29,7 @@ o.encoding = 'UTF-8'
 o.clipboard = 'unnamedplus'
 o.backspace = 'indent,eol,start'
 o.colorcolumn = '9999'
+o.completeopt = 'menuone,noinsert,noselect'
 
 wo.number = true
 wo.relativenumber = true
