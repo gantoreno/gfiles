@@ -44,6 +44,13 @@ return require('packer').startup(function()
   use 'ryanoasis/vim-devicons'
   use 'kyazdani42/nvim-web-devicons'
   
+
+  use {'sheerun/vim-polyglot', as = 'polyglot'}
+  use {'nvim-lua/popup.nvim', as = 'popup'}
+  use {'nvim-lua/plenary.nvim', as = 'plenary'}
+  use {'nvim-telescope/telescope.nvim', as = 'telescope'}
+  use {'tomtom/tcomment_vim', as = 'tcomment'}
+
   use {'mattn/emmet-vim', as = 'emmet'}
   use {'mhinz/vim-signify', as = 'signify'}
   use {'gantoreno/vim-startrail', as = 'startrail'}
