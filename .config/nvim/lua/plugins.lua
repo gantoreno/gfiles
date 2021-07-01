@@ -2,6 +2,13 @@ local g = vim.g
 local fn = vim.fn
 local command = vim.api.nvim_command
 
+g.airline_theme = 'startrail'
+g.airline_powerline_fonts = true
+g['airline#extensions#tabline#enabled'] = true
+g['airline#extensions#tabline#show_splits'] = false
+g['airline#extensions#tabline#show_buffers'] = false
+g['airline#extensions#tabline#show_close_button'] = false
+
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -9,12 +16,12 @@ if fn.empty(fn.glob(install_path)) > 0 then
   command 'packadd packer.nvim'
 end
 
-g.airline_theme = 'startrail'
-g.airline_powerline_fonts = true
-
 return require('packer').startup(function()
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
+
+	use 'ryanoasis/vim-devicons'
+	use 'kyazdani42/nvim-web-devicons'
 
 	use {'gantoreno/vim-startrail', as = 'startrail'}
 	use {'kyazdani42/nvim-tree.lua', as = 'nvim-tree'}
