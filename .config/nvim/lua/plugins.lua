@@ -18,6 +18,7 @@ g.indentLine_char = '│'
 g.indent_blankline_space_char = ' '
 g.indent_blankline_filetype_exclude = {
   'term',
+  'packer',
   'NvimTree'
 }
 g.indent_blankline_show_first_indent_level = true
@@ -29,6 +30,8 @@ g.signify_sign_change='┃'
 g.signify_sign_changedelete='┃'
 g.signify_sign_delete_first_line='┃'
 g.signify_sign_show_count=false
+
+g['prettier#autoformat'] = true
 
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
@@ -56,6 +59,7 @@ return require('packer').startup(function()
   use {'gantoreno/vim-startrail', as = 'startrail'}
   use {'kyazdani42/nvim-tree.lua', as = 'nvim-tree'}
   use {'vim-airline/vim-airline', as = 'airline'}
+  use {'prettier/vim-prettier', run = 'yarn-install'}
   use {'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
 end)
 
