@@ -1,6 +1,10 @@
-vim.g.startrail_italic_comments = false
-vim.g.startrail_italic_functions = false
+local g = vim.g
+local o = vim.o
+local command = vim.api.nvim_command
 
-vim.cmd('colorscheme startrail')
+g.startrail_italic_comments = false
+g.startrail_italic_functions = false
 
-vim.o.termguicolors = true
+command('colorscheme startrail')
+
+o.termguicolors = true
