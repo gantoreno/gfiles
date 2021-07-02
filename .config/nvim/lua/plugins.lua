@@ -19,7 +19,7 @@ g['airline#extensions#tabline#enabled'] = true
 g['airline#extensions#tabline#show_splits'] = false
 g['airline#extensions#tabline#show_buffers'] = false
 g['airline#extensions#tabline#show_close_button'] = false
-  -- }}}
+-- }}}
 
 -- NvimTree {{{
 g.nvim_tree_auto_close = 1
@@ -40,7 +40,7 @@ g.indent_blankline_filetype_exclude = {
 g.indent_blankline_show_first_indent_level = true
 g.indent_blankline_show_trailing_blankline_indent = false
 -- }}}
-
+--
 -- Signify {{{
 g.signify_sign_add='┃'
 g.signify_sign_delete='┃'
@@ -52,6 +52,7 @@ g.signify_sign_show_count=false
 
 -- Prettier {{{
 g['prettier#autoformat'] = true
+g['prettier#quickfix_enabled'] = false
 g['prettier#autoformat_require_pragma'] = false
 
 g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy'}
