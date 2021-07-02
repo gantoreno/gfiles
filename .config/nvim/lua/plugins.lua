@@ -62,6 +62,7 @@ return require('packer').startup(function()
   -- }}}
 
   -- Editor tools {{{
+  use 'chrisbra/Colorizer'
   use {
     'mhinz/vim-signify', 
     config = function()
