@@ -31,6 +31,7 @@ o.splitbelow = true
 o.errorbells = false
 o.smartindent = true
 
+o.shortmess = o.shortmess..'c'
 o.listchars = 'eol:↴,nbsp:·,space:·,trail:·'
 o.mouse = 'a'
 o.encoding = 'UTF-8'
