@@ -25,8 +25,8 @@ o.termguicolors = true
 -- }}}
 
 -- LSP custom highlights {{{
-command('au VimEnter * hi LspDiagnosticsDefaultError guifg=#cf8164')
-command('au VimEnter * hi LspDiagnosticsDefaultWarning guifg=#d2b45f')
-command('au VimEnter * hi LspDiagnosticsDefaultInformation guifg=#d2b45f')
-command('au VimEnter * hi LspDiagnosticsDefaultHint guifg=#7dc2c7')
+command('autocmd VimEnter * highlight LspDiagnosticsDefaultError guifg=#cf8164')
+command('autocmd VimEnter * highlight LspDiagnosticsDefaultWarning guifg=#d2b45f')
+command('autocmd VimEnter * highlight LspDiagnosticsDefaultInformation guifg=#d2b45f')
+command('autocmd VimEnter * highlight LspDiagnosticsDefaultHint guifg=#7dc2c7')
 -- }}}
