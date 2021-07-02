@@ -53,7 +53,12 @@ return require('packer').startup(function()
       vim.g['prettier#autoformat_require_pragma'] = false
     end
   }
-  use 'jiangmiao/auto-pairs'
+  use {
+    'jiangmiao/auto-pairs',
+    config = function()
+      vim.g.AutoPairsShortcutToggle = '' 
+    end
+  }
   -- }}}
 
   -- Editor tools {{{
