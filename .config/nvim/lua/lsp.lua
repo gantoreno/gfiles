@@ -6,10 +6,14 @@
 -- 
 -- Neovim LSP file
 
+-- TS Server setup {{{
 require'lspconfig'.tsserver.setup{
   on_attach = require'compe'.on_attach
 }
+-- }}}
 
+-- Pyright setup {{{
 require'lspconfig'.pyright.setup{
   on_attach = require'compe'.on_attach
 }
+-- }}}

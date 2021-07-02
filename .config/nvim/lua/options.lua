@@ -6,11 +6,14 @@
 -- 
 -- Neovim options file
 
+-- Variables {{{
 local g = vim.g
 local o = vim.o
 local bo = vim.bo
 local wo = vim.wo
+-- }}}
 
+-- Options {{{
 o.tabstop = 2
 o.scrolloff = 10
 o.shiftwidth = 2
@@ -40,8 +43,11 @@ o.listchars = 'eol:↴,nbsp:·,space:·,trail:·'
 o.foldmethod = 'marker'
 o.colorcolumn = '9999'
 o.completeopt = 'menuone,noinsert,noselect'
+-- }}}
 
+-- Window options {{{
 wo.number = true
 wo.relativenumber = true
 
 wo.signcolumn = 'number'
+-- }}}

@@ -6,6 +6,7 @@
 -- 
 -- Neovim completion file
 
+-- Compe setup {{{
 require'compe'.setup {
   enabled = true;
   autocomplete = true;
@@ -38,3 +39,4 @@ require'compe'.setup {
     luasnip = true;
   };
 }
+-- }}}
