@@ -28,7 +28,8 @@ My everyday tools consist of the following:
   - [`vim-plug`](https://github.com/junegunn/vim-plug) - Minimalist Vim Plugin Manager.
     - [`vim-startrail`](https://github.com/gantoreno/vim-startrail) - A dark & peaceful colorscheme for Vim & Neovim.
     - [`vim-airline`](https://github.com/vim-airline/vim-airline) - Lean & mean status/tabline for Vim that's light as air.
-    - [`coc.nvim`](https://github.com/neoclide/coc.nvim) - Nodejs extension host for Vim & Neovim.
+    - [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig) - Quickstart configurations for the Nvim LSP client.
+    - [`nvim-treesitter`](https://github.com/nvim-treesitter/nvim-treesitter) - Nvim Treesitter configurations and abstraction layer.
     - [`telescope.nvim`](https://github.com/nvim-telescope/telescope.nvim) - Find, Filter, Preview, Pick. All lua, all the time.
     - [`vim-devicons`](https://github.com/ryanoasis/vim-devicons) - Adds file type icons to Vim plugins such as: NERDTree, vim-airline, CtrlP, unite, Denite, lightline, vim-startify and many more.
     - [`emmet-vim`](https://github.com/mattn/emmet-vim) - A Vim plug-in which provides support for expanding abbreviations similar to emmet.
