@@ -26,7 +26,7 @@ o.termguicolors = true
 
 -- LSP custom highlights {{{
 command('autocmd VimEnter * highlight LspDiagnosticsDefaultError guifg=#fe9f7c')
-command('autocmd VimEnter * highlight LspDiagnosticsDefaultWarning guifg=orange')
+command('autocmd VimEnter * highlight LspDiagnosticsDefaultWarning guifg=#e8aa6e')
 command('autocmd VimEnter * highlight LspDiagnosticsDefaultInformation guifg=#7dc2c7')
 command('autocmd VimEnter * highlight LspDiagnosticsDefaultHint guifg=#d2b45f')
 -- }}}
