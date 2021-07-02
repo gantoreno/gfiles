@@ -91,7 +91,7 @@ _G.packer_plugins = {
     path = "/Users/gabrielmoreno/.local/share/nvim/site/pack/packer/opt/indent-blankline.nvim"
   },
   ["lspsaga.nvim"] = {
-    config = { "\27LJ\2\n~\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\4\14warn_sign\b\14hint_sign\b\15error_sign\b\15infor_sign\b\18init_lsp_saga\flspsaga\frequire\0" },
+    config = { "\27LJ\2\n~\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\4\15error_sign\b\14hint_sign\b\14warn_sign\b\15infor_sign\b\18init_lsp_saga\flspsaga\frequire\0" },
     loaded = true,
     path = "/Users/gabrielmoreno/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
   },
@@ -170,26 +170,14 @@ time([[Setup for indent-blankline.nvim]], false)
 time([[packadd for indent-blankline.nvim]], true)
 vim.cmd [[packadd indent-blankline.nvim]]
 time([[packadd for indent-blankline.nvim]], false)
--- Config for: vim-signify
-time([[Config for vim-signify]], true)
-try_loadstring("\27LJ\2\n�\1\0\0\2\0\t\0\0256\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0'\1\3\0=\1\4\0006\0\0\0009\0\1\0'\1\3\0=\1\5\0006\0\0\0009\0\1\0'\1\3\0=\1\6\0006\0\0\0009\0\1\0'\1\3\0=\1\a\0006\0\0\0009\0\1\0+\1\1\0=\1\b\0K\0\1\0\28signify_sign_show_count#signify_sign_delete_first_line\30signify_sign_changedelete\24signify_sign_change\24signify_sign_delete\b┃\21signify_sign_add\6g\bvim\0", "config", "vim-signify")
-time([[Config for vim-signify]], false)
--- Config for: nvim-compe
-time([[Config for nvim-compe]], true)
-try_loadstring("\27LJ\2\n]\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\4\0\0\nexact\14substring\nfuzzy&completion_matching_strategy_list\6g\bvim\0", "config", "nvim-compe")
-time([[Config for nvim-compe]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 try_loadstring("\27LJ\2\n�\1\0\0\2\0\6\0\0176\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1\1\0=\1\3\0006\0\0\0009\0\1\0)\1\1\0=\1\4\0006\0\0\0009\0\1\0)\1\0\0=\1\5\0K\0\1\0\29nvim_tree_indent_markers\27nvim_tree_quit_on_open\25nvim_tree_update_cwd\25nvim_tree_auto_close\6g\bvim\0", "config", "nvim-tree.lua")
 time([[Config for nvim-tree.lua]], false)
--- Config for: lspsaga.nvim
-time([[Config for lspsaga.nvim]], true)
-try_loadstring("\27LJ\2\n~\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\4\14warn_sign\b\14hint_sign\b\15error_sign\b\15infor_sign\b\18init_lsp_saga\flspsaga\frequire\0", "config", "lspsaga.nvim")
-time([[Config for lspsaga.nvim]], false)
--- Config for: auto-pairs
-time([[Config for auto-pairs]], true)
-try_loadstring("\27LJ\2\n:\0\0\2\0\4\0\0056\0\0\0009\0\1\0'\1\3\0=\1\2\0K\0\1\0\5\28AutoPairsShortcutToggle\6g\bvim\0", "config", "auto-pairs")
-time([[Config for auto-pairs]], false)
+-- Config for: nvim-compe
+time([[Config for nvim-compe]], true)
+try_loadstring("\27LJ\2\n]\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\4\0\0\nexact\14substring\nfuzzy&completion_matching_strategy_list\6g\bvim\0", "config", "nvim-compe")
+time([[Config for nvim-compe]], false)
 -- Config for: vim-prettier
 time([[Config for vim-prettier]], true)
 try_loadstring("\27LJ\2\n�\1\0\0\2\0\5\0\r6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0+\1\1\0=\1\3\0006\0\0\0009\0\1\0+\1\1\0=\1\4\0K\0\1\0'prettier#autoformat_require_pragma\30prettier#quickfix_enabled\24prettier#autoformat\6g\bvim\0", "config", "vim-prettier")
@@ -198,6 +186,18 @@ time([[Config for vim-prettier]], false)
 time([[Config for vim-airline]], true)
 try_loadstring("\27LJ\2\n�\2\0\0\2\0\t\0\0256\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0+\1\2\0=\1\4\0006\0\0\0009\0\1\0+\1\2\0=\1\5\0006\0\0\0009\0\1\0+\1\1\0=\1\6\0006\0\0\0009\0\1\0+\1\1\0=\1\a\0006\0\0\0009\0\1\0+\1\1\0=\1\b\0K\0\1\0001airline#extensions#tabline#show_close_button,airline#extensions#tabline#show_buffers+airline#extensions#tabline#show_splits'airline#extensions#tabline#enabled\28airline_powerline_fonts\14startrail\18airline_theme\6g\bvim\0", "config", "vim-airline")
 time([[Config for vim-airline]], false)
+-- Config for: lspsaga.nvim
+time([[Config for lspsaga.nvim]], true)
+try_loadstring("\27LJ\2\n~\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\4\15error_sign\b\14hint_sign\b\14warn_sign\b\15infor_sign\b\18init_lsp_saga\flspsaga\frequire\0", "config", "lspsaga.nvim")
+time([[Config for lspsaga.nvim]], false)
+-- Config for: vim-signify
+time([[Config for vim-signify]], true)
+try_loadstring("\27LJ\2\n�\1\0\0\2\0\t\0\0256\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0'\1\3\0=\1\4\0006\0\0\0009\0\1\0'\1\3\0=\1\5\0006\0\0\0009\0\1\0'\1\3\0=\1\6\0006\0\0\0009\0\1\0'\1\3\0=\1\a\0006\0\0\0009\0\1\0+\1\1\0=\1\b\0K\0\1\0\28signify_sign_show_count#signify_sign_delete_first_line\30signify_sign_changedelete\24signify_sign_change\24signify_sign_delete\b┃\21signify_sign_add\6g\bvim\0", "config", "vim-signify")
+time([[Config for vim-signify]], false)
+-- Config for: auto-pairs
+time([[Config for auto-pairs]], true)
+try_loadstring("\27LJ\2\n:\0\0\2\0\4\0\0056\0\0\0009\0\1\0'\1\3\0=\1\2\0K\0\1\0\5\28AutoPairsShortcutToggle\6g\bvim\0", "config", "auto-pairs")
+time([[Config for auto-pairs]], false)
 if should_profile then save_profiles() end
 
 END
