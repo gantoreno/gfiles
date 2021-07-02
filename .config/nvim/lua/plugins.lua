@@ -114,6 +114,17 @@ return require('packer').startup(function()
   -- LSP & Completion {{{
   use 'neovim/nvim-lspconfig'
   use {
+    'glepnir/lspsaga.nvim',
+    config = function()
+      require'lspsaga'.init_lsp_saga {
+        error_sign = '',
+        warn_sign = '',
+        hint_sign = '',
+        infor_sign = '',
+      }
+    end
+  }
+  use {
     'hrsh7th/nvim-compe',
     config = function()
       vim.g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy'}
