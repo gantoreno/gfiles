@@ -36,7 +36,7 @@ return require('packer').startup(function()
   -- Fuzzy finding {{{
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
-  use 'nvim-telescope/telescope.nvim'
+  use 'nvim-telescope/telescope.nvim';
   -- }}}
 
   -- Commenting {{{
@@ -72,6 +72,12 @@ return require('packer').startup(function()
         " / / __/ __ `/ __ \\/ ___/ / _ \\/ / ",
         "/ /_/ / /_/ / /_/ / /  / /  __/ /  ",
         "\\____/\\__,_/_.___/_/  /_/\\___/_/   "
+      }
+      vim.g.dashboard_custom_footer = {
+        'Being in command means making tough decisions. Not being',
+        'in command means shutting up and doing what you\'re told.',
+        '', 
+        '- Eoin Colfer, The Artemis Fowl Files'
       }
       vim.g.dashboard_default_executive = 'telescope'
     end
