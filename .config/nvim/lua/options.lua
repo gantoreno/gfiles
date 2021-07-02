@@ -37,6 +37,7 @@ o.clipboard = 'unnamedplus'
 o.backspace = 'indent,eol,start'
 o.shortmess = o.shortmess..'c'
 o.listchars = 'eol:↴,nbsp:·,space:·,trail:·'
+o.foldmethod = 'marker'
 o.colorcolumn = '9999'
 o.completeopt = 'menuone,noinsert,noselect'
 
