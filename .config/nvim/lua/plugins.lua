@@ -7,7 +7,6 @@
 -- Neovim plugins file
 
 -- Variables {{{
-local g = vim.g
 local fn = vim.fn
 local command = vim.api.nvim_command
 -- }}}
@@ -49,9 +48,9 @@ return require('packer').startup(function()
   use {
     'prettier/vim-prettier',
     config = function()
-      g['prettier#autoformat'] = true
-      g['prettier#quickfix_enabled'] = false
-      g['prettier#autoformat_require_pragma'] = false
+      vim.g['prettier#autoformat'] = true
+      vim.g['prettier#quickfix_enabled'] = false
+      vim.g['prettier#autoformat_require_pragma'] = false
     end
   }
   use 'jiangmiao/auto-pairs'
@@ -61,21 +60,21 @@ return require('packer').startup(function()
   use {
     'mhinz/vim-signify', 
     config = function()
-      g.signify_sign_add='┃'
-      g.signify_sign_delete='┃'
-      g.signify_sign_change='┃'
-      g.signify_sign_changedelete='┃'
-      g.signify_sign_delete_first_line='┃'
-      g.signify_sign_show_count=false
+      vim.g.signify_sign_add='┃'
+      vim.g.signify_sign_delete='┃'
+      vim.g.signify_sign_change='┃'
+      vim.g.signify_sign_changedelete='┃'
+      vim.g.signify_sign_delete_first_line='┃'
+      vim.g.signify_sign_show_count=false
     end
   }
   use {
     'kyazdani42/nvim-tree.lua',
     config = function()
-      g.nvim_tree_auto_close = 1
-      g.nvim_tree_update_cwd = 1
-      g.nvim_tree_quit_on_open = 1
-      g.nvim_tree_indent_markers = 0
+      vim.g.nvim_tree_auto_close = true
+      vim.g.nvim_tree_update_cwd = 1
+      vim.g.nvim_tree_quit_on_open = 1
+      vim.g.nvim_tree_indent_markers = 0
     end
   }
   use {
@@ -112,7 +111,7 @@ return require('packer').startup(function()
   use {
     'hrsh7th/nvim-compe',
     config = function()
-      g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy'}
+      vim.g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy'}
     end
   }
   -- }}}
