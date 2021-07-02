@@ -64,6 +64,19 @@ return require('packer').startup(function()
   -- Editor tools {{{
   use 'chrisbra/Colorizer'
   use {
+    'glepnir/dashboard-nvim',
+    config = function()
+      vim.g.dashboard_custom_header = {
+        "   ______      __         _      __",
+        "  / ____/___ _/ /_  _____(_)__  / /",
+        " / / __/ __ `/ __ \\/ ___/ / _ \\/ / ",
+        "/ /_/ / /_/ / /_/ / /  / /  __/ /  ",
+        "\\____/\\__,_/_.___/_/  /_/\\___/_/   "
+      }
+      vim.g.dashboard_default_executive = 'telescope'
+    end
+  }
+  use {
     'mhinz/vim-signify', 
     config = function()
       vim.g.signify_sign_add='┃'
@@ -104,6 +117,7 @@ return require('packer').startup(function()
         'help',
         'term',
         'packer',
+        'dashboard',
         'NvimTree'
       }
       vim.g.indent_blankline_show_first_indent_level = true
