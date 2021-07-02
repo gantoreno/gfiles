@@ -9,3 +9,7 @@
 require'lspconfig'.tsserver.setup{
   on_attach = require'compe'.on_attach
 }
+
+require'lspconfig'.pyright.setup{
+  on_attach = require'compe'.on_attach
+}
