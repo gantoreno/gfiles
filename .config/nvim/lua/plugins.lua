@@ -139,7 +139,7 @@ return require('packer').startup(function(use)
   use {
     'lukas-reineke/indent-blankline.nvim', 
     setup = function()
-      vim.g.indentLine_char = '│'
+      vim.g.indentLine_char = '▏'
       vim.g.indent_blankline_space_char = ' '
       vim.g.indent_blankline_filetype_exclude = {
         'help',
