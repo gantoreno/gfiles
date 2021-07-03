@@ -73,11 +73,34 @@ return require('packer').startup(function()
         "/ /_/ / /_/ / /_/ / /  / /  __/ /  ",
         "\\____/\\__,_/_.___/_/  /_/\\___/_/   "
       }
+      vim.g.dashboard_custom_section = {
+        a = {
+          description = {'  Find File          '},
+          command = 'Telescope find_files'
+        },
+        b = {
+          description = {'  Recently Seen Files'},
+          command = 'Telescope oldfiles'
+        },
+        c = {
+          description = {'  Load Last Session  '},
+          command = 'SessionLoad'
+        },
+        d = {
+          description = {'  Find Word          '},
+          command = 'Telescope live_grep'
+        },
+        e = {
+          description = {'  Neovim Config Files'},
+          command = 'lua require(\'telescope.builtin\').find_files({search_dirs = {\''..os.getenv('HOME')..'/.config/nvim\'}})'
+        }
+      }
       vim.g.dashboard_custom_footer = {
-        'Being in command means making tough decisions. Not being',
-        'in command means shutting up and doing what you\'re told.',
+        ' Being in command means making tough decisions. ',
+        'Not being in command means shutting up and doing',
+        '               what you\'re told.               ',
         '', 
-        '- Eoin Colfer, The Artemis Fowl Files'
+        '      Eoin Colfer, The Artemis Fowl Files       '
       }
       vim.g.dashboard_default_executive = 'telescope'
     end
