@@ -19,7 +19,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   command 'packadd packer.nvim'
 end
 
-return require('packer').startup(function()
+return require('packer').startup(function(use)
   -- Packer {{{
   use 'wbthomason/packer.nvim'
   -- }}}
