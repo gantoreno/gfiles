@@ -155,7 +155,38 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- LSP & Completion {{{
-  use 'neovim/nvim-lspconfig'
+    use {
+      'neovim/nvim-lspconfig',
+      config = function()
+        vim.lsp.protocol.CompletionItemKind = {
+          " (Text) ",
+          " (Method)",
+          " (Function)",
+          " (Constructor)",
+          "ﴲ (Field)",
+          " (Variable)",
+          " (Class)",
+          "ﰮ (Interface)",
+          " (Module)",
+          "襁(Property)",
+          " (Unit)",
+          " (Value)",
+          "練(Enum)",
+          " (Keyword)",
+          " (Snippet)",
+          " (Color)",
+          " (File)",
+          " (Reference)",
+          " (Folder)",
+          " (EnumMember)",
+          "ﲀ (Constant)",
+          "ﳤ (Struct)",
+          " (Event)",
+          " (Operator)",
+          " (TypeParameter)"
+        }
+      end
+    }
   use {
     'glepnir/lspsaga.nvim',
     config = function()
