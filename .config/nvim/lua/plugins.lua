@@ -36,7 +36,21 @@ return require('packer').startup(function(use)
   -- Fuzzy finding {{{
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
-  use 'nvim-telescope/telescope.nvim';
+  use {
+    'nvim-telescope/telescope.nvim',
+    config = function()
+      require('telescope').setup{
+        defaults = {
+          mappings = {
+            i = {
+              ["<esc>"] = require('telescope.actions').close, 
+            },
+          },
+          borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+        }
+      }
+    end
+  }
   -- }}}
 
   -- Commenting {{{
