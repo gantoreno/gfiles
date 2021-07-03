@@ -115,7 +115,6 @@ return require('packer').startup(function()
   }
   use {
     'lukas-reineke/indent-blankline.nvim', 
-    branch = 'lua',
     setup = function()
       vim.g.indentLine_char = '│'
       vim.g.indent_blankline_space_char = ' '
