@@ -7,7 +7,8 @@
 -- Neovim TreeSitter file
 -- TreeSitter setup {{{
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
-  highlight = {enable = true}
+  indent = {enable = true},
+  highlight = {enable = true},
+  ensure_installed = "maintained"
 }
 -- }}}
