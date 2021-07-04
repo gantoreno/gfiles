@@ -31,20 +31,20 @@ o.splitbelow = true
 o.errorbells = false
 o.smartindent = true
 
-o.mouse = 'a'
-o.encoding = 'UTF-8'
-o.clipboard = 'unnamedplus'
-o.backspace = 'indent,eol,start'
-o.shortmess = o.shortmess .. 'c'
-o.listchars = 'eol:↴,nbsp:·,space:·,trail:·'
-o.foldmethod = 'marker'
-o.colorcolumn = '9999'
-o.completeopt = 'menuone,noinsert,noselect'
+o.mouse = "a"
+o.encoding = "UTF-8"
+o.clipboard = "unnamedplus"
+o.backspace = "indent,eol,start"
+o.shortmess = o.shortmess .. "c"
+o.listchars = "eol:↴,nbsp:·,space:·,trail:·"
+o.foldmethod = "marker"
+o.colorcolumn = "9999"
+o.completeopt = "menuone,noinsert,noselect"
 -- }}}
 
 -- Window options {{{
 wo.number = true
 wo.relativenumber = true
 
-wo.signcolumn = 'number'
+wo.signcolumn = "number"
 -- }}}

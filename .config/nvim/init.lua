@@ -5,13 +5,14 @@
 -- \____/\__,_/_.___/_/  /_/\___/_/      GitHub:   https://github.com/gantoreno
 --
 -- Neovim configuration file
+
 -- Modules {{{
-require('plugins')
-require('colors')
-require('options')
-require('keymaps')
-require('autocommands')
-require('lsp')
-require('completion')
-require('treesitter')
+require("plugins")
+require("colors")
+require("options")
+require("keymaps")
+require("autocommands")
+require("lsp")
+require("completion")
+require("treesitter")
 -- }}

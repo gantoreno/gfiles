@@ -11,22 +11,19 @@ local set_keymap = vim.api.nvim_set_keymap
 -- }}}
 
 -- Leader {{{
-set_keymap('n', '<space>', '<nop>', {noremap = true, silent = true})
+set_keymap("n", "<space>", "<nop>", { noremap = true, silent = true })
 
-g.mapleader = ' '
+g.mapleader = " "
 -- }}}
 
 -- Keymaps {{{
-set_keymap('', '<leader>cc', ':TComment<cr>', {noremap = true, silent = true})
-set_keymap('', '<leader>hh', ':ColorHighlight<cr>',
-           {noremap = true, silent = true})
-set_keymap('', '<leader>nn', ':NvimTreeToggle<cr>',
-           {noremap = true, silent = true})
-set_keymap('', '<leader>ff', ':Telescope find_files<cr>',
-           {noremap = true, silent = true})
+set_keymap("", "<leader>cc", ":TComment<cr>", { noremap = true, silent = true })
+set_keymap("", "<leader>hh", ":ColorHighlight<cr>", { noremap = true, silent = true })
+set_keymap("", "<leader>nn", ":NvimTreeToggle<cr>", { noremap = true, silent = true })
+set_keymap("", "<leader>ff", ":Telescope find_files<cr>", { noremap = true, silent = true })
 
-set_keymap('', '<leader>wsus', ':!workspace up -s<cr><cr>', {silent = true})
-set_keymap('', '<leader>wsud', ':!workspace up -d<cr><cr>', {silent = true})
-set_keymap('', '<leader>wsue', ':!workspace up -e<cr><cr>', {silent = true})
-set_keymap('', '<leader>wsd', ':!workspace down<cr><cr>', {silent = true})
+set_keymap("", "<leader>wsus", ":!workspace up -s<cr><cr>", { silent = true })
+set_keymap("", "<leader>wsud", ":!workspace up -d<cr><cr>", { silent = true })
+set_keymap("", "<leader>wsue", ":!workspace up -e<cr><cr>", { silent = true })
+set_keymap("", "<leader>wsd", ":!workspace down<cr><cr>", { silent = true })
 -- }}}
