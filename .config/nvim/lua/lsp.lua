@@ -77,5 +77,6 @@ require("lspconfig").sumneko_lua.setup({
       telemetry = { enable = false },
     },
   },
+  on_attach = on_attach,
 })
 -- }}}
