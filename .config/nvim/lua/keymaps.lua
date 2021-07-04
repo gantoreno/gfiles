@@ -26,4 +26,5 @@ set_keymap('', '<leader>ff', ':Telescope find_files<cr>', {noremap = true, silen
 set_keymap('', '<leader>wsus', ':!workspace up -s<cr><cr>', {silent = true})
 set_keymap('', '<leader>wsud', ':!workspace up -d<cr><cr>', {silent = true})
 set_keymap('', '<leader>wsue', ':!workspace up -e<cr><cr>', {silent = true})
+set_keymap('', '<leader>wsd', ':!workspace down<cr><cr>', {silent = true})
 -- }}}
