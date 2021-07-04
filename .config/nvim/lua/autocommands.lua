@@ -17,7 +17,7 @@ command("autocmd BufNewFile,BufRead *.js,*.jsx set filetype=javascriptreact")
 command("autocmd BufNewFile,BufRead *.tsx,*.ts set filetype=typescriptreact")
 command("autocmd BufNewFile,BufRead *.zsh-theme set filetype=zsh")
 command(
-	'autocmd BufNewFile,BufRead *.html,*.css,*.js,*.jsx,*.ts,*.tsx let g:user_emmet_expandabbr_key="<tab>" | imap <expr> <Tab> emmet#expandAbbrIntelligent("<tab>")'
+  'autocmd BufNewFile,BufRead *.html,*.css,*.js,*.jsx,*.ts,*.tsx let g:user_emmet_expandabbr_key="<tab>" | imap <expr> <Tab> emmet#expandAbbrIntelligent("<tab>")'
 )
 
 command("autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.lua,*.py lua vim.lsp.buf.formatting_sync(nil, 150)")
