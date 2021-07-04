@@ -5,17 +5,18 @@
 -- \____/\__,_/_.___/_/  /_/\___/_/      GitHub:   https://github.com/gantoreno
 --
 -- Neovim plugins file
-
 -- Variables {{{
-  local fn = vim.fn
-  local command = vim.api.nvim_command
+local fn = vim.fn
+local command = vim.api.nvim_command
 -- }}}
 
 -- Packer {{{
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
-  fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
+  fn.system({
+    'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path
+  })
   command 'packadd packer.nvim'
 end
 
@@ -39,14 +40,10 @@ return require('packer').startup(function(use)
   use {
     'nvim-telescope/telescope.nvim',
     config = function()
-      require('telescope').setup{
+      require('telescope').setup {
         defaults = {
-          mappings = {
-            i = {
-              ["<esc>"] = require('telescope.actions').close,
-            },
-          },
-          borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+          mappings = {i = {["<esc>"] = require('telescope.actions').close}},
+          borderchars = {'─', '│', '─', '│', '┌', '┐', '┘', '└'}
         }
       }
     end
@@ -69,9 +66,7 @@ return require('packer').startup(function(use)
   }
   use {
     'jiangmiao/auto-pairs',
-    config = function()
-      vim.g.AutoPairsShortcutToggle = ''
-    end
+    config = function() vim.g.AutoPairsShortcutToggle = '' end
   }
   use 'mattn/efm-langserver'
   -- }}}
@@ -107,14 +102,14 @@ return require('packer').startup(function(use)
         },
         e = {
           description = {'  Neovim Config Files'},
-          command = 'lua require(\'telescope.builtin\').find_files({search_dirs = {\''..os.getenv('HOME')..'/.config/nvim\'}})'
+          command = 'lua require(\'telescope.builtin\').find_files({search_dirs = {\'' ..
+              os.getenv('HOME') .. '/.config/nvim\'}})'
         }
       }
       vim.g.dashboard_custom_footer = {
         ' Being in command means making tough decisions. ',
         'Not being in command means shutting up and doing',
-        '               what you\'re told.               ',
-        '',
+        '               what you\'re told.               ', '',
         '      Eoin Colfer, The Artemis Fowl Files       '
       }
       vim.g.dashboard_default_executive = 'telescope'
@@ -123,12 +118,12 @@ return require('packer').startup(function(use)
   use {
     'mhinz/vim-signify',
     config = function()
-      vim.g.signify_sign_add='┃'
-      vim.g.signify_sign_delete='┃'
-      vim.g.signify_sign_change='┃'
-      vim.g.signify_sign_changedelete='┃'
-      vim.g.signify_sign_delete_first_line='┃'
-      vim.g.signify_sign_show_count=false
+      vim.g.signify_sign_add = '┃'
+      vim.g.signify_sign_delete = '┃'
+      vim.g.signify_sign_change = '┃'
+      vim.g.signify_sign_changedelete = '┃'
+      vim.g.signify_sign_delete_first_line = '┃'
+      vim.g.signify_sign_show_count = false
     end
   }
   use {
@@ -157,11 +152,7 @@ return require('packer').startup(function(use)
       vim.g.indentLine_char = '▏'
       vim.g.indent_blankline_space_char = ' '
       vim.g.indent_blankline_filetype_exclude = {
-        'help',
-        'term',
-        'packer',
-        'dashboard',
-        'NvimTree'
+        'help', 'term', 'packer', 'dashboard', 'NvimTree'
       }
       vim.g.indent_blankline_show_first_indent_level = true
       vim.g.indent_blankline_show_trailing_blankline_indent = false
@@ -170,38 +161,20 @@ return require('packer').startup(function(use)
   -- }}}
 
   -- LSP & Completion {{{
-    use {
-      'neovim/nvim-lspconfig',
-      config = function()
-        vim.lsp.protocol.CompletionItemKind = {
-          " (Text) ",
-          " (Method)",
-          " (Function)",
-          " (Constructor)",
-          "ﴲ (Field)",
-          " (Variable)",
-          " (Class)",
-          "ﰮ (Interface)",
-          " (Module)",
-          "襁(Property)",
-          " (Unit)",
-          " (Value)",
-          "練(Enum)",
-          " (Keyword)",
-          " (Snippet)",
-          " (Color)",
-          " (File)",
-          " (Reference)",
-          " (Folder)",
-          " (EnumMember)",
-          "ﲀ (Constant)",
-          "ﳤ (Struct)",
-          " (Event)",
-          " (Operator)",
-          " (TypeParameter)"
-        }
-      end
-    }
+  use {
+    'neovim/nvim-lspconfig',
+    config = function()
+      vim.lsp.protocol.CompletionItemKind = {
+        " (Text) ", " (Method)", " (Function)", " (Constructor)",
+        "ﴲ (Field)", " (Variable)", " (Class)", "ﰮ (Interface)",
+        " (Module)", "襁(Property)", " (Unit)", " (Value)",
+        "練(Enum)", " (Keyword)", " (Snippet)", " (Color)",
+        " (File)", " (Reference)", " (Folder)", " (EnumMember)",
+        "ﲀ (Constant)", "ﳤ (Struct)", " (Event)", " (Operator)",
+        " (TypeParameter)"
+      }
+    end
+  }
   use {
     'glepnir/lspsaga.nvim',
     config = function()
@@ -209,7 +182,7 @@ return require('packer').startup(function(use)
         error_sign = '',
         warn_sign = '',
         hint_sign = '',
-        infor_sign = '',
+        infor_sign = ''
       }
     end
   }

@@ -5,7 +5,6 @@
 -- \____/\__,_/_.___/_/  /_/\___/_/      GitHub:   https://github.com/gantoreno
 --
 -- Neovim options file
-
 -- Variables {{{
 local o = vim.o
 local wo = vim.wo
@@ -36,7 +35,7 @@ o.mouse = 'a'
 o.encoding = 'UTF-8'
 o.clipboard = 'unnamedplus'
 o.backspace = 'indent,eol,start'
-o.shortmess = o.shortmess..'c'
+o.shortmess = o.shortmess .. 'c'
 o.listchars = 'eol:↴,nbsp:·,space:·,trail:·'
 o.foldmethod = 'marker'
 o.colorcolumn = '9999'

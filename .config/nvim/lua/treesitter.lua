@@ -5,12 +5,9 @@
 -- \____/\__,_/_.___/_/  /_/\___/_/      GitHub:   https://github.com/gantoreno
 --
 -- Neovim TreeSitter file
-
 -- TreeSitter setup {{{
-require'nvim-treesitter.configs'.setup{
+require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained",
-  highlight = {
-    enable = true
-  }
+  highlight = {enable = true}
 }
 -- }}}
