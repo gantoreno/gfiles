@@ -43,7 +43,8 @@ return require('packer').startup(function(use)
       require('telescope').setup {
         defaults = {
           mappings = {i = {["<esc>"] = require('telescope.actions').close}},
-          borderchars = {'─', '│', '─', '│', '┌', '┐', '┘', '└'}
+          borderchars = {'─', '│', '─', '│', '┌', '┐', '┘', '└'},
+          file_ignore_patterns = {'node_modules', '.git'}
         }
       }
     end
