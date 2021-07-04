@@ -20,6 +20,6 @@ command(
     'autocmd BufNewFile,BufRead *.html,*.css,*.js,*.jsx,*.ts,*.tsx let g:user_emmet_expandabbr_key="<tab>" | imap <expr> <Tab> emmet#expandAbbrIntelligent("<tab>")')
 
 command(
-    'autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.lua,*.py lua vim.lsp.buf.formatting_sync(nil, 100)')
+    'autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.lua,*.py lua vim.lsp.buf.formatting_sync(nil, 150)')
 -- }}}
 
