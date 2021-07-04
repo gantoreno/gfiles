@@ -27,8 +27,9 @@ end
 -- EFM Setup {{{
 require"lspconfig".efm.setup {
   init_options = {documentFormatting = true},
+  filetypes = {'lua'},
   settings = {
-    rootMarkers = {".git/"},
+    rootMarkers = {'.git/'},
     languages = {
       lua = {
         {formatCommand = "lua-format -i --indent-width=2", formatStdin = true}
