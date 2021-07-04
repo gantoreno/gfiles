@@ -3,11 +3,11 @@
 --  / / __/ __ `/ __ \/ ___/ / _ \/ /    E-mail:   gantoreno@gmail.com
 -- / /_/ / /_/ / /_/ / /  / /  __/ /     Website:  https://gantoreno.com
 -- \____/\__,_/_.___/_/  /_/\___/_/      GitHub:   https://github.com/gantoreno
--- 
+--
 -- Neovim LSP file
 
 -- Custom `on_attach` function {{{
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
   buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', {noremap = true, silent = true})
@@ -18,6 +18,20 @@ local on_attach = function(client, bufnr)
 
   return require'compe'.on_attach
 end
+-- }}}
+
+-- EFM Setup {{{
+require "lspconfig".efm.setup {
+  init_options = {documentFormatting = true},
+  settings = {
+    rootMarkers = {".git/"},
+    languages = {
+      lua = {
+        {formatCommand = "lua-format -i", formatStdin = true}
+      }
+    }
+  }
+}
 -- }}}
 
 -- TS Server setup {{{

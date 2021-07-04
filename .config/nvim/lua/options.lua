@@ -3,13 +3,11 @@
 --  / / __/ __ `/ __ \/ ___/ / _ \/ /    E-mail:   gantoreno@gmail.com
 -- / /_/ / /_/ / /_/ / /  / /  __/ /     Website:  https://gantoreno.com
 -- \____/\__,_/_.___/_/  /_/\___/_/      GitHub:   https://github.com/gantoreno
--- 
+--
 -- Neovim options file
 
 -- Variables {{{
-local g = vim.g
 local o = vim.o
-local bo = vim.bo
 local wo = vim.wo
 -- }}}
 

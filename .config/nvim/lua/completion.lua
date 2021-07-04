@@ -3,7 +3,7 @@
 --  / / __/ __ `/ __ \/ ___/ / _ \/ /    E-mail:   gantoreno@gmail.com
 -- / /_/ / /_/ / /_/ / /  / /  __/ /     Website:  https://gantoreno.com
 -- \____/\__,_/_.___/_/  /_/\___/_/      GitHub:   https://github.com/gantoreno
--- 
+--
 -- Neovim completion file
 
 -- Compe setup {{{
@@ -21,7 +21,7 @@ require'compe'.setup {
   max_kind_width = 100;
   max_menu_width = 100;
   documentation = {
-    border = { '', '' ,'', ' ', '', '', '', ' ' }, 
+    border = { '', '' ,'', ' ', '', '', '', ' ' },
     winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder",
     max_width = 120,
     min_width = 60,

@@ -3,12 +3,12 @@
 --  / / __/ __ `/ __ \/ ___/ / _ \/ /    E-mail:   gantoreno@gmail.com
 -- / /_/ / /_/ / /_/ / /  / /  __/ /     Website:  https://gantoreno.com
 -- \____/\__,_/_.___/_/  /_/\___/_/      GitHub:   https://github.com/gantoreno
--- 
+--
 -- Neovim plugins file
 
 -- Variables {{{
-local fn = vim.fn
-local command = vim.api.nvim_command
+  local fn = vim.fn
+  local command = vim.api.nvim_command
 -- }}}
 
 -- Packer {{{
@@ -32,7 +32,7 @@ return require('packer').startup(function(use)
   use 'ryanoasis/vim-devicons'
   use 'kyazdani42/nvim-web-devicons'
   -- }}}
-  
+
   -- Fuzzy finding {{{
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
@@ -43,7 +43,7 @@ return require('packer').startup(function(use)
         defaults = {
           mappings = {
             i = {
-              ["<esc>"] = require('telescope.actions').close, 
+              ["<esc>"] = require('telescope.actions').close,
             },
           },
           borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
@@ -57,7 +57,7 @@ return require('packer').startup(function(use)
   use 'tomtom/tcomment_vim'
   -- }}}
 
-  -- Snippets {{{
+  -- Snippets & formatting{{{
   use 'mattn/emmet-vim'
   use {
     'prettier/vim-prettier',
@@ -70,9 +70,10 @@ return require('packer').startup(function(use)
   use {
     'jiangmiao/auto-pairs',
     config = function()
-      vim.g.AutoPairsShortcutToggle = '' 
+      vim.g.AutoPairsShortcutToggle = ''
     end
   }
+  use 'mattn/efm-langserver'
   -- }}}
 
   -- Editor tools {{{
@@ -113,14 +114,14 @@ return require('packer').startup(function(use)
         ' Being in command means making tough decisions. ',
         'Not being in command means shutting up and doing',
         '               what you\'re told.               ',
-        '', 
+        '',
         '      Eoin Colfer, The Artemis Fowl Files       '
       }
       vim.g.dashboard_default_executive = 'telescope'
     end
   }
   use {
-    'mhinz/vim-signify', 
+    'mhinz/vim-signify',
     config = function()
       vim.g.signify_sign_add='┃'
       vim.g.signify_sign_delete='┃'
@@ -140,7 +141,7 @@ return require('packer').startup(function(use)
     end
   }
   use {
-    'vim-airline/vim-airline', 
+    'vim-airline/vim-airline',
     config = function()
       vim.g.airline_theme = 'startrail'
       vim.g.airline_powerline_fonts = true
@@ -151,7 +152,7 @@ return require('packer').startup(function(use)
     end
   }
   use {
-    'lukas-reineke/indent-blankline.nvim', 
+    'lukas-reineke/indent-blankline.nvim',
     setup = function()
       vim.g.indentLine_char = '▏'
       vim.g.indent_blankline_space_char = ' '
