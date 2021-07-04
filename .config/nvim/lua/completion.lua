@@ -5,6 +5,7 @@
 -- \____/\__,_/_.___/_/  /_/\___/_/      GitHub:   https://github.com/gantoreno
 --
 -- Neovim completion file
+
 -- Compe setup {{{
 require("compe").setup({
   enabled = true,

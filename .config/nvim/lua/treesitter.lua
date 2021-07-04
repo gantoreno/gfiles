@@ -5,6 +5,7 @@
 -- \____/\__,_/_.___/_/  /_/\___/_/      GitHub:   https://github.com/gantoreno
 --
 -- Neovim TreeSitter file
+
 -- TreeSitter setup {{{
 require("nvim-treesitter.configs").setup({
   indent = { enable = true },

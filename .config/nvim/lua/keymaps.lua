@@ -5,6 +5,7 @@
 -- \____/\__,_/_.___/_/  /_/\___/_/      GitHub:   https://github.com/gantoreno
 --
 -- Neovim keymaps file
+
 -- Variables {{{
 local g = vim.g
 local set_keymap = vim.api.nvim_set_keymap

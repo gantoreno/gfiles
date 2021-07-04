@@ -5,6 +5,7 @@
 -- \____/\__,_/_.___/_/  /_/\___/_/      GitHub:   https://github.com/gantoreno
 --
 -- Neovim options file
+
 -- Variables {{{
 local o = vim.o
 local wo = vim.wo
