@@ -19,6 +19,7 @@ command('autocmd BufNewFile,BufRead *.zsh-theme set filetype=zsh')
 command(
     'autocmd BufNewFile,BufRead *.html,*.css,*.js,*.jsx,*.ts,*.tsx let g:user_emmet_expandabbr_key="<tab>" | imap <expr> <Tab> emmet#expandAbbrIntelligent("<tab>")')
 
-command('autocmd BufWritePre *.lua lua vim.lsp.buf.formatting_sync(nil, 100)')
+command(
+    'autocmd BufWritePre *.lua,*.py lua vim.lsp.buf.formatting_sync(nil, 100)')
 -- }}}
 

@@ -27,12 +27,15 @@ end
 -- EFM Setup {{{
 require"lspconfig".efm.setup {
   init_options = {documentFormatting = true},
-  filetypes = {'lua'},
+  filetypes = {'lua', 'python'},
   settings = {
     rootMarkers = {'.git/'},
     languages = {
       lua = {
-        {formatCommand = "lua-format -i --indent-width=2", formatStdin = true}
+        {formatCommand = 'lua-format -i --indent-width=2', formatStdin = true}
+      },
+      python = {
+        {formatCommand = 'autopep8 --ignore E501 -', formatStdin = true}
       }
     }
   }
