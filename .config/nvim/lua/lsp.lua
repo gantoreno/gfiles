@@ -40,6 +40,10 @@ require("lspconfig").efm.setup({
 require("lspconfig").tsserver.setup({ on_attach = on_attach })
 -- }}}
 
+-- Flow setup {{{
+require("lspconfig").flow.setup({ on_attach = on_attach })
+-- }}}
+
 -- Pyright setup {{{
 require("lspconfig").pyright.setup({ on_attach = on_attach })
 -- }}}
