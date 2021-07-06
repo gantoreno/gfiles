@@ -75,7 +75,6 @@ return require("packer").startup(function(use)
       vim.g.AutoPairsShortcutToggle = ""
     end,
   })
-  use("mattn/efm-langserver")
   -- }}}
 
   -- Editor tools {{{
