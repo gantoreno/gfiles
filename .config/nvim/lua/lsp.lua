@@ -48,6 +48,10 @@ require("lspconfig").flow.setup({ on_attach = on_attach })
 require("lspconfig").pyright.setup({ on_attach = on_attach })
 -- }}}
 
+-- Bash Setup {{{
+require("lspconfig").bashls.setup({ on_attach = on_attach })
+-- }}}
+
 -- Lua setup {{{
 local system_name
 
