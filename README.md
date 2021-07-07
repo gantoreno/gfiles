@@ -1,10 +1,14 @@
-<div align="center">
-  <img src=".github/starfiles.png"></img>
-</div>
+<p align="center">
+  <img src=".github/starfiles.svg" width="300" />
+</p>
 
-# My Dotfiles
-
-![https://img.shields.io/github/issues/gantoreno/dotfiles](https://img.shields.io/github/issues/gantoreno/dotfiles) ![https://img.shields.io/github/forks/gantoreno/dotfiles](https://img.shields.io/github/forks/gantoreno/dotfiles) ![https://img.shields.io/github/stars/gantoreno/dotfiles](https://img.shields.io/github/stars/gantoreno/dotfiles) ![https://img.shields.io/github/license/gantoreno/dotfiles](https://img.shields.io/github/license/gantoreno/dotfiles) ![https://raw.githubusercontent.com/sindresorhus/awesome/main/media/badge.svg](https://raw.githubusercontent.com/sindresorhus/awesome/main/media/badge.svg)
+<p align="center">
+  <img src="https://img.shields.io/github/issues/gantoreno/dotfiles" />
+  <img src="https://img.shields.io/github/forks/gantoreno/dotfiles" />
+  <img src="https://img.shields.io/github/stars/gantoreno/dotfiles" />
+  <img src="https://img.shields.io/github/license/gantoreno/dotfiles" />
+  <img src="https://raw.githubusercontent.com/sindresorhus/awesome/main/media/badge.svg" />
+</p>
 
 > Being in command means making tough decisions. Not being in command means shutting up and doing what you're told.
 >
