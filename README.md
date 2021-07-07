@@ -10,9 +10,11 @@
   <img src="https://raw.githubusercontent.com/sindresorhus/awesome/main/media/badge.svg" />
 </p>
 
-> Being in command means making tough decisions. Not being in command means shutting up and doing what you're told.
+<h1 align="center">🌟 A setup from the stars</h1>
+
+> The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of starstuff.
 >
-> \- Eoin Colfer, The Artemis Fowl Files.
+> \- Carl Sagan
 
 The power of the command line is often underrated. My developer journey led me to an almost 100% terminal-based way of working (and living), for this reason, I organized all my config files in this dotfiles repo, in order to keep track of my settings, programs, themes & more. Feel free to use whatever you want!
 
