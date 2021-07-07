@@ -52,9 +52,10 @@ export CLICOLOR=1
 export LSCOLORS="GxGxBxDxCxEgEdxbxgxcxd"
 
 export EDITOR="nvim"
-export EDITORRC=$([[ $EDITOR == "nvim" ]] && echo "~/.config/nvim/init.vim" || echo "~/.vimrc")
+export EDITORRC="$HOME/.config/nvim/init.lua"
 
 export PATH="$HOME/.scripts:$PATH"
+export PATH="/usr/local/Cellar/llvm/12.0.0_1/bin:$PATH"
 # }}}
 
 # Sources {{{
