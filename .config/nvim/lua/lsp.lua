@@ -40,6 +40,14 @@ require("lspconfig").efm.setup({
 require("lspconfig").tsserver.setup({ on_attach = on_attach })
 -- }}}
 
+-- Clangd setup {{{
+require("lspconfig").clangd.setup({ on_attach = on_attach })
+-- }}}
+
+-- CMake setup {{{
+require("lspconfig").cmake.setup({ on_attach = on_attach })
+-- }}}
+
 -- Flow setup {{{
 require("lspconfig").flow.setup({ on_attach = on_attach })
 -- }}}
