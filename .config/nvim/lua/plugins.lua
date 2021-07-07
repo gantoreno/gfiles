@@ -78,7 +78,12 @@ return require("packer").startup(function(use)
   -- }}}
 
   -- Editor tools {{{
-  use("chrisbra/Colorizer")
+  use({
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup({})
+    end,
+  })
   use({
     "glepnir/dashboard-nvim",
     config = function()
