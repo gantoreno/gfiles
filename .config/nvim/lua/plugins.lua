@@ -84,6 +84,7 @@ return require("packer").startup(function(use)
       require("colorizer").setup({})
     end,
   })
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install" })
   use({
     "glepnir/dashboard-nvim",
     config = function()
