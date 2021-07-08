@@ -84,6 +84,7 @@ return require("packer").startup(function(use)
       require("colorizer").setup({})
     end,
   })
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install" })
   use({
     "glepnir/dashboard-nvim",
     config = function()
@@ -119,11 +120,11 @@ return require("packer").startup(function(use)
         },
       }
       vim.g.dashboard_custom_footer = {
-        " Being in command means making tough decisions. ",
-        "Not being in command means shutting up and doing",
-        "               what you're told.               ",
+        " The nitrogen in our DNA, the calcium in our teeth, the iron in our blood,  ",
+        "the carbon in our apple pies were made in the interiors of collapsing stars.",
+        "                         We are made of starstuff.                          ",
         "",
-        "      Eoin Colfer, The Artemis Fowl Files       ",
+        "                                - Carl Sagan                                ",
       }
       vim.g.dashboard_default_executive = "telescope"
     end,

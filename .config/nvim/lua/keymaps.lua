@@ -21,6 +21,7 @@ g.mapleader = " "
 set_keymap("", "<leader>cc", ":TComment<cr>", { noremap = true, silent = true })
 set_keymap("", "<leader>nn", ":NvimTreeToggle<cr>", { noremap = true, silent = true })
 set_keymap("", "<leader>hh", ":ColorizerToggle<cr>", { noremap = true, silent = true })
+set_keymap("", "<leader>pp", ":MarkdownPreview<cr>", { noremap = true, silent = true })
 set_keymap("", "<leader>ff", ":Telescope find_files<cr>", { noremap = true, silent = true })
 
 set_keymap("", "<leader>wsus", ":!workspace up -s<cr><cr>", { silent = true })
