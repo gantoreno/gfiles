@@ -10,7 +10,7 @@
   <img src="https://raw.githubusercontent.com/sindresorhus/awesome/main/media/badge.svg" />
 </p>
 
-<h1 align="center">🌟 A setup from the stars</h1>
+<h1 align="center">A setup from the stars</h1>
 
 > The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of starstuff.
 >
