@@ -21,4 +21,6 @@ command(
 )
 
 command("autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.lua,*.py lua vim.lsp.buf.formatting_sync(nil, 150)")
+
+command("autocmd VimLeave * !workspace down 2> /dev/null")
 -- }}}
