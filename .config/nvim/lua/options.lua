@@ -19,7 +19,7 @@ o.laststatus = 2
 o.softtabstop = 0
 
 o.list = false
-o.wrap = false
+o.wrap = true
 o.hidden = true
 o.number = true
 o.showcmd = false
