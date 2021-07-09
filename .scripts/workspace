@@ -40,6 +40,7 @@ warning() {
 case $1 in
   up)
     tmux split-window -v -p 25 
+    tmux set-option -g @workspace "yes"
 
     case $2 in
       -s)
@@ -58,13 +59,19 @@ case $1 in
     exit
     ;;
   down)
-    panes=$(tmux list-panes | wc -l | xargs)
+    if [[ ! -z $(tmux show-option -g @workspace) ]]; then
+      tmux set -gu @workspace
 
-    [[ $panes -eq 1 ]] && warning "Cannot teardown a workspace with only 1 pane!"
+      panes=$(tmux list-panes | wc -l | xargs)
 
-    for pane in $(seq $panes 2); do
-      tmux kill-pane -t $pane
-    done
+      [[ $panes -eq 1 ]] && warning "Cannot teardown a workspace with only 1 pane!"
+
+      for pane in $(seq $panes 2); do
+        tmux kill-pane -t $pane
+      done
+    else
+      warning "No workspace layout has been toggled!"
+    fi
 
     exit
     ;;
