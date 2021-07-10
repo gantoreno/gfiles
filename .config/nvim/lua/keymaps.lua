@@ -23,6 +23,9 @@ set_keymap("", "<leader>nn", ":NvimTreeToggle<cr>", { noremap = true, silent = t
 set_keymap("", "<leader>hh", ":ColorizerToggle<cr>", { noremap = true, silent = true })
 set_keymap("", "<leader>pp", ":MarkdownPreview<cr>", { noremap = true, silent = true })
 set_keymap("", "<leader>ff", ":Telescope find_files<cr>", { noremap = true, silent = true })
+set_keymap("", "<leader>tt", ":tabnew<cr>", { noremap = true, silent = true })
+set_keymap("", "<leader><left>", ":tabprev<cr>", { noremap = true, silent = true })
+set_keymap("", "<leader><right>", ":tabnext<cr>", { noremap = true, silent = true })
 
 set_keymap("", "<leader>wsus", ":!workspace up --single<cr><cr>", { silent = true })
 set_keymap("", "<leader>wsud", ":!workspace up --double<cr><cr>", { silent = true })
