@@ -11,12 +11,12 @@
 # Usage function {{{
 usage() {
   echo "Usage:"
-  echo "  workspace up [-s | -d | -e]"
+  echo "  workspace up [options]"
   echo "  workspace down"
   echo "Options:"
-  echo "  -s  simple layout (1 extra pane)"
-  echo "  -d  double layout (2 extra panes)"
-  echo "  -e  extended layout (3 extra panes)"
+  echo "  -s | --single  single layout (1 extra pane)"
+  echo "  -d | --double  double layout (2 extra panes)"
+  echo "  -t | --triple  triple layout (3 extra panes)"
 
   exit 1
 }
@@ -46,12 +46,12 @@ case $1 in
     tmux split-window -v -p 25 
 
     case $2 in
-      -s)
+      -s | --single)
         ;;
-      -d)
+      -d | --double)
         tmux split-window -hb -p 50
         ;;
-      -e)
+      -t | --triple)
         tmux split-window -hb -p 66
         tmux split-window -hb -p 50
         ;;
