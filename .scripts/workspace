@@ -39,8 +39,8 @@ warning() {
 # Execute commands {{{
 case $1 in
   up)
-    if [[ -z $(tmux show-option -g @workspace) ]]; then
-      tmux set-option -g @workspace "yes"
+    if [[ -z $(tmux show-option -gw @workspace) ]]; then
+      tmux set-option -w @workspace "yes"
     else
       warning "Cannot nest workspaces!"
     fi
@@ -64,8 +64,8 @@ case $1 in
     exit
     ;;
   down)
-    if [[ ! -z $(tmux show-option -g @workspace) ]]; then
-      tmux set -gu @workspace
+    if [[ ! -z $(tmux show-option -w @workspace) ]]; then
+      tmux set -wu @workspace
 
       panes=$(tmux list-panes | wc -l | xargs)
 
