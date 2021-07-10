@@ -149,6 +149,8 @@ return require("packer").startup(function(use)
       vim.g.nvim_tree_update_cwd = 1
       vim.g.nvim_tree_quit_on_open = 1
       vim.g.nvim_tree_indent_markers = 0
+
+      require("nvim-tree.view").View.winopts.signcolumn = "no"
     end,
   })
   use({
