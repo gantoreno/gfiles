@@ -92,7 +92,7 @@ alias themeconfig="$EDITOR $ZSHDIR/themes/$THEME.zsh-theme"
 # }}}
 
 # Fetch {{{
-if [[ $(tmux display-message -p "#P" 2> /dev/null) == 1 ]] then 
+if [[ $(tmux display-message -p "#P" 2> /dev/null) == 1 ]]; then 
   fetch
 fi
 # }}}

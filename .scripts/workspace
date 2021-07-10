@@ -39,8 +39,11 @@ warning() {
 # Execute commands {{{
 case $1 in
   up)
+    if [[ -z $(tmux show-option -g @workspace) ]]; then
+      tmux set-option -g @workspace "yes"
+    fi
+
     tmux split-window -v -p 25 
-    tmux set-option -g @workspace "yes"
 
     case $2 in
       -s)
