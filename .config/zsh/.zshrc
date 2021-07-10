@@ -18,6 +18,8 @@ export ZSHRC="$ZSHDIR/.zshrc"
 # User configuration {{{
 setopt PROMPT_SUBST
 
+unsetopt PROMPT_CR
+
 bindkey -v
 
 autoload -U colors      && colors
