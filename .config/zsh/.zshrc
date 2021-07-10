@@ -58,8 +58,8 @@ export PATH="$HOME/.scripts:$PATH"
 export PATH="/usr/local/Cellar/llvm/12.0.0_1/bin:$PATH"
 # }}}
 
-# Sources {{{
-[[ ! -z $(brew --prefix nvm) ]] && source $(brew --prefix nvm)/nvm.sh
+# Evals {{{
+eval $(fnm env)
 # }}}
 
 # Aliases {{{
