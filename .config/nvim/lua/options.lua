@@ -32,6 +32,7 @@ o.splitbelow = true
 o.errorbells = false
 o.smartindent = true
 
+o.splitright = true
 o.mouse = "a"
 o.encoding = "UTF-8"
 o.clipboard = "unnamedplus"
