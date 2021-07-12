@@ -11,5 +11,5 @@ local o = vim.o
 -- }}}
 
 -- Options {{{
-o.cursorline = true
+o.cursorline = false
 -- }}}

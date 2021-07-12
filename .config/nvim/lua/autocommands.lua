@@ -11,8 +11,6 @@ local command = vim.api.nvim_command
 -- }}}
 
 -- Commands {{{
-command("autocmd BufEnter * if &filetype == 'NvimTree' | setlocal signcolumn=no | endif")
-
 command("autocmd BufNewFile,BufRead *.zsh-theme set filetype=zsh")
 command("autocmd BufNewFile,BufRead *.js,*.jsx, set filetype=javascriptreact")
 command("autocmd BufNewFile,BufRead *.ts,*.tsx, set filetype=typescriptreact")
@@ -20,5 +18,9 @@ command(
   'autocmd BufNewFile,BufRead *.html,*.css,*.js,*.jsx,*.ts,*.tsx let g:user_emmet_expandabbr_key="<tab>" | imap <expr> <Tab> emmet#expandAbbrIntelligent("<tab>")'
 )
 
-command("autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.lua,*.py lua vim.lsp.buf.formatting_sync(nil, 150)")
+command(
+  "autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.lua,*.py,*.c,*.cpp,*.h,*.hpp,CMakeLists.txt lua vim.lsp.buf.formatting_sync(nil, 150)"
+)
+
+command("autocmd VimLeave * !workspace down 2> /dev/null")
 -- }}}

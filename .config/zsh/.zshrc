@@ -18,11 +18,13 @@ export ZSHRC="$ZSHDIR/.zshrc"
 # User configuration {{{
 setopt PROMPT_SUBST
 
+unsetopt PROMPT_CR
+
 bindkey -v
 
-autoload -U colors      && colors
-autoload -U compinit    && compinit
-autoload -U promptinit  && promptinit
+autoload -U colors && colors
+autoload -U compinit && compinit
+autoload -U promptinit && promptinit
 # }}}
 
 # Theme loader {{{
@@ -56,10 +58,11 @@ export EDITORRC="$HOME/.config/nvim/init.lua"
 
 export PATH="$HOME/.scripts:$PATH"
 export PATH="/usr/local/Cellar/llvm/12.0.0_1/bin:$PATH"
+export PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:$PATH"
 # }}}
 
-# Sources {{{
-[[ ! -z $(brew --prefix nvm) ]] && source $(brew --prefix nvm)/nvm.sh
+# Evals {{{
+eval $(fnm env)
 # }}}
 
 # Aliases {{{
@@ -74,6 +77,7 @@ alias pc="peco"
 alias xp="expand"
 alias ws="workspace"
 
+alias lzg="lazygit"
 alias gaa="git add ."
 alias gcm="git commit"
 alias gst="git status"
@@ -81,7 +85,7 @@ alias glg="git log --graph"
 alias gpm="git push origin main"
 
 alias vim="$EDITOR"
-alias fetch="fm6000"
+alias fetch="macfetch"
 alias pingtest="ping 8.8.8.8"
 alias fastbrew="HOMEBREW_NO_AUTO_UPDATE=1 brew"
 
@@ -92,7 +96,7 @@ alias themeconfig="$EDITOR $ZSHDIR/themes/$THEME.zsh-theme"
 # }}}
 
 # Fetch {{{
-if [[ $(tmux display-message -p "#P" 2> /dev/null) == 1 ]] then 
+if [[ $(tmux display-message -p "#P" 2> /dev/null) == 1 ]]; then 
   fetch
 fi
 # }}}

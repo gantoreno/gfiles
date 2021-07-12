@@ -11,12 +11,12 @@
 # Usage function {{{
 usage() {
   echo "Usage:"
-  echo "  workspace up [-s | -d | -e]"
+  echo "  workspace up [options]"
   echo "  workspace down"
   echo "Options:"
-  echo "  -s  simple layout (1 extra pane)"
-  echo "  -d  double layout (2 extra panes)"
-  echo "  -e  extended layout (3 extra panes)"
+  echo "  -s | --single  single layout (1 extra pane)"
+  echo "  -d | --double  double layout (2 extra panes)"
+  echo "  -t | --triple  triple layout (3 extra panes)"
 
   exit 1
 }
@@ -39,15 +39,21 @@ warning() {
 # Execute commands {{{
 case $1 in
   up)
+    if [[ -z $(tmux show-option -w @workspace) ]]; then
+      tmux set-option -w @workspace "yes"
+    else
+      warning "Cannot nest workspaces!"
+    fi
+
     tmux split-window -v -p 25 
 
     case $2 in
-      -s)
+      -s | --single)
         ;;
-      -d)
+      -d | --double)
         tmux split-window -hb -p 50
         ;;
-      -e)
+      -t | --triple)
         tmux split-window -hb -p 66
         tmux split-window -hb -p 50
         ;;
@@ -58,13 +64,19 @@ case $1 in
     exit
     ;;
   down)
-    panes=$(tmux list-panes | wc -l | xargs)
+    if [[ ! -z $(tmux show-option -w @workspace) ]]; then
+      tmux set -wu @workspace
 
-    [[ $panes -eq 1 ]] && warning "Cannot teardown a workspace with only 1 pane!"
+      panes=$(tmux list-panes | wc -l | xargs)
 
-    for pane in $(seq $panes 2); do
-      tmux kill-pane -t $pane
-    done
+      [[ $panes -eq 1 ]] && warning "Cannot teardown a workspace with only 1 pane!"
+
+      for pane in $(seq $panes 2); do
+        tmux kill-pane -t $pane
+      done
+    else
+      warning "No workspace layout has been toggled!"
+    fi
 
     exit
     ;;

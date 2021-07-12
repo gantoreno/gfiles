@@ -144,10 +144,14 @@ return require("packer").startup(function(use)
     "kyazdani42/nvim-tree.lua",
     config = function()
       vim.g.nvim_tree_width = 40
+      vim.g.nvim_tree_follow = 1
+      vim.g.nvim_tree_ignore = { ".git" }
       vim.g.nvim_tree_auto_close = true
       vim.g.nvim_tree_update_cwd = 1
       vim.g.nvim_tree_quit_on_open = 1
       vim.g.nvim_tree_indent_markers = 0
+
+      require("nvim-tree.view").View.winopts.signcolumn = "no"
     end,
   })
   use({

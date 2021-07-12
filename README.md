@@ -13,7 +13,7 @@
 <h1 align="center">A setup from the stars</h1>
 
 <p align="center">
-  <img src=".github/banner.png"  />
+  <img src=".github/main.png"  />
 </p>
 
 > The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of starstuff.
@@ -51,7 +51,7 @@ I also use [Zsh](https://www.zsh.org/) as my main interactive shell, loading the
 I use [Neovim](https://neovim.io/) as my main text-editor for everything, from scripting to web development to mobile applications and even machine learning & data science. My config files use [Lua](https://www.lua.org/) instead of VimScript to take advantage of all the native toosl such as LSP's and syntax trees.
 
 <p align="center">
-  <img src=".github/editor-workflow.gif" />
+  <img src=".github/workflow.gif" />
 </p>
 
 My setup uses the following:
@@ -74,12 +74,12 @@ Note how TMUX also helps on creating extra terminal panes to perform command-lin
 Editing is not the only thing to do when it comes to terminals, this are the set of utilities I use on a daily basis to perform tasks regarding version control, project management, connectivity & more:
 
 - [`git`](https://git-scm.com/) - Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
-- [`nvm`](https://github.com/nvm-sh/nvm) - NVM is a version manager for Node.js, designed to be installed per-user, and invoked per-shell.
+- [`fnm`](https://github.com/Schniz/fnm#shell-setup) - Fast and simple Node.js version manager, built in Rust.
   - [`node`](https://nodejs.org/es/) - Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.
   - [`npm`](https://www.npmjs.com/) - The free NPM registry has become the center of JavaScript code sharing, and with more than one million packages, the largest software registry in the world.
 - [`brew`](https://brew.sh/index_es) - Homebrew is the easiest and most flexible way to install the UNIX tools Apple didn’t include with macOS.
 - [`exa`](https://github.com/ogham/exa) - A modern replacement for `ls`.
-- [`afetch`](https://github.com/anhsirk0/fetch-master-6000) - Simple system info written in C.
+- [`macfetch`](https://github.com/gantoreno/macfetch) - A macOS Neofetch alternative written in C++.
 - [`curl`](https://curl.se/) - command line tool and library for transferring data with URLs.
 - [`wget`](https://www.gnu.org/software/wget/) - GNU Wget is a free software package for retrieving files using HTTP, HTTPS, FTP and FTPS, the most widely used Internet protocols.
 - [`ngrok`](https://ngrok.com/) - Ngrok provides a real-time web UI where you can introspect all HTTP traffic running over your tunnels.
