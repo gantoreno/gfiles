@@ -41,7 +41,7 @@ I also use [Zsh](https://www.zsh.org/) as my main interactive shell, loading the
 
 ### Editor
 
-I use [Neovim](https://neovim.io/) as my main text-editor for everything, from scripting to web development to mobile applications and even machine learning & data science. My config files use [Lua](https://www.lua.org/) instead of VimScript to take advantage of all the native toosl such as LSP's and syntax trees.
+I use [Neovim](https://neovim.io/) as my main text-editor for everything, from scripting to web development to mobile applications and even machine learning & data science. My config files use [Lua](https://www.lua.org/) instead of VimScript to take advantage of all the native tools such as LSP's and syntax trees.
 
 <p align="center">
   <img src=".github/workflow.gif" />
