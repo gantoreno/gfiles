@@ -19,7 +19,7 @@ command(
 )
 
 command(
-  "autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.lua,*.py,*.c,*.cpp,*.h,*.hpp lua vim.lsp.buf.formatting_sync(nil, 150)"
+  "autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.lua,*.py,*.c,*.cpp,*.h,*.hpp,CMakeLists.txt lua vim.lsp.buf.formatting_sync(nil, 150)"
 )
 
 command("autocmd VimLeave * !workspace down 2> /dev/null")
