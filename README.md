@@ -15,6 +15,7 @@ The power of the command line is often underrated. My developer journey led me t
 <p align="center">
   <img src=".github/main.png"  />
 </p>
+
 **NOTE:** This is a macOS-based setup in terms of paths & package managers, keep this in mind before trying to directly clone & setup all my configurations.
 
 ## Tools
