@@ -1,20 +1,10 @@
 <p align="center">
-  <img src=".github/logo.svg" width="300" />
+  <img src=".github/startrail.svg" width="300" style="margin: 50px" />
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/github/issues/gantoreno/dotfiles" />
-  <img src="https://img.shields.io/github/forks/gantoreno/dotfiles" />
-  <img src="https://img.shields.io/github/stars/gantoreno/dotfiles" />
-  <img src="https://img.shields.io/github/license/gantoreno/dotfiles" />
-  <img src="https://raw.githubusercontent.com/sindresorhus/awesome/main/media/badge.svg" />
-</p>
+# Starfiles
 
-<h1 align="center">A setup from the stars</h1>
-
-<p align="center">
-  <img src=".github/main.png"  />
-</p>
+![https://img.shields.io/github/issues/gantoreno/dotfiles](https://img.shields.io/github/issues/gantoreno/dotfiles) ![https://img.shields.io/github/forks/gantoreno/dotfiles](https://img.shields.io/github/forks/gantoreno/dotfiles) ![https://img.shields.io/github/stars/gantoreno/dotfiles](https://img.shields.io/github/stars/gantoreno/dotfiles) ![https://img.shields.io/github/license/gantoreno/dotfiles](https://img.shields.io/github/license/gantoreno/dotfiles) ![https://raw.githubusercontent.com/sindresorhus/awesome/main/media/badge.svg](https://raw.githubusercontent.com/sindresorhus/awesome/main/media/badge.svg)
 
 > The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of starstuff.
 >
@@ -22,6 +12,9 @@
 
 The power of the command line is often underrated. My developer journey led me to an almost 100% terminal-based way of working (and living), for this reason, I organized all my config files in this dotfiles repo, in order to keep track of my settings, programs, themes & more. Feel free to use whatever you want!
 
+<p align="center">
+  <img src=".github/main.png"  />
+</p>
 **NOTE:** This is a macOS-based setup in terms of paths & package managers, keep this in mind before trying to directly clone & setup all my configurations.
 
 ## Tools
