@@ -58,6 +58,7 @@ export EDITORRC="$HOME/.config/nvim/init.lua"
 
 export PATH="$HOME/.scripts:$PATH"
 export PATH="/usr/local/Cellar/llvm/12.0.0_1/bin:$PATH"
+export PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:$PATH"
 # }}}
 
 # Evals {{{
