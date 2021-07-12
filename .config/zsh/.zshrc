@@ -76,6 +76,7 @@ alias pc="peco"
 alias xp="expand"
 alias ws="workspace"
 
+alias lzg="lazygit"
 alias gaa="git add ."
 alias gcm="git commit"
 alias gst="git status"
