@@ -64,7 +64,7 @@ return require("packer").startup(function(use)
   use({
     "prettier/vim-prettier",
     config = function()
-      vim.g["prettier#autoformat"] = true
+      vim.g["prettier#autoformat"] = false
       vim.g["prettier#quickfix_enabled"] = false
       vim.g["prettier#autoformat_require_pragma"] = false
     end,
@@ -233,6 +233,7 @@ return require("packer").startup(function(use)
       vim.g.completion_matching_strategy_list = { "exact", "substring", "fuzzy" }
     end,
   })
+  use({ "creativenull/diagnosticls-nvim" })
   -- }}}
 
   -- Highlighting {{{

@@ -22,22 +22,43 @@ local on_attach = function(_, bufnr)
 end
 -- }}}
 
--- EFM Setup {{{
-require("lspconfig").efm.setup({
-  init_options = { documentFormatting = true },
-  filetypes = { "lua", "python" },
-  settings = {
-    rootMarkers = { ".git/" },
-    languages = {
-      lua = { { formatCommand = "stylua -", formatStdin = true } },
-      python = { { formatCommand = "autopep8 -", formatStdin = true } },
+-- Diagnosticls Setup {{{
+require("diagnosticls-nvim").init({
+  default_config = false,
+  formatting = false,
+})
+
+require("diagnosticls-nvim").setup({
+  ["javascriptreact"] = {
+    formatter = require("diagnosticls-nvim.formatters.prettier"),
+    linter = require("diagnosticls-nvim.linters.eslint"),
+  },
+  ["typescriptreact"] = {
+    formatter = require("diagnosticls-nvim.formatters.prettier"),
+    linter = require("diagnosticls-nvim.linters.eslint"),
+  },
+  ["python"] = {
+    formatter = require("diagnosticls-nvim.formatters.autopep8"),
+  },
+  ["lua"] = {
+    formatter = {
+      sourceName = "stylua",
+      command = "stylua",
+      args = { "-" },
+      rootPatterns = { "stylua.toml" },
     },
   },
 })
 -- }}}
 
 -- TS Server setup {{{
-require("lspconfig").tsserver.setup({ on_attach = on_attach })
+require("lspconfig").tsserver.setup({
+  on_attach = function(client)
+    client.resolved_capabilities.document_formatting = false
+
+    on_attach(client)
+  end,
+})
 -- }}}
 
 -- Clangd setup {{{
