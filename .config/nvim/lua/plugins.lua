@@ -220,6 +220,9 @@ return require("packer").startup(function(use)
     "glepnir/lspsaga.nvim",
     config = function()
       require("lspsaga").init_lsp_saga({
+        code_action_prompt = {
+          enable = false,
+        },
         error_sign = "",
         warn_sign = "",
         hint_sign = "",
