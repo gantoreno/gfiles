@@ -81,6 +81,10 @@ require("lspconfig").pyright.setup({ on_attach = on_attach })
 require("lspconfig").bashls.setup({ on_attach = on_attach })
 -- }}}
 
+-- Rust setup {{{
+require("lspconfig").rls.setup({ on_attach = on_attach })
+-- }}}
+
 -- Lua setup {{{
 local system_name
 
