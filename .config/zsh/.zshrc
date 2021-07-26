@@ -84,6 +84,11 @@ alias gst="git status"
 alias glg="git log --graph"
 alias gpm="git push origin main"
 
+alias npdev="npm run dev"
+alias nptest="npm run test"
+alias npstart="npm run start"
+alias npbuild="npm run build"
+
 alias vim="$EDITOR"
 alias fetch="macfetch"
 alias pingtest="ping 8.8.8.8"
