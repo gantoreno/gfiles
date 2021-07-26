@@ -13,7 +13,7 @@
 The power of the command line is often underrated. My developer journey led me to an almost 100% terminal-based way of working (and living), for this reason, I organized all my config files in this dotfiles repo, in order to keep track of my settings, programs, themes & more. Feel free to use whatever you want!
 
 <p align="center">
-  <img src=".github/main.png"  />
+  <img src=".github/banner.png"  />
 </p>
 
 **NOTE:** This is a macOS-based setup in terms of paths & package managers, keep this in mind before trying to directly clone & setup all my configurations.
@@ -45,7 +45,7 @@ I also use [Zsh](https://www.zsh.org/) as my main interactive shell, loading the
 I use [Neovim](https://neovim.io/) as my main text-editor for everything, from scripting to web development to mobile applications and even machine learning & data science. My config files use [Lua](https://www.lua.org/) instead of VimScript to take advantage of all the native tools such as LSP's and syntax trees.
 
 <p align="center">
-  <img src=".github/workflow.gif" />
+  <img src=".github/demo.gif" />
 </p>
 
 My setup uses the following:
