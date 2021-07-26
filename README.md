@@ -13,7 +13,7 @@
 The power of the command line is often underrated. My developer journey led me to an almost 100% terminal-based way of working (and living), for this reason, I organized all my config files in this dotfiles repo, in order to keep track of my settings, programs, themes & more. Feel free to use whatever you want!
 
 <p align="center">
-  <img src=".github/main.png"  />
+  <img src=".github/banner.png"  />
 </p>
 
 **NOTE:** This is a macOS-based setup in terms of paths & package managers, keep this in mind before trying to directly clone & setup all my configurations.
@@ -31,7 +31,7 @@ As a command-line user, all of my tools are terminal-based, therefore I can grou
 For my terminal emulator, I use [iTerm2](https://iterm2.com/), the macOS terminal replacement, alongside with [TMUX](http://www.sromero.org/wiki/linux/aplicaciones/tmux), a terminal multiplexer, in order to handle panes, splits, tabs, and sessions.
 
 <p align="center">
-  <img src=".github/terminal.png"  />
+  <img src=".github/layout.png"  />
 </p>
 
 I also use [Zsh](https://www.zsh.org/) as my main interactive shell, loading the [Agnoster](https://github.com/agnoster/agnoster-zsh-theme) theme, and plugins such as:
@@ -45,7 +45,7 @@ I also use [Zsh](https://www.zsh.org/) as my main interactive shell, loading the
 I use [Neovim](https://neovim.io/) as my main text-editor for everything, from scripting to web development to mobile applications and even machine learning & data science. My config files use [Lua](https://www.lua.org/) instead of VimScript to take advantage of all the native tools such as LSP's and syntax trees.
 
 <p align="center">
-  <img src=".github/workflow.gif" />
+  <img src=".github/demo.gif" />
 </p>
 
 My setup uses the following:
@@ -79,10 +79,6 @@ Editing is not the only thing to do when it comes to terminals, this are the set
 - [`ngrok`](https://ngrok.com/) - Ngrok provides a real-time web UI where you can introspect all HTTP traffic running over your tunnels.
 - [`openssh`](https://www.openssh.com/) - OpenSSH is the premier connectivity tool for remote login with the SSH protocol.
 - [`openssl`](https://www.openssl.org/) - OpenSSL is a robust, commercial-grade, and full-featured toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols.
-
-## Fonts
-
-My setup currently uses Mozilla's original [Fira Mono](https://github.com/mozilla/Fira) (specifically the [NF patched version](https://github.com/mozilla/Fira)). It preserves a decent line height that is comfortable to the eyes and a good aspect ratio for my coding preferences. All my fonts can be found inside the `.fonts` directory.
 
 ## Wallpapers
 

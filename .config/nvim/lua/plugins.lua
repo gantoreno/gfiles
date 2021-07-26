@@ -9,11 +9,11 @@
 -- Variables {{{
 local fn = vim.fn
 local command = vim.api.nvim_command
+
+local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 -- }}}
 
 -- Packer {{{
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-
 if fn.empty(fn.glob(install_path)) > 0 then
   fn.system({
     "git",
@@ -64,7 +64,7 @@ return require("packer").startup(function(use)
   use({
     "prettier/vim-prettier",
     config = function()
-      vim.g["prettier#autoformat"] = true
+      vim.g["prettier#autoformat"] = false
       vim.g["prettier#quickfix_enabled"] = false
       vim.g["prettier#autoformat_require_pragma"] = false
     end,
@@ -89,11 +89,23 @@ return require("packer").startup(function(use)
     "glepnir/dashboard-nvim",
     config = function()
       vim.g.dashboard_custom_header = {
-        "   ______      __         _      __",
-        "  / ____/___ _/ /_  _____(_)__  / /",
-        " / / __/ __ `/ __ \\/ ___/ / _ \\/ / ",
-        "/ /_/ / /_/ / /_/ / /  / /  __/ /  ",
-        "\\____/\\__,_/_.___/_/  /_/\\___/_/   ",
+        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠤⠔⠒⠈⠉⠉⠉⠈⠉⠉⠀⠐⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⠀⣠⠔⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⢀⡤⠚⠁⠀⠀⠀⠀⠀⢀⣀⡠⠤⠤⠀⠀⠠⠤⢄⣀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⣠⠔⠊⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠐⠢⣀⠀⠀⠀⠀⠈⠱⣆⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠄⠀⠀⠀⠀⠈⢣⡀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⢠⠎⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠀⠀⠀⠀⠀⠳⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⣰⠃⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠄⠀⠀⠀⠀⢣⠀",
+        "⠰⠀⠀⠀⠀⢰⠃⠀⠀⠀⠀⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡀⠀⠀⠀⠈⡄⠀⠀⠀⠈⡆",
+        "⡆⠀⠀⠀⠀⡎⠀⠀⠀⠀⡘⠀⠀⠀⠀⠠⠀⠀⠀⠀⠀⠀⠀⠹⣆⠀⠀⠀⠀⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹",
+        "⠃⠀⠀⠀⠀⡇⠀⠀⠀⠀⡇⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⢸⡄⠀⠀⠀⢸⠀⠀⠀⠀⢰⠀⠀⠀⠀⢸",
+        "⡇⠀⠀⠀⠀⡇⠀⠀⠀⠀⡇⠀⠀⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⣸⠁⠀⠀⠀⠸⠀⠀⠀⠀⠈⠀⠀⠀⠀⢸",
+        "⢇⠀⠀⠀⠀⢣⠀⠀⠀⠀⢹⠀⠀⠀⠀⠈⠂⡀⠀⠀⠀⠀⢀⡔⠁⠀⠀⠀⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⡈",
+        "⠸⡀⠀⠀⠀⠘⣆⠀⠀⠀⠀⢳⡀⠀⠀⠀⠀⠈⠀⠐⠂⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠁⠀⠀⠀⢀⠁",
+        "⠀⠱⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠙⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠆⠀",
+        "⠀⠀⢣⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀",
+        "⠀⠀⠀⠳⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠉⢢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀",
       }
       vim.g.dashboard_custom_section = {
         a = {
@@ -220,6 +232,9 @@ return require("packer").startup(function(use)
     "glepnir/lspsaga.nvim",
     config = function()
       require("lspsaga").init_lsp_saga({
+        code_action_prompt = {
+          enable = false,
+        },
         error_sign = "",
         warn_sign = "",
         hint_sign = "",
@@ -233,6 +248,7 @@ return require("packer").startup(function(use)
       vim.g.completion_matching_strategy_list = { "exact", "substring", "fuzzy" }
     end,
   })
+  use({ "creativenull/diagnosticls-nvim" })
   -- }}}
 
   -- Highlighting {{{

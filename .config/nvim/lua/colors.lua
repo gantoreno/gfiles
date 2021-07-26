@@ -10,7 +10,6 @@
 local g = vim.g
 local o = vim.o
 local command = vim.api.nvim_command
-local highlight = vim.highlight
 -- }}}
 
 -- Startrail theme {{{
@@ -25,8 +24,8 @@ o.termguicolors = true
 -- }}}
 
 -- LSP custom highlights {{{
-command("autocmd VimEnter * highlight LspDiagnosticsDefaultError guifg=#fe9f7c")
-command("autocmd VimEnter * highlight LspDiagnosticsDefaultWarning guifg=#e8aa6e")
-command("autocmd VimEnter * highlight LspDiagnosticsDefaultInformation guifg=#7dc2c7")
-command("autocmd VimEnter * highlight LspDiagnosticsDefaultHint guifg=#d2b45f")
+command("autocmd VimEnter * highlight LspDiagnosticsDefaultError guifg=red")
+command("autocmd VimEnter * highlight LspDiagnosticsDefaultWarning guifg=orange")
+command("autocmd VimEnter * highlight LspDiagnosticsDefaultInformation guifg=yellow")
+command("autocmd VimEnter * highlight LspDiagnosticsDefaultHint guifg=cyan")
 -- }}}
