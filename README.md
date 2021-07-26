@@ -31,7 +31,7 @@ As a command-line user, all of my tools are terminal-based, therefore I can grou
 For my terminal emulator, I use [iTerm2](https://iterm2.com/), the macOS terminal replacement, alongside with [TMUX](http://www.sromero.org/wiki/linux/aplicaciones/tmux), a terminal multiplexer, in order to handle panes, splits, tabs, and sessions.
 
 <p align="center">
-  <img src=".github/terminal.png"  />
+  <img src=".github/layout.png"  />
 </p>
 
 I also use [Zsh](https://www.zsh.org/) as my main interactive shell, loading the [Agnoster](https://github.com/agnoster/agnoster-zsh-theme) theme, and plugins such as:
