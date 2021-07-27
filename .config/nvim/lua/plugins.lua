@@ -197,6 +197,15 @@ return require("packer").startup(function(use)
       vim.g.indent_blankline_show_trailing_blankline_indent = false
     end,
   })
+  use({
+    "voldikss/vim-floaterm",
+    setup = function()
+      vim.g.floaterm_width = 0.75
+      vim.g.floaterm_height = 0.75
+      vim.g.floaterm_autoclose = 1
+      vim.g.floaterm_wintype = "float"
+    end,
+  })
   -- }}}
 
   -- LSP & Completion {{{
