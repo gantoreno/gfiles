@@ -59,6 +59,10 @@ return require("packer").startup(function(use)
   use("tomtom/tcomment_vim")
   -- }}}
 
+  -- Navigation {{{
+  use("christoomey/vim-tmux-navigator")
+  -- }}}
+
   -- Snippets & formatting{{{
   use("mattn/emmet-vim")
   use({
