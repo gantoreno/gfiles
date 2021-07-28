@@ -114,7 +114,7 @@ return require("packer").startup(function(use)
       vim.g.dashboard_custom_section = {
         a = {
           description = { "  Find File          " },
-          command = "Telescope find_files",
+          command = "Telescope find_files hidden=true",
         },
         b = {
           description = { "  Recently Seen Files" },
