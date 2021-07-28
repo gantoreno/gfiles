@@ -24,6 +24,7 @@ set_keymap("", "<leader>hh", ":ColorizerToggle<cr>", { noremap = true, silent = 
 set_keymap("", "<leader>pp", ":MarkdownPreview<cr>", { noremap = true, silent = true })
 set_keymap("", "<leader>ff", ":Telescope find_files hidden=true<cr>", { noremap = true, silent = true })
 set_keymap("", "<leader>lzg", ":FloatermNew lazygit<cr>", { noremap = true, silent = true })
+
 set_keymap("", "<leader>tt", ":tabnew<cr>", { noremap = true, silent = true })
 set_keymap("", "<leader><left>", ":tabprev<cr>", { noremap = true, silent = true })
 set_keymap("", "<leader><right>", ":tabnext<cr>", { noremap = true, silent = true })
