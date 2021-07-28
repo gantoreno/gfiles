@@ -17,6 +17,13 @@ set_keymap("n", "<space>", "<nop>", { noremap = true, silent = true })
 g.mapleader = " "
 -- }}}
 
+-- Please learn to use hjkl {{{
+set_keymap("", "<up>", "<nop>", { noremap = true, silent = true })
+set_keymap("", "<down>", "<nop>", { noremap = true, silent = true })
+set_keymap("", "<left>", "<nop>", { noremap = true, silent = true })
+set_keymap("", "<right>", "<nop>", { noremap = true, silent = true })
+-- }}}
+
 -- Keymaps {{{
 set_keymap("", "<leader>cc", ":TComment<cr>", { noremap = true, silent = true })
 set_keymap("", "<leader>nn", ":NvimTreeToggle<cr>", { noremap = true, silent = true })
