@@ -91,7 +91,7 @@ alias npbuild="npm run build"
 
 alias vim="$EDITOR"
 alias fetch="macfetch"
-alias pingtest="ping 8.8.8.8"
+alias pingtest="gping 8.8.8.8"
 alias fastbrew="HOMEBREW_NO_AUTO_UPDATE=1 brew"
 
 alias zshconfig="$EDITOR $ZSHRC"
