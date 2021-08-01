@@ -82,6 +82,14 @@ return require("packer").startup(function(use)
   -- }}}
 
   -- Editor tools {{{
+  use("xolox/vim-misc")
+  use({
+    "xolox/vim-notes",
+    config = function()
+      vim.g.notes_suffix = ".nt"
+      vim.g.notes_directories = { "~/.notes" }
+    end,
+  })
   use({
     "norcalli/nvim-colorizer.lua",
     config = function()
@@ -121,8 +129,10 @@ return require("packer").startup(function(use)
           command = "Telescope oldfiles",
         },
         c = {
-          description = { "  Load Last Session  " },
-          command = "SessionLoad",
+          description = { "  Search Notes       " },
+          command = "lua require('telescope.builtin').find_files({search_dirs = {'"
+            .. os.getenv("HOME")
+            .. "/.notes'}})",
         },
         d = {
           description = { "  Find Word          " },
@@ -217,7 +227,7 @@ return require("packer").startup(function(use)
         " (Method)",
         " (Function)",
         " (Constructor)",
-        "ﴲ (Field)",
+        "��� (Field)",
         " (Variable)",
         " (Class)",
         "ﰮ (Interface)",

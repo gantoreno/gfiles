@@ -11,6 +11,7 @@ local command = vim.api.nvim_command
 -- }}}
 
 -- Commands {{{
+command("autocmd BufNewFile,BufRead *.nt set filetype=note")
 command("autocmd BufNewFile,BufRead *.zsh-theme set filetype=zsh")
 command("autocmd BufNewFile,BufRead *.js,*.jsx, set filetype=javascriptreact")
 command("autocmd BufNewFile,BufRead *.ts,*.tsx, set filetype=typescriptreact")
