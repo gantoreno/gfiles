@@ -48,5 +48,5 @@ o.completeopt = "menuone,noinsert,noselect"
 wo.number = true
 wo.relativenumber = true
 
-wo.signcolumn = "number"
+wo.signcolumn = "yes"
 -- }}}
