@@ -7,7 +7,7 @@
 # ZSH configuration file
 
 # Run TMUX {{{
-[[ -z $TMUX ]] && exec tmux -f $HOME/.config/tmux/.tmux.conf
+# [[ -z $TMUX ]] && exec tmux -f $HOME/.config/tmux/.tmux.conf
 # }}}
 
 # Config paths {{{
@@ -101,7 +101,7 @@ alias themeconfig="$EDITOR $ZSHDIR/themes/$THEME.zsh-theme"
 # }}}
 
 # Fetch {{{
-if [[ $(tmux display-message -p "#P" 2> /dev/null) == 1 ]]; then 
+if [[ $TERM_PROGRAM == "iTerm.app" ]]; then 
   fetch
 fi
 # }}}

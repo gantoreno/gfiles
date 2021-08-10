@@ -23,22 +23,22 @@ end
 -- }}}
 
 -- Diagnosticls Setup {{{
-require("diagnosticls-nvim").init({
+require("diagnosticls-configs").init({
   default_config = false,
   formatting = false,
 })
 
-require("diagnosticls-nvim").setup({
+require("diagnosticls-configs").setup({
   ["javascriptreact"] = {
-    formatter = require("diagnosticls-nvim.formatters.prettier"),
-    linter = require("diagnosticls-nvim.linters.eslint"),
+    formatter = require("diagnosticls-configs.formatters.prettier"),
+    linter = require("diagnosticls-configs.linters.eslint"),
   },
   ["typescriptreact"] = {
-    formatter = require("diagnosticls-nvim.formatters.prettier"),
-    linter = require("diagnosticls-nvim.linters.eslint"),
+    formatter = require("diagnosticls-configs.formatters.prettier"),
+    linter = require("diagnosticls-configs.linters.eslint"),
   },
   ["python"] = {
-    formatter = require("diagnosticls-nvim.formatters.autopep8"),
+    formatter = require("diagnosticls-configs.formatters.autopep8"),
   },
   ["lua"] = {
     formatter = {

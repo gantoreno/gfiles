@@ -269,7 +269,7 @@ return require("packer").startup(function(use)
       vim.g.completion_matching_strategy_list = { "exact", "substring", "fuzzy" }
     end,
   })
-  use({ "creativenull/diagnosticls-nvim" })
+  use({ "creativenull/diagnosticls-configs-nvim" })
   -- }}}
 
   -- Highlighting {{{
