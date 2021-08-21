@@ -1,5 +1,5 @@
 <p align="center">
-  <img src=".github/startrail.svg" width="300" style="margin: 50px" />
+  <img src=".github/logo.svg" width="300" style="margin: 50px" />
 </p>
 
 # Starfiles
