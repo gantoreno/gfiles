@@ -98,62 +98,6 @@ return require("packer").startup(function(use)
   })
   use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install" })
   use({
-    "glepnir/dashboard-nvim",
-    config = function()
-      vim.g.dashboard_custom_header = {
-        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠤⠔⠒⠈⠉⠉⠉⠈⠉⠉⠀⠐⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-        "⠀⠀⠀⠀⠀⠀⠀⠀⣠⠔⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-        "⠀⠀⠀⠀⠀⢀⡤⠚⠁⠀⠀⠀⠀⠀⢀⣀⡠⠤⠤⠀⠀⠠⠤⢄⣀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀",
-        "⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⣠⠔⠊⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠐⠢⣀⠀⠀⠀⠀⠈⠱⣆⠀⠀⠀⠀",
-        "⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠄⠀⠀⠀⠀⠈⢣⡀⠀⠀",
-        "⠀⠀⠀⠀⠀⠀⠀⢠⠎⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠀⠀⠀⠀⠀⠳⠀⠀",
-        "⠀⠀⠀⠀⠀⠀⣰⠃⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠄⠀⠀⠀⠀⢣⠀",
-        "⠰⠀⠀⠀⠀⢰⠃⠀⠀⠀⠀⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡀⠀⠀⠀⠈⡄⠀⠀⠀⠈⡆",
-        "⡆⠀⠀⠀⠀⡎⠀⠀⠀⠀⡘⠀⠀⠀⠀⠠⠀⠀⠀⠀⠀⠀⠀⠹⣆⠀⠀⠀⠀⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹",
-        "⠃⠀⠀⠀⠀⡇⠀⠀⠀⠀⡇⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⢸⡄⠀⠀⠀⢸⠀⠀⠀⠀⢰⠀⠀⠀⠀⢸",
-        "⡇⠀⠀⠀⠀⡇⠀⠀⠀⠀⡇⠀⠀⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⣸⠁⠀⠀⠀⠸⠀⠀⠀⠀⠈⠀⠀⠀⠀⢸",
-        "⢇⠀⠀⠀⠀⢣⠀⠀⠀⠀⢹⠀⠀⠀⠀⠈⠂⡀⠀⠀⠀⠀⢀⡔⠁⠀⠀⠀⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⡈",
-        "⠸⡀⠀⠀⠀⠘⣆⠀⠀⠀⠀⢳⡀⠀⠀⠀⠀⠈⠀⠐⠂⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠁⠀⠀⠀⢀⠁",
-        "⠀⠱⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠙⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠆⠀",
-        "⠀⠀⢣⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀",
-        "⠀⠀⠀⠳⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-        "⠀⠀⠀⠀⠉⢢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀",
-      }
-      vim.g.dashboard_custom_section = {
-        a = {
-          description = { "  Find File          " },
-          command = "Telescope find_files hidden=true",
-        },
-        b = {
-          description = { "  Recently Seen Files" },
-          command = "Telescope oldfiles",
-        },
-        c = {
-          description = { "  Search Notes       " },
-          command = "lua require('telescope.builtin').find_files({search_dirs = {'"
-            .. os.getenv("HOME")
-            .. "/.notes'}})",
-        },
-        d = {
-          description = { "  Find Word          " },
-          command = "Telescope live_grep",
-        },
-        e = {
-          description = { "  Neovim Config Files" },
-          command = "lua require('telescope.builtin').find_files({search_dirs = {'"
-            .. os.getenv("HOME")
-            .. "/.config/nvim'}})",
-        },
-      }
-      vim.g.dashboard_custom_footer = {
-        "We are made of starstuff",
-        "",
-        "      - Carl Sagan      ",
-      }
-      vim.g.dashboard_default_executive = "telescope"
-    end,
-  })
-  use({
     "mhinz/vim-signify",
     config = function()
       vim.g.signify_sign_add = "┃"
@@ -174,6 +118,18 @@ return require("packer").startup(function(use)
       vim.g.nvim_tree_update_cwd = 1
       vim.g.nvim_tree_quit_on_open = 1
       vim.g.nvim_tree_indent_markers = 0
+      vim.g.nvim_tree_icons = {
+        folder = {
+          arrow_open = "",
+          arrow_closed = "",
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "",
+          symlink_open = "",
+        },
+      }
 
       require("nvim-tree.view").View.winopts.signcolumn = "no"
     end,

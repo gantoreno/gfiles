@@ -32,6 +32,7 @@ o.splitbelow = true
 o.errorbells = false
 o.smartindent = true
 
+o.shortmess = o.shortmess .. "I"
 o.splitright = true
 o.mouse = "a"
 o.encoding = "UTF-8"
