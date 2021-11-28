@@ -6,10 +6,6 @@
 # 
 # ZSH configuration file
 
-# Run TMUX {{{
-# [[ -z $TMUX ]] && exec tmux -f $HOME/.config/tmux/.tmux.conf
-# }}}
-
 # Config paths {{{
 export ZSHDIR="$HOME/.config/zsh"
 export ZSHRC="$ZSHDIR/.zshrc"
@@ -17,8 +13,6 @@ export ZSHRC="$ZSHDIR/.zshrc"
 
 # User configuration {{{
 setopt PROMPT_SUBST
-
-# unsetopt PROMPT_CR
 
 bindkey -v
 
