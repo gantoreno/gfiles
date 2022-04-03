@@ -1,5 +1,5 @@
 <p align="center">
-  <img src=".github/icon.png" heigh="150" />
+  <img src=".github/icon.png" width="150" />
 </p>
 
 # Gfiles
