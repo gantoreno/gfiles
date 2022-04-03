@@ -11,10 +11,17 @@ export ZSHDIR="$HOME/.config/zsh"
 export ZSHRC="$ZSHDIR/.zshrc"
 # }}}
 
+
+# Fig {{{
+[[ -s ~/.fig/shell/pre.sh ]] && source "$HOME/.fig/shell/pre.sh"
+# }}}
+
+#
 # User configuration {{{
 setopt PROMPT_SUBST
 
 bindkey -v
+bindkey '^R' history-incremental-search-backward
 
 autoload -U colors && colors
 autoload -U compinit && compinit
@@ -32,9 +39,10 @@ plugins=(
   zsh-z
   git
   shrink-path
-  zsh-autosuggestions
   zsh-syntax-highlighting/zsh-syntax-highlighting
 )
+
+[[ -z "$NEOVIM" ]] && plugins+=(zsh-autosuggestions)
 
 foreach plugin in $plugins
   [[ -e $ZSHDIR/plugins/$plugin.plugin.zsh ]] && source $ZSHDIR/plugins/$plugin.plugin.zsh
@@ -50,13 +58,26 @@ export LSCOLORS="GxGxBxDxCxEgEdxbxgxcxd"
 export EDITOR="nvim"
 export EDITORRC="$HOME/.config/nvim/init.vim"
 
+export SSHRC="$HOME/.ssh/config"
+
 export PATH="$HOME/.scripts:$PATH"
 export PATH="/usr/local/Cellar/llvm/12.0.0_1/bin:$PATH"
 export PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
 # }}}
 
-# Evals {{{
-eval $(fnm env)
+# RbEnv {{{
+eval "$(rbenv init - zsh)"
+# }}}
+
+# Lazy load {{{
+
+lazy_load_nvm() {
+  unset -f node
+  export NVM_DIR=~/.nvm
+
+  [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
+}
 # }}}
 
 # Aliases {{{
@@ -66,6 +87,8 @@ alias l="ls"
 alias la="ls -a"
 alias ll="ls -l"
 alias lla="ls -la"
+
+alias top="htop --tree"
 
 alias pc="peco"
 alias xp="expand"
@@ -78,7 +101,7 @@ alias gck="git checkout"
 alias gaa="git add ."
 alias gcm="git commit"
 alias gam="git commit --amend"
-alias gst="git status --porcelain"
+alias gst="git status"
 alias glg="git log --graph --oneline"
 alias gpm="git push origin main"
 
@@ -89,9 +112,10 @@ alias npbuild="npm run build"
 
 alias vim="$EDITOR"
 alias fetch="macfetch"
-alias pingtest="ping 8.8.8.8"
+alias pingtest="prettyping 8.8.8.8"
 alias fastbrew="HOMEBREW_NO_AUTO_UPDATE=1 brew"
 
+alias sshconfig="$EDITOR $SSHRC"
 alias zshconfig="$EDITOR $ZSHRC"
 alias vimconfig="$EDITOR $EDITORRC"
 alias tmuxconfig="$EDITOR ~/.config/tmux/.tmux.conf"
@@ -99,7 +123,14 @@ alias themeconfig="$EDITOR $ZSHDIR/themes/$THEME.zsh-theme"
 # }}}
 
 # Fetch {{{
-if [[ $TERM_PROGRAM == "iTerm.app" ]]; then 
+if [[ $TERM_PROGRAM == "iTerm.app" && -z "$NEOVIM" ]]; then 
   fetch
 fi
+# }}}
+
+test -e /Users/gabrielmoreno/.config/zsh/.iterm2_shell_integration.zsh && source /Users/gabrielmoreno/.config/zsh/.iterm2_shell_integration.zsh || true
+
+
+# Fig {{{
+[[ -s ~/.fig/fig.sh ]] && source "$HOME/.fig/fig.sh"
 # }}}
