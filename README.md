@@ -2,7 +2,7 @@
   <img src=".github/icon.png" heigh="150" />
 </p>
 
-# Starfiles
+# Gfiles
 
 ![https://img.shields.io/github/issues/gantoreno/gfiles](https://img.shields.io/github/issues/gantoreno/gfiles) ![https://img.shields.io/github/forks/gantoreno/gfiles](https://img.shields.io/github/forks/gantoreno/gfiles) ![https://img.shields.io/github/stars/gantoreno/gfiles](https://img.shields.io/github/stars/gantoreno/gfiles) ![https://img.shields.io/github/license/gantoreno/gfiles](https://img.shields.io/github/license/gantoreno/gfiles) ![https://raw.githubusercontent.com/sindresorhus/awesome/main/media/badge.svg](https://raw.githubusercontent.com/sindresorhus/awesome/main/media/badge.svg)
 
