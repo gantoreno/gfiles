@@ -1,4 +1,4 @@
-#    ______      __         _      __   Gabriel Moreno
+#    ______      __         _      __   Gabriel MorenoG
 #   / ____/___ _/ /_  _____(_)__  / /   ==============
 #  / / __/ __ `/ __ \/ ___/ / _ \/ /    E-mail:   gantoreno@gmail.com
 # / /_/ / /_/ / /_/ / /  / /  __/ /     Website:  https://gantoreno.com
@@ -7,7 +7,7 @@
 # ZSH configuration file
 
 # Run TMUX {{{
-[[ -z $TMUX ]] && exec tmux -f "$HOME/.config/tmux/.tmux.conf"
+# [[ -z $TMUX ]] && exec tmux -f "$HOME/.config/tmux/.tmux.conf"
 # }}}
 
 # Config paths {{{
@@ -17,7 +17,7 @@ export ZSHRC="$ZSHDIR/.zshrc"
 
 
 # Fig {{{
-[[ -s ~/.fig/shell/pre.sh ]] && source "$HOME/.fig/shell/pre.sh"
+# [[ -s ~/.fig/shell/pre.sh ]] && source "$HOME/.fig/shell/pre.sh"
 # }}}
 
 #
@@ -35,7 +35,7 @@ autoload -U promptinit && promptinit
 # Theme loader {{{
 THEME="gabriel"
 
-[[ ! -z $THEME ]] && source $ZSHDIR/themes/$THEME.zsh-theme
+[[ ! -z $THEME ]] && source "$ZSHDIR/themes/$THEME.zsh-theme"
 # }}}
 
 # Plugin loader {{{
@@ -49,7 +49,9 @@ plugins=(
 [[ -z "$NEOVIM" ]] && plugins+=(zsh-autosuggestions)
 
 foreach plugin in $plugins
-  [[ -e $ZSHDIR/plugins/$plugin.plugin.zsh ]] && source $ZSHDIR/plugins/$plugin.plugin.zsh
+  plugin_path="$ZSHDIR/plugins/$plugin.plugin.zsh" 
+
+  [[ -e $plugin_path ]] && source $plugin_path
 end
 # }}}
 
@@ -75,10 +77,10 @@ eval "$(rbenv init - zsh)"
 # }}}
 
 # Lazy load {{{
-
 lazy_load_nvm() {
   unset -f node
-  export NVM_DIR=~/.nvm
+
+  export NVM_DIR="$HOME/.nvm"
 
   [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
 }
@@ -134,7 +136,6 @@ fi
 
 test -e /Users/gabrielmoreno/.config/zsh/.iterm2_shell_integration.zsh && source /Users/gabrielmoreno/.config/zsh/.iterm2_shell_integration.zsh || true
 
-
 # Fig {{{
-[[ -s ~/.fig/fig.sh ]] && source "$HOME/.fig/fig.sh"
+# [[ -s ~/.fig/fig.sh ]] && source "$HOME/.fig/fig.sh"
 # }}}

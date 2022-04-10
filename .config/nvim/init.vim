@@ -4,7 +4,8 @@ filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-airline/vim-airline'
+Plug 'sheerun/vim-wombat-scheme'
+Plug 'w0ng/vim-hybrid'
 
 Plug 'kamykn/popup-menu.nvim'
 
@@ -28,6 +29,8 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'tomtom/tcomment_vim'
 
+Plug 'lukas-reineke/indent-blankline.nvim'
+
 call plug#end()
 
 colorscheme gabriel
@@ -40,8 +43,8 @@ set laststatus=3
 set mouse=a
 set shiftwidth=2
 set shortmess=FI
-set showtabline=2
-set signcolumn=number
+set background=dark
+set signcolumn=yes
 set so=15
 set softtabstop=2
 
@@ -57,9 +60,23 @@ set splitright
 set termguicolors
 set relativenumber
 
+set statusline=%!StatusLineNormal()
+
 let g:mapleader = ' '
 
 let g:closetag_filenames = '*.html,*.js,*.jsx,*.ts,*.tsx'
+
+let g:indentLine_char = "▏"
+let g:indent_blankline_space_char = " "
+let g:indent_blankline_filetype_exclude = [
+  \ "help",
+  \ "term",
+  \ "packer",
+  \ "dashboard",
+  \ "NvimTree",
+  \ ]
+let g:indent_blankline_show_first_indent_level = v:true
+let g:indent_blankline_show_trailing_blankline_indent = v:false
 
 let g:coc_global_extensions = [
   \ 'coc-json',
@@ -84,6 +101,7 @@ let g:signify_sign_change = '┃'
 let g:signify_sign_changedelete = '┃'
 let g:signify_sign_delete_first_line = '┃'
 let g:signify_sign_show_count = 0
+
 
 let g:floaterm_shell = 'NEOVIM=1 '.&shell
 let g:floaterm_height = 0.25
@@ -127,7 +145,7 @@ let g:airline_symbols = {
   \ 'linenr': ' ㏑:', 
   \ 'modified': '+', 
   \ 'whitespace': '☲', 
-  \ 'branch': '', 
+  \ 'branch': '', 
   \ 'ellipsis': '...', 
   \ 'paste': 'PASTE', 
   \ 'maxlinenr': '☰', 
@@ -135,10 +153,10 @@ let g:airline_symbols = {
   \ 'spell': 'SPELL', 
   \ 'space': ' ', 
   \ 'dirty': '!',
-  \ 'colnr': ' ℅:', 
+  \ 'colnr': '  ℅: ', 
   \ 'keymap': 'Keymap:', 
   \ 'crypt': '🔒', 
-  \ 'notexists': 'Ɇ'
+  \ 'notexists': ''
   \ }
 
 let g:ctrlp_map = '<leader>pp'
@@ -169,6 +187,8 @@ nmap <silent> <leader>nn :CocCommand explorer<CR>
 nmap <silent> <leader>ss :call SynStack()<CR>
 nmap <silent> <leader>coc :CocConfig<CR>
 
+nmap <silent> <leader>lzg :FloatermNew --wintype=float --width=0.8 --height=0.8 --position=center lazygit<CR>
+
 vmap <silent> <leader>so :sort<CR>
 
 noremap <silent> <C-h> <C-\><C-n><C-w>h
@@ -188,6 +208,7 @@ autocmd FileType floaterm call FloatermSettings()
 autocmd BufEnter * if winnr('$') == 1 && &filetype == 'coc-explorer' | q | endif
 
 autocmd BufNewFile,BufRead *.ejs set filetype=ejs
+autocmd BufNewFile,BufRead *.config set filetype=yaml
 autocmd BufNewFile,BufRead *.js,*.jsx set filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.tsx,*.ts set filetype=typescript.tsx
 autocmd BufNewFile,BufRead *.zsh-theme set filetype=zsh
@@ -220,7 +241,9 @@ function StatusLineNormal() abort
 
   hi SshGroup guibg=#fafafa guifg=#0d0d0d
 
-  " let b:leftstatus .= "%#SshGroup#    %#StatusLine# "
+  let b:leftstatus .= "%#SshGroup#    %#StatusLine#"
+
+  let b:leftstatus .= '   '
 
   if !empty(b:branch)
     let b:leftstatus .= ' %{b:branch}   '
@@ -238,6 +261,8 @@ function StatusLineNormal() abort
   if !empty(&ft) && &ft != 'TelescopePrompt'
     let b:rightstatus .= '    %{&ft}'
   endif
+
+  let b:rightstatus .= '   '
 
   return b:leftstatus . '%=' . b:rightstatus
 endfunction
