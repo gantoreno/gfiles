@@ -4,37 +4,25 @@ filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'sheerun/vim-wombat-scheme'
-Plug 'w0ng/vim-hybrid'
-
-Plug 'kamykn/popup-menu.nvim'
-
-Plug 'kien/ctrlp.vim'
-
 Plug 'gantoreno/vim-gabriel'
-Plug 'Mofiqul/vscode.nvim'
 
-Plug 'HerringtonDarkholme/yats.vim'
-
-Plug 'neoclide/coc.nvim', { 'branch': 'release', 'do': 'yarn install' }
-
-Plug 'voldikss/vim-floaterm'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-Plug 'sheerun/vim-polyglot'
-
-Plug 'mhinz/vim-signify'
-Plug 'tpope/vim-fugitive'
+Plug 'neoclide/coc.nvim', { 'branch': 'release', 'do': 'yarn install' }
 
 Plug 'tomtom/tcomment_vim'
 
-Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-fugitive'
+Plug 'sheerun/vim-polyglot'
+Plug 'voldikss/vim-floaterm'
 
 call plug#end()
 
 colorscheme gabriel
 
+set background=dark
 set backspace=indent,eol,start
 set clipboard=unnamedplus
 set encoding=utf-8
@@ -43,7 +31,6 @@ set laststatus=3
 set mouse=a
 set shiftwidth=2
 set shortmess=FI
-set background=dark
 set signcolumn=yes
 set so=15
 set softtabstop=2
@@ -58,7 +45,6 @@ set number
 set splitbelow
 set splitright
 set termguicolors
-set relativenumber
 
 set statusline=%!StatusLineNormal()
 
@@ -101,7 +87,6 @@ let g:signify_sign_change = '┃'
 let g:signify_sign_changedelete = '┃'
 let g:signify_sign_delete_first_line = '┃'
 let g:signify_sign_show_count = 0
-
 
 let g:floaterm_shell = 'NEOVIM=1 '.&shell
 let g:floaterm_height = 0.25
@@ -187,6 +172,7 @@ nmap <silent> <leader>nn :CocCommand explorer<CR>
 nmap <silent> <leader>ss :call SynStack()<CR>
 nmap <silent> <leader>coc :CocConfig<CR>
 
+nmap <silent> <leader>mk :FloatermNew --wintype=float --width=0.8 --height=0.8 --position=center --autoclose=0 make<CR>
 nmap <silent> <leader>lzg :FloatermNew --wintype=float --width=0.8 --height=0.8 --position=center lazygit<CR>
 
 vmap <silent> <leader>so :sort<CR>
