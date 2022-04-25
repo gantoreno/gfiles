@@ -8,6 +8,8 @@
 
 The power of the command line is often underrated. My developer journey led me to an almost 100% terminal-based way of working (and living), for this reason, I organized all my config files in this dotfiles repo, in order to keep track of my settings, programs, themes & more. Feel free to use whatever you want!
 
+![https://www.gantoreno.com/assets/img/tools.png](https://www.gantoreno.com/assets/img/tools.png)
+
 **NOTE:** This is a macOS-based setup in terms of paths & package managers, keep this in mind before trying to directly clone & setup all my configurations.
 
 ## Tools
