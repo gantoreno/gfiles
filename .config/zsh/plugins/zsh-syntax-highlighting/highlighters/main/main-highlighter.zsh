@@ -62,7 +62,7 @@
 : ${ZSH_HIGHLIGHT_STYLES[comment]:=fg=black,bold}
 : ${ZSH_HIGHLIGHT_STYLES[named-fd]:=none}
 : ${ZSH_HIGHLIGHT_STYLES[numeric-fd]:=none}
-: ${ZSH_HIGHLIGHT_STYLES[arg0]:=fg=green} # green
+: ${ZSH_HIGHLIGHT_STYLES[arg0]:=fg=green,bold} # green
 
 # Whether the highlighter should be called or not.
 _zsh_highlight_highlighter_main_predicate()
