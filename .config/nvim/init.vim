@@ -31,7 +31,7 @@ set laststatus=3
 set mouse=a
 set shiftwidth=2
 set shortmess=FI
-set signcolumn=yes
+set signcolumn=number
 set so=15
 set softtabstop=2
 

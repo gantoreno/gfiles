@@ -6,10 +6,6 @@
 # 
 # ZSH configuration file
 
-# Run TMUX {{{
-# [[ -z $TMUX ]] && exec tmux -f "$HOME/.config/tmux/.tmux.conf"
-# }}}
-
 # Config paths {{{
 export ZSHDIR="$HOME/.config/zsh"
 export ZSHRC="$ZSHDIR/.zshrc"
@@ -17,7 +13,8 @@ export ZSHRC="$ZSHDIR/.zshrc"
 
 
 # Fig {{{
-# [[ -s ~/.fig/shell/pre.sh ]] && source "$HOME/.fig/shell/pre.sh"
+[[ -s ~/.fig/shell/zshrc.pre.zsh ]] && source "$HOME/.fig/shell/zshrc.pre.zsh"
+[[ -s ~/.fig/shell/pre.sh ]] && source "$HOME/.fig/shell/pre.sh"
 # }}}
 
 #
@@ -70,6 +67,8 @@ export PATH="$HOME/.scripts:$PATH"
 export PATH="/usr/local/Cellar/llvm/12.0.0_1/bin:$PATH"
 export PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.fig/bin:$PATH"
 # }}}
 
 # RbEnv {{{
@@ -137,5 +136,7 @@ fi
 test -e /Users/gabrielmoreno/.config/zsh/.iterm2_shell_integration.zsh && source /Users/gabrielmoreno/.config/zsh/.iterm2_shell_integration.zsh || true
 
 # Fig {{{
-# [[ -s ~/.fig/fig.sh ]] && source "$HOME/.fig/fig.sh"
+[[ -s ~/.fig/shell/zshrc.post.zsh ]] && source "$HOME/.fig/shell/zshrc.post.zsh" || true
+[[ -s ~/.fig/fig.sh ]] && source "$HOME/.fig/fig.sh" || true
 # }}}
+
