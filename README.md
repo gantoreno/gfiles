@@ -24,7 +24,7 @@ As a command-line user, most of my tools are terminal-based, therefore I can gro
 
 For my terminal emulator, I use [iTerm2](https://iterm2.com/), the macOS terminal replacement, along with my own colorscheme, [iTerm2 Gabriel](https://github.com/gantoreno/gfiles/blob/development/.schemes/Gabriel.itermcolors).
 
-I also use [Zsh](https://www.zsh.org/) as my main interactive shell, loading my own prompt theme, [ZSH Gabriel](https://github.com/gantoreno/gfiles/blob/development/.config/zsh/themes/gabriel.zsh-theme), along with plugins such as:
+I also use [Zsh](https://www.zsh.org/) as my main interactive shell, loading my own prompt theme, [Zsh Gabriel](https://github.com/gantoreno/gfiles/blob/development/.config/zsh/themes/gabriel.zsh-theme), along with plugins such as:
 
 - [`zsh-z`](https://github.com/agkozak/zsh-z) - Jump quickly to directories that you have visited "frecently".
 - [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like autosuggestions for Zsh.
