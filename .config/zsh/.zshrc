@@ -136,7 +136,7 @@ fi
 test -e /Users/gabrielmoreno/.config/zsh/.iterm2_shell_integration.zsh && source /Users/gabrielmoreno/.config/zsh/.iterm2_shell_integration.zsh || true
 
 # Fig {{{
-[[ -s ~/.fig/shell/zshrc.post.zsh ]] && source "$HOME/.fig/shell/zshrc.post.zsh"
-[[ -s ~/.fig/fig.sh ]] && source "$HOME/.fig/fig.sh"
+[[ -s ~/.fig/shell/zshrc.post.zsh ]] && source "$HOME/.fig/shell/zshrc.post.zsh" || true
+[[ -s ~/.fig/fig.sh ]] && source "$HOME/.fig/fig.sh" || true
 # }}}
 
