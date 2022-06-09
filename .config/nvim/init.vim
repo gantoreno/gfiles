@@ -45,6 +45,7 @@ set number
 set splitbelow
 set splitright
 set termguicolors
+set relativenumber
 
 set statusline=%!StatusLineNormal()
 
@@ -245,7 +246,7 @@ function StatusLineNormal() abort
   let b:rightstatus .= '   %{toupper(g:endoflines[&ff])}'
 
   if !empty(&ft) && &ft != 'TelescopePrompt'
-    let b:rightstatus .= '    %{&ft}'
+    let b:rightstatus .= '    %{&ft}'
   endif
 
   let b:rightstatus .= '   '
