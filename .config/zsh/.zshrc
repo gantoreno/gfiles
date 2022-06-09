@@ -11,11 +11,6 @@ export ZSHDIR="$HOME/.config/zsh"
 export ZSHRC="$ZSHDIR/.zshrc"
 # }}}
 
-# Fig {{{
-[[ -s ~/.fig/shell/zshrc.pre.zsh ]] && source "$HOME/.fig/shell/zshrc.pre.zsh"
-[[ -s ~/.fig/shell/pre.sh ]] && source "$HOME/.fig/shell/pre.sh"
-# }}}
-
 # User configuration {{{
 setopt PROMPT_SUBST
 
