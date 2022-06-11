@@ -36,7 +36,7 @@ plugins=(
   zsh-syntax-highlighting/zsh-syntax-highlighting
 )
 
-[[ -z "$NEOVIM" ]] && plugins+=(zsh-autosuggestions/zsh-autosuggestions)
+# [[ -z "$NEOVIM" ]] && plugins+=(zsh-autosuggestions/zsh-autosuggestions)
 
 foreach plugin in $plugins
   plugin_path="$ZSHDIR/plugins/$plugin.plugin.zsh" 
