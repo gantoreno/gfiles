@@ -27,17 +27,34 @@
   "explorer.quitOnOpen": true,
   "explorer.width": 30,
   "explorer.contentWidthType": "win-width",
-  "explorer.icon.enableNerdfont": false,
-  "explorer.icon.enableVimDevicons": false,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.icon.customIcons": {
+    "icons": {
+      "folderClosed": {
+        "code": "",
+        "color": "#006aff"
+      },
+      "folderOpened": {
+        "code": "",
+        "color": "#006aff"
+      },
+      "file": {
+        "code": "",
+        "color": "#999999"
+      },
+      "fileHidden": {
+        "code": "",
+        "color": "#999999"
+      }
+    }
+  },
   "explorer.icon.expanded": "",
   "explorer.icon.collapsed": "",
-  // "explorer.icon.expanded": "-",
-  // "explorer.icon.collapsed": "+",
   "explorer.git.icon.status.ignored": "",
   "explorer.git.icon.status.untracked": "U",
   "explorer.file.showHiddenFiles": true,
   "explorer.file.column.indent.indentLine": false,
-  "explorer.file.root.template": "[icon | 1] [fullpath]",
+  "explorer.file.root.template": "[icon | 1] [root]",
   "explorer.file.child.template": "[selection | clip | 1] [indent][icon | 1] [filename growRight 1] [git]",
   "explorer.keyMappings.global": {
     "<cr>": ["expandable?", ["expanded?", "collapse", "expand"], "open"]

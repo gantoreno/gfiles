@@ -1,4 +1,4 @@
-#    ______      __         _      __   Gabriel MorenoG
+#    ______      __         _      __   Gabriel Moreno
 #   / ____/___ _/ /_  _____(_)__  / /   ==============
 #  / / __/ __ `/ __ \/ ___/ / _ \/ /    E-mail:   gantoreno@gmail.com
 # / /_/ / /_/ / /_/ / /  / /  __/ /     Website:  https://gantoreno.com
@@ -11,13 +11,6 @@ export ZSHDIR="$HOME/.config/zsh"
 export ZSHRC="$ZSHDIR/.zshrc"
 # }}}
 
-
-# Fig {{{
-[[ -s ~/.fig/shell/zshrc.pre.zsh ]] && source "$HOME/.fig/shell/zshrc.pre.zsh"
-[[ -s ~/.fig/shell/pre.sh ]] && source "$HOME/.fig/shell/pre.sh"
-# }}}
-
-#
 # User configuration {{{
 setopt PROMPT_SUBST
 
@@ -43,7 +36,7 @@ plugins=(
   zsh-syntax-highlighting/zsh-syntax-highlighting
 )
 
-[[ -z "$NEOVIM" ]] && plugins+=(zsh-autosuggestions)
+# [[ -z "$NEOVIM" ]] && plugins+=(zsh-autosuggestions/zsh-autosuggestions)
 
 foreach plugin in $plugins
   plugin_path="$ZSHDIR/plugins/$plugin.plugin.zsh" 
@@ -57,6 +50,8 @@ export DEFAULT_USER="gabrielmoreno"
 
 export CLICOLOR=1
 export LSCOLORS="GxGxBxDxCxEgEdxbxgxcxd"
+# export LS_COLORS="di=1;36"
+# export EXA_COLORS="da=36"
 
 export EDITOR="nvim"
 export EDITORRC="$HOME/.config/nvim/init.vim"
@@ -73,6 +68,7 @@ export PATH="$HOME/.fig/bin:$PATH"
 
 # RbEnv {{{
 eval "$(rbenv init - zsh)"
+eval "$(fnm env)"
 # }}}
 
 # Lazy load {{{
@@ -93,7 +89,7 @@ alias la="ls -a"
 alias ll="ls -l"
 alias lla="ls -la"
 
-alias top="htop --tree"
+alias top="htop"
 
 alias pc="peco"
 alias xp="expand"
@@ -132,11 +128,5 @@ if [[ $TERM_PROGRAM == "iTerm.app" && -z "$NEOVIM" ]]; then
   fetch
 fi
 # }}}
-
-test -e /Users/gabrielmoreno/.config/zsh/.iterm2_shell_integration.zsh && source /Users/gabrielmoreno/.config/zsh/.iterm2_shell_integration.zsh || true
-
-# Fig {{{
-[[ -s ~/.fig/shell/zshrc.post.zsh ]] && source "$HOME/.fig/shell/zshrc.post.zsh" || true
-[[ -s ~/.fig/fig.sh ]] && source "$HOME/.fig/fig.sh" || true
-# }}}
+#
 
