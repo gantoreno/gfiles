@@ -54,7 +54,7 @@
   "explorer.git.icon.status.untracked": "U",
   "explorer.file.showHiddenFiles": true,
   "explorer.file.column.indent.indentLine": false,
-  "explorer.file.root.template": "[icon | 1] [fullpath]",
+  "explorer.file.root.template": "[icon | 1] [root]",
   "explorer.file.child.template": "[selection | clip | 1] [indent][icon | 1] [filename growRight 1] [git]",
   "explorer.keyMappings.global": {
     "<cr>": ["expandable?", ["expanded?", "collapse", "expand"], "open"]
