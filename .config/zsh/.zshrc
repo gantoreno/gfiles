@@ -80,7 +80,7 @@ lazy_load_nvm() {
 # }}}
 
 # Aliases {{{
-alias ls="ls"
+alias ls="els"
 
 alias l="ls"
 alias la="ls -a"
@@ -111,6 +111,7 @@ alias npbuild="npm run build"
 
 alias e="emacs"
 alias vim="$EDITOR"
+alias code="code-insiders"
 alias fetch="macfetch"
 alias pingtest="prettyping 8.8.8.8"
 alias fastbrew="HOMEBREW_NO_AUTO_UPDATE=1 brew"
