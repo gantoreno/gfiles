@@ -51,8 +51,8 @@ export DEFAULT_USER="gabrielmoreno"
 export CLICOLOR=1
 export LSCOLORS="GxGxBxDxCxEgEdxbxgxcxd"
 
-export EDITOR="vim"
-export EDITORRC="$HOME/.vimrc"
+export EDITOR="nvim"
+export EDITORRC="$HOME/.config/nvim/init.lua"
 
 export SSHRC="$HOME/.ssh/config"
 
@@ -123,8 +123,9 @@ alias themeconfig="$EDITOR $ZSHDIR/themes/$THEME.zsh-theme"
 # }}}
 
 # Fetch {{{
-# if [[ $TERM_PROGRAM == "iTerm.app" && -z "$NEOVIM" ]]; then 
-#   fetch
-# fi
+if [[ $TERM_PROGRAM == "iTerm.app" && -z "$NEOVIM" ]]; then 
+  echo ""
+  fetch
+fi
 # }}}
 
