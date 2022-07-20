@@ -31,6 +31,27 @@ return require('packer').startup(function(use)
   })
 
   use({
+    "kdheepak/tabline.nvim",
+    config = function() 
+      require("tabline").setup({
+        enable = true,
+        options = {
+          show_tabs_only = true
+        }
+      })
+    end
+  })
+  use({
+    "nvim-lualine/lualine.nvim",
+    config = function()
+      require("lualine").setup({
+        options = {
+          theme = "onedark",
+        },
+      })
+    end
+  })
+  use({
     "kyazdani42/nvim-tree.lua",
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
     config = function()

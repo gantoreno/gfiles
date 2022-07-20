@@ -80,7 +80,7 @@ lazy_load_nvm() {
 # }}}
 
 # Aliases {{{
-alias ls="ls"
+alias ls="exa --icons"
 
 alias l="ls"
 alias la="ls -a"
