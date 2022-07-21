@@ -1,4 +1,8 @@
+require('completion')
+require('keymaps')
+require('lsp')
 require('options')
 require('plugins')
-require('colors')
-require('keymaps')
+require('statusline')
+require('tabline')
+

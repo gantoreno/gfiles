@@ -27,7 +27,7 @@ plugins=(
   zsh-z
   git
   shrink-path
-  # zsh-syntax-highlighting/zsh-syntax-highlighting
+  zsh-syntax-highlighting/zsh-syntax-highlighting
 )
 
 [[ -z "$NEOVIM" ]] && plugins+=(zsh-autosuggestions/zsh-autosuggestions)

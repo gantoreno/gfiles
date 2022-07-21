@@ -1,6 +1,6 @@
 local o = vim.o
 local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({ 
@@ -14,43 +14,86 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
   use("wbthomason/packer.nvim")
+
+  use("nvim-lualine/lualine.nvim")
+  use("akinsho/bufferline.nvim")
 
   use({
     "navarasu/onedark.nvim",
     config = function() 
       require("onedark").setup({
-        style = "warmer",
-        code_style = {
-          comments = 'none'
-        }
+        style = "dark",
       })
       require("onedark").load()
     end
   })
 
   use({
-    "kdheepak/tabline.nvim",
-    config = function() 
-      require("tabline").setup({
-        enable = true,
-        options = {
-          show_tabs_only = true
+    "neovim/nvim-lspconfig",
+    config = function()
+      vim.lsp.protocol.CompletionItemKind = {
+        " (Text)",
+        " (Method)",
+        " (Function)",
+        " (Constructor)",
+        "ﴲ (Field)",
+        " (Variable)",
+        " (Class)",
+        "ﰮ (Interface)",
+        " (Module)",
+        "襁(Property)",
+        " (Unit)",
+        " (Value)",
+        "練(Enum)",
+        " (Keyword)",
+        " (Snippet)",
+        " (Color)",
+        " (File)",
+        " (Reference)",
+        " (Folder)",
+        " (EnumMember)",
+        "ﲀ (Constant)",
+        "ﳤ (Struct)",
+        " (Event)",
+        " (Operator)",
+        " (TypeParameter)",
+      }
+    end
+  })
+
+  use({
+    "glepnir/lspsaga.nvim",
+    config = function()
+      require("lspsaga").init_lsp_saga({
+        code_action_lightbulb = {
+          enable = false,
+        },
+        diagnostic_header = { " ", " ", " ", "ﴞ " },
+      })
+    end,
+  })
+
+  use({
+    "hrsh7th/nvim-compe",
+    config = function()
+      vim.g.completion_matching_strategy_list = { "exact", "substring", "fuzzy" }
+    end,
+  })
+
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        ensure_installed = "all",
+        highlight = {
+          enable = true
         }
       })
     end
   })
-  use({
-    "nvim-lualine/lualine.nvim",
-    config = function()
-      require("lualine").setup({
-        options = {
-          theme = "onedark",
-        },
-      })
-    end
-  })
+
+
   use({
     "kyazdani42/nvim-tree.lua",
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -62,7 +105,6 @@ return require('packer').startup(function(use)
           }
         },
         view = {
-          adaptive_size = true,
           signcolumn = "no"
         },
         update_focused_file = {
@@ -72,8 +114,6 @@ return require('packer').startup(function(use)
     end,
   })
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
   if packer_bootstrap then
     require('packer').sync()
   end

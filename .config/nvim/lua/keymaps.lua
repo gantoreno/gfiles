@@ -5,5 +5,6 @@ set_keymap("n", "<space>", "<nop>", { noremap = true, silent = true })
 
 g.mapleader = " "
 
-set_keymap("", "<leader>nn", ":NvimTreeToggle<cr>", { noremap = true, silent = true })
+set_keymap("", "<leader>nn", "<cmd>NvimTreeToggle<cr>", { noremap = true, silent = true })
+set_keymap("n", "L", "<cmd>Lspsaga show_line_diagnostics<cr>", { silent = true,noremap = true })
 
