@@ -1,4 +1,6 @@
-require("compe").setup({
+local compe = require("compe")
+
+local config = {
   enabled = true,
   autocomplete = true,
   debug = false,
@@ -29,4 +31,7 @@ require("compe").setup({
     ultisnips = true,
     luasnip = true,
   },
-})
+}
+
+compe.setup(config)
+

@@ -1,3 +1,5 @@
+require('autocommands')
+require('colors')
 require('completion')
 require('keymaps')
 require('lsp')

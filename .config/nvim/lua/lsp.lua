@@ -1,3 +1,6 @@
+local compe = require("compe")
+local lspconfig = require("lspconfig")
+
 local on_attach = function(_, bufnr)
   local function buf_set_keymap(...)
     vim.api.nvim_buf_set_keymap(bufnr, ...)
@@ -9,13 +12,9 @@ local on_attach = function(_, bufnr)
   buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", { noremap = true, silent = true })
   buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", { noremap = true, silent = true })
 
-  return require("compe").on_attach
+  return compe.on_attach
 end
 
-require("lspconfig").tsserver.setup({
-  on_attach = function(client, bufnr)
-    client.server_capabilities.document_formatting = false
-
-    on_attach(client, bufnr)
-  end,
+lspconfig.tsserver.setup({
+  on_attach = on_attach
 })

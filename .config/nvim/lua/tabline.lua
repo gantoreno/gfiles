@@ -6,7 +6,7 @@ local config = {
   },
   highlights = {
     fill = {
-      guibg = "#202328"
+      guibg = "#1a1a1c"
     }
   }
 }

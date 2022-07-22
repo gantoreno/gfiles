@@ -3,7 +3,7 @@ directory() {
 
   [[ -z $dir ]] && return
 
-  echo "%B%F{cyan}$dir%f%b "
+  echo "%B%F{blue}$dir%f%b "
 }
 
 git_branch() {
@@ -13,7 +13,7 @@ git_branch() {
 
   local dirty=$(git status --porcelain 2> /dev/null)
 
-  [[ ! -z $dirty ]] && echo "%b%fon %B%F{magenta}🚀 $branch %F{red}[!?]%b%f " || echo "%b%fon %B%F{magenta}🚀 $branch%f%b "
+  [[ ! -z $dirty ]] && echo "%b%fon %B%F{magenta} $branch %F{red}[!?]%b%f " || echo "%b%fon %B%F{magenta} $branch%f%b "
 }
 
 package_version() {
@@ -23,7 +23,7 @@ package_version() {
 
   [[ -z $version ]] && return
 
-  echo "is %B%F{red}📦 $version%f%b "
+  echo "is %B%F{red} $version%f%b "
 }
 
 node_version() {
@@ -31,7 +31,7 @@ node_version() {
 
   local version=$(node --version)
 
-  echo "via %B%F{green}🐝 $version%f%b "
+  echo "via %B%F{green} $version%f%b "
 }
 
 

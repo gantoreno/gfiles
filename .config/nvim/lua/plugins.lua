@@ -1,4 +1,3 @@
-local o = vim.o
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
@@ -13,20 +12,26 @@ if fn.empty(fn.glob(install_path)) > 0 then
   })
 end
 
-return require('packer').startup(function(use)
+local packer = require("packer")
+
+return packer.startup(function(use)
   use("wbthomason/packer.nvim")
 
   use("nvim-lualine/lualine.nvim")
   use("akinsho/bufferline.nvim")
 
+  use("navarasu/onedark.nvim")
+
+  use("jiangmiao/auto-pairs")
+  use("mattn/emmet-vim")
+
   use({
-    "navarasu/onedark.nvim",
-    config = function() 
-      require("onedark").setup({
-        style = "dark",
-      })
-      require("onedark").load()
-    end
+    "prettier/vim-prettier",
+    config = function()
+      vim.g["prettier#autoformat"] = false
+      vim.g["prettier#quickfix_enabled"] = false
+      vim.g["prettier#autoformat_require_pragma"] = false
+    end,
   })
 
   use({
@@ -69,7 +74,12 @@ return require('packer').startup(function(use)
         code_action_lightbulb = {
           enable = false,
         },
-        diagnostic_header = { " ", " ", " ", "ﴞ " },
+        diagnostic_header = { 
+          " ", 
+          " ", 
+          " ", 
+          "ﴞ " 
+        },
       })
     end,
   })
@@ -77,7 +87,11 @@ return require('packer').startup(function(use)
   use({
     "hrsh7th/nvim-compe",
     config = function()
-      vim.g.completion_matching_strategy_list = { "exact", "substring", "fuzzy" }
+      vim.g.completion_matching_strategy_list = { 
+        "exact", 
+        "substring", 
+        "fuzzy" 
+      }
     end,
   })
 
@@ -87,6 +101,9 @@ return require('packer').startup(function(use)
       require("nvim-treesitter.configs").setup({
         ensure_installed = "all",
         highlight = {
+          enable = true
+        },
+        indent = {
           enable = true
         }
       })
@@ -115,6 +132,6 @@ return require('packer').startup(function(use)
   })
 
   if packer_bootstrap then
-    require('packer').sync()
+    packer.sync()
   end
 end)
