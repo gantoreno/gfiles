@@ -129,3 +129,4 @@ if [[ $TERM_PROGRAM == "iTerm.app" && -z "$NEOVIM" ]]; then
 fi
 # }}}
 
+alias luamake=/Users/gabrielmoreno/.cache/nvim/lspconfig/sumneko_lua/lua-language-server/3rd/luamake/luamake

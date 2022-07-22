@@ -6,4 +6,3 @@ local config = {
 
 onedark.setup(config)
 onedark.load()
-

@@ -1,14 +1,16 @@
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
+local packer_bootstrap
+
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({ 
-    'git', 
-    'clone', 
-    '--depth', 
-    '1', 
-    'https://github.com/wbthomason/packer.nvim', 
-    install_path 
+  packer_bootstrap = fn.system({
+    'git',
+    'clone',
+    '--depth',
+    '1',
+    'https://github.com/wbthomason/packer.nvim',
+    install_path
   })
 end
 
@@ -17,20 +19,46 @@ local packer = require("packer")
 return packer.startup(function(use)
   use("wbthomason/packer.nvim")
 
+  use("nvim-lua/popup.nvim")
+  use("nvim-lua/plenary.nvim")
+
   use("nvim-lualine/lualine.nvim")
   use("akinsho/bufferline.nvim")
 
   use("navarasu/onedark.nvim")
 
   use("jiangmiao/auto-pairs")
+  use("tomtom/tcomment_vim")
   use("mattn/emmet-vim")
 
   use({
-    "prettier/vim-prettier",
+    "voldikss/vim-floaterm",
     config = function()
-      vim.g["prettier#autoformat"] = false
-      vim.g["prettier#quickfix_enabled"] = false
-      vim.g["prettier#autoformat_require_pragma"] = false
+      vim.g.floaterm_shell = 'NEOVIM=1 /bin/zsh'
+      vim.g.floaterm_height = 0.25
+      vim.g.floaterm_autoclose = 2
+      vim.g.floaterm_wintype = 'split'
+      vim.g.floaterm_position = 'botright'
+      vim.g.floaterm_keymap_toggle = '<leader>tt'
+    end
+  })
+
+  use({
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup()
+    end
+  })
+
+  use({
+    "nvim-telescope/telescope.nvim",
+    config = function()
+      require("telescope").setup({
+        defaults = {
+          mappings = { i = { ["<esc>"] = require("telescope.actions").close } },
+          file_ignore_patterns = { "node_modules", ".git" },
+        },
+      })
     end,
   })
 
@@ -68,29 +96,12 @@ return packer.startup(function(use)
   })
 
   use({
-    "glepnir/lspsaga.nvim",
-    config = function()
-      require("lspsaga").init_lsp_saga({
-        code_action_lightbulb = {
-          enable = false,
-        },
-        diagnostic_header = { 
-          " ", 
-          " ", 
-          " ", 
-          "ﴞ " 
-        },
-      })
-    end,
-  })
-
-  use({
     "hrsh7th/nvim-compe",
     config = function()
-      vim.g.completion_matching_strategy_list = { 
-        "exact", 
-        "substring", 
-        "fuzzy" 
+      vim.g.completion_matching_strategy_list = {
+        "exact",
+        "substring",
+        "fuzzy"
       }
     end,
   })
@@ -109,7 +120,6 @@ return packer.startup(function(use)
       })
     end
   })
-
 
   use({
     "kyazdani42/nvim-tree.lua",

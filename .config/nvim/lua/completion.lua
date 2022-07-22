@@ -34,4 +34,3 @@ local config = {
 }
 
 compe.setup(config)
-
