@@ -8,6 +8,7 @@ o.number = true
 o.expandtab = true
 o.cursorline = true
 o.termguicolors = true
+o.cmdheight = 1
 o.scrolloff = 10
 o.shiftwidth = 2
 o.laststatus = 3

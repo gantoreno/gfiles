@@ -35,11 +35,18 @@ return packer.startup(function(use)
     "voldikss/vim-floaterm",
     config = function()
       vim.g.floaterm_shell = 'NEOVIM=1 /bin/zsh'
+      vim.g.floaterm_width = vim.api.nvim_win_get_width(0)
       vim.g.floaterm_height = 0.25
       vim.g.floaterm_autoclose = 2
       vim.g.floaterm_wintype = 'split'
-      vim.g.floaterm_position = 'botright'
+      vim.g.floaterm_position = 'rightbelow'
       vim.g.floaterm_keymap_toggle = '<leader>tt'
+
+      vim.api.nvim_command("hi VertSplit guibg=#1b1c1e guifg=#1b1c1e")
+
+      vim.api.nvim_command("hi Floaterm guibg=#1b1c1e")
+      vim.api.nvim_command("hi FloatermNC guibg=#1b1c1e")
+      vim.api.nvim_command("hi FloatermBorder guibg=#1b1c1e guifg=#61afef")
     end
   })
 
@@ -138,6 +145,8 @@ return packer.startup(function(use)
           enable = true
         }
       })
+
+      vim.api.nvim_command("hi Directory guibg=#1b1c1e")
     end,
   })
 
