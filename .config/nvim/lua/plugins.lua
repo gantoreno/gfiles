@@ -144,6 +144,7 @@ return packer.startup(function(use)
           }
         },
         view = {
+          width = 35,
           signcolumn = "no"
         },
         update_focused_file = {
