@@ -45,6 +45,7 @@ set number
 set splitbelow
 set splitright
 set termguicolors
+set relativenumber
 
 set statusline=%!Statusline()
 
