@@ -9,7 +9,7 @@ Plug 'gantoreno/vim-gabriel'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-Plug 'neoclide/coc.nvim', { 'branch': 'release', 'do': 'yarn install' }
+Plug 'neoclide/coc.nvim', { 'commit': '49d73e6', 'do': 'yarn install' }
 
 Plug 'tomtom/tcomment_vim'
 
