@@ -14,6 +14,9 @@ local config = {
     },
   },
   highlights = {
+    buffer_selected = {
+      gui = 'none'
+    },
     fill = {
       guibg = "#1b1c1e"
     },
