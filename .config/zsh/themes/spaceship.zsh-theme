@@ -36,7 +36,7 @@ node_version() {
 
 
 symbol() {
-  echo "%B%F{%(?.green.red)}➜%f%b "
+  echo "%B%F{%(?.green.red)}❯%f%b "
 }
 
 PROMPT=$'\n'
