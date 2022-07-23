@@ -9,14 +9,14 @@ Plug 'gantoreno/vim-gabriel'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-Plug 'neoclide/coc.nvim', { 'commit': '49d73e6', 'do': 'yarn install' }
-
 Plug 'tomtom/tcomment_vim'
 
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
 Plug 'voldikss/vim-floaterm'
+
+Plug 'neoclide/coc.nvim', { 'commit': '49d73e6', 'do': 'yarn install' }
 
 call plug#end()
 
