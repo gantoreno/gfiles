@@ -97,8 +97,6 @@ alias ws="workspace"
 
 alias lzg="lazygit"
 
-alias code="code-insiders"
-
 alias gpl="git pull"
 alias gck="git checkout"
 alias gaa="git add ."
