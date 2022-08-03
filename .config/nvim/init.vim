@@ -76,7 +76,7 @@ let g:floaterm_shell = 'NEOVIM=1 '.&shell
 let g:floaterm_height = 0.25
 let g:floaterm_autoclose = 1
 let g:floaterm_wintype = 'split'
-let g:floaterm_position = 'botright'
+let g:floaterm_position = 'bottom'
 let g:floaterm_keymap_toggle = '<leader>tt'
 
 let g:currentmode={
@@ -125,7 +125,8 @@ nmap <silent> <leader>nn :CocCommand explorer<CR>
 nmap <silent> <leader>ss :SynStack<CR>
 nmap <silent> <leader>coc :CocConfig<CR>
 
-nmap <silent> <leader>lzg :FloatermNew --wintype=float --width=0.8 --height=0.8 --position=center lazygit<CR>
+nmap <silent> <leader>lzg :FloatermNew --autoclose=2 --wintype=float --width=0.8 --height=0.8 --position=center lazygit<CR>
+nmap <silent> <leader>glg :FloatermNew --autoclose=2 --wintype=float --width=0.8 --height=0.8 --position=center git log --graph<CR>
 
 nnoremap <silent> K :call ShowDocumentation()<CR>
 
