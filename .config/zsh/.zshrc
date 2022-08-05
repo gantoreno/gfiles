@@ -128,5 +128,4 @@ if [[ $TERM_PROGRAM == "iTerm.app" && -z "$NEOVIM" ]]; then
   fetch
 fi
 # }}}
-#
 
