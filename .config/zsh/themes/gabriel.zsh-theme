@@ -24,7 +24,18 @@ parse_git_branch() {
 
   [[ -z $branch ]] && return
 
-	@@ -22,11 +39,16 @@ date() {
+  local dirty=$(git status --porcelain 2> /dev/null)
+
+  [[ ! -z $dirty ]] && echo " %b%fon %B%F{red}$branch %F{yellow}[!?]%b%f" || echo " %b%fon %B%F{red}$branch%f%b"
+}
+
+status() {
+  echo "%(?.. %b%fexited %B%F{red}%?%f%b)"
+}
+
+date() {
+  local segment="at %B%F{magenta}%D{%L:%M %p}%f%b"
+
   echo %s $segment
 }
 
