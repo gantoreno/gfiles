@@ -28,10 +28,10 @@ set cmdheight=0
 set clipboard=unnamedplus
 set encoding=utf-8
 set fileencoding=utf-8
-set laststatus=3
+set laststatus=0
 set mouse=a
 set shiftwidth=2
-set signcolumn=number
+set signcolumn=yes
 set so=15
 set softtabstop=2
 
@@ -45,7 +45,6 @@ set number
 set splitbelow
 set splitright
 set termguicolors
-set relativenumber
 
 set statusline=%!Statusline()
 

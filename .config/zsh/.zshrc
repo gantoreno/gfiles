@@ -36,8 +36,6 @@ plugins=(
   zsh-syntax-highlighting/zsh-syntax-highlighting
 )
 
-# [[ -z "$NEOVIM" ]] && plugins+=(zsh-autosuggestions/zsh-autosuggestions)
-
 foreach plugin in $plugins
   plugin_path="$ZSHDIR/plugins/$plugin.plugin.zsh" 
 
@@ -49,9 +47,7 @@ end
 export DEFAULT_USER="gabrielmoreno"
 
 export CLICOLOR=1
-export LSCOLORS="GxGxBxDxCxEgEdxbxgxcxd"
-# export LS_COLORS="di=1;36"
-# export EXA_COLORS="da=36"
+export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 
 export EDITOR="nvim"
 export EDITORRC="$HOME/.config/nvim/init.vim"
@@ -82,7 +78,7 @@ lazy_load_nvm() {
 # }}}
 
 # Aliases {{{
-alias ls="exa"
+alias ls="ls"
 
 alias l="ls"
 alias la="ls -a"
@@ -123,3 +119,8 @@ alias tmuxconfig="$EDITOR ~/.config/tmux/.tmux.conf"
 alias themeconfig="$EDITOR $ZSHDIR/themes/$THEME.zsh-theme"
 # }}}
 
+# Variables {{{
+# ZSH_HIGHLIGHT_STYLES[alias]='fg=white,bold'
+# ZSH_HIGHLIGHT_STYLES[builtin]='fg=white,bold'
+# ZSH_HIGHLIGHT_STYLES[command]='fg=white,bold'
+# }}}
