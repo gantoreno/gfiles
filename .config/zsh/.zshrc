@@ -119,3 +119,8 @@ alias tmuxconfig="$EDITOR ~/.config/tmux/.tmux.conf"
 alias themeconfig="$EDITOR $ZSHDIR/themes/$THEME.zsh-theme"
 # }}}
 
+# Fetch {{{
+if [[ "$TERM_PROGRAM" == "iTerm.app" ]]; then
+  fetch
+fi
+# }}}
