@@ -78,7 +78,7 @@ lazy_load_nvm() {
 # }}}
 
 # Aliases {{{
-alias ls="ls"
+alias ls="exa"
 
 alias l="ls"
 alias la="ls -a"
@@ -118,6 +118,11 @@ alias vimconfig="$EDITOR $EDITORRC"
 alias tmuxconfig="$EDITOR ~/.config/tmux/.tmux.conf"
 alias themeconfig="$EDITOR $ZSHDIR/themes/$THEME.zsh-theme"
 # }}}
+
+if [[ "$TERM_PROGRAM" == "iTerm.app" ]]; then
+  echo ""
+  fetch
+fi
 
 # Variables {{{
 # ZSH_HIGHLIGHT_STYLES[alias]='fg=white,bold'
