@@ -119,13 +119,3 @@ alias tmuxconfig="$EDITOR ~/.config/tmux/.tmux.conf"
 alias themeconfig="$EDITOR $ZSHDIR/themes/$THEME.zsh-theme"
 # }}}
 
-if [[ "$TERM_PROGRAM" == "iTerm.app" ]]; then
-  echo ""
-  fetch
-fi
-
-# Variables {{{
-# ZSH_HIGHLIGHT_STYLES[alias]='fg=white,bold'
-# ZSH_HIGHLIGHT_STYLES[builtin]='fg=white,bold'
-# ZSH_HIGHLIGHT_STYLES[command]='fg=white,bold'
-# }}}

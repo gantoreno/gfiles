@@ -4,7 +4,7 @@ filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'gantoreno/vim-gabriel'
+Plug 'gantoreno/vim-gabriel', { 'commit': 'db53be0' }
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
