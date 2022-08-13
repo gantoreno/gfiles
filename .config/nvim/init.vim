@@ -4,12 +4,14 @@ filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'gantoreno/vim-gabriel', { 'commit': 'db53be0' }
+Plug 'gantoreno/vim-gabriel'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'tomtom/tcomment_vim'
+
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
@@ -47,6 +49,17 @@ set splitright
 set termguicolors
 
 set statusline=%!Statusline()
+
+let g:indent_blankline_char='▏'
+let g:indent_blankline_filetype_exclude = [
+  \ "help",
+  \ "term",
+  \ "packer",
+  \ "dashboard",
+  \ "NvimTree",
+  \ ]
+let g:indent_blankline_show_first_indent_level = v:true
+let g:indent_blankline_show_trailing_blankline_indent = v:false
 
 let g:mapleader = ' '
 
