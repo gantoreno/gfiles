@@ -22,12 +22,6 @@ autoload -U compinit && compinit
 autoload -U promptinit && promptinit
 # }}}
 
-# Theme loader {{{
-THEME="gabriel"
-
-[[ ! -z $THEME ]] && source "$ZSHDIR/themes/$THEME.zsh-theme"
-# }}}
-
 # Plugin loader {{{
 plugins=(
   zsh-z
@@ -41,6 +35,12 @@ foreach plugin in $plugins
 
   [[ -e $plugin_path ]] && source $plugin_path
 end
+# }}}
+
+# Theme loader {{{
+THEME="gabriel"
+
+[[ ! -z $THEME ]] && source "$ZSHDIR/themes/$THEME.zsh-theme"
 # }}}
 
 # Exports {{{

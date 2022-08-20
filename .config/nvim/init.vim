@@ -26,8 +26,8 @@ colorscheme gabriel
 
 set background=dark
 set backspace=indent,eol,start
-set cmdheight=0
 set clipboard=unnamedplus
+set cmdheight=0
 set encoding=utf-8
 set fileencoding=utf-8
 set laststatus=3

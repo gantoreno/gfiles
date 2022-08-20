@@ -1,6 +1,0 @@
-#!/bin/sh
-
-source=$1
-basename=$(basename $source)
-echo $source
-echo $basename

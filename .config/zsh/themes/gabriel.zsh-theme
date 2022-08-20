@@ -1,54 +1,64 @@
-function preexec() {
-  timer=$(($(gdate +%s%0N)/1000000))
+segment() {
+  local segment="$1"
+
+  [[ ! -z $2 ]] && segment="%F{$2}$segment%f"
+  [[ $3 == 'bold' ]] && segment="%B$segment%b"
+  [[ ! -z $4 ]] && segment="$4 $segment"
+
+  echo "$segment "
 }
 
-function precmd() {
-  [[ $? == "130" ]] && timer=$(($(gdate +%s%0N)/1000000))
+directory() {
+  local dir=$(shrink_path -f)
+
+  [[ -z $dir ]] && return
+
+  segment $dir blue bold
 }
 
-function benchmark() {
-  if [ $timer ]; then
-    now=$(($(gdate +%s%0N)/1000000))
-    elapsed=$(($now-$timer))
-
-    result=$(format-time $elapsed)
-
-    echo " took %B%F{yellow}$result%f%b"
-
-    unset timer
-  fi
-}
-
-parse_git_branch() {
-  local branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+repository() {
+  local branch=$(git_prompt_info)
 
   [[ -z $branch ]] && return
 
-  local dirty=$(git status --porcelain 2> /dev/null)
-
-  [[ ! -z $dirty ]] && echo " %b%fon %B%F{red}$branch %F{yellow}[!?]%b%f" || echo " %b%fon %B%F{red}$branch%f%b"
-}
-
-status() {
-  echo "%(?.. %b%fexited %B%F{red}%?%f%b)"
+  segment $branch red bold on
 }
 
 date() {
-  local segment="at %B%F{magenta}%D{%L:%M %p}%f%b"
+  local timestamp="%B%F{magenta}%D{%L:%M %p}%f%b"
 
-  echo %s $segment
+  segment $timestamp magenta bold at
+}
+
+status() {
+  echo "%(?..%b%fexited %B%F{red}%?%f%b )"
 }
 
 symbol() {
-  echo " "
+  local icon=""
+
+  segment $icon white bold
 }
 
-PROMPT=$'\n'
+prompt() {
+  PROMPT=$'
+'
 
-PROMPT+=$'%F{blue}%B$(shrink_path -f)%b%f'
-PROMPT+=$'%F{red}%B$(parse_git_branch)%b%f'
-PROMPT+=$'$(date)'
-PROMPT+=$'$(status)'
-PROMPT+=$'$(benchmark)'
-PROMPT+=$'\n'
-PROMPT+=$'$(symbol)'
+  PROMPT+=$(directory)
+  PROMPT+=$(repository)
+  PROMPT+=$(date)
+  PROMPT+=$(status)
+
+  PROMPT+=$'
+'
+
+  PROMPT+=$(symbol)
+}
+
+autoload -Uz add-zsh-hook
+
+add-zsh-hook precmd prompt
+
+ZSH_THEME_GIT_PROMPT_PREFIX=""
+ZSH_THEME_GIT_PROMPT_SUFFIX=""
+ZSH_THEME_GIT_PROMPT_DIRTY=" %F{yellow}%B[!?]%b%f"
