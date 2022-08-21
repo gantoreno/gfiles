@@ -1,15 +1,15 @@
 export ZSHDIR="$HOME/.config/zsh"
 
-source "$ZSHDIR/utils/functions.zsh"
-
-bindkey -v
-bindkey ^R history-incremental-search-backward
+export PATH="$HOME/.fig/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 export EDITOR="nvim"
 export LS="exa"
 
-export PATH="$HOME/.fig/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
+source "$ZSHDIR/utils/functions.zsh"
+
+bindkey -v
+bindkey ^R history-incremental-search-backward
 
 plugin fnm
 plugin git
