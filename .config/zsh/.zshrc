@@ -23,7 +23,7 @@ theme gabriel
 alias vim="$EDITOR"
 alias ls="$LS"
 
-alias vimconfig="$EDITOR $HOME/.config/nvim/init.vim"
+alias editorconfig="$EDITOR $HOME/.config/nvim/init.vim"
 alias zshconfig="$EDITOR $HOME/.config/zsh/.zshrc"
 
 if [[ $TERM_PROGRAM == "iTerm.app" && $(type macfetch) ]]; then
