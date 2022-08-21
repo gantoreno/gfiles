@@ -37,7 +37,7 @@ status() {
 symbol() {
   local icon=""
 
-  segment $icon white bold
+  segment $icon white
 }
 
 prompt() {

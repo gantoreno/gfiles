@@ -1,11 +1,11 @@
 theme() {
-  local path="$ZSHDIR/themes/$1.zsh-theme"
+  local theme_path="$ZSHDIR/themes/$1.zsh-theme"
 
-  [[ -f $path ]] && source $path
+  [[ -f $theme_path ]] && source $theme_path
 }
 
 plugin() {
-  local path="$ZSHDIR/plugins/$1.plugin.zsh"
+  local plugin_path="$ZSHDIR/plugins/$1.plugin.zsh"
 
-  [[ -f $path ]] && source $path
+  [[ -f $plugin_path ]] && source $plugin_path
 }
