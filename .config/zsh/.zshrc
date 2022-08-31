@@ -27,7 +27,7 @@ plugin shrink-path
 plugin zsh-syntax-highlighting off
 plugin zsh-z
 
-theme default
+theme saturn/saturn
 
 banner off
 
