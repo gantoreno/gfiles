@@ -4,3 +4,9 @@
 [submodule "zsh-autosuggestions"]
   path = .config/zsh/plugins/zsh-autosuggestions
   url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule ".config/zsh/themes/saturn"]
+	path = .config/zsh/themes/saturn
+	url = https://github.com/gantoreno/saturn-prompt
+[submodule ".config/zsh/themes/spaceship"]
+	path = .config/zsh/themes/spaceship
+	url = https://github.com/spaceship-prompt/spaceship-prompt

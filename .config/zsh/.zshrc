@@ -8,13 +8,16 @@ export FETCH="macfetch"
 export LS="ls"
 
 export CLICOLOR=1
-export LSCOLORS="GxGxBxDxCxEgEdxbxgxcxd"
+export LSCOLORS="GxGxBxDxCxEgEdxbxgxcx"
 
 source "$ZSHDIR/utils/functions.zsh"
 
-setopt promptsubst
+setopt PROMPT_SUBST
 
-bindkey -v
+autoload -U colors && colors
+autoload -U compinit && compinit
+autoload -U promptinit && promptinit
+
 bindkey ^R history-incremental-search-backward
 
 plugin fnm
@@ -24,7 +27,7 @@ plugin shrink-path
 plugin zsh-syntax-highlighting off
 plugin zsh-z
 
-theme basic
+theme default
 
 banner off
 
@@ -33,4 +36,3 @@ alias ls="$LS"
 
 alias editorconfig="$EDITOR $HOME/.vimrc"
 alias zshconfig="$EDITOR $HOME/.config/zsh/.zshrc"
-
