@@ -11,6 +11,8 @@ source "$ZSHDIR/utils/functions.zsh"
 bindkey -v
 bindkey ^R history-incremental-search-backward
 
+setopt prompt_subst
+
 plugin fnm
 plugin git
 plugin rbenv
@@ -26,6 +28,3 @@ alias ls="$LS"
 alias editorconfig="$EDITOR $HOME/.config/nvim/init.vim"
 alias zshconfig="$EDITOR $HOME/.config/zsh/.zshrc"
 
-if [[ $TERM_PROGRAM == "iTerm.app" && $(type macfetch) ]]; then
-  macfetch
-fi
