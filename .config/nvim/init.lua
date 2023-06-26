@@ -8,7 +8,7 @@ require('statusline')
 require('tabline')
 
 -- Options
+require('options')
 require('autocommands')
-require('config')
 require('keymaps')
 
