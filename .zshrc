@@ -1,8 +1,6 @@
 # Oh-My-Zsh stuff
 export ZSH="$HOME/.oh-my-zsh"
-export LANGINFO="UTF-8 $LANGINFO"
 
-# Prompt theme
 ZSH_THEME="gabriel"
 
 CUSTOM_LS_COLORS="Exfxcxdxbxegedabagacad"
