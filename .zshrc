@@ -34,7 +34,7 @@ alias gsp="git status --porcelain"
 alias :wq="exit"
 
 alias zshconfig="vim $HOME/Developer/Configuration/gfiles/.zshrc"
-alias vimconfig="vim $HOME/Developer/Configuration/gfiles/.config/nvim/init.vim"
+alias vimconfig="vim $HOME/Developer/Configuration/gfiles/.config/nvim/init.lua"
 
 # Evals
 eval $(fnm env)
