@@ -33,6 +33,9 @@ alias gsp="git status --porcelain"
 
 alias :wq="exit"
 
+alias zshconfig="vim $HOME/Developer/Configuration/gfiles/.zshrc"
+alias vimconfig="vim $HOME/Developer/Configuration/gfiles/.config/nvim/init.vim"
+
 # Evals
 eval $(fnm env)
 
@@ -43,6 +46,8 @@ export PATH="$PATH:$HOME/.scripts"
 export PATH="$PATH:$HOME/.cargo/bin"
 
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+export EDITOR="nvim"
 
 # Zemoga stuff
 export AWS_CA_BUNDLE="/Library/Application Support/Netskope/STAgent/data/nscacert_combined.pem"
