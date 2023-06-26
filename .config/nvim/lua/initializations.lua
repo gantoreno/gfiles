@@ -12,6 +12,7 @@ require('nvim-tree').setup({
   renderer = {
     group_empty = true,
     icons = {
+      git_placement = 'after',
       glyphs = {
         folder = {
           default = '',
@@ -48,7 +49,7 @@ require('telescope').setup({
 -- Treesitter
 require('nvim-treesitter.configs').setup({
   ensure_installed = 'all',
-  indent = { enable = false },
+  indent = { enable = true },
   highlight = { enable = true },
 })
 
