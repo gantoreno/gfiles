@@ -13,7 +13,6 @@ o.smartindent = true
 o.splitbelow = true
 o.splitright = true
 o.termguicolors = true
-o.autochdir = true
 
 o.so = 15
 o.laststatus = 3
