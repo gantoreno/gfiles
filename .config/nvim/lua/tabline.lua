@@ -34,7 +34,9 @@ function get_icon(bufname, extension)
 end
 
 function with_highlight_group(text, hl)
-  return '%#' .. hl .. "#" .. text .. '%##'
+  return table.concat {
+    '%#', hl, "#", text, '%##'
+  }
 end
 
 -- Tabline

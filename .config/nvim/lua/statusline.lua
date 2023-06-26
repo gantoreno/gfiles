@@ -39,7 +39,29 @@ local paddings = {
 
 local separator = '%='
 
--- Functions
+-- Helper functions
+function all_trim(s)
+   return s:match("^%s*(.-)%s*$")
+end
+
+function get_mode_highlight(mode)
+  local mode = all_trim(mode)
+  local highlight = mode_colors[mode]
+
+  if highlight == nil then
+    return mode_colors['default']
+  end
+
+  return highlight
+end
+
+function with_highlight_group(text, hl)
+  return table.concat {
+    '%#', hl, "#", text, '%##'
+  }
+end
+
+-- Segments
 local function branch()
   local branch = fn.system('git branch --show-current 2> /dev/null | tr -d "\n"')
 
@@ -47,7 +69,11 @@ local function branch()
     branch = 'No branch'
   end
 
-  return ' ' .. string.format(' %s', branch) .. ' '
+  return table.concat {
+    ' ',
+    string.format(' %s', branch),
+    ' ',
+  }
 end
 
 local function mode()
@@ -58,7 +84,11 @@ local function mode()
     current_mode_mapped = 'Visual Block' -- TODO: Fix this behavior
   end
 
-  return ' ' .. current_mode_mapped:upper() .. ' '
+  return table.concat {
+    ' ',
+    current_mode_mapped:upper(),
+    ' '
+  }
 end
 
 local function metadata()
@@ -84,33 +114,23 @@ local function filetype()
     filetype = 'Unknown'
   end
 
-  return ' ' .. string.format(" %s", filetype) .. ' '
-end
-
-function with_highlight_group(text, hl)
-  return '%#' .. hl .. "#" .. text .. '%##'
-end
-
-function all_trim(s)
-   return s:match( "^%s*(.-)%s*$" )
-end
-
-function get_mode_highlight(mode)
-  local mode = all_trim(mode)
-  local highlight = mode_colors[mode]
-
-  if highlight == nil then
-    return mode_colors['default']
-  end
-
-  return highlight
+  return table.concat {
+    ' ',
+    string.format(" %s", filetype),
+    ' '
+  }
 end
 
 function lsp()
   local error_count = 0
   local warning_count = 0
 
-  return with_highlight_group('  ', 'ErrorStrong')  .. error_count .. fn.with_highlight_group('  ', 'WarningStrong') .. warning_count .. ' '
+  return table.concat {
+    with_highlight_group('  ', 'ErrorStrong'),
+    error_count,
+    with_highlight_group('  ', 'WarningStrong'),
+    warning_count
+  }
 end
 
 -- Statusline
