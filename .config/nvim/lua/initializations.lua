@@ -1,7 +1,10 @@
+-- Autopairs
 require("nvim-autopairs").setup({ check_ts = true })
 
+-- Comments
 require("nvim_comment").setup({})
 
+-- File tree
 require('nvim-tree').setup({
   actions = {
     open_file = { quit_on_open = true }
@@ -32,6 +35,7 @@ require('nvim-tree').setup({
   filters = { dotfiles = false },
 })
 
+-- Telescope
 require('telescope').setup({
   defaults = {
     mappings = { 
@@ -41,12 +45,14 @@ require('telescope').setup({
   },
 })
 
+-- Treesitter
 require('nvim-treesitter.configs').setup({
   ensure_installed = 'all',
   indent = { enable = false },
   highlight = { enable = true },
 })
 
+-- Devicons
 require('nvim-web-devicons').setup({
   strict = true,
   override_by_extension = {
