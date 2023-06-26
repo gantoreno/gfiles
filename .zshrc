@@ -14,7 +14,7 @@ plugins=(
   zsh-syntax-highlighting
 )
 
-source $ZSH/oh-my-zsh.sh 2> /dev/null
+source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias g="git"
