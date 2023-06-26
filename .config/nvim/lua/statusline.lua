@@ -57,7 +57,11 @@ end
 
 function with_highlight_group(text, hl)
   return table.concat {
-    '%#', hl, "#", text, '%##'
+    '%#', 
+    hl, 
+    "#", 
+    text, 
+    '%##'
   }
 end
 
