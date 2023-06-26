@@ -1,5 +1,6 @@
 -- Plugins
 require('plugins')
+require('initializations')
 
 -- UI
 require('colors')
