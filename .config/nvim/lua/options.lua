@@ -31,7 +31,6 @@ o.shortmess = o.shortmess .. 'astWAIc'
 -- Globals
 g.mapleader = ' '
 
-
 -- Extra plugin options
 g.floaterm_borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' }
 g.floaterm_shell = 'NEOVIM=1 /usr/bin/env zsh'
