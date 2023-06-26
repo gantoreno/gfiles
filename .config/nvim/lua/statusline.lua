@@ -87,7 +87,7 @@ local function filetype()
   return ' ' .. string.format(" %s", filetype) .. ' '
 end
 
-fn.with_highlight_group = function(text, hl)
+function with_highlight_group(text, hl)
   return '%#' .. hl .. "#" .. text .. '%##'
 end
 
@@ -110,18 +110,18 @@ function lsp()
   local error_count = 0
   local warning_count = 0
 
-  return fn.with_highlight_group('  ', 'ErrorStrong')  .. error_count .. fn.with_highlight_group('  ', 'WarningStrong') .. warning_count .. ' '
+  return with_highlight_group('  ', 'ErrorStrong')  .. error_count .. fn.with_highlight_group('  ', 'WarningStrong') .. warning_count .. ' '
 end
 
 -- Statusline
 function statusline()
   return table.concat {
-    fn.with_highlight_group(mode(), 'UIBlockInverse'),
-    fn.with_highlight_group(branch(), 'UIBlockMuted'),
-    fn.with_highlight_group(lsp(), 'UIBlockMuted'),
+    with_highlight_group(mode(), 'UIBlockInverse'),
+    with_highlight_group(branch(), 'UIBlockMuted'),
+    with_highlight_group(lsp(), 'UIBlockMuted'),
     separator,
-    fn.with_highlight_group(metadata(), 'UIBlockMuted'),
-    fn.with_highlight_group(filetype(), 'UIBlockInverse'),
+    with_highlight_group(metadata(), 'UIBlockMuted'),
+    with_highlight_group(filetype(), 'UIBlockInverse'),
   }
 end
 
