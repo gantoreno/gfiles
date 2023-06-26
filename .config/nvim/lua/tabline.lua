@@ -60,7 +60,7 @@ function tabline()
   end
 
   t = t .. '%='
-  t = t .. fn.with_highlight_group(' X ', 'UIBlockMuted')
+  t = t .. fn.with_highlight_group('%999X X ', 'UIBlockMuted')
 
   return t
 end
