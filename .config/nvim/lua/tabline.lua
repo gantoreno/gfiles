@@ -56,7 +56,7 @@ function tabline()
     local is_active = index == current_index
 
     t = t .. "%" .. index .. "T" 
-    t = t .. fn.with_highlight_group(' ' .. icon .. file_name .. (is_modified and ' ⏺ ' or ' '), is_active and is_modified and 'UIBlockYellow' or is_active and 'UIBlockBlue' or 'UIBlockMuted')
+    t = t .. fn.with_highlight_group(' ' .. icon .. file_name .. (is_modified and ' ⏺ ' or ' '), is_active and 'UIBlockInverse' or 'UIBlockMuted')
   end
 
   t = t .. '%='

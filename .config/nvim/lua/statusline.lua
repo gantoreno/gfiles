@@ -27,19 +27,6 @@ local modes = {
   ['t'] = 'Terminal',
 }
 
-local mode_colors = {
-  ['Normal'] = 'UIBlockBlue',
-  ['Replace'] = 'UIBlockRed',
-  ['Insert'] = 'UIBlockGreen',
-  ['Visual'] = 'UIBlockCyan',
-  ['Visual Line'] = 'UIBlockCyan',
-  ['Visual Block'] = 'UIBlockMagenta',
-  ['Command'] = 'UIBlockMagenta',
-  ['Terminal'] = 'UIBlockRed',
-  ['Shell'] = 'UIBlockGreen',
-  ['default'] = 'UIBlockBlue',
-}
-
 local endoflines = {
   unix = 'lf',
   windows = 'crlf',
@@ -121,16 +108,12 @@ end
 
 -- Statusline
 function statusline()
-  local mode = mode()
-  local branch = branch()
-  local metadata = metadata()
-  local filetype = filetype()
   return table.concat {
-    fn.with_highlight_group(string.upper(mode), get_mode_highlight(mode)),
-    fn.with_highlight_group(branch, 'UIBlockMuted'),
+    fn.with_highlight_group(mode(), 'UIBlockInverse'),
+    fn.with_highlight_group(branch(), 'UIBlockMuted'),
     separator,
-    fn.with_highlight_group(metadata, 'UIBlockMuted'),
-    fn.with_highlight_group(filetype, 'UIBlockBlue'),
+    fn.with_highlight_group(metadata(), 'UIBlockMuted'),
+    fn.with_highlight_group(filetype(), 'UIBlockInverse'),
   }
 end
 
