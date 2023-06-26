@@ -56,13 +56,7 @@ function get_mode_highlight(mode)
 end
 
 function with_highlight_group(text, hl)
-  return table.concat {
-    '%#', 
-    hl, 
-    "#", 
-    text, 
-    '%##'
-  }
+  return table.concat { '%#', hl, "#", text, '%##' }
 end
 
 -- Segments
@@ -73,11 +67,7 @@ local function branch()
     branch = 'No branch'
   end
 
-  return table.concat {
-    ' ',
-    string.format(' %s', branch),
-    ' ',
-  }
+  return table.concat { ' ', string.format(' %s', branch), ' ' }
 end
 
 local function mode()
@@ -88,11 +78,7 @@ local function mode()
     current_mode_mapped = 'Visual Block' -- TODO: Fix this behavior
   end
 
-  return table.concat {
-    ' ',
-    current_mode_mapped:upper(),
-    ' '
-  }
+  return table.concat { ' ', current_mode_mapped:upper(), ' ' }
 end
 
 local function metadata()
@@ -100,15 +86,7 @@ local function metadata()
   local encoding = bo.fenc
   local endofline = endoflines[vim.bo.ff]
 
-  return table.concat {
-    ' ',
-    string.format("Spaces: %s", spaces),
-    ' | ',
-    string.format("%s", encoding):upper(),
-    ' | ',
-    string.format("%s", endofline):upper(),
-    ' ',
-  }
+  return table.concat { ' Spaces: ', spaces, ' | ', encoding:upper(), ' | ', endofline:upper(), ' ' }
 end
 
 local function filetype()
@@ -118,11 +96,7 @@ local function filetype()
     filetype = 'Unknown'
   end
 
-  return table.concat {
-    ' ',
-    string.format(" %s", filetype),
-    ' '
-  }
+  return table.concat { ' ', string.format(" %s", filetype), ' ' }
 end
 
 function lsp()

@@ -5,7 +5,7 @@ local o = vim.o
 local fn = vim.fn
 local api = vim.api
 
--- Functions
+-- Helper functions
 function get_tab_name(bufname, index)
     local title = fn.gettabvar(index, 'TablineTitle')
 
@@ -34,9 +34,7 @@ function get_icon(bufname, extension)
 end
 
 function with_highlight_group(text, hl)
-  return table.concat {
-    '%#', hl, "#", text, '%##'
-  }
+  return table.concat { '%#', hl, "#", text, '%##' }
 end
 
 -- Tabline
