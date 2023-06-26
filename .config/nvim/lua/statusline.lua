@@ -106,11 +106,19 @@ function get_mode_highlight(mode)
   return highlight
 end
 
+function lsp()
+  local error_count = 0
+  local warning_count = 0
+
+  return fn.with_highlight_group('  ' .. error_count, 'ErrorStrong') .. fn.with_highlight_group('  ' .. warning_count, 'WarningStrong') .. ' '
+end
+
 -- Statusline
 function statusline()
   return table.concat {
     fn.with_highlight_group(mode(), 'UIBlockInverse'),
     fn.with_highlight_group(branch(), 'UIBlockMuted'),
+    fn.with_highlight_group(lsp(), 'UIBlockMuted'),
     separator,
     fn.with_highlight_group(metadata(), 'UIBlockMuted'),
     fn.with_highlight_group(filetype(), 'UIBlockInverse'),
