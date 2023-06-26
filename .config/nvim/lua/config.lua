@@ -9,7 +9,6 @@ o.hlsearch = false
 o.number = true
 o.relativenumber = true
 o.showmode = false
-o.smartindent = true
 o.splitbelow = true
 o.splitright = true
 o.termguicolors = true
