@@ -36,7 +36,6 @@ require('packer').startup(function(use)
         },
         renderer = {
           group_empty = true,
-          root_folder_label = false,
           icons = {
             glyphs = {
               folder = {
@@ -71,13 +70,13 @@ require('packer').startup(function(use)
     requires = 'nvim-lua/plenary.nvim',
     config = function()
       require('telescope').setup({
-          defaults = {
-            mappings = { 
-              i = { ['<esc>'] = require('telescope.actions').close } 
-            },
-            file_ignore_patterns = { 'node_modules', '.git', 'build' },
+        defaults = {
+          mappings = { 
+            i = { ['<esc>'] = require('telescope.actions').close } 
           },
-        })
+          file_ignore_patterns = { 'node_modules', '.git', 'build' },
+        },
+      })
     end
   })
 
