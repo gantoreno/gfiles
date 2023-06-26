@@ -18,10 +18,7 @@ require('packer').startup(function(use)
 
   -- File navigation
   use('nvim-tree/nvim-tree.lua')
-  use({ 
-    'nvim-telescope/telescope.nvim', 
-    requires = 'nvim-lua/plenary.nvim',
-  })
+  use({ 'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim' })
 
   -- Git
   use('mhinz/vim-signify')
@@ -30,11 +27,7 @@ require('packer').startup(function(use)
   use('voldikss/vim-floaterm')
  
   -- Treesitter
-  use({
-    'nvim-treesitter/nvim-treesitter',
-    requires = 'nvim-treesitter/playground',
-    run = ':TSUpdate',
-  })
+  use({ 'nvim-treesitter/nvim-treesitter', requires = 'nvim-treesitter/playground', run = ':TSUpdate' })
 
   -- Icons
   use('nvim-tree/nvim-web-devicons')
