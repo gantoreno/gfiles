@@ -48,9 +48,7 @@ require('packer').startup(function(use)
           },
           special_files = {}
         },
-        update_focused_file = {
-          enable = true,
-        },
+        update_focused_file = { enable = true },
         tab = {
           sync = {
             open = true,
@@ -58,10 +56,8 @@ require('packer').startup(function(use)
             ignore = {},
           },
         },
-        view = {
-          signcolumn = "no",
-        },
-        filters = { dotfiles = true },
+        view = { signcolumn = "no" },
+        filters = { dotfiles = false },
       })
     end
   })
