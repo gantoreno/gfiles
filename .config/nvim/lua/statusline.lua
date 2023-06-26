@@ -58,7 +58,7 @@ local function mode()
     current_mode_mapped = 'Visual Block' -- TODO: Fix this behavior
   end
 
-  return ' ' .. current_mode_mapped .. ' '
+  return ' ' .. current_mode_mapped:upper() .. ' '
 end
 
 local function metadata()
@@ -110,7 +110,7 @@ function lsp()
   local error_count = 0
   local warning_count = 0
 
-  return fn.with_highlight_group('  ' .. error_count, 'ErrorStrong') .. fn.with_highlight_group('  ' .. warning_count, 'WarningStrong') .. ' '
+  return fn.with_highlight_group('  ', 'ErrorStrong')  .. error_count .. fn.with_highlight_group('  ', 'WarningStrong') .. warning_count .. ' '
 end
 
 -- Statusline
