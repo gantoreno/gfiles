@@ -1,6 +1,9 @@
 -- Plugins
 require('plugins')
 
+-- LSP
+require('lsp')
+
 -- UI
 require('colors')
 require('statusline')

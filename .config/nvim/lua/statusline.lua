@@ -100,8 +100,8 @@ local function filetype()
 end
 
 function lsp()
-  local error_count = 0
-  local warning_count = 0
+  local error_count = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
+  local warning_count = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
 
   return table.concat {
     with_highlight_group('  ', 'ErrorStrong'),

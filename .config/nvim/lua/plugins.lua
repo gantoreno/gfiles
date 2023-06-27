@@ -8,7 +8,7 @@ command("packadd packer.nvim")
 require('packer').startup(function(use)
   use('wbthomason/packer.nvim')
 
-  use('gantoreno/vim-gabriel')
+  use('/Users/gabrielmoreno/Developer/Personal/vim-gabriel')
 
   use('windwp/nvim-autopairs')
   use('terrortylor/nvim-comment')
@@ -17,12 +17,14 @@ require('packer').startup(function(use)
   use({ 'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim' })
 
   use('mhinz/vim-signify')
+  use('nvim-tree/nvim-web-devicons')
 
   use('voldikss/vim-floaterm')
+
+  use('neovim/nvim-lspconfig')
+  use({ 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } })
  
   use({ 'nvim-treesitter/nvim-treesitter', requires = 'nvim-treesitter/playground', run = ':TSUpdate' })
-
-  use('nvim-tree/nvim-web-devicons')
 end)
 
 -- Plugin configuration
