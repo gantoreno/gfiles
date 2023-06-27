@@ -21,7 +21,7 @@ o.cmdheight = 1
 
 o.backspace = 'indent,eol,start'
 o.clipboard = 'unnamedplus'
-o.signcolumn = 'number'
+o.signcolumn = 'yes'
 o.encoding = 'utf-8'
 o.fileencoding = 'utf-8'
 
