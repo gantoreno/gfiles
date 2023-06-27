@@ -23,7 +23,7 @@ require('packer').startup(function(use)
 
   use('neovim/nvim-lspconfig')
   use({ 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } })
- 
+
   use({ 'nvim-treesitter/nvim-treesitter', requires = 'nvim-treesitter/playground', run = ':TSUpdate' })
 end)
 

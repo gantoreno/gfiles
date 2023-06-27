@@ -41,7 +41,7 @@ local separator = '%='
 
 -- Helper functions
 function all_trim(s)
-   return s:match("^%s*(.-)%s*$")
+  return s:match("^%s*(.-)%s*$")
 end
 
 function get_mode_highlight(mode)
