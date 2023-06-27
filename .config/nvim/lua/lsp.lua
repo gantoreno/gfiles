@@ -47,12 +47,31 @@ cmp.setup({
   sources = {
     { name = 'nvim_lsp' }
   },
+  completion = {
+    completeopt = 'menu,menuone,noinsert'
+  },
+  mapping = {
+    ['<Down>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }), {'i'}),
+    ['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), {'i'}),
+    ['<Cr>'] = cmp.mapping.confirm({ select = true }),
+  },
   window = {
     completion = cmp.config.window.bordered({
       winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+      scrollbar = false,
     }),
     documentation = cmp.config.window.bordered({
       winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+      scrollbar = false,
     }),
   }
 })
+
+-- Icons
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
