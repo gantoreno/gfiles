@@ -31,14 +31,6 @@ for _, server in ipairs(servers) do
         border = border 
       }),
     },
-    on_attach = function(client, bufnr)
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        buffer = buffer,
-        callback = function()
-          vim.lsp.buf.format({ async = false })
-        end
-      })
-    end
   })
 end
 
@@ -48,6 +40,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local opts = { buffer = evt.buf }
 
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = evt.buf,
+      callback = function()
+        vim.lsp.buf.format({ async = false })
+      end
+    })
   end
 })
 

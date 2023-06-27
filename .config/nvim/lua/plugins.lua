@@ -72,6 +72,8 @@ require('telescope').setup({
   },
 })
 
+require('lspconfig.ui.windows').default_options.border = 'rounded'
+
 require('nvim-treesitter.configs').setup({
   ensure_installed = 'all',
   indent = { enable = true },
