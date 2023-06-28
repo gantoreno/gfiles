@@ -5,6 +5,10 @@ local cmp_lsp = require('cmp_nvim_lsp')
 -- Setup language servers.
 local servers = {
   'astro',
+  'eslint',
+  'html',
+  'jsonls',
+  'lua_ls',
   'tsserver',
 }
 
@@ -28,7 +32,7 @@ for _, server in ipairs(servers) do
         border = border
       }),
       ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-        border = border 
+        border = border
       }),
     },
   })
@@ -59,8 +63,8 @@ cmp.setup({
     completeopt = 'menu,menuone,noinsert'
   },
   mapping = {
-    ['<Down>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }), {'i'}),
-    ['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), {'i'}),
+    ['<Down>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }), { 'i' }),
+    ['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), { 'i' }),
     ['<Cr>'] = cmp.mapping.confirm({ select = true }),
   },
   window = {
@@ -76,11 +80,11 @@ cmp.setup({
 })
 
 -- Icons
-local signs = { 
-  Error = " ", 
-  Warn = " ", 
-  Hint = " ", 
-  Info = " " 
+local signs = {
+  Error = " ",
+  Warn = " ",
+  Hint = " ",
+  Info = " "
 }
 
 for type, icon in pairs(signs) do
