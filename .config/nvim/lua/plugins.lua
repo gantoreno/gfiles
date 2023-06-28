@@ -65,8 +65,8 @@ require('nvim-tree').setup({
 
 require('telescope').setup({
   defaults = {
-    mappings = { 
-      i = { ['<esc>'] = require('telescope.actions').close } 
+    mappings = {
+      i = { ['<esc>'] = require('telescope.actions').close }
     },
     file_ignore_patterns = { 'node_modules', '.git', 'build' },
   },
@@ -88,6 +88,5 @@ require('nvim-web-devicons').setup({
       color = "#e0622a",
       name = "Astro"
     }
-  };
+  },
 })
-
