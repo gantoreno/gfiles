@@ -81,18 +81,13 @@ require('packer').startup(function(use)
     config = function()
       require('telescope').setup({
         defaults = {
+          layout_strategy = 'vertical',
           mappings = {
-            i = { ['<esc>'] = require('telescope.actions').close }
+            i = {
+              ['<esc>'] = require('telescope.actions').close
+            }
           },
           file_ignore_patterns = { 'node_modules', '.git', 'build', 'static' },
-        },
-        pickers = {
-          find_files = {
-            theme = "dropdown",
-          },
-          live_grep = {
-            theme = "dropdown",
-          }
         },
       })
     end
