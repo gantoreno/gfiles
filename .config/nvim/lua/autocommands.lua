@@ -4,13 +4,17 @@ local tree_group = api.nvim_create_augroup("Tree", { clear = true })
 
 -- Autocommands
 api.nvim_create_autocmd(
-  'FileType', 
+  'FileType',
   { pattern = 'floaterm', command = 'setlocal nonumber nocursorline norelativenumber signcolumn=no', group = tree_group }
 )
 
 
 api.nvim_create_autocmd(
   { 'BufNewFile', 'BufRead' },
-  { pattern = '*.mdx', command = 'setlocal ft=markdown', group = tree_group }
+  { pattern = '*.mdx', command = 'setlocal ft=markdown' }
 )
 
+api.nvim_create_autocmd(
+  { 'BufNewFile', 'BufRead' },
+  { pattern = '.env*', command = 'setlocal ft=config' }
+)
