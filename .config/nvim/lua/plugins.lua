@@ -99,6 +99,7 @@ require('packer').startup(function(use)
     config = function()
       require('nvim-web-devicons').setup({
         strict = true,
+        default = true,
         override_by_extension = {
           ["astro"] = {
             icon = "󰑣",
@@ -132,6 +133,13 @@ require('packer').startup(function(use)
   })
 
   use({ 'nvim-treesitter/nvim-treesitter', requires = 'nvim-treesitter/playground', run = ':TSUpdate' })
+
+  use({
+    'laytan/cloak.nvim',
+    config = function()
+      require('cloak').setup({})
+    end
+  })
 
   if packer_bootstrap then
     require('packer').sync()
