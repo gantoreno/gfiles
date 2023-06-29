@@ -13,4 +13,3 @@ require('tabline')
 require('options')
 require('autocommands')
 require('keymaps')
-
