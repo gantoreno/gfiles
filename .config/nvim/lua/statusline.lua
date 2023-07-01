@@ -27,7 +27,7 @@ local endoflines = {
 
 local paddings = {
   small = '  ',
-  large = '  ',
+  large = '   ',
 }
 
 local separator = '%='
