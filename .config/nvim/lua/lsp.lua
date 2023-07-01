@@ -52,8 +52,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- Setup completion
 cmp.setup({
-  sources = {
-    { name = 'nvim_lsp' }
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'vsnip' },
+  }),
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body)   -- For `vsnip` users.
+    end,
   },
   completion = {
     completeopt = 'menu,menuone,noinsert'
