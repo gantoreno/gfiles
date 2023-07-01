@@ -141,6 +141,20 @@ require('packer').startup(function(use)
     end
   })
 
+  use({
+    'mhartington/formatter.nvim',
+    config = function()
+      require('formatter').setup({
+        filetype = {
+          javascript = { require('formatter.filetypes.javascript').prettier },
+          javascriptreact = { require('formatter.filetypes.javascriptreact').prettier },
+          typescript = { require('formatter.filetypes.typescript').prettier },
+          typescriptreact = { require('formatter.filetypes.typescriptreact').prettier },
+        }
+      })
+    end
+  })
+
   if packer_bootstrap then
     require('packer').sync()
   end
