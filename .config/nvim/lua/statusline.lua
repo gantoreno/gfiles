@@ -45,11 +45,7 @@ end
 
 local function mode()
   local current_mode = vim.api.nvim_get_mode().mode
-  local current_mode_mapped = modes[current_mode]
-
-  if current_mode_mapped == nil then
-    current_mode_mapped = 'Visual Block' -- TODO: Fix this behavior
-  end
+  local current_mode_mapped = modes[current_mode] or 'Visual Block'
 
   return string.format('-- %s --', string.upper(current_mode_mapped))
 end
