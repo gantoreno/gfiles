@@ -1,9 +1,3 @@
-local o = vim.o
-local bo = vim.bo
-
-local api = vim.api
-local fn = vim.fn
-
 -- Mappings
 local modes = {
   ['n'] = 'Normal',
@@ -40,7 +34,7 @@ local separator = '%='
 
 -- Functions
 local function branch()
-  local branch = fn.system('git branch --show-current 2> /dev/null | tr -d "\n"')
+  local branch = vim.fn.system('git branch --show-current 2> /dev/null | tr -d "\n"')
 
   if branch == '' then
     branch = 'No branch'
@@ -50,7 +44,7 @@ local function branch()
 end
 
 local function mode()
-  local current_mode = api.nvim_get_mode().mode
+  local current_mode = vim.api.nvim_get_mode().mode
   local current_mode_mapped = modes[current_mode]
 
   if current_mode_mapped == nil then
@@ -61,10 +55,10 @@ local function mode()
 end
 
 local function metadata()
-  local spaces = o.shiftwidth
-  local encoding = bo.fenc
+  local spaces = vim.o.shiftwidth
+  local encoding = vim.bo.fenc
   local endofline = endoflines[vim.bo.ff]
-  local filetype = bo.filetype
+  local filetype = vim.bo.filetype
 
   if filetype == '' then
     filetype = 'Unknown'
@@ -98,4 +92,4 @@ function statusline()
   }
 end
 
-api.nvim_exec('set statusline=%!v:lua.statusline()', false)
+vim.api.nvim_exec('set statusline=%!v:lua.statusline()', false)
