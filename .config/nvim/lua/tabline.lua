@@ -62,12 +62,12 @@ function tabline()
 
     t = t .. "%" .. index .. "T"
     t = t ..
-        (is_active and '▌  ' or '   ') ..
+        (is_active and '▌ ' or '  ') ..
         file_icon ..
         with_highlight_group(file_name,
           has_errors and 'Error' or has_warnings and 'WarningMsg' or
           is_active and 'StatusLineSel' or 'StatusLine') ..
-        (is_modified and ' ⏺ ' or is_active and '%999X  ×' or '   ')
+        (is_modified and with_highlight_group(' ⏺ ', is_active and 'StatusLineSel' or 'StatusLine') or is_active and '%999X × ' or '   ')
   end
 
   t = t .. '%='
