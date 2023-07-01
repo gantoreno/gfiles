@@ -25,9 +25,9 @@ function get_icon(bufname, extension)
   local filename = fn.fnamemodify(bufname, ':t')
 
   if ok then
-    local icon = web.get_icon(filename, extension, { default = true })
+    local icon, hl = web.get_icon(filename, extension, { default = true })
 
-    return icon
+    return with_highlight_group(icon, hl)
   end
 
   return nil
@@ -57,14 +57,20 @@ function tabline()
     local file_name = get_tab_name(buffer_name, index)
     local file_icon = get_icon(buffer_name, buffer_extension) .. ' ' or ''
 
+    local has_errors = #vim.diagnostic.get(buffer_number, { severity = vim.diagnostic.severity.ERROR }) > 0
+    local has_warnings = #vim.diagnostic.get(buffer_number, { severity = vim.diagnostic.severity.WARN }) > 0
+
     t = t .. "%" .. index .. "T"
     t = t ..
-    with_highlight_group(' ' .. file_icon .. file_name .. (is_modified and ' ⏺ ' or ' '),
-      is_active and 'UIBlockInverse' or 'UIBlockMuted')
+        (is_active and '▌  ' or '   ') ..
+        file_icon ..
+        with_highlight_group(file_name,
+          has_errors and 'Error' or has_warnings and 'WarningMsg' or
+          is_active and 'StatusLineSel' or 'StatusLine') ..
+        (is_modified and ' ⏺ ' or is_active and '%999X  ×' or '   ')
   end
 
   t = t .. '%='
-  t = t .. with_highlight_group('%999X X ', 'UIBlockMuted')
 
   return t
 end
