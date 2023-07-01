@@ -17,7 +17,7 @@ o.so = 15
 o.laststatus = 3
 o.showtabline = 2
 o.shiftwidth = 2
-o.cmdheight = 1
+o.cmdheight = 0
 
 o.backspace = 'indent,eol,start'
 o.clipboard = 'unnamedplus'
