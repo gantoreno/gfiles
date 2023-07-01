@@ -8,7 +8,6 @@ api.nvim_create_autocmd(
   { pattern = 'floaterm', command = 'setlocal nonumber nocursorline norelativenumber signcolumn=no', group = tree_group }
 )
 
-
 api.nvim_create_autocmd(
   { 'BufNewFile', 'BufRead' },
   { pattern = '*.mdx', command = 'setlocal ft=markdown' }
