@@ -37,7 +37,9 @@ end
 vim.api.nvim_create_autocmd('BufWinEnter', {
   pattern = '*',
   callback = function()
-    if winbar_ignore_filetypes[vim.bo.filetype] then
+    local filetype = vim.bo.filetype
+
+    if winbar_ignore_filetypes[filetype] or filetype == '' then
       return
     end
 
