@@ -29,7 +29,7 @@ require('nvim-tree').setup({
     special_files = {}
   },
   update_focused_file = {
-    tenable = true
+    enable = true
   },
   tab = {
     sync = {
