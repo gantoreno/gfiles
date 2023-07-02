@@ -6,6 +6,7 @@ require('nvim-tree').setup({
     group_empty = true,
     highlight_git = true,
     icons = {
+      symlink_arrow = ' -> ',
       show = {
         git = false
       },
