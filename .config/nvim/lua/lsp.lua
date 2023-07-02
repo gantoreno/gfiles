@@ -95,9 +95,3 @@ for type, icon in pairs(signs) do
 
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "", linehl = hl .. 'Background' })
 end
-
-vim.diagnostic.config({
-  virtual_text = {
-    prefix = ''
-  }
-})
