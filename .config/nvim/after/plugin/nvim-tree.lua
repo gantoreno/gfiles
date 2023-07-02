@@ -26,7 +26,9 @@ require('nvim-tree').setup({
     },
     special_files = {}
   },
-  update_focused_file = { enable = true },
+  update_focused_file = {
+    tenable = true
+  },
   tab = {
     sync = {
       open = true,
