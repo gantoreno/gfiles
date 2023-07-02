@@ -8,6 +8,7 @@ require('lsp')
 require('colors')
 require('statusline')
 require('tabline')
+require('winbar')
 
 -- Options
 require('options')
