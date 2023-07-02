@@ -14,14 +14,14 @@ local servers = {
 }
 
 local border = {
-  { "╭", "FloatBorder" },
-  { "─", "FloatBorder" },
-  { "╮", "FloatBorder" },
-  { "│", "FloatBorder" },
-  { "╯", "FloatBorder" },
-  { "─", "FloatBorder" },
-  { "╰", "FloatBorder" },
-  { "│", "FloatBorder" },
+  { '╭', 'FloatBorder' },
+  { '─', 'FloatBorder' },
+  { '╮', 'FloatBorder' },
+  { '│', 'FloatBorder' },
+  { '╯', 'FloatBorder' },
+  { '─', 'FloatBorder' },
+  { '╰', 'FloatBorder' },
+  { '│', 'FloatBorder' },
 }
 
 -- LSP settings (for overriding per client)
@@ -29,10 +29,10 @@ for _, server in ipairs(servers) do
   lspconfig[server].setup({
     capabilities = cmp_lsp.default_capabilities(),
     handlers = {
-      ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+      ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
         border = border
       }),
-      ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+      ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
         border = border
       }),
     },
@@ -59,7 +59,7 @@ cmp.setup({
   }),
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      vim.fn['vsnip#anonymous'](args.body) -- For `vsnip` users.
     end,
   },
   completion = {
@@ -72,11 +72,11 @@ cmp.setup({
   },
   window = {
     completion = cmp.config.window.bordered({
-      winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+      winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None',
       scrollbar = false,
     }),
     documentation = cmp.config.window.bordered({
-      winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+      winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None',
       scrollbar = false,
     }),
   }
@@ -84,14 +84,14 @@ cmp.setup({
 
 -- Icons
 local signs = {
-  Error = "",
-  Warn = "",
-  Hint = "",
-  Info = ""
+  Error = '',
+  Warn = '',
+  Hint = '',
+  Info = ''
 }
 
 for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
+  local hl = 'DiagnosticSign' .. type
 
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "", linehl = hl .. 'Background' })
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '', linehl = hl .. 'Background' })
 end
