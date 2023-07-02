@@ -9,6 +9,7 @@ function winbar()
   local w = '  '
 
   local parent_directory = string.match(vim.fn.expand('%:h'), "/(%w+)$") or '[No Directory]'
+
   local current_file = vim.fn.expand('%:t')
   local current_file_extension = vim.fn.fnamemodify(current_file, ':e')
 
