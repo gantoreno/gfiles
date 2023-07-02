@@ -21,10 +21,6 @@ api.nvim_create_autocmd(
   { pattern = '.env*', command = 'setlocal ft=config' }
 )
 
--- api.nvim_create_autocmd(
---   { 'BufWritePost' },
---   { pattern = '*.js,*.ts,*.jsx,*.tsx,*.astro', command = 'FormatWrite' }
--- )
 api.nvim_create_autocmd(
   { 'BufWritePre' },
   { pattern = '*', command = 'lua vim.lsp.buf.format({ async = false })' }
