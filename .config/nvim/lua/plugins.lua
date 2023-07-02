@@ -1,15 +1,10 @@
-local fn = vim.fn
-local cmd = vim.cmd
-local command = vim.api.nvim_command
-
--- Make sure packer is installed
 local ensure_packer = function()
-  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+  local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+  if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+    vim.fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
 
-    cmd('packadd packer.nvim')
+    vim.cmd('packadd packer.nvim')
 
     return true
   end
@@ -20,7 +15,7 @@ end
 local packer_bootstrap = ensure_packer()
 
 -- Configure packer
-command("packadd packer.nvim")
+vim.api.nvim_command("packadd packer.nvim")
 
 require('packer').startup(function(use)
   -- Colorscheme
@@ -34,6 +29,7 @@ require('packer').startup(function(use)
   use('terrortylor/nvim-comment')
 
   -- UI elements
+  use('SmiteshP/nvim-navic')
   use('voldikss/vim-floaterm')
   use('nvim-tree/nvim-tree.lua')
   use({
