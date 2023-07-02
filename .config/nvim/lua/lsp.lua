@@ -6,6 +6,7 @@ local cmp_lsp = require('cmp_nvim_lsp')
 -- Setup language servers.
 local servers = {
   'astro',
+  'emmet_ls',
   'eslint',
   'html',
   'jsonls',
@@ -69,6 +70,7 @@ cmp.setup({
     ['<Down>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }), { 'i' }),
     ['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), { 'i' }),
     ['<Cr>'] = cmp.mapping.confirm({ select = true }),
+    ['<Tab>'] = cmp.mapping.confirm({ select = true }),
   },
   window = {
     completion = cmp.config.window.bordered({
