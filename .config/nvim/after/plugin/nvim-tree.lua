@@ -5,7 +5,9 @@ require('nvim-tree').setup({
   renderer = {
     group_empty = true,
     highlight_git = true,
-    root_folder_modifier = ':t',
+    root_folder_label = function(path)
+      return ' ' .. vim.fn.fnamemodify(path, ":t")
+    end,
     icons = {
       symlink_arrow = ' -> ',
       show = {
