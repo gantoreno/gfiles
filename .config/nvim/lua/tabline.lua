@@ -7,10 +7,15 @@ local api = vim.api
 
 -- Tabline
 function tabline()
+  local explorer_label = '  EXPLORER  '
+
   local last_index = fn.tabpagenr('$')
   local current_index = fn.tabpagenr()
 
-  local t = ''
+  local is_tree_visible = require('nvim-tree.api').tree.is_visible()
+
+  local t = is_tree_visible and
+      highlights.with_highlight_group(explorer_label, 'Directory') .. string.rep(' ', 31 - explorer_label:len()) or ''
 
   for index = 1, last_index do
     local window_number = fn.tabpagewinnr(index)
