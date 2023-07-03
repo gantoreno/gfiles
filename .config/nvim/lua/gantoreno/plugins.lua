@@ -1,5 +1,6 @@
-local api = vim.api
 local fn = vim.fn
+
+local packer = require('packer')
 
 local ensure_packer = function()
   local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
@@ -18,9 +19,15 @@ end
 local packer_bootstrap = ensure_packer()
 
 -- Configure packer
-api.nvim_command("packadd packer.nvim")
+packer.init({
+  display = {
+    open_fn = function()
+      return require('packer.util').float({ border = 'rounded' })
+    end
+  }
+})
 
-require('packer').startup(function(use)
+return packer.startup(function(use)
   -- Colorscheme
   use('/Users/gabrielmoreno/Developer/Personal/nvim-gabriel')
 
@@ -62,6 +69,6 @@ require('packer').startup(function(use)
   use('laytan/cloak.nvim')
 
   if packer_bootstrap then
-    require('packer').sync()
+    packer.sync()
   end
 end)
