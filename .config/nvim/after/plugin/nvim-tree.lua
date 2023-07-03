@@ -41,3 +41,11 @@ require('nvim-tree').setup({
   view = { signcolumn = "no" },
   filters = { dotfiles = false },
 })
+
+require('nvim-web-devicons').set_icon({
+  astro = {
+    icon = "󰑣",
+    color = "#e0622a",
+    name = "Astro"
+  }
+})
