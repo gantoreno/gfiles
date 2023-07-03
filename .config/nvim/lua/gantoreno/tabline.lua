@@ -1,6 +1,6 @@
-local tabs = require('utils.tabs')
-local icons = require('utils.icons')
-local highlights = require('utils.highlights')
+local tabs = require('gantoreno.utils.tabs')
+local icons = require('gantoreno.utils.icons')
+local highlights = require('gantoreno.utils.highlights')
 
 local fn = vim.fn
 

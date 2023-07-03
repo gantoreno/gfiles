@@ -1,3 +1,5 @@
+local fn = vim.fn
+
 require('nvim-tree').setup({
   actions = {
     open_file = { quit_on_open = true }
@@ -6,7 +8,7 @@ require('nvim-tree').setup({
     group_empty = true,
     highlight_git = true,
     root_folder_label = function(path)
-      return ' ' .. vim.fn.fnamemodify(path, ":t")
+      return ' ' .. fn.fnamemodify(path, ":t")
     end,
     icons = {
       symlink_arrow = ' -> ',

@@ -1,4 +1,4 @@
-local highlight = require('utils.highlights')
+local highlight = require('gantoreno.utils.highlights')
 
 local M = {}
 

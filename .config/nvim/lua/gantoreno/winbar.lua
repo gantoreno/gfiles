@@ -1,4 +1,4 @@
-local icons = require('utils.icons')
+local icons = require('gantoreno.utils.icons')
 
 local winbar_ignore_filetypes = {
   NvimTree = true,
