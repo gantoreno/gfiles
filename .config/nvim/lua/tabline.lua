@@ -3,7 +3,6 @@ local icons = require('utils.icons')
 local highlights = require('utils.highlights')
 
 local fn = vim.fn
-local api = vim.api
 
 -- Tabline
 function tabline()
@@ -45,7 +44,7 @@ function tabline()
           has_errors and 'Error' or has_warnings and 'WarningMsg' or
           is_active and 'StatusLineSel' or 'StatusLine')
     t = t ..
-    (is_modified and highlights.with_highlight_group(' ⏺ ', is_active and 'StatusLineSel' or 'StatusLine') or is_active and '%999X × ' or '   ')
+        (is_modified and highlights.with_highlight_group(' ⏺ ', is_active and 'StatusLineSel' or 'StatusLine') or is_active and '%999X × ' or '   ')
   end
 
   t = t .. '%='
@@ -53,4 +52,4 @@ function tabline()
   return t
 end
 
-api.nvim_exec('set tabline=%!v:lua.tabline()', false)
+vim.o.tabline = '%{%v:lua.tabline()%}'

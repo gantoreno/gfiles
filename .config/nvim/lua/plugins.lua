@@ -25,6 +25,7 @@ require('packer').startup(function(use)
   use('wbthomason/packer.nvim')
 
   -- Editor tools
+  use('itchyny/vim-gitbranch')
   use('windwp/nvim-autopairs')
   use('terrortylor/nvim-comment')
 

@@ -1,3 +1,6 @@
+local fn = vim.fn
+local api = vim.api
+
 -- Mappings
 local modes = {
   ['n'] = 'Normal',
@@ -34,17 +37,17 @@ local separator = '%='
 
 -- Functions
 local function branch()
-  local branch = vim.fn.system('git branch --show-current 2> /dev/null | tr -d "\n"')
+  local branch_name = fn.eval('gitbranch#name()')
 
-  if branch == '' then
-    branch = 'No branch'
+  if branch_name == '' then
+    branch_name = 'No branch'
   end
 
-  return string.format('󰘬 %s', branch)
+  return string.format('󰘬 %s', branch_name)
 end
 
 local function mode()
-  local current_mode = vim.api.nvim_get_mode().mode
+  local current_mode = api.nvim_get_mode().mode
   local current_mode_mapped = modes[current_mode] or 'Visual Block'
 
   return string.format('-- %s --', string.upper(current_mode_mapped))
@@ -60,7 +63,7 @@ local function metadata()
     filetype = 'Unknown'
   end
 
-  local row, column = unpack(vim.api.nvim_win_get_cursor(0))
+  local row, column = unpack(api.nvim_win_get_cursor(0))
 
   return table.concat {
     string.format("Ln %s, Col %s", row, column),
@@ -77,15 +80,14 @@ end
 
 -- Statusline
 function statusline()
-  return table.concat {
-    paddings.small,
-    branch(),
-    paddings.large,
-    mode(),
-    separator,
-    metadata(),
-    paddings.small
-  }
+  return
+      paddings.small ..
+      branch() ..
+      paddings.large ..
+      mode() ..
+      separator ..
+      metadata() ..
+      paddings.small
 end
 
-vim.api.nvim_exec('set statusline=%!v:lua.statusline()', false)
+vim.o.statusline = '%{%v:lua.statusline()%}'
