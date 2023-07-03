@@ -11,27 +11,16 @@ local servers = {
   'tsserver',
 }
 
-local border = {
-  { '╭', 'FloatBorder' },
-  { '─', 'FloatBorder' },
-  { '╮', 'FloatBorder' },
-  { '│', 'FloatBorder' },
-  { '╯', 'FloatBorder' },
-  { '─', 'FloatBorder' },
-  { '╰', 'FloatBorder' },
-  { '│', 'FloatBorder' },
-}
-
 -- LSP settings (for overriding per client)
 for _, server in ipairs(servers) do
   lspconfig[server].setup({
     capabilities = cmp_lsp.default_capabilities(),
     handlers = {
       ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
-        border = border
+        border = 'rounded'
       }),
       ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-        border = border
+        border = 'rounded'
       }),
     },
   })
