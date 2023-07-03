@@ -1,3 +1,8 @@
+local api = vim.api
+local fn = vim.fn
+local keymap = vim.keymap
+local lsp = vim.lsp
+
 local cmp_lsp = require('cmp_nvim_lsp')
 local lspconfig = require('lspconfig')
 
@@ -15,24 +20,24 @@ for _, server in ipairs(servers) do
   lspconfig[server].setup({
     capabilities = cmp_lsp.default_capabilities(),
     handlers = {
-      ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
+      ['textDocument/hover'] = lsp.with(lsp.handlers.hover, {
         border = 'rounded'
       }),
-      ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+      ['textDocument/signatureHelp'] = lsp.with(lsp.handlers.signature_help, {
         border = 'rounded'
       }),
     },
   })
 end
 
-vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+api.nvim_create_autocmd('LspAttach', {
+  group = api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(evt)
     local opts = { buffer = evt.buf }
 
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+    keymap.set('n', 'K', lsp.buf.hover, opts)
+    keymap.set('n', 'gd', lsp.buf.definition, opts)
+    keymap.set('n', 'gD', lsp.buf.declaration, opts)
   end
 })
 
@@ -44,8 +49,8 @@ local signs = {
   Info = ''
 }
 
-for type, icon in pairs(signs) do
-  local hl = 'DiagnosticSign' .. type
+for type, text in pairs(signs) do
+  local texthl = 'DiagnosticSign' .. type
 
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
+  fn.sign_define(texthl, { text = text, texthl = texthl })
 end
