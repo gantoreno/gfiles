@@ -1,8 +1,14 @@
+local loader = vim.loader
+
+-- Module loader
+loader.enable()
+
 -- Plugins
 require('gantoreno.plugins')
 
--- LSP
+-- LSP & Completion
 require('gantoreno.lsp')
+require('gantoreno.completion')
 
 -- UI
 require('gantoreno.colors')
