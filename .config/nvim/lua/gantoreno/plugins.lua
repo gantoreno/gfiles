@@ -29,7 +29,7 @@ packer.init({
 
 return packer.startup(function(use)
   -- Colorscheme
-  use('/Users/gabrielmoreno/Developer/Personal/nvim-gabriel')
+  use('~/Developer/Personal/nvim-gabriel')
 
   -- Packer itself
   use('wbthomason/packer.nvim')
@@ -37,7 +37,10 @@ return packer.startup(function(use)
   -- Editor tools
   use('itchyny/vim-gitbranch')
   use('windwp/nvim-autopairs')
-  use('terrortylor/nvim-comment')
+  use({
+    'numtostr/comment.nvim',
+    requires = 'JoosepAlviste/nvim-ts-context-commentstring'
+  })
 
   -- UI elements
   use('SmiteshP/nvim-navic')

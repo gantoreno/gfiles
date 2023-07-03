@@ -31,9 +31,6 @@ map("n", "<C-g>", ":lua require('telescope.builtin').live_grep({ hidden = true }
 
 map("n", "<C-n>", ":NvimTreeToggle<CR>", { silent = true })
 
-map("n", "<C-/>", ":CommentToggle<CR>", { silent = true })
-map("v", "<C-/>", ":CommentToggle<CR>", { silent = true })
-
 map("n", "<leadet>tsp", ":TSPlaygroundToggle<CR>", { silent = true })
 
 map("n", "<leader>lzg", ":FloatermNew --wintype=float --width=0.8 --height=0.8 --position=center lazygit<CR>",
