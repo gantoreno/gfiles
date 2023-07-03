@@ -1,8 +1,11 @@
-local ensure_packer = function()
-  local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+local api = vim.api
+local fn = vim.fn
 
-  if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-    vim.fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+local ensure_packer = function()
+  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
 
     vim.cmd('packadd packer.nvim')
 
@@ -15,7 +18,7 @@ end
 local packer_bootstrap = ensure_packer()
 
 -- Configure packer
-vim.api.nvim_command("packadd packer.nvim")
+api.nvim_command("packadd packer.nvim")
 
 require('packer').startup(function(use)
   -- Colorscheme

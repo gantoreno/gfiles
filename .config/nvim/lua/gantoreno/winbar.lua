@@ -1,3 +1,8 @@
+local bo = vim.bo
+
+local api = vim.api
+local fn = vim.fn
+
 local icons = require('gantoreno.utils.icons')
 
 local winbar_ignore_filetypes = {
@@ -8,10 +13,10 @@ local winbar_ignore_filetypes = {
 function winbar()
   local w = '  '
 
-  local parent_directory = string.match(vim.fn.expand('%:h'), "/(%w+)$") or '[No Directory]'
+  local parent_directory = string.match(fn.expand('%:h'), "/(%w+)$") or '[No Directory]'
 
-  local current_file = vim.fn.expand('%:t')
-  local current_file_extension = vim.fn.fnamemodify(current_file, ':e')
+  local current_file = fn.expand('%:t')
+  local current_file_extension = fn.fnamemodify(current_file, ':e')
 
   if current_file == '' then
     current_file = '[No Name]'
@@ -35,10 +40,10 @@ function winbar()
   return w
 end
 
-vim.api.nvim_create_autocmd('BufWinEnter', {
+api.nvim_create_autocmd('BufWinEnter', {
   pattern = '*',
   callback = function()
-    local filetype = vim.bo.filetype
+    local filetype = bo.filetype
 
     if winbar_ignore_filetypes[filetype] or filetype == '' then
       return

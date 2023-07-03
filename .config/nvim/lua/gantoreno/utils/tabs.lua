@@ -1,9 +1,11 @@
+local fn = vim.fn
+
 local M = {}
 
 M.get_tab_name = function(bufname, index)
-  local title = vim.fn.gettabvar(index, 'TablineTitle')
+  local title = fn.gettabvar(index, 'TablineTitle')
 
-  if title ~= vim.NIL and title ~= '' then
+  if title ~= nil and title ~= '' then
     return title
   end
 
@@ -11,7 +13,7 @@ M.get_tab_name = function(bufname, index)
     return "[No Name]"
   end
 
-  return vim.fn.fnamemodify(bufname, ':t')
+  return fn.fnamemodify(bufname, ':t')
 end
 
 return M

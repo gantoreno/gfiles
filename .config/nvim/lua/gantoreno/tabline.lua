@@ -1,8 +1,9 @@
+local diagnostic = vim.diagnostic
+local fn = vim.fn
+
 local tabs = require('gantoreno.utils.tabs')
 local icons = require('gantoreno.utils.icons')
 local highlights = require('gantoreno.utils.highlights')
-
-local fn = vim.fn
 
 -- Tabline
 function tabline()
@@ -33,8 +34,8 @@ function tabline()
     local file_name = tabs.get_tab_name(buffer_name, index)
     local file_icon = icons.get_icon(buffer_name, buffer_extension) .. ' ' or ''
 
-    local has_errors = #vim.diagnostic.get(buffer_number, { severity = vim.diagnostic.severity.ERROR }) > 0
-    local has_warnings = #vim.diagnostic.get(buffer_number, { severity = vim.diagnostic.severity.WARN }) > 0
+    local has_errors = #diagnostic.get(buffer_number, { severity = diagnostic.severity.ERROR }) > 0
+    local has_warnings = #diagnostic.get(buffer_number, { severity = diagnostic.severity.WARN }) > 0
 
     t = t .. "%" .. index .. "T"
     t = t ..

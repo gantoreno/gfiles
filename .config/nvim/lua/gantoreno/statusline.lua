@@ -1,3 +1,6 @@
+local o = vim.o
+local bo = vim.bo
+
 local fn = vim.fn
 local api = vim.api
 
@@ -54,10 +57,10 @@ local function mode()
 end
 
 local function metadata()
-  local spaces = vim.o.shiftwidth
-  local encoding = vim.bo.fenc
-  local endofline = endoflines[vim.bo.ff]
-  local filetype = vim.bo.filetype
+  local spaces = o.shiftwidth
+  local encoding = bo.fenc
+  local endofline = endoflines[bo.ff]
+  local filetype = bo.filetype
 
   if filetype == '' then
     filetype = 'Unknown'
@@ -90,4 +93,4 @@ function statusline()
       paddings.small
 end
 
-vim.o.statusline = '%{%v:lua.statusline()%}'
+o.statusline = '%{%v:lua.statusline()%}'
