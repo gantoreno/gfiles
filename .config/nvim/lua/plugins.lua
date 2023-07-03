@@ -19,7 +19,7 @@ vim.api.nvim_command("packadd packer.nvim")
 
 require('packer').startup(function(use)
   -- Colorscheme
-  use('/Users/gabrielmoreno/Developer/Personal/vim-gabriel')
+  use('/Users/gabrielmoreno/Developer/Personal/nvim-gabriel')
 
   -- Packer itself
   use('wbthomason/packer.nvim')
