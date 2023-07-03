@@ -37,7 +37,7 @@ local separator = '%='
 
 -- Functions
 local function branch()
-  local branch_name = fn.eval('gitbranch#name()')
+  local branch_name = fn['gitbranch#name']()
 
   if branch_name == '' then
     branch_name = 'No branch'
