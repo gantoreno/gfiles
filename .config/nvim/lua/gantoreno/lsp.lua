@@ -18,7 +18,6 @@ local servers = {
 -- LSP settings (for overriding per client)
 for _, server in ipairs(servers) do
   lspconfig[server].setup({
-    capabilities = cmp_lsp.default_capabilities(),
     handlers = {
       ['textDocument/hover'] = lsp.with(lsp.handlers.hover, {
         border = 'rounded'
@@ -27,6 +26,13 @@ for _, server in ipairs(servers) do
         border = 'rounded'
       }),
     },
+    on_attach = function(client)
+      client.capabilities = cmp_lsp.default_capabilities()
+
+      if client.name == 'tsserver' then
+        client.resolved_capabilities.document_formatting = false
+      end
+    end
   })
 end
 

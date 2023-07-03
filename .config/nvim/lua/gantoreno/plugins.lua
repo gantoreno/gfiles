@@ -57,6 +57,7 @@ return packer.startup(function(use)
 
   -- Language utilities
   use('neovim/nvim-lspconfig')
+  use('jose-elias-alvarez/null-ls.nvim')
   use('mhartington/formatter.nvim')
   use({ 'nvim-treesitter/nvim-treesitter', requires = 'nvim-treesitter/playground', run = ':TSUpdate' })
   use({
