@@ -32,17 +32,3 @@ o.shortmess = o.shortmess .. 'astWAIc'
 g.mapleader = ' '
 
 -- Extra plugin options
-g.floaterm_borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' }
-g.floaterm_shell = 'NEOVIM=1 /usr/bin/env zsh'
-g.floaterm_height = 0.25
-g.floaterm_autoclose = 1
-g.floaterm_wintype = 'split'
-g.floaterm_position = 'botright'
-g.floaterm_keymap_toggle = '<C-s>'
-
-g.signify_sign_add = '┃'
-g.signify_sign_delete = '▸'
-g.signify_sign_change = '┃'
-g.signify_sign_changedelete = '┃'
-g.signify_sign_delete_first_line = '┃'
-g.signify_sign_show_count = 0
