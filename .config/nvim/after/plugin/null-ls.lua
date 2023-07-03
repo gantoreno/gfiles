@@ -6,6 +6,7 @@ null_ls.setup({
   debug = false,
   border = 'rounded',
   sources = {
+    formatting.clang_format,
     formatting.prettier,
     formatting.black,
   }

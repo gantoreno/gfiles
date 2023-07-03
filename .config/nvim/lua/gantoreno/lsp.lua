@@ -9,6 +9,7 @@ local lspconfig = require('lspconfig')
 -- Setup language servers.
 local servers = {
   'astro',
+  'clangd',
   'eslint',
   'jsonls',
   'lua_ls',
