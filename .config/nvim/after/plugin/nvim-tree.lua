@@ -60,7 +60,7 @@ require('nvim-web-devicons').set_default_icon(default_icon.glyph, default_icon.f
 -- Other icons
 require('nvim-web-devicons').set_icon({
   astro = {
-    icon = "",
+    icon = "",
     color = "#e0622a",
     name = "Astro"
   }
