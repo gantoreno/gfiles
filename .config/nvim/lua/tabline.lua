@@ -7,15 +7,19 @@ local api = vim.api
 
 -- Tabline
 function tabline()
-  local explorer_label = '  EXPLORER  '
+  local t = ''
 
   local last_index = fn.tabpagenr('$')
   local current_index = fn.tabpagenr()
 
   local is_tree_visible = require('nvim-tree.api').tree.is_visible()
 
-  local t = is_tree_visible and
-      highlights.with_highlight_group(explorer_label, 'Directory') .. string.rep(' ', 31 - explorer_label:len()) or ''
+  if is_tree_visible then
+    local explorer_label = '  EXPLORER  '
+
+    t = t .. highlights.with_highlight_group(explorer_label, 'Directory') ..
+        string.rep(' ', vim.fn.winwidth(1) + 1 - explorer_label:len())
+  end
 
   for index = 1, last_index do
     local window_number = fn.tabpagewinnr(index)
@@ -35,12 +39,13 @@ function tabline()
 
     t = t .. "%" .. index .. "T"
     t = t ..
-        (is_active and '▌ ' or '  ') ..
-        file_icon ..
+        (is_active and '▌ ' or '  ')
+    t = t .. file_icon ..
         highlights.with_highlight_group(file_name,
           has_errors and 'Error' or has_warnings and 'WarningMsg' or
-          is_active and 'StatusLineSel' or 'StatusLine') ..
-        (is_modified and highlights.with_highlight_group(' ⏺ ', is_active and 'StatusLineSel' or 'StatusLine') or is_active and '%999X × ' or '   ')
+          is_active and 'StatusLineSel' or 'StatusLine')
+    t = t ..
+    (is_modified and highlights.with_highlight_group(' ⏺ ', is_active and 'StatusLineSel' or 'StatusLine') or is_active and '%999X × ' or '   ')
   end
 
   t = t .. '%='
