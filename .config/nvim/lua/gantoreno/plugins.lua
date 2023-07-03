@@ -50,8 +50,8 @@ require('packer').startup(function(use)
     'hrsh7th/nvim-cmp',
     requires = {
       'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-vsnip',
-      'hrsh7th/vim-vsnip',
+      'l3mon4d3/luasnip',
+      'saadparwaiz1/cmp_luasnip',
     },
   })
 
