@@ -1,4 +1,11 @@
 local fn = vim.fn
+local api = vim.api
+
+local default_icon = {
+  glyph = '',
+  fg = '#bfc2c1',
+  ctermfg = 250,
+}
 
 require('nvim-tree').setup({
   actions = {
@@ -16,6 +23,7 @@ require('nvim-tree').setup({
         git = false
       },
       glyphs = {
+        default = "",
         folder = {
           default = '',
           open = '',
@@ -44,6 +52,12 @@ require('nvim-tree').setup({
   filters = { dotfiles = false },
 })
 
+-- Default icon configurations
+api.nvim_set_hl(0, 'NvimTreeFileIcon', { fg = default_icon.fg })
+
+require('nvim-web-devicons').set_default_icon(default_icon.glyph, default_icon.fg, default_icon.ctermfg)
+
+-- Other icons
 require('nvim-web-devicons').set_icon({
   astro = {
     icon = "󰑣",
