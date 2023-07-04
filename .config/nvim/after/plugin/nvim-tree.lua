@@ -55,7 +55,7 @@ local custom_icons = {
     name = 'Default'
   },
   astro = {
-    icon = "",
+    icon = "󱓞",
     color = "#e0622a",
     name = "Astro"
   },
