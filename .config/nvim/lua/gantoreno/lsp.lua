@@ -27,6 +27,13 @@ for _, server in ipairs(servers) do
         border = 'rounded'
       }),
     },
+    settings = {
+      Lua = {
+        diagnostics = {
+          globals = { 'vim' }
+        }
+      }
+    },
     on_attach = function(client)
       client.capabilities = cmp_lsp.default_capabilities()
 
