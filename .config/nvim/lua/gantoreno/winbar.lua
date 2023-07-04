@@ -13,10 +13,19 @@ local winbar_ignore_filetypes = {
 function Winbar()
   local w = '  '
 
-  local parent_directory = string.match(fn.expand('%:h'), '/(%w+)$') or '[No Directory]'
-
+  local parent_directory = string.match(fn.expand('%:h'), '/(%w+)$')
   local current_file = fn.expand('%:t')
   local current_file_extension = fn.fnamemodify(current_file, ':e')
+
+  if not parent_directory then
+    parent_directory = fn.expand('%:p')
+    parent_directory = parent_directory:gsub(current_file, '')
+
+    if parent_directory ~= '/' then
+      parent_directory = parent_directory:sub(2, -2)
+      parent_directory = parent_directory:gsub('/', '  ')
+    end
+  end
 
   if current_file == '' then
     current_file = '[No Name]'
