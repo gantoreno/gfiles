@@ -124,6 +124,11 @@ local custom_icons = {
     color = '#519aba',
     name = 'TypeScript'
   },
+  toml = {
+    icon = "",
+    color = "#41535b",
+    name = "TOML",
+  },
   yml = {
     icon = '',
     color = '#9976bf',
@@ -181,7 +186,7 @@ require('nvim-web-devicons').set_icon({
   ['md'] = custom_icons.md,
   ['mdx'] = custom_icons.md,
   ['py'] = custom_icons.python,
-  ['toml'] = custom_icons.shell,
+  ['toml'] = custom_icons.toml,
   ['yaml'] = custom_icons.yml,
   ['yml'] = custom_icons.yml,
 })
