@@ -8,3 +8,8 @@ require('nvim-treesitter.configs').setup({
     enable_autocmd = false,
   },
 })
+
+require('treesitter-context').setup({
+  enable = true,
+  mode = 'topline',
+})

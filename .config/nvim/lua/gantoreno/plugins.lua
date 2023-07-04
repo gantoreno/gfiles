@@ -59,7 +59,14 @@ return packer.startup(function(use)
   -- Language utilities
   use('neovim/nvim-lspconfig')
   use('jose-elias-alvarez/null-ls.nvim')
-  use({ 'nvim-treesitter/nvim-treesitter', requires = 'nvim-treesitter/playground', run = ':TSUpdate' })
+  use({
+    'nvim-treesitter/nvim-treesitter',
+    requires = {
+      'nvim-treesitter/playground',
+      'nvim-treesitter/nvim-treesitter-context',
+    },
+    run = ':TSUpdate',
+  })
   use({
     'hrsh7th/nvim-cmp',
     requires = {
