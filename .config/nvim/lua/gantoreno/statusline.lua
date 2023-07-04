@@ -5,8 +5,6 @@ local api = vim.api
 local diagnostic = vim.diagnostic
 local fn = vim.fn
 
-local null_ls_info = require('null-ls.info')
-
 -- Mappings
 local modes = {
   ['n'] = 'Normal',
