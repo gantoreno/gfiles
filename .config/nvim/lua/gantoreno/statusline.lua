@@ -4,6 +4,8 @@ local bo = vim.bo
 local fn = vim.fn
 local api = vim.api
 
+local null_ls_info = require('null-ls.info')
+
 -- Mappings
 local modes = {
   ['n'] = 'Normal',
@@ -54,7 +56,7 @@ local function get_mode()
 end
 
 local function get_indentation()
-  return string.format("Spaces: %s", o.shiftwidth)
+  return string.format('Spaces: %s', o.shiftwidth)
 end
 
 local function get_file_encoding()
@@ -79,6 +81,21 @@ local function get_filetype()
   end
 
   return filetype:gsub("^%l", string.upper)
+end
+
+local function get_prettier_status()
+  local is_prettier_active = require("null-ls").is_registered({
+    name = 'prettierd',
+    filetype = bo.filetype
+  })
+
+  if not is_prettier_active then
+    return nil
+  end
+
+  local icon = '󰄭'
+
+  return string.format('%s Prettier', icon)
 end
 
 local function get_icons()
@@ -115,6 +132,11 @@ function Statusline()
   local filetype = get_filetype()
   if filetype then
     s = s .. '   ' .. filetype
+  end
+
+  local prettier_status = get_prettier_status()
+  if prettier_status then
+    s = s .. '   ' .. prettier_status
   end
 
   s = s .. '   ' .. get_icons()
