@@ -34,11 +34,11 @@ local endoflines = {
   windows = 'crlf',
 }
 
+-- Functions
 local function build_segment(str, hl)
   return highlight.with_highlight_group(string.format(' %s ', str), hl or 'StatusLine')
 end
 
--- Functions
 local function get_branch()
   local branch_name = fn['gitbranch#name']()
 
