@@ -43,7 +43,7 @@ local function get_branch()
   local branch_name = fn['gitbranch#name']()
 
   if branch_name == '' then
-    return nil
+    return -1
   end
 
   return build_segment(string.format('󰘬 %s ', branch_name))
@@ -72,7 +72,7 @@ local function get_eol()
   local eol = endoflines[bo.ff]
 
   if not eol then
-    return nil
+    return -1
   end
 
   return build_segment(eol:upper())
@@ -82,7 +82,7 @@ local function get_filetype()
   local filetype = bo.filetype
 
   if filetype == '' then
-    return nil
+    return -1
   end
 
   return build_segment(filetype:gsub('^%l', string.upper))
@@ -95,7 +95,7 @@ local function get_prettier_status()
   })
 
   if not is_prettier_active then
-    return nil
+    return ''
   end
 
   local ok_icon = '󰄭'
@@ -132,15 +132,15 @@ function Statusline()
   }
 
   for _, segment in pairs(left_segments) do
-    if segment then
+    if segment ~= -1 then
       s = s .. segment .. ' '
     end
   end
 
   s = s .. '%='
 
-  for _, segment in ipairs(right_segments) do
-    if segment then
+  for i, segment in ipairs(right_segments) do
+    if segment ~= -1 then
       s = s .. ' ' .. segment
     end
   end
