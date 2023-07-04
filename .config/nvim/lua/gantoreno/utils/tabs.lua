@@ -10,7 +10,7 @@ M.get_tab_name = function(bufname, index)
   end
 
   if bufname == '' then
-    return "[No Name]"
+    return '[No Name]'
   end
 
   return fn.fnamemodify(bufname, ':t')

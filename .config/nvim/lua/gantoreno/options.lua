@@ -30,5 +30,3 @@ o.shortmess = o.shortmess .. 'astWAIc'
 
 -- Globals
 g.mapleader = ' '
-
--- Extra plugin options

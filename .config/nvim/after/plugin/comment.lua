@@ -1,9 +1,9 @@
 require('Comment').setup({
   toggler = {
-    line = '<C-/>'
+    line = '<C-/>',
   },
   opleader = {
-    line = '<C-/>'
+    line = '<C-/>',
   },
   pre_hook = function(ctx)
     local utils = require('Comment.utils')
@@ -19,5 +19,5 @@ require('Comment').setup({
       key = ctx.ctype == utils.ctype.line and '__default' or '__multiline',
       location = location,
     })
-  end
+  end,
 })

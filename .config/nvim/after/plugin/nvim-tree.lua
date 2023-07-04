@@ -3,7 +3,7 @@ local api = vim.api
 
 require('nvim-tree').setup({
   actions = {
-    open_file = { quit_on_open = true }
+    open_file = { quit_on_open = true },
   },
   renderer = {
     group_empty = true,
@@ -14,7 +14,7 @@ require('nvim-tree').setup({
     icons = {
       symlink_arrow = ' 󱞩 ',
       show = {
-        git = false
+        git = false,
       },
       glyphs = {
         default = '',
@@ -27,13 +27,13 @@ require('nvim-tree').setup({
           symlink_open = '',
           arrow_closed = ' ',
           arrow_open = ' ',
-        }
+        },
       },
     },
-    special_files = {}
+    special_files = {},
   },
   update_focused_file = {
-    enable = true
+    enable = true,
   },
   tab = {
     sync = {
@@ -52,87 +52,87 @@ local custom_icons = {
     icon = '',
     color = '#bfc2c1',
     cterm_color = 250,
-    name = 'Default'
+    name = 'Default',
   },
   astro = {
     icon = '󱎯',
     color = '#d07c44',
-    name = 'Astro'
+    name = 'Astro',
   },
   css = {
     icon = '',
     color = '#5e91ae',
-    name = 'CSS'
+    name = 'CSS',
   },
   json = {
     icon = '',
     color = '#cbcb41',
-    name = 'JSON'
+    name = 'JSON',
   },
   shell = {
     icon = '',
     color = '#90b556',
-    name = 'Shell'
+    name = 'Shell',
   },
   eslint = {
     icon = '󰱺',
     color = '#9976bf',
-    name = 'ESLint'
+    name = 'ESLint',
   },
   lua = {
     icon = '󰢱',
     color = '#5e91ae',
-    name = 'Lua'
+    name = 'Lua',
   },
   python = {
     icon = '',
     color = '#5e91ae',
-    name = 'Python'
+    name = 'Python',
   },
   npm = {
     icon = '',
     color = '#9b3e3e',
-    name = 'NPM'
+    name = 'NPM',
   },
   md = {
     icon = '',
     color = '#5e91ae',
-    name = 'Markdown'
+    name = 'Markdown',
   },
   readme = {
     icon = '',
     color = '#5e91ae',
-    name = 'Readme'
+    name = 'Readme',
   },
   changelog = {
     icon = '',
     color = '#5e91ae',
-    name = 'Changelog'
+    name = 'Changelog',
   },
   license = {
     icon = '',
     color = '#cbcb41',
-    name = 'License'
+    name = 'License',
   },
   js = {
     icon = '',
     color = '#cbcb41',
-    name = 'Js'
+    name = 'Js',
   },
   specjs = {
     icon = '',
     color = '#d07c44',
-    name = 'SpecJs'
+    name = 'SpecJs',
   },
   jsx = {
     icon = '',
     color = '#5e91ae',
-    name = 'JSX'
+    name = 'JSX',
   },
   ts = {
     icon = '',
     color = '#5e91ae',
-    name = 'TypeScript'
+    name = 'TypeScript',
   },
   toml = {
     icon = '',
@@ -142,14 +142,14 @@ local custom_icons = {
   yml = {
     icon = '',
     color = '#9976bf',
-    name = 'YAML'
+    name = 'YAML',
   },
 }
 
 -- Default icon configurations
 api.nvim_set_hl(0, 'NvimTreeFileIcon', {
   fg = custom_icons.default.color,
-  ctermfg = custom_icons.default.cterm_color
+  ctermfg = custom_icons.default.cterm_color,
 })
 
 require('nvim-web-devicons').set_default_icon(

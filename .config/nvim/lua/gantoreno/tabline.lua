@@ -17,8 +17,9 @@ function Tabline()
   if is_tree_visible then
     local explorer_label = '  EXPLORER  '
 
-    t = t .. highlights.with_highlight_group(explorer_label, 'Directory') ..
-        string.rep(' ', vim.fn.winwidth(1) + 1 - explorer_label:len())
+    t = t
+      .. highlights.with_highlight_group(explorer_label, 'Directory')
+      .. string.rep(' ', vim.fn.winwidth(1) + 1 - explorer_label:len())
   end
 
   for index = 1, last_index do
@@ -37,15 +38,20 @@ function Tabline()
     local has_errors = #diagnostic.get(buffer_number, { severity = diagnostic.severity.ERROR }) > 0
     local has_warnings = #diagnostic.get(buffer_number, { severity = diagnostic.severity.WARN }) > 0
 
-    t = t .. "%" .. index .. "T"
-    t = t ..
-        (is_active and '▌ ' or '  ')
-    t = t .. file_icon ..
-        highlights.with_highlight_group(file_name,
-          has_errors and 'Error' or has_warnings and 'WarningMsg' or
-          is_active and 'StatusLineSel' or 'StatusLine')
-    t = t ..
-        (is_modified and highlights.with_highlight_group(' ⏺ ', is_active and 'StatusLineSel' or 'StatusLine') or is_active and '%999X 󰅖 ' or '   ')
+    t = t .. '%' .. index .. 'T'
+    t = t .. (is_active and '▌ ' or '  ')
+    t = t
+      .. file_icon
+      .. highlights.with_highlight_group(
+        file_name,
+        has_errors and 'Error' or has_warnings and 'WarningMsg' or is_active and 'StatusLineSel' or 'StatusLine'
+      )
+    t = t
+      .. (
+        is_modified and highlights.with_highlight_group(' ⏺ ', is_active and 'StatusLineSel' or 'StatusLine')
+        or is_active and '%999X 󰅖 '
+        or '   '
+      )
   end
 
   t = t .. '%='

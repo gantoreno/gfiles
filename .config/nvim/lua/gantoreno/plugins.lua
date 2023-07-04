@@ -23,8 +23,8 @@ packer.init({
   display = {
     open_fn = function()
       return require('packer.util').float({ border = 'rounded' })
-    end
-  }
+    end,
+  },
 })
 
 return packer.startup(function(use)
@@ -39,7 +39,7 @@ return packer.startup(function(use)
   use('windwp/nvim-autopairs')
   use({
     'numtostr/comment.nvim',
-    requires = 'JoosepAlviste/nvim-ts-context-commentstring'
+    requires = 'JoosepAlviste/nvim-ts-context-commentstring',
   })
 
   -- UI elements

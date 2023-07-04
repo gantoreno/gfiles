@@ -79,13 +79,13 @@ local function get_filetype()
     return nil
   end
 
-  return filetype:gsub("^%l", string.upper)
+  return filetype:gsub('^%l', string.upper)
 end
 
 local function get_prettier_status()
-  local is_prettier_active = require("null-ls").is_registered({
+  local is_prettier_active = require('null-ls').is_registered({
     name = 'prettierd',
-    filetype = bo.filetype
+    filetype = bo.filetype,
   })
 
   if not is_prettier_active then

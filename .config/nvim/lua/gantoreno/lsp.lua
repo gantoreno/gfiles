@@ -21,18 +21,18 @@ for _, server in ipairs(servers) do
   lspconfig[server].setup({
     handlers = {
       ['textDocument/hover'] = lsp.with(lsp.handlers.hover, {
-        border = 'rounded'
+        border = 'rounded',
       }),
       ['textDocument/signatureHelp'] = lsp.with(lsp.handlers.signature_help, {
-        border = 'rounded'
+        border = 'rounded',
       }),
     },
     settings = {
       Lua = {
         diagnostics = {
-          globals = { 'vim' }
-        }
-      }
+          globals = { 'vim' },
+        },
+      },
     },
     on_attach = function(client)
       client.capabilities = cmp_lsp.default_capabilities()
@@ -40,7 +40,7 @@ for _, server in ipairs(servers) do
       if client.name == 'tsserver' then
         client.resolved_capabilities.document_formatting = false
       end
-    end
+    end,
   })
 end
 
@@ -52,7 +52,7 @@ api.nvim_create_autocmd('LspAttach', {
     keymap.set('n', 'K', lsp.buf.hover, opts)
     keymap.set('n', 'gd', lsp.buf.definition, opts)
     keymap.set('n', 'gD', lsp.buf.declaration, opts)
-  end
+  end,
 })
 
 -- Icons
@@ -60,7 +60,7 @@ local signs = {
   Error = '',
   Warn = '',
   Hint = '',
-  Info = ''
+  Info = '',
 }
 
 for type, text in pairs(signs) do

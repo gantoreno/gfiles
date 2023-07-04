@@ -12,7 +12,7 @@ cmp.setup({
     end,
   },
   completion = {
-    completeopt = 'menu,menuone,noinsert'
+    completeopt = 'menu,menuone,noinsert',
   },
   mapping = {
     -- Navigation
@@ -46,5 +46,5 @@ cmp.setup({
       winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None',
       scrollbar = false,
     }),
-  }
+  },
 })

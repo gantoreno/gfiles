@@ -7,7 +7,8 @@ null_ls.setup({
   border = 'rounded',
   sources = {
     formatting.clang_format,
+    formatting.stylua,
     formatting.prettierd,
     formatting.black,
-  }
+  },
 })
