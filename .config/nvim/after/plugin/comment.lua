@@ -1,3 +1,5 @@
+local utils = require('Comment.utils')
+
 require('Comment').setup({
   toggler = {
     line = '<C-/>',
@@ -6,7 +8,6 @@ require('Comment').setup({
     line = '<C-/>',
   },
   pre_hook = function(ctx)
-    local utils = require('Comment.utils')
     local location = nil
 
     if ctx.ctype == utils.ctype.block then
