@@ -35,7 +35,10 @@ local endoflines = {
 }
 
 -- Custom highlights
-api.nvim_set_hl(0, 'StatusLineErrorSegment', { fg = '#ffffff', bg = o.background == 'dark' and '#633c3b' or '#4d2b2a' })
+api.nvim_set_hl(0, 'StatusLineErrorSegment', {
+  fg = '#ffffff',
+  bg = o.background == 'dark' and '#633c3b' or '#4d2b2a',
+})
 
 -- Functions
 local function build_segment(str, hl)
@@ -101,8 +104,8 @@ local function get_prettier_status()
     return ''
   end
 
-  local ok_icon = ''
-  local warn_icon = ''
+  local ok_icon = '󰄬'
+  local warn_icon = '⚠'
 
   local has_errors = #diagnostic.get(vim.fn.bufnr(), { severity = diagnostic.severity.ERROR }) > 0
 
