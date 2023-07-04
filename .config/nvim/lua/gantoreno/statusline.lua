@@ -110,7 +110,9 @@ local function get_prettier_status()
 end
 
 local function get_icons()
-  return build_segment('   ')
+  local has_errors = #diagnostic.get(vim.fn.bufnr(), { severity = diagnostic.severity.ERROR }) > 0
+
+  return build_segment('' .. '   ' .. (has_errors and '' or ''))
 end
 
 -- Statusline
