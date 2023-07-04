@@ -6,7 +6,7 @@ local icons = require('gantoreno.utils.icons')
 local highlights = require('gantoreno.utils.highlights')
 
 -- Tabline
-function tabline()
+function Tabline()
   local t = ''
 
   local last_index = fn.tabpagenr('$')
@@ -53,4 +53,4 @@ function tabline()
   return t
 end
 
-vim.o.tabline = '%{%v:lua.tabline()%}'
+vim.o.tabline = '%{%v:lua.Tabline()%}'

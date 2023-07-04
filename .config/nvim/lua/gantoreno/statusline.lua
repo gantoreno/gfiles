@@ -82,7 +82,7 @@ local function metadata()
 end
 
 -- Statusline
-function statusline()
+function Statusline()
   return
       paddings.small ..
       branch() ..
@@ -93,4 +93,4 @@ function statusline()
       paddings.small
 end
 
-o.statusline = '%{%v:lua.statusline()%}'
+o.statusline = '%{%v:lua.Statusline()%}'

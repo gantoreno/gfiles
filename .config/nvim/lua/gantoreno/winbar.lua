@@ -10,7 +10,7 @@ local winbar_ignore_filetypes = {
   floaterm = true,
 }
 
-function winbar()
+function Winbar()
   local w = '  '
 
   local parent_directory = string.match(fn.expand('%:h'), "/(%w+)$") or '[No Directory]'
@@ -49,6 +49,6 @@ api.nvim_create_autocmd('BufWinEnter', {
       return
     end
 
-    vim.wo.winbar = '%{%v:lua.winbar()%}'
+    vim.wo.winbar = '%{%v:lua.Winbar()%}'
   end
 })
