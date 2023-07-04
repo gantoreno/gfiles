@@ -1,8 +1,9 @@
 local o = vim.o
 local bo = vim.bo
 
-local fn = vim.fn
 local api = vim.api
+local diagnostic = vim.diagnostic
+local fn = vim.fn
 
 local null_ls_info = require('null-ls.info')
 
@@ -93,9 +94,12 @@ local function get_prettier_status()
     return nil
   end
 
-  local icon = '󰄭'
+  local ok_icon = '󰄭'
+  local warn_icon = '⚠'
 
-  return string.format('%s Prettier', icon)
+  local has_errors = #diagnostic.get(vim.fn.bufnr(), { severity = diagnostic.severity.ERROR }) > 0
+
+  return string.format('%s Prettier', has_errors and warn_icon or ok_icon)
 end
 
 local function get_icons()
