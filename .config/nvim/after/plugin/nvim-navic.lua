@@ -14,7 +14,7 @@ require('nvim-navic').setup({
     Constructor = ' ',
     Enum = '󰕘 ',
     Interface = '󰕘 ',
-    Function = '󰊕 ',
+    Function = '󰆧 ',
     Variable = '󰆧 ',
     Constant = '󰆧 ',
     String = '󰀬 ',
