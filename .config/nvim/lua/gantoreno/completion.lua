@@ -1,5 +1,6 @@
 local cmp = require('cmp')
 local luasnip = require('luasnip')
+local lspkind = require('lspkind')
 
 cmp.setup({
   sources = cmp.config.sources({
@@ -10,6 +11,11 @@ cmp.setup({
     expand = function(args)
       luasnip.lsp_expand(args.body)
     end,
+  },
+  formatting = {
+    format = lspkind.cmp_format({
+      mode = 'symbol',
+    }),
   },
   completion = {
     completeopt = 'menu,menuone,noinsert',

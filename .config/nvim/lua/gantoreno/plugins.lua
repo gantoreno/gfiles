@@ -57,6 +57,7 @@ return packer.startup(function(use)
   use('nvim-tree/nvim-web-devicons')
 
   -- Language utilities
+  use('onsails/lspkind.nvim')
   use('neovim/nvim-lspconfig')
   use('jose-elias-alvarez/null-ls.nvim')
   use({
