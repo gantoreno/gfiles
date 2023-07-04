@@ -114,6 +114,16 @@ local custom_icons = {
     color = '#cbcb41',
     name = 'License'
   },
+  js = {
+    icon = '',
+    color = '#cbcb41',
+    name = 'Js'
+  },
+  specjs = {
+    icon = '',
+    color = '#d07c44',
+    name = 'SpecJs'
+  },
   jsx = {
     icon = '',
     color = '#5e91ae',
@@ -185,8 +195,14 @@ require('nvim-web-devicons').set_icon({
   ['mdx'] = custom_icons.md,
   ['py'] = custom_icons.python,
   ['toml'] = custom_icons.toml,
+  ['js'] = custom_icons.js,
+  ['mjs'] = custom_icons.js,
   ['ts'] = custom_icons.ts,
   ['tsx'] = custom_icons.ts,
   ['yaml'] = custom_icons.yml,
   ['yml'] = custom_icons.yml,
+
+  -- Extensions
+  ['spec.js'] = custom_icons.specjs,
+  ['test.js'] = custom_icons.specjs,
 })
