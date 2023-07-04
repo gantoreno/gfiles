@@ -2,6 +2,7 @@ local api = vim.api
 local fn = vim.fn
 local keymap = vim.keymap
 local lsp = vim.lsp
+local diagnostic = vim.diagnostic
 
 local cmp_lsp = require('cmp_nvim_lsp')
 local lspconfig = require('lspconfig')
@@ -52,6 +53,13 @@ api.nvim_create_autocmd('LspAttach', {
 })
 
 -- Icons
+diagnostic.config({
+  virtual_text = {
+    prefix = '',
+    suffix = ' ',
+  },
+})
+
 local signs = {
   Error = '',
   Warn = '',
