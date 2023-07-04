@@ -61,7 +61,7 @@ local custom_icons = {
   },
   css = {
     icon = "",
-    color = "#519aba",
+    color = "#5e91ae",
     name = "CSS"
   },
   json = {
@@ -81,12 +81,12 @@ local custom_icons = {
   },
   lua = {
     icon = '󰢱',
-    color = '#519aba',
+    color = '#5e91ae',
     name = 'Lua'
   },
   python = {
     icon = '',
-    color = '#519aba',
+    color = '#5e91ae',
     name = 'Python'
   },
   npm = {
@@ -96,17 +96,17 @@ local custom_icons = {
   },
   md = {
     icon = '',
-    color = '#519aba',
+    color = '#5e91ae',
     name = 'Markdown'
   },
   readme = {
     icon = '',
-    color = '#519aba',
+    color = '#5e91ae',
     name = 'Readme'
   },
   changelog = {
     icon = '',
-    color = '#519aba',
+    color = '#5e91ae',
     name = 'Changelog'
   },
   license = {
@@ -116,12 +116,12 @@ local custom_icons = {
   },
   jsx = {
     icon = '',
-    color = '#519aba',
+    color = '#5e91ae',
     name = 'JSX'
   },
   ts = {
     icon = '',
-    color = '#519aba',
+    color = '#5e91ae',
     name = 'TypeScript'
   },
   toml = {
