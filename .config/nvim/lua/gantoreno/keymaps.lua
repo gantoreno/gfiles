@@ -43,7 +43,7 @@ map(
 )
 map(
   'n',
-  '<leader>lzg',
+  '<leader>glg',
   ':FloatermNew --wintype=float --width=0.8 --height=0.8 --position=center git log --graph --oneline<CR>',
   { silent = true }
 )
