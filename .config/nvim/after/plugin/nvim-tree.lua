@@ -9,7 +9,7 @@ require('nvim-tree').setup({
     group_empty = true,
     highlight_git = true,
     root_folder_label = function(path)
-      return ' ' .. fn.fnamemodify(path, ":t")
+      return ' ' .. fn.fnamemodify(path, ':t')
     end,
     icons = {
       symlink_arrow = ' 󱞩 ',
@@ -17,7 +17,7 @@ require('nvim-tree').setup({
         git = false
       },
       glyphs = {
-        default = "",
+        default = '',
         folder = {
           default = '',
           open = '',
@@ -42,7 +42,7 @@ require('nvim-tree').setup({
       ignore = {},
     },
   },
-  view = { signcolumn = "no" },
+  view = { signcolumn = 'no' },
   filters = { dotfiles = false },
 })
 
@@ -55,14 +55,14 @@ local custom_icons = {
     name = 'Default'
   },
   astro = {
-    icon = "󱎯",
-    color = "#e0622a",
-    name = "Astro"
+    icon = '󱎯',
+    color = '#d07c44',
+    name = 'Astro'
   },
   css = {
-    icon = "",
-    color = "#5e91ae",
-    name = "CSS"
+    icon = '',
+    color = '#5e91ae',
+    name = 'CSS'
   },
   json = {
     icon = '',
@@ -135,9 +135,9 @@ local custom_icons = {
     name = 'TypeScript'
   },
   toml = {
-    icon = "",
-    color = "#41535b",
-    name = "TOML",
+    icon = '',
+    color = '#41535b',
+    name = 'TOML',
   },
   yml = {
     icon = '',
