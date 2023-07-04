@@ -45,7 +45,7 @@ function tabline()
           has_errors and 'Error' or has_warnings and 'WarningMsg' or
           is_active and 'StatusLineSel' or 'StatusLine')
     t = t ..
-        (is_modified and highlights.with_highlight_group(' ⏺ ', is_active and 'StatusLineSel' or 'StatusLine') or is_active and '%999X × ' or '   ')
+        (is_modified and highlights.with_highlight_group(' ⏺ ', is_active and 'StatusLineSel' or 'StatusLine') or is_active and '%999X 󰅖 ' or '   ')
   end
 
   t = t .. '%='
