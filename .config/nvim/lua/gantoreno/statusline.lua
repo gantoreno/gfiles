@@ -133,7 +133,7 @@ function Statusline()
 
   for _, segment in pairs(left_segments) do
     if segment then
-      s = s .. segment
+      s = s .. segment .. ' '
     end
   end
 
@@ -141,7 +141,7 @@ function Statusline()
 
   for _, segment in ipairs(right_segments) do
     if segment then
-      s = s .. segment
+      s = s .. ' ' .. segment
     end
   end
 
