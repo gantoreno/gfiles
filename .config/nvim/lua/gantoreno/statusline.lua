@@ -34,6 +34,9 @@ local endoflines = {
   windows = 'crlf',
 }
 
+-- Custom highlights
+api.nvim_set_hl(0, 'StatusLineErrorSegment', { fg = '#ffffff', bg = o.background == 'dark' and '#633c3b' or '#4d2b2a' })
+
 -- Functions
 local function build_segment(str, hl)
   return highlight.with_highlight_group(string.format(' %s ', str), hl or 'StatusLine')
@@ -105,7 +108,7 @@ local function get_prettier_status()
 
   return build_segment(
     string.format('%s Prettier', has_errors and warn_icon or ok_icon),
-    has_errors and 'UIBlockRed' or nil
+    has_errors and 'StatusLineErrorSegment' or nil
   )
 end
 
