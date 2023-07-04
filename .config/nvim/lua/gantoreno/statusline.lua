@@ -31,66 +31,97 @@ local endoflines = {
   windows = 'crlf',
 }
 
-local paddings = {
-  small = '  ',
-  large = '   ',
-}
-
-local separator = '%='
-
 -- Functions
-local function branch()
+local function get_branch()
   local branch_name = fn['gitbranch#name']()
 
   if branch_name == '' then
-    branch_name = 'No branch'
+    return nil
   end
 
-  return string.format('󰘬 %s', branch_name)
+  return string.format('󰘬 %s ', branch_name)
 end
 
-local function mode()
+local function get_location()
+  return 'Ln %l, Col %c'
+end
+
+local function get_mode()
   local current_mode = api.nvim_get_mode().mode
   local current_mode_mapped = modes[current_mode] or 'Visual Block'
 
   return string.format('-- %s --', string.upper(current_mode_mapped))
 end
 
-local function metadata()
-  local spaces = o.shiftwidth
-  local encoding = bo.fenc
-  local endofline = endoflines[bo.ff]
+local function get_indentation()
+  return string.format("Spaces: %s", o.shiftwidth)
+end
+
+local function get_file_encoding()
+  return bo.fenc:upper()
+end
+
+local function get_eol()
+  local eol = endoflines[bo.ff]
+
+  if not eol then
+    return nil
+  end
+
+  return eol:upper()
+end
+
+local function get_filetype()
   local filetype = bo.filetype
 
   if filetype == '' then
-    filetype = 'Unknown'
+    return nil
   end
 
-  local row, column = unpack(api.nvim_win_get_cursor(0))
+  return filetype:gsub("^%l", string.upper)
+end
 
-  return table.concat {
-    string.format("Ln %s, Col %s", row, column),
-    paddings.large,
-    string.format("spaces: %s", spaces),
-    paddings.large,
-    string.format("%s", encoding):upper(),
-    paddings.large,
-    string.format("%s", endofline):upper(),
-    paddings.large,
-    string.format(" %s", filetype),
-  }
+local function get_icons()
+  return '   '
 end
 
 -- Statusline
 function Statusline()
-  return
-      paddings.small ..
-      branch() ..
-      paddings.large ..
-      mode() ..
-      separator ..
-      metadata() ..
-      paddings.small
+  local s = '  '
+
+  -- Left status
+  local branch = get_branch()
+  if branch then
+    s = s .. branch .. '   '
+  end
+
+  local mode = get_mode()
+  if mode then
+    s = s .. mode .. '   '
+  end
+
+  s = s .. '%='
+
+  -- Right status
+  s = s .. '   ' .. get_location()
+  s = s .. '   ' .. get_indentation()
+  s = s .. '   ' .. get_file_encoding()
+
+  local eol = get_eol()
+  if eol then
+    s = s .. '   ' .. eol
+  end
+
+  local filetype = get_filetype()
+  if filetype then
+    s = s .. '   ' .. filetype
+  end
+
+  s = s .. '   ' .. get_icons()
+
+  s = s .. '  '
+
+  return s
 end
 
 o.statusline = '%{%v:lua.Statusline()%}'
