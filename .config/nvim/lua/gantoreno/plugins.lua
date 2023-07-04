@@ -46,6 +46,7 @@ return packer.startup(function(use)
   use('SmiteshP/nvim-navic')
   use('voldikss/vim-floaterm')
   use('nvim-tree/nvim-tree.lua')
+  use('norcalli/nvim-colorizer.lua')
   use({
     'nvim-telescope/telescope.nvim',
     requires = 'nvim-lua/plenary.nvim',
