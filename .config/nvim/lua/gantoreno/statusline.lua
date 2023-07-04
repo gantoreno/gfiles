@@ -5,6 +5,8 @@ local api = vim.api
 local diagnostic = vim.diagnostic
 local fn = vim.fn
 
+local highlight = require('gantoreno.utils.highlights')
+
 -- Mappings
 local modes = {
   ['n'] = 'Normal',
@@ -32,6 +34,10 @@ local endoflines = {
   windows = 'crlf',
 }
 
+local function build_segment(str, hl)
+  return highlight.with_highlight_group(string.format(' %s ', str), hl or 'StatusLine')
+end
+
 -- Functions
 local function get_branch()
   local branch_name = fn['gitbranch#name']()
@@ -40,26 +46,26 @@ local function get_branch()
     return nil
   end
 
-  return string.format('󰘬 %s ', branch_name)
+  return build_segment(string.format('󰘬 %s ', branch_name))
 end
 
 local function get_location()
-  return 'Ln %l, Col %c'
+  return build_segment('Ln %l, Col %c')
 end
 
 local function get_mode()
   local current_mode = api.nvim_get_mode().mode
   local current_mode_mapped = modes[current_mode] or 'Visual Block'
 
-  return string.format('-- %s --', string.upper(current_mode_mapped))
+  return build_segment(string.format('-- %s --', string.upper(current_mode_mapped)))
 end
 
 local function get_indentation()
-  return string.format('Spaces: %s', o.shiftwidth)
+  return build_segment(string.format('Spaces: %s', o.shiftwidth))
 end
 
 local function get_file_encoding()
-  return bo.fenc:upper()
+  return build_segment(bo.fenc:upper())
 end
 
 local function get_eol()
@@ -69,7 +75,7 @@ local function get_eol()
     return nil
   end
 
-  return eol:upper()
+  return build_segment(eol:upper())
 end
 
 local function get_filetype()
@@ -79,7 +85,7 @@ local function get_filetype()
     return nil
   end
 
-  return filetype:gsub('^%l', string.upper)
+  return build_segment(filetype:gsub('^%l', string.upper))
 end
 
 local function get_prettier_status()
@@ -97,53 +103,49 @@ local function get_prettier_status()
 
   local has_errors = #diagnostic.get(vim.fn.bufnr(), { severity = diagnostic.severity.ERROR }) > 0
 
-  return string.format('%s Prettier', has_errors and warn_icon or ok_icon)
+  return build_segment(
+    string.format('%s Prettier', has_errors and warn_icon or ok_icon),
+    has_errors and 'UIBlockRed' or nil
+  )
 end
 
 local function get_icons()
-  return '   '
+  return build_segment('   ')
 end
 
 -- Statusline
 function Statusline()
-  local s = '  '
+  local s = ' '
 
-  -- Left status
-  local branch = get_branch()
-  if branch then
-    s = s .. branch .. '   '
-  end
+  local left_segments = {
+    get_branch(),
+    get_mode(),
+  }
+  local right_segments = {
+    get_location(),
+    get_indentation(),
+    get_file_encoding(),
+    get_eol(),
+    get_filetype(),
+    get_prettier_status(),
+    get_icons(),
+  }
 
-  local mode = get_mode()
-  if mode then
-    s = s .. mode .. '   '
+  for _, segment in pairs(left_segments) do
+    if segment then
+      s = s .. segment
+    end
   end
 
   s = s .. '%='
 
-  -- Right status
-  s = s .. '   ' .. get_location()
-  s = s .. '   ' .. get_indentation()
-  s = s .. '   ' .. get_file_encoding()
-
-  local eol = get_eol()
-  if eol then
-    s = s .. '   ' .. eol
+  for _, segment in ipairs(right_segments) do
+    if segment then
+      s = s .. segment
+    end
   end
 
-  local filetype = get_filetype()
-  if filetype then
-    s = s .. '   ' .. filetype
-  end
-
-  local prettier_status = get_prettier_status()
-  if prettier_status then
-    s = s .. '   ' .. prettier_status
-  end
-
-  s = s .. '   ' .. get_icons()
-
-  s = s .. '  '
+  s = s .. ' '
 
   return s
 end
