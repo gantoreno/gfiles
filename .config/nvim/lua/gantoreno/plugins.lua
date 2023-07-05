@@ -43,6 +43,7 @@ return packer.startup(function(use)
   })
 
   -- UI elements
+  use('lewis6991/gitsigns.nvim')
   use('SmiteshP/nvim-navic')
   use('voldikss/vim-floaterm')
   use('nvim-tree/nvim-tree.lua')
@@ -53,7 +54,6 @@ return packer.startup(function(use)
   })
 
   -- Symbols
-  use('mhinz/vim-signify')
   use('nvim-tree/nvim-web-devicons')
 
   -- Language utilities
