@@ -13,7 +13,11 @@ local winbar_ignore_filetypes = {
 function Winbar()
   local w = '  '
 
-  local parent_directory = string.match(fn.expand('%:h'), '/(%w+)$')
+  local root_directory = vim.loop.cwd()
+
+  local base_directory = fn.expand('%:h')
+  local parent_directory = string.match(base_directory, '/(%w+)$')
+
   local current_file = fn.expand('%:t')
   local current_file_extension = fn.fnamemodify(current_file, ':e')
 
@@ -27,14 +31,17 @@ function Winbar()
     end
   end
 
+  if parent_directory and base_directory ~= '.' and base_directory ~= root_directory then
+    w = w .. '%#Directory#' .. parent_directory .. '  '
+  end
+
   if current_file == '' then
     current_file = '[No Name]'
   end
 
   local icon = icons.get_icon(current_file, current_file_extension)
 
-  w = w .. '%#Directory#' .. parent_directory
-  w = w .. '  ' .. icon .. '%#Directory# ' .. current_file
+  w = w .. icon .. '%#Directory# ' .. current_file
 
   local is_location_available = require('nvim-navic').is_available()
 
