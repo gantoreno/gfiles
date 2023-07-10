@@ -27,8 +27,8 @@ function Tabline()
 
     t = t
       .. highlights.with_highlight_group(explorer_label, 'TabLine')
-      .. string.rep(' ', vim.fn.winwidth(1) + 1 - explorer_label:len() - 3)
-      .. highlights.with_highlight_group('󰇘  ', 'TabLine')
+      .. string.rep(' ', vim.fn.winwidth(1) + 1 - explorer_label:len() - 4)
+      .. highlights.with_highlight_group('󰇘   ', 'TabLine')
   end
 
   for index = 1, last_index do
