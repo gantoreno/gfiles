@@ -10,6 +10,7 @@ local windows = {}
 local ignore_filetypes = {
   ['NvimTree'] = true,
   ['floaterm'] = true,
+  ['TelescopePrompt'] = true,
 }
 
 -- Tabline

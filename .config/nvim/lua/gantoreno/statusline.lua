@@ -12,7 +12,10 @@ local filetype = nil
 local ignore_filetypes = {
   ['NvimTree'] = true,
   ['floaterm'] = true,
+  ['TelescopePrompt'] = true,
 }
+
+local is_prettier_active = false
 
 -- Mappings
 local modes = {
@@ -106,13 +109,17 @@ local function get_filetype()
 end
 
 local function get_prettier_status()
-  local is_prettier_active = require('null-ls').is_registered({
+  local _is_prettier_active = require('null-ls').is_registered({
     name = 'prettierd',
     filetype = bo.filetype,
   })
 
+  if _is_prettier_active then
+    is_prettier_active = _is_prettier_active
+  end
+
   if not is_prettier_active then
-    return ''
+    return -1
   end
 
   local ok_icon = '󰄬'
