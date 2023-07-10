@@ -27,7 +27,8 @@ function Tabline()
 
     t = t
       .. highlights.with_highlight_group(explorer_label, 'Directory')
-      .. string.rep(' ', vim.fn.winwidth(1) + 1 - explorer_label:len())
+      .. string.rep(' ', vim.fn.winwidth(1) + 1 - explorer_label:len() - 3)
+      .. highlights.with_highlight_group('󰇘  ', 'Normal')
   end
 
   for index = 1, last_index do
