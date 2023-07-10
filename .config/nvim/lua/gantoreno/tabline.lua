@@ -5,6 +5,13 @@ local tabs = require('gantoreno.utils.tabs')
 local icons = require('gantoreno.utils.icons')
 local highlights = require('gantoreno.utils.highlights')
 
+-- State
+local windows = {}
+local ignore_filetypes = {
+  ['NvimTree'] = true,
+  ['floaterm'] = true,
+}
+
 -- Tabline
 function Tabline()
   local t = ''
@@ -25,7 +32,14 @@ function Tabline()
   for index = 1, last_index do
     local window_number = fn.tabpagewinnr(index)
 
-    local buffer_number = fn.tabpagebuflist(index)[window_number]
+    local _buffer_number = fn.tabpagebuflist(index)[window_number]
+
+    if not ignore_filetypes[fn.getbufvar(_buffer_number, '&filetype')] then
+      windows[index] = _buffer_number
+    end
+
+    local buffer_number = windows[index]
+
     local buffer_name = fn.bufname(buffer_number)
     local buffer_extension = fn.fnamemodify(buffer_name, ':e')
 
@@ -33,7 +47,7 @@ function Tabline()
     local is_active = index == current_index
 
     local file_name = tabs.get_tab_name(buffer_name, index)
-    local file_icon = icons.get_icon(buffer_name, buffer_extension) .. ' ' or ''
+    local file_icon = icons.get_icon(buffer_name, buffer_extension) .. ' '
 
     local has_errors = #diagnostic.get(buffer_number, { severity = diagnostic.severity.ERROR }) > 0
     local has_warnings = #diagnostic.get(buffer_number, { severity = diagnostic.severity.WARN }) > 0

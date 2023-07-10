@@ -7,6 +7,13 @@ local fn = vim.fn
 
 local highlight = require('gantoreno.utils.highlights')
 
+-- State
+local filetype = nil
+local ignore_filetypes = {
+  ['NvimTree'] = true,
+  ['floaterm'] = true,
+}
+
 -- Mappings
 local modes = {
   ['n'] = 'Normal',
@@ -85,7 +92,11 @@ local function get_eol()
 end
 
 local function get_filetype()
-  local filetype = bo.filetype
+  local _filetype = bo.filetype
+
+  if not ignore_filetypes[_filetype] then
+    filetype = _filetype
+  end
 
   if filetype == '' then
     return -1
