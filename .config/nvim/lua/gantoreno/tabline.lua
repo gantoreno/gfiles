@@ -26,9 +26,9 @@ function Tabline()
     local explorer_label = '  EXPLORER  '
 
     t = t
-      .. highlights.with_highlight_group(explorer_label, 'Directory')
+      .. highlights.with_highlight_group(explorer_label, 'TabLine')
       .. string.rep(' ', vim.fn.winwidth(1) + 1 - explorer_label:len() - 3)
-      .. highlights.with_highlight_group('󰇘  ', 'Normal')
+      .. highlights.with_highlight_group('󰇘  ', 'TabLine')
   end
 
   for index = 1, last_index do
@@ -60,7 +60,7 @@ function Tabline()
       .. file_icon
       .. highlights.with_highlight_group(
         file_name,
-        has_errors and 'Error' or has_warnings and 'WarningMsg' or is_active and 'StatusLineSel' or 'StatusLine'
+        has_errors and 'Error' or has_warnings and 'WarningMsg' or is_active and 'TabLineSel' or 'TabLine'
       )
     t = t
       .. (
@@ -72,8 +72,8 @@ function Tabline()
 
   t = t .. '%='
 
-  t = t .. '  ' .. highlights.with_highlight_group('', 'Normal')
-  t = t .. '  ' .. highlights.with_highlight_group('󰇘', 'Normal')
+  t = t .. '  ' .. highlights.with_highlight_group('', 'TabLine')
+  t = t .. '  ' .. highlights.with_highlight_group('󰇘', 'TabLine')
 
   t = t .. '  '
 
