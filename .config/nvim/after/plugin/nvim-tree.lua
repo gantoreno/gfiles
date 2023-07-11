@@ -138,7 +138,12 @@ local custom_icons = {
   ts = {
     icon = '',
     color = '#5e91ae',
-    name = 'TypeScript',
+    name = 'Ts',
+  },
+  spects = {
+    icon = '',
+    color = '#d07c44',
+    name = 'SpecTs',
   },
   toml = {
     icon = '',
@@ -211,4 +216,6 @@ require('nvim-web-devicons').set_icon({
   -- Extensions
   ['spec.js'] = custom_icons.specjs,
   ['test.js'] = custom_icons.specjs,
+  ['spec.ts'] = custom_icons.specjs,
+  ['test.ts'] = custom_icons.specjs,
 })
