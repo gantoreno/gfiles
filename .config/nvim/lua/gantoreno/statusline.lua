@@ -150,7 +150,7 @@ end
 
 -- Statusline
 function Statusline()
-  local s = get_ssh() .. ' '
+  local s = get_ssh() .. '  '
 
   local left_segments = {
     get_branch(),
