@@ -45,6 +45,11 @@ local endoflines = {
 }
 
 -- Custom highlights
+api.nvim_set_hl(0, 'SSHConnectionSegment', {
+  fg = o.background == 'dark' and '#000000' or '#ffffff',
+  bg = o.background == 'dark' and '#ffffff' or '#000000',
+})
+
 api.nvim_set_hl(0, 'StatusLineErrorSegment', {
   fg = '#ffffff',
   bg = o.background == 'dark' and '#633c3b' or '#4d2b2a',
@@ -53,6 +58,10 @@ api.nvim_set_hl(0, 'StatusLineErrorSegment', {
 -- Functions
 local function build_segment(str, hl)
   return highlight.with_highlight_group(string.format(' %s ', str), hl or 'StatusLine')
+end
+
+local function get_ssh()
+  return build_segment('  ', 'SSHConnectionSegment')
 end
 
 local function get_branch()
@@ -141,7 +150,7 @@ end
 
 -- Statusline
 function Statusline()
-  local s = ' '
+  local s = get_ssh() .. ' '
 
   local left_segments = {
     get_branch(),
