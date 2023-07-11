@@ -114,7 +114,7 @@ local function get_filetype()
     return -1
   end
 
-  return build_segment(string.format(' %s', filetype:gsub('^%l', string.upper)))
+  return build_segment(filetype:gsub('^%l', string.upper))
 end
 
 local function get_prettier_status()
