@@ -216,6 +216,6 @@ require('nvim-web-devicons').set_icon({
   -- Extensions
   ['spec.js'] = custom_icons.specjs,
   ['test.js'] = custom_icons.specjs,
-  ['spec.ts'] = custom_icons.specjs,
-  ['test.ts'] = custom_icons.specjs,
+  ['spec.ts'] = custom_icons.spects,
+  ['test.ts'] = custom_icons.spects,
 })
