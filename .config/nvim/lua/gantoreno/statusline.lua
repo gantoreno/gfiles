@@ -61,7 +61,9 @@ local function build_segment(str, hl)
 end
 
 local function get_ssh()
-  return build_segment('  ', 'SSHConnectionSegment')
+  return highlight.with_highlight_group('', 'TabLineSel')
+    .. build_segment('', 'SSHConnectionSegment')
+    .. highlight.with_highlight_group('', 'TabLineSel')
 end
 
 local function get_branch()
