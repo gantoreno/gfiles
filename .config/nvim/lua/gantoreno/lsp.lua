@@ -53,13 +53,6 @@ api.nvim_create_autocmd('LspAttach', {
 })
 
 -- Icons
-diagnostic.config({
-  virtual_text = {
-    prefix = '',
-    suffix = ' ',
-  },
-})
-
 local signs = {
   Error = '',
   Warn = '',
@@ -69,6 +62,7 @@ local signs = {
 
 for type, text in pairs(signs) do
   local texthl = 'DiagnosticSign' .. type
+  local linehl = 'DiagnosticSign' .. type .. 'Line'
 
-  fn.sign_define(texthl, { text = text, texthl = texthl })
+  fn.sign_define(texthl, { text = text, texthl = texthl, linehl = linehl })
 end

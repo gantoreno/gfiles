@@ -155,6 +155,11 @@ local custom_icons = {
     color = '#41535b',
     name = 'TOML',
   },
+  yarnlock = {
+    icon = '',
+    color = '#5e91ae',
+    name = 'YarnLock',
+  },
   yml = {
     icon = '',
     color = '#9976bf',
@@ -224,4 +229,5 @@ require('nvim-web-devicons').set_icon({
   ['spec.ts'] = custom_icons.spects,
   ['test.ts'] = custom_icons.spects,
   ['tsconfig.json'] = custom_icons.tsconfig,
+  ['yarn.lock'] = custom_icons.yarnlock,
 })
