@@ -59,7 +59,7 @@ function Tabline()
     t = t
       .. file_icon
       .. highlights.with_highlight_group(
-        file_name .. (error_count > 0 and ' ' .. error_count or ''),
+        file_name .. (error_count > 0 and ' ' .. error_count or warning_count > 0 and ' ' .. warning_count or ''),
         error_count > 0 and 'Error' or warning_count > 0 and 'WarningMsg' or is_active and 'TabLineSel' or 'TabLine'
       )
     t = t
