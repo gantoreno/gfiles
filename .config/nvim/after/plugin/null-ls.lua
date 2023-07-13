@@ -8,7 +8,9 @@ null_ls.setup({
   sources = {
     formatting.clang_format,
     formatting.stylua,
-    formatting.prettierd,
     formatting.black,
+    formatting.prettierd.with({
+      extra_filetypes = { 'astro' },
+    }),
   },
 })

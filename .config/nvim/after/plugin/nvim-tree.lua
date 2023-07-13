@@ -225,6 +225,7 @@ require('nvim-web-devicons').set_icon({
   ['toml'] = custom_icons.toml,
   ['js'] = custom_icons.js,
   ['mjs'] = custom_icons.js,
+  ['cjs'] = custom_icons.js,
   ['ts'] = custom_icons.ts,
   ['tsx'] = custom_icons.ts,
   ['yaml'] = custom_icons.yml,
