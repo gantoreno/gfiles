@@ -15,6 +15,7 @@ cmp.setup({
   formatting = {
     format = lspkind.cmp_format({
       mode = 'symbol',
+      preset = 'codicons',
     }),
   },
   completion = {
