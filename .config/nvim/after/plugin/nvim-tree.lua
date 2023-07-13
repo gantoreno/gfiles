@@ -6,7 +6,6 @@ require('nvim-tree').setup({
     open_file = { quit_on_open = true },
     file_popup = {
       open_win_config = {
-
         border = 'rounded',
       },
     },
