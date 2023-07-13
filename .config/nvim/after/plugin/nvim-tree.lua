@@ -165,6 +165,11 @@ local custom_icons = {
     color = '#9976bf',
     name = 'YAML',
   },
+  terminal = {
+    icon = '',
+    color = '#ffffff',
+    name = 'Terminal',
+  },
 }
 
 -- Default icon configurations
