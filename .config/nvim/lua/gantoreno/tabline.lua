@@ -51,16 +51,16 @@ function Tabline()
     local file_name = tabs.get_tab_name(buffer_name, index)
     local file_icon = icons.get_icon(buffer_name, buffer_extension) .. ' '
 
-    local has_errors = #diagnostic.get(buffer_number, { severity = diagnostic.severity.ERROR }) > 0
-    local has_warnings = #diagnostic.get(buffer_number, { severity = diagnostic.severity.WARN }) > 0
+    local error_count = #diagnostic.get(buffer_number, { severity = diagnostic.severity.ERROR })
+    local warning_count = #diagnostic.get(buffer_number, { severity = diagnostic.severity.WARN })
 
     t = t .. '%' .. index .. 'T'
     t = t .. (is_active and '▏ ' or '  ')
     t = t
       .. file_icon
       .. highlights.with_highlight_group(
-        file_name,
-        has_errors and 'Error' or has_warnings and 'WarningMsg' or is_active and 'TabLineSel' or 'TabLine'
+        file_name .. (error_count > 0 and ' ' .. error_count or ''),
+        error_count > 0 and 'Error' or warning_count > 0 and 'WarningMsg' or is_active and 'TabLineSel' or 'TabLine'
       )
     t = t
       .. (
