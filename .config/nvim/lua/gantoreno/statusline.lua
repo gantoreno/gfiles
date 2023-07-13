@@ -73,7 +73,7 @@ local function get_branch()
     return -1
   end
 
-  return build_segment(string.format('󰘬 %s', branch_name))
+  return build_segment(string.format('󰘬 %s ', branch_name))
 end
 
 local function get_location()
