@@ -3,7 +3,7 @@ local api = vim.api
 -- Autocommands
 api.nvim_create_autocmd('FileType', {
   pattern = 'floaterm',
-  command = 'setlocal nonumber nocursorline norelativenumber signcolumn=no',
+  command = 'setlocal nonumber nocursorline norelativenumber signcolumn=no mouse=',
 })
 
 api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, { pattern = '*.mdx', command = 'setlocal ft=markdown' })
