@@ -2,7 +2,7 @@ local api = vim.api
 local tbl_extend = vim.tbl_extend
 
 -- Functions
-function map(mode, lhs, rhs, opts)
+local function map(mode, lhs, rhs, opts)
   local options = { noremap = true }
 
   if opts then
