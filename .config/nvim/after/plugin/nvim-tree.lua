@@ -50,10 +50,6 @@ require('nvim-tree').setup({
   },
   view = {
     signcolumn = 'no',
-    width = {
-      min = '25%',
-      max = 50,
-    },
   },
   filters = { dotfiles = false },
 })
