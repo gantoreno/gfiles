@@ -4,9 +4,13 @@ local api = vim.api
 local fn = vim.fn
 
 local icons = require('gantoreno.utils.icons')
+local highlights = require('gantoreno.utils.highlights')
 
 local winbar_ignore_filetypes = {
   NvimTree = true,
+}
+
+local winbar_special_filetypes = {
   floaterm = true,
 }
 
@@ -56,6 +60,27 @@ function Winbar()
   return w
 end
 
+function SpecialWinbar()
+  local w = ''
+
+  w = w .. highlights.with_highlight_group('▏ TERMINAL', 'TabLineSel') .. '   '
+  w = w .. highlights.with_highlight_group('DEBUG CONSOLE', 'Directory') .. '   '
+  w = w .. highlights.with_highlight_group('PROBLEMS', 'Directory') .. '   '
+  w = w .. highlights.with_highlight_group('COMMENTS', 'Directory') .. '   '
+
+  w = w .. '%='
+
+  w = w .. highlights.with_highlight_group(' zsh', 'Directory') .. '  '
+  w = w .. highlights.with_highlight_group('', 'Directory') .. '  '
+  w = w .. highlights.with_highlight_group('', 'Directory') .. '  '
+  w = w .. highlights.with_highlight_group('󰩺', 'Directory') .. '  '
+  w = w .. highlights.with_highlight_group('󰇘', 'Directory') .. '  '
+  w = w .. highlights.with_highlight_group('', 'Directory') .. '  '
+  w = w .. highlights.with_highlight_group('', 'Directory') .. '  '
+
+  return w
+end
+
 api.nvim_create_autocmd('BufWinEnter', {
   pattern = '*',
   callback = function()
@@ -66,5 +91,18 @@ api.nvim_create_autocmd('BufWinEnter', {
     end
 
     vim.wo.winbar = '%{%v:lua.Winbar()%}'
+  end,
+})
+
+api.nvim_create_autocmd('FileType', {
+  pattern = '*',
+  callback = function()
+    local filetype = bo.filetype
+
+    if winbar_special_filetypes[filetype] then
+      vim.wo.winbar = '%{%v:lua.SpecialWinbar()%}'
+    end
+
+    return
   end,
 })
