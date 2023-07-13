@@ -52,7 +52,7 @@ api.nvim_set_hl(0, 'SSHConnectionSegment', {
 
 api.nvim_set_hl(0, 'StatusLineErrorSegment', {
   fg = '#ffffff',
-  bg = o.background == 'dark' and '#633c3b' or '#4d2b2a',
+  bg = o.background == 'dark' and '#693a3a' or '#522929',
 })
 
 -- Functions
