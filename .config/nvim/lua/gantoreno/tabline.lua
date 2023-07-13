@@ -55,7 +55,7 @@ function Tabline()
     local warning_count = #diagnostic.get(buffer_number, { severity = diagnostic.severity.WARN })
 
     t = t .. '%' .. index .. 'T'
-    t = t .. (is_active and '▏ ' or '  ')
+    t = t .. (is_active and '▎ ' or '  ')
     t = t
       .. file_icon
       .. highlights.with_highlight_group(
