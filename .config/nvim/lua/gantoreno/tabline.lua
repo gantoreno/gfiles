@@ -72,11 +72,6 @@ function Tabline()
 
   t = t .. '%='
 
-  t = t .. '  ' .. highlights.with_highlight_group('', 'TabLine')
-  t = t .. '  ' .. highlights.with_highlight_group('󰇘', 'TabLine')
-
-  t = t .. '  '
-
   return t
 end
 

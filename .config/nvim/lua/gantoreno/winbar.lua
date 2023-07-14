@@ -52,30 +52,10 @@ function Winbar()
   if is_location_available then
     local location = require('nvim-navic').get_location()
 
-    if location ~= '' then
-      w = w .. '  ' .. location
-    else
-      w = w .. '  ' .. '…'
-    end
+    w = w .. '  ' .. (location ~= '' and location or '…')
+  else
+    w = w .. '  ' .. '…'
   end
-
-  return w
-end
-
-function SpecialWinbar()
-  local w = ''
-
-  w = w .. highlights.with_highlight_group('▎ TERMINAL', 'TabLineSel') .. '   '
-
-  w = w .. '%='
-
-  w = w .. highlights.with_highlight_group(' zsh', 'Directory') .. '  '
-  w = w .. highlights.with_highlight_group('', 'Directory') .. '  '
-  w = w .. highlights.with_highlight_group('', 'Directory') .. '  '
-  w = w .. highlights.with_highlight_group('󰩺', 'Directory') .. '  '
-  w = w .. highlights.with_highlight_group('󰇘', 'Directory') .. '  '
-  w = w .. highlights.with_highlight_group('', 'Directory') .. '  '
-  w = w .. highlights.with_highlight_group('', 'Directory') .. '  '
 
   return w
 end
@@ -93,15 +73,15 @@ api.nvim_create_autocmd('BufWinEnter', {
   end,
 })
 
-api.nvim_create_autocmd('FileType', {
-  pattern = '*',
-  callback = function()
-    local filetype = bo.filetype
-
-    local window_settings = vim.api.nvim_win_get_config(0)
-
-    if winbar_special_filetypes[filetype] and window_settings.relative == '' then
-      vim.wo.winbar = '%{%v:lua.SpecialWinbar()%}'
-    end
-  end,
-})
+--[[ api.nvim_create_autocmd('FileType', { ]]
+--[[   pattern = '*', ]]
+--[[   callback = function() ]]
+--[[     local filetype = bo.filetype ]]
+--[[]]
+--[[     local window_settings = vim.api.nvim_win_get_config(0) ]]
+--[[]]
+--[[     if winbar_special_filetypes[filetype] and window_settings.relative == '' then ]]
+--[[       vim.wo.winbar = '%{%v:lua.SpecialWinbar()%}' ]]
+--[[     end ]]
+--[[   end, ]]
+--[[ }) ]]
