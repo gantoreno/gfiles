@@ -146,10 +146,10 @@ end
 
 -- Statusline
 function Statusline()
-  local s = ''
+  local s = ' '
 
   local left_segments = {
-    get_ssh(),
+    --[[ get_ssh(), ]]
     get_branch(),
     get_mode(),
   }
