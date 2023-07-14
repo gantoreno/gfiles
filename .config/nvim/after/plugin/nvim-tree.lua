@@ -50,7 +50,12 @@ require('nvim-tree').setup({
   view = {
     signcolumn = 'no',
   },
-  filters = { dotfiles = false },
+  filters = {
+    dotfiles = false,
+    custom = {
+      '.DS_Store',
+    },
+  },
 })
 
 -- Custom icon configurations
@@ -171,6 +176,11 @@ local custom_icons = {
     color = '#ffffff',
     name = 'Terminal',
   },
+  rs = {
+    icon = '',
+    color = '#41535b',
+    name = 'Rust',
+  },
 }
 
 -- Default icon configurations
@@ -228,7 +238,7 @@ require('nvim-web-devicons').set_icon({
   ['ts'] = custom_icons.ts,
   ['tsx'] = custom_icons.ts,
   ['yaml'] = custom_icons.yml,
-  ['yml'] = custom_icons.yml,
+  ['rs'] = custom_icons.rs,
 
   -- Extensions
   ['spec.js'] = custom_icons.specjs,
