@@ -148,9 +148,8 @@ end
 function Statusline()
   local s = ''
 
-  --[[ s = s .. get_ssh() .. ' ' ]]
-
   local left_segments = {
+    get_ssh(),
     get_branch(),
     get_mode(),
   }
