@@ -102,7 +102,5 @@ api.nvim_create_autocmd('FileType', {
     if winbar_special_filetypes[filetype] then
       vim.wo.winbar = '%{%v:lua.SpecialWinbar()%}'
     end
-
-    return
   end,
 })
