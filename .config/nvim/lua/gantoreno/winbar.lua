@@ -29,7 +29,7 @@ function Winbar()
     parent_directory = fn.expand('%:p')
     parent_directory = parent_directory:gsub(current_file, '')
 
-    if parent_directory ~= '/' then
+    if parent_directory and parent_directory ~= '/' then
       parent_directory = parent_directory:sub(2, -2)
       parent_directory = parent_directory:gsub('/', '  ')
     end
