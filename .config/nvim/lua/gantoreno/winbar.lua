@@ -54,6 +54,8 @@ function Winbar()
 
     if location ~= '' then
       w = w .. '  ' .. location
+    else
+      w = w .. '  ' .. '…'
     end
   end
 
