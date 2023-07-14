@@ -147,7 +147,7 @@ end
 local function get_icons()
   local has_errors = #diagnostic.get(vim.fn.bufnr(), { severity = diagnostic.severity.ERROR }) > 0
 
-  return build_segment('' .. '   ' .. (has_errors and '' or ''))
+  return build_segment(has_errors and '' or '')
 end
 
 -- Statusline
