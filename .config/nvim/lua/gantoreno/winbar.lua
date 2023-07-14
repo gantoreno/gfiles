@@ -66,9 +66,6 @@ function SpecialWinbar()
   local w = ''
 
   w = w .. highlights.with_highlight_group('▎ TERMINAL', 'TabLineSel') .. '   '
-  w = w .. highlights.with_highlight_group('DEBUG CONSOLE', 'Directory') .. '   '
-  w = w .. highlights.with_highlight_group('PROBLEMS', 'Directory') .. '   '
-  w = w .. highlights.with_highlight_group('COMMENTS', 'Directory') .. '   '
 
   w = w .. '%='
 
