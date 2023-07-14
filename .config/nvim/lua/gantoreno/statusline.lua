@@ -152,7 +152,9 @@ end
 
 -- Statusline
 function Statusline()
-  local s = get_ssh() .. ' '
+  local s = ''
+
+  --[[ s = s .. get_ssh() .. ' ' ]]
 
   local left_segments = {
     get_branch(),
@@ -170,7 +172,7 @@ function Statusline()
 
   for _, segment in pairs(left_segments) do
     if segment ~= -1 then
-      s = s .. segment .. ' '
+      s = s .. ' ' .. segment
     end
   end
 
@@ -178,11 +180,9 @@ function Statusline()
 
   for i, segment in ipairs(right_segments) do
     if segment ~= -1 then
-      s = s .. ' ' .. segment
+      s = s .. segment .. ' '
     end
   end
-
-  s = s .. ' '
 
   return s
 end

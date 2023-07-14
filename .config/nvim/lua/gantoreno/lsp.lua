@@ -14,6 +14,7 @@ local servers = {
   'eslint',
   'jsonls',
   'lua_ls',
+  'rust_analyzer',
   'tsserver',
 }
 
