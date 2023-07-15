@@ -5,10 +5,11 @@ require('telescope').setup({
     entry_prefix = ' ',
     preview = false,
     layout_strategy = 'vertical',
+    sorting_strategy = 'ascending',
     layout_config = {
       vertical = {
         prompt_position = 'top',
-        width = 0.5,
+        width = 0.6,
       },
     },
     mappings = {
