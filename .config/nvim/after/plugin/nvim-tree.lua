@@ -152,7 +152,7 @@ local custom_icons = {
     name = 'SpecTs',
   },
   tsconfig = {
-    icon = '',
+    icon = '󰛦',
     color = '#5e91ae',
     name = 'TsConfig',
   },
@@ -246,5 +246,4 @@ require('nvim-web-devicons').set_icon({
   ['spec.ts'] = custom_icons.spects,
   ['test.ts'] = custom_icons.spects,
   ['tsconfig.json'] = custom_icons.tsconfig,
-  ['yarn.lock'] = custom_icons.yarnlock,
 })
