@@ -133,7 +133,7 @@ local function get_prettier_status()
     return -1
   end
 
-  local ok_icon = '󰄬'
+  local ok_icon = '󰄭'
   local warn_icon = '⚠'
 
   local has_errors = #diagnostic.get(vim.fn.bufnr(), { severity = diagnostic.severity.ERROR }) > 0
