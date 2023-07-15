@@ -35,6 +35,7 @@ return packer.startup(function(use)
   use('wbthomason/packer.nvim')
 
   -- Editor tools
+  use('tpope/vim-surround')
   use('itchyny/vim-gitbranch')
   use('windwp/nvim-autopairs')
   use({
