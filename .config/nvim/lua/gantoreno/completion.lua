@@ -33,7 +33,7 @@ cmp.setup({
         Module = '',
         Operator = '󱖦',
         Property = '󰯠',
-        Reference = '',
+        Reference = '󱞫',
         Snippet = '󰅴',
         Struct = '󰌗',
         Text = '󰭳',
