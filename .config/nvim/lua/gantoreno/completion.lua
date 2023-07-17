@@ -16,7 +16,7 @@ cmp.setup({
     format = lspkind.cmp_format({
       mode = 'symbol',
       symbol_map = {
-        Class = '󰓸',
+        Class = '󰆩',
         Color = '󰌁',
         Constant = '󰭸',
         Constructor = '󰆧',
@@ -33,7 +33,7 @@ cmp.setup({
         Module = '',
         Operator = '󱖦',
         Property = '󰯠',
-        Reference = '󰋺',
+        Reference = '󱞫',
         Snippet = '󰅴',
         Struct = '󰌗',
         Text = '󰭳',

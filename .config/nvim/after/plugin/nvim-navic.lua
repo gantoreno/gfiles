@@ -5,7 +5,7 @@ require('nvim-navic').setup({
   icons = {
     Array = '󰅪 ',
     Boolean = '󰋰 ',
-    Class = '󰓸 ',
+    Class = '󰆩 ',
     Constant = '󰭸 ',
     Constructor = '󰆧 ',
     Enum = '󰆜 ',
