@@ -2,10 +2,10 @@ local utils = require('Comment.utils')
 
 require('Comment').setup({
   toggler = {
-    line = '<C-/>',
+    line = '<leader>cc',
   },
   opleader = {
-    line = '<C-/>',
+    line = '<leader>cc',
   },
   pre_hook = function(ctx)
     local location = nil
