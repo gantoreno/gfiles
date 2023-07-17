@@ -26,12 +26,12 @@ map('t', '<C-l>', '<C-\\><C-n><C-w>l', { silent = true })
 map('n', '<leader><left>', ':tabprev<CR>', { silent = true })
 map('n', '<leader><right>', ':tabnext<CR>', { silent = true })
 
-map('n', '<C-f>', ":lua require('telescope.builtin').find_files({ hidden = true })<CR>", { silent = true })
-map('n', '<C-g>', ":lua require('telescope.builtin').live_grep({ hidden = true })<CR>", { silent = true })
+map('n', '<leader>ff', ":lua require('telescope.builtin').find_files({ hidden = true })<CR>", { silent = true })
+map('n', '<leader>gg', ":lua require('telescope.builtin').live_grep({ hidden = true })<CR>", { silent = true })
 
-map('n', '<C-n>', ':NvimTreeToggle<CR>', { silent = true })
+map('n', '<leader>nn', ':NvimTreeToggle<CR>', { silent = true })
 
-map('n', '<C-s>', ':FloatermToggle<CR>', { silent = true })
+map('n', '<leader>tt', ':FloatermToggle<CR>', { silent = true })
 
 map('n', '<leadet>tsp', ':TSPlaygroundToggle<CR>', { silent = true })
 
