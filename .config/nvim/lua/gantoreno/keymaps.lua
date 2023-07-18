@@ -33,7 +33,7 @@ map('n', '<leader>nn', ':NvimTreeToggle<CR>', { silent = true })
 
 map('n', '<leader>tt', ':FloatermToggle<CR>', { silent = true })
 
-map('n', '<leadet>tsp', ':TSPlaygroundToggle<CR>', { silent = true })
+map('n', '<leader>ii', ':TwoslashQueriesInspect<CR>', { silent = true })
 
 map(
   'n',

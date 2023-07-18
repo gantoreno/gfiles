@@ -1,4 +1,5 @@
-require('twoslash-queries.nvim').setup({
+require('twoslash-queries').setup({
+  multi_line = true,
   is_enabled = true,
-  highligtt = 'Ignore',
+  highlight = 'Ignore',
 })

@@ -35,9 +35,11 @@ for _, server in ipairs(servers) do
         },
       },
     },
-    on_attach = function(client)
+    on_attach = function(client, bufnr)
       client.capabilities = cmp_lsp.default_capabilities()
       client.resolved_capabilities.document_formatting = false
+
+      require('twoslash-queries').attach(client, bufnr)
     end,
   })
 end
