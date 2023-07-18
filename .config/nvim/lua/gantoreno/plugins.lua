@@ -62,6 +62,7 @@ return packer.startup(function(use)
   use('onsails/lspkind.nvim')
   use('neovim/nvim-lspconfig')
   use('jose-elias-alvarez/null-ls.nvim')
+  use('marilari88/twoslash-queries.nvim')
   use({
     'nvim-treesitter/nvim-treesitter',
     requires = {
