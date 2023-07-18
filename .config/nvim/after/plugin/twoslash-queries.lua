@@ -1,3 +1,5 @@
 require('twoslash-queries').setup({
-  highlight = 'Ignore',
+  multi_line = true,
+  is_enabled = true,
+  highlight = 'Comment',
 })
