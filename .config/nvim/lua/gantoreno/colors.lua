@@ -16,6 +16,7 @@ require('material').setup({
   },
   custom_highlights = {
     CursorLine = { bg = '#171717' },
+    ["@punctuation.delimiter.astro"] = { fg = "#515151" },
   }
 })
 
