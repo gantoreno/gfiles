@@ -57,12 +57,7 @@ api.nvim_create_autocmd('LspAttach', {
 })
 
 -- Icons
-diagnostic.config({
-  virtual_text = {
-    prefix = '',
-    suffix = '',
-  },
-})
+diagnostic.config({})
 
 local signs = {
   Error = '',
