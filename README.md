@@ -20,15 +20,13 @@ As a command-line user, most of my tools are terminal-based, therefore I can gro
 
 ### Terminal emulator
 
-For my terminal emulator, I use [iTerm2](https://iterm2.com/), the macOS terminal replacement, along with my own colorscheme, [iTerm2 Gabriel](https://github.com/gantoreno/gfiles/blob/main/.schemes/Gabriel.itermcolors).
+For my terminal emulator, I use [iTerm2](https://iterm2.com/), the macOS terminal replacement, along with a custom-made [Material Theme Darker](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme) color palette.
 
-I also use [Zsh](https://www.zsh.org/) as my main interactive shell, loading my own prompt theme, [Zsh Gabriel](https://github.com/gantoreno/gfiles/blob/main/.config/zsh/themes/gabriel.zsh-theme), along with plugins such as:
+I also use [Zsh](https://www.zsh.org/) as my main interactive shell, rocking [Spaceship](https://github.com/spaceship-prompt/spaceship-prompt) as my prompt, and other plugins such as:
 
 - [`zsh-z`](https://github.com/agkozak/zsh-z) - Jump quickly to directories that you have visited "frecently".
 - [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like autosuggestions for Zsh.
 - [`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting) - Fish shell like syntax highlighting for Zsh.
-
-Regarding fonts, I use Google's new monospaced font, Google Sans Mono (which, yes, is proprietary, but don't let anyone know, ok?). You can find a _slightly_ modified version inside the [`.fonts`](https://github.com/gantoreno/gfiles/blob/main/.fonts) directory, as well as a fallback font if you want to have my little "g" logo as the prompt symbol.
 
 ### Editor
 
@@ -43,8 +41,8 @@ Editing is not the only thing to do when it comes to terminals, this are the set
   - [`node`](https://nodejs.org/es/) - Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.
   - [`npm`](https://www.npmjs.com/) - The free NPM registry has become the center of JavaScript code sharing, and with more than one million packages, the largest software registry in the world.
 - [`brew`](https://brew.sh/index_es) - Homebrew is the easiest and most flexible way to install the UNIX tools Apple didn’t include with macOS.
-- [`exa`](https://github.com/ogham/exa) - A modern replacement for `ls`.
-- [`macfetch`](https://github.com/gantoreno/macfetch) - A macOS Neofetch alternative written in C++.
+- [`eza`](https://github.com/eza-community/eza) - A modern, maintained replacement for `ls` (formerly `exa`).
+- [`macfetch`](https://github.com/gantoreno/macfetch) - A macOS Neofetch alternative written in Rust.
 
 ## Inspiration
 
