@@ -42,7 +42,6 @@ return packer.startup(function(use)
 
   -- UI elements
   use('lewis6991/gitsigns.nvim')
-  use('SmiteshP/nvim-navic')
   use('voldikss/vim-floaterm')
   use('akinsho/toggleterm.nvim')
   use('nvim-tree/nvim-tree.lua')

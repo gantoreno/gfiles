@@ -40,7 +40,6 @@ for _, server in ipairs(servers) do
       twoslash_queries.attach(client, bufnr)
 
       client.capabilities = cmp_lsp.default_capabilities()
-      client.resolved_capabilities.document_formatting = false
     end,
   })
 end
