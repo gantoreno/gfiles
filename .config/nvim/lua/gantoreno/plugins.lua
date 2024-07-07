@@ -29,7 +29,7 @@ packer.init({
 
 return packer.startup(function(use)
   -- Colorscheme
-  use('~/Developer/Personal/nvim-gabriel')
+  use('marko-cerovac/material.nvim')
 
   -- Packer itself
   use('wbthomason/packer.nvim')
@@ -38,10 +38,7 @@ return packer.startup(function(use)
   use('tpope/vim-surround')
   use('itchyny/vim-gitbranch')
   use('windwp/nvim-autopairs')
-  use({
-    'numtostr/comment.nvim',
-    requires = 'JoosepAlviste/nvim-ts-context-commentstring',
-  })
+  use('terrortylor/nvim-comment')
 
   -- UI elements
   use('lewis6991/gitsigns.nvim')
@@ -49,12 +46,13 @@ return packer.startup(function(use)
   use('voldikss/vim-floaterm')
   use('akinsho/toggleterm.nvim')
   use('nvim-tree/nvim-tree.lua')
+  use('nvim-lualine/lualine.nvim')
   use('norcalli/nvim-colorizer.lua')
+  use('lukas-reineke/indent-blankline.nvim')
   use({
     'nvim-telescope/telescope.nvim',
     requires = 'nvim-lua/plenary.nvim',
   })
-  use('lukas-reineke/indent-blankline.nvim')
 
   -- Symbols
   use('nvim-tree/nvim-web-devicons')

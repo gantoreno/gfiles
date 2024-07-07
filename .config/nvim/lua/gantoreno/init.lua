@@ -12,11 +12,8 @@ require('gantoreno.completion')
 
 -- UI
 require('gantoreno.colors')
-require('gantoreno.statusline')
-require('gantoreno.tabline')
-require('gantoreno.winbar')
 
--- Optiongantoreno.s
+-- Options
 require('gantoreno.options')
 require('gantoreno.autocommands')
 require('gantoreno.keymaps')

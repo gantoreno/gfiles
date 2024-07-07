@@ -15,9 +15,9 @@ o.termguicolors = true
 
 o.so = 15
 o.laststatus = 3
-o.showtabline = 2
+o.showtabline = 0
 o.shiftwidth = 2
-o.cmdheight = 0
+o.cmdheight = 1
 
 o.backspace = 'indent,eol,start'
 o.clipboard = 'unnamedplus'

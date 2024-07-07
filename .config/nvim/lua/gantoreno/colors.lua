@@ -1,11 +1,21 @@
-local o = vim.o
+local g = vim.g
 
+local api = vim.api
 local cmd = vim.cmd
-local fn = vim.fn
 
-local os_mode = fn.system('defaults read -g AppleInterfaceStyle 2> /dev/null | tr -d "\n"')
+require('material').setup({
+  plugins = {
+    'nvim-tree',
+    'telescope',
+  },
+  styles = {
+    keywords = { italic = true },
+  },
+  disable = {
+    eob_lines = true,
+  },
+})
 
-o.background = os_mode == 'Dark' and 'dark' or 'light'
+g.material_style = 'darker'
 
--- Mode
-cmd.colorscheme('gabriel')
+cmd('colorscheme material')
