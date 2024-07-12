@@ -7,7 +7,6 @@ ZSH_THEME="spaceship"
 
 plugins=(
   git
-  zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
@@ -105,3 +104,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export DENO_INSTALL="/Users/gabrielmoreno/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
+# sst
+export PATH=/Users/gabrielmoreno/.sst/bin:$PATH
+
+# AWS
+export AWS_SDK_LOAD_CONFIG=1
