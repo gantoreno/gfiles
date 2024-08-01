@@ -3,7 +3,7 @@ require('telescope').setup({
     prompt_prefix = ' ',
     selection_caret = ' ',
     entry_prefix = ' ',
-    preview = false,
+    preview = true,
     mappings = {
       i = {
         ['<esc>'] = require('telescope.actions').close,
