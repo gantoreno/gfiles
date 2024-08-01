@@ -30,6 +30,9 @@ packer.init({
 return packer.startup(function(use)
   -- Colorscheme
   use('marko-cerovac/material.nvim')
+  use('Mofiqul/vscode.nvim')
+  use('sainnhe/sonokai')
+  use('folke/tokyonight.nvim')
 
   -- Packer itself
   use('wbthomason/packer.nvim')
@@ -52,6 +55,9 @@ return packer.startup(function(use)
     'nvim-telescope/telescope.nvim',
     requires = 'nvim-lua/plenary.nvim',
   })
+
+  -- Navigation
+  use('christoomey/vim-tmux-navigator')
 
   -- Symbols
   use('nvim-tree/nvim-web-devicons')
