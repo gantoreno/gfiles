@@ -3,11 +3,11 @@ source $HOME/.confidentialrc
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="spaceship"
+# ZSH_THEME="default"
 
 plugins=(
   git
-  zsh-syntax-highlighting
+  # zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -18,9 +18,9 @@ bindkey -e
 # Aliases
 alias g="git"
 
-alias ls="eza --icons"
+# alias ls="eza --icons"
 
-alias vim="nvim"
+# alias vim="nvim"
 
 alias lzg="lazygit"
 
@@ -88,7 +88,7 @@ function node_version {
 }
 
 # Disable prompt for now
-# PROMPT='%n@%m %1~ %# $(git_branch)$(node_version)'
+PROMPT='%n@%m %1~ %# $(git_branch)$(node_version)'
 
 # Haskell
 [ -f "/Users/gabrielmoreno/.ghcup/env" ] && source "/Users/gabrielmoreno/.ghcup/env"
