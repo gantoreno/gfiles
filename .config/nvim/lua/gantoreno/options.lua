@@ -15,7 +15,7 @@ o.termguicolors = true
 
 o.so = 15
 o.laststatus = 3
-o.showtabline = 0
+o.showtabline = 1
 o.shiftwidth = 2
 o.cmdheight = 1
 
