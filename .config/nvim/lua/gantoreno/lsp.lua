@@ -21,14 +21,6 @@ local servers = {
 
 for _, server in ipairs(servers) do
   lspconfig[server].setup({
-    handlers = {
-      ['textDocument/hover'] = lsp.with(lsp.handlers.hover, {
-        border = 'rounded',
-      }),
-      ['textDocument/signatureHelp'] = lsp.with(lsp.handlers.signature_help, {
-        border = 'rounded',
-      }),
-    },
     settings = {
       Lua = {
         diagnostics = {
