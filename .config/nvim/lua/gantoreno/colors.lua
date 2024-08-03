@@ -5,7 +5,8 @@ require('onedark').setup({
     keywords = 'italic',
   },
   highlights = {
-    NvimTreeWinSeparator = { bg = "#232326", fg = "#232326" }
+    NvimTreeWinSeparator = { bg = "#232326", fg = "#232326" },
+    ["@tag.delimiter"] = { fg = "#9d9fa5" },
   },
   style = 'warmer'
 })
