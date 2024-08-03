@@ -31,7 +31,7 @@ map('n', '<C-g>', ":lua require('telescope.builtin').live_grep({ hidden = true }
 
 map('n', '<C-n>', ':NvimTreeToggle<CR>', { silent = true })
 
-map('n', '<C-j>', ':FloatermToggle<CR>', { silent = true })
+map('n', '<C-t>', ':FloatermToggle<CR>', { silent = true })
 
 map('n', '<C-c>', ':CommentToggle<cr>', { silent = true })
 map('v', '<C-c>', ':CommentToggle<cr>', { silent = true })

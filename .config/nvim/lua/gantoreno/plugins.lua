@@ -33,6 +33,8 @@ return packer.startup(function(use)
   use('Mofiqul/vscode.nvim')
   use('sainnhe/sonokai')
   use('folke/tokyonight.nvim')
+  use('rebelot/kanagawa.nvim')
+  use('navarasu/onedark.nvim')
 
   -- Packer itself
   use('wbthomason/packer.nvim')
