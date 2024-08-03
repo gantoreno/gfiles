@@ -15,6 +15,7 @@ require('telescope').setup({
       'build',
       'static',
       '.oh%-my%-zsh',
+      '.tmux/',
     },
   },
 })
