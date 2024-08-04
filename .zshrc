@@ -39,6 +39,8 @@ alias :wq="exit"
 
 alias zshconfig="vim $HOME/Developer/Configuration/gfiles/.zshrc"
 alias vimconfig="vim $HOME/Developer/Configuration/gfiles/.config/nvim/init.lua"
+alias tmuxconfig="vim $HOME/Developer/Configuration/gfiles/.tmux.conf"
+alias starshipconfig="vim $HOME/Developer/Configuration/gfiles/.config/starship.toml"
 
 # Evals
 eval "$(fnm env --use-on-cd)"
