@@ -2,7 +2,7 @@
 export LC_ALL=en_US.UTF-8
 
 # TMUX
-[[ $TERM_PROGRAM == "iTerm.app" ]] && [[ -z "$TMUX" ]] && exec tmux -u
+[[ -z "$TMUX" ]] && exec tmux -u
 
 # Confidential
 source $HOME/.confidentialrc
@@ -43,6 +43,7 @@ alias gsp="git status --porcelain"
 alias zshconfig="vim $HOME/Developer/Configuration/gfiles/.zshrc"
 alias vimconfig="vim $HOME/Developer/Configuration/gfiles/.config/nvim/init.lua"
 alias tmuxconfig="vim $HOME/Developer/Configuration/gfiles/.tmux.conf"
+alias ghosttyconfig="vim $HOME/Developer/Configuration/gfiles/.config/ghostty/config"
 alias starshipconfig="vim $HOME/Developer/Configuration/gfiles/.config/starship.toml"
 
 alias :wq="exit"
@@ -66,6 +67,9 @@ export EDITOR="nvim"
 
 # Bun completions
 [ -s "/Users/gabrielmoreno/.bun/_bun" ] && source "/Users/gabrielmoreno/.bun/_bun"
+
+# XDG
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # Go
 export PATH="$HOME/go/bin:$PATH"

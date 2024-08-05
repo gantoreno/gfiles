@@ -1,0 +1,60 @@
+# Font
+font-family = Maple Mono NF
+font-size = 12
+
+font-codepoint-map = U+23FB-U+F1AF0=JetBrainsMono Nerd Font Mono
+
+adjust-cell-height = 20%
+
+# Cursor
+cursor-style = block
+
+# Window
+window-width = 85
+window-height = 25
+
+window-step-resize = true
+
+window-padding-balance = true
+
+# Shell
+shell-integration-features = true
+
+# Colors
+background = #232325
+foreground= #9d9fa5
+
+selection-foreground = #9d9fa5
+selection-background = #2c2d31
+
+# Black
+palette = 0=#101012
+palette = 8=#59595d
+
+# Red
+palette = 1=#df5d67
+palette = 9=#df5d67
+
+# Green
+palette = 2=#90b473
+palette = 10=#90b473
+
+# Yellow
+palette = 3=#dcb672
+palette = 11=#dcb672
+
+# Blue
+palette = 4=#58a5e4
+palette = 12=#58a5e4
+
+# Magenta
+palette = 5=#bc6fd1
+palette = 13=#bc6fd1
+
+# Cyan
+palette = 6=#52a8b4
+palette = 14=#52a8b4
+
+# White
+palette = 7=#9d9fa5
+palette = 15=#9d9fa5
