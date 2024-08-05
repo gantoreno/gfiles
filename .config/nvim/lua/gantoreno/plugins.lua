@@ -39,6 +39,7 @@ return packer.startup(function(use)
   use('itchyny/vim-gitbranch')
   use('windwp/nvim-autopairs')
   use('terrortylor/nvim-comment')
+  use('windwp/nvim-ts-autotag')
 
   -- UI elements
   use('lewis6991/gitsigns.nvim')

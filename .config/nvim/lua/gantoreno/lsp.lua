@@ -6,7 +6,6 @@ local diagnostic = vim.diagnostic
 
 local cmp_lsp = require('cmp_nvim_lsp')
 local lspconfig = require('lspconfig')
-local twoslash_queries = require('twoslash-queries')
 
 -- Setup language servers.
 local servers = {
@@ -29,8 +28,6 @@ for _, server in ipairs(servers) do
       },
     },
     on_attach = function(client, bufnr)
-      twoslash_queries.attach(client, bufnr)
-
       client.capabilities = cmp_lsp.default_capabilities()
     end,
   })
