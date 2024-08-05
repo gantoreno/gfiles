@@ -36,6 +36,8 @@ map('n', '<C-t>', ':FloatermToggle<CR>', { silent = true })
 map('n', '<C-c>', ':CommentToggle<cr>', { silent = true })
 map('v', '<C-c>', ':CommentToggle<cr>', { silent = true })
 
+map('n', '<C-s>', ':CloakToggle<cr>', { silent = true })
+
 map(
   'n',
   '<leader>lzg',
