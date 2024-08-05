@@ -4,6 +4,9 @@ export LC_ALL=en_US.UTF-8
 
 source $HOME/.confidentialrc
 
+bindkey '^[[1;3C' forward-word
+bindkey '^[[1;3D' backward-word
+
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 
