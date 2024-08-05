@@ -28,16 +28,11 @@ packer.init({
 })
 
 return packer.startup(function(use)
-  -- Colorscheme
-  use('marko-cerovac/material.nvim')
-  use('Mofiqul/vscode.nvim')
-  use('sainnhe/sonokai')
-  use('folke/tokyonight.nvim')
-  use('rebelot/kanagawa.nvim')
-  use('navarasu/onedark.nvim')
-
   -- Packer itself
   use('wbthomason/packer.nvim')
+
+  -- Colorscheme
+  use('navarasu/onedark.nvim')
 
   -- Editor tools
   use('tpope/vim-surround')
@@ -67,7 +62,6 @@ return packer.startup(function(use)
   -- Language utilities
   use('onsails/lspkind.nvim')
   use('neovim/nvim-lspconfig')
-  use('marilari88/twoslash-queries.nvim')
   use({
     'nvim-treesitter/nvim-treesitter',
     requires = {
