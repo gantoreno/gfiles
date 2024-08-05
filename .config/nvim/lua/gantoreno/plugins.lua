@@ -40,6 +40,7 @@ return packer.startup(function(use)
   use('windwp/nvim-autopairs')
   use('terrortylor/nvim-comment')
   use('windwp/nvim-ts-autotag')
+  use('sbdchd/neoformat')
 
   -- UI elements
   use('lewis6991/gitsigns.nvim')

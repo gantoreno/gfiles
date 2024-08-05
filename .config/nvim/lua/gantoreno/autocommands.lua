@@ -9,7 +9,7 @@ api.nvim_create_autocmd('FileType', {
 api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, { pattern = '*.mdx', command = 'setlocal ft=markdown' })
 api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, { pattern = '.env*', command = 'setlocal ft=config' })
 
-api.nvim_create_autocmd({ 'BufWritePre' }, { pattern = '*', command = 'lua vim.lsp.buf.format({ async = false })' })
+api.nvim_create_autocmd({ 'BufWritePre' }, { pattern = '*', command = 'undojoin | Neoformat' })
 
 api.nvim_create_autocmd('QuitPre', {
   callback = function()

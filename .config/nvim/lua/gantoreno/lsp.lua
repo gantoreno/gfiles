@@ -26,6 +26,7 @@ for _, server in ipairs(servers) do
           globals = { 'vim' },
         },
       },
+      document_formatting = false
     },
     on_attach = function(client, bufnr)
       client.capabilities = cmp_lsp.default_capabilities()
