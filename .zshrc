@@ -2,7 +2,7 @@
 export LC_ALL=en_US.UTF-8
 
 # TMUX
-[[ -z "$TMUX" ]] && exec tmux -u
+[[ $TERM_PROGRAM == "iTerm.app" ]] && [[ -z "$TMUX" ]] && exec tmux -u
 
 # Confidential
 source $HOME/.confidentialrc
