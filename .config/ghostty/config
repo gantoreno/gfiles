@@ -21,7 +21,7 @@ window-padding-balance = true
 shell-integration-features = true
 
 # Keybinds
-macos-option-as-alt = true
+macos-option-as-alt = left
 
 keybind = cmd+right=text:\x05
 keybind = cmd+left=text:\x01
