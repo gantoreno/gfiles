@@ -13,15 +13,20 @@ cursor-style = block
 window-width = 85
 window-height = 25
 
-window-padding-x = 4
-window-padding-y = 2
-
 window-step-resize = true
 
 window-padding-balance = true
 
 # Shell
 shell-integration-features = true
+
+# Keybinds
+macos-option-as-alt = true
+
+keybind = cmd+right=text:\x05
+keybind = cmd+left=text:\x01
+keybind = alt+left=esc:b
+keybind = alt+right=esc:f
 
 # Colors
 background = #232325
