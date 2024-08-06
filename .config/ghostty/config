@@ -29,7 +29,7 @@ keybind = alt+left=esc:b
 keybind = alt+right=esc:f
 
 # Colors
-background = #232325
+background = #232326
 foreground= #9d9fa5
 
 selection-foreground = #9d9fa5
