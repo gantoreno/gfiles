@@ -5,11 +5,12 @@ require('onedark').setup({
     keywords = 'italic',
   },
   highlights = {
-    NvimTreeWinSeparator = { bg = "#232326", fg = "#232326" },
-    ["@tag.delimiter"] = { fg = "#9d9fa5" },
-    ["@tag.attribute"] = { fg = "#D19A66" },
+    NvimTreeWinSeparator = { bg = '#232326', fg = '#232326' },
+    ['@tag.delimiter'] = { fg = '#9d9fa5' },
+    ['@tag.attribute'] = { fg = '#D19A66' },
+    ['@tag'] = { fg = '#e86671' },
   },
-  style = 'warmer'
+  style = 'warmer',
 })
 
 cmd('colorscheme onedark')
