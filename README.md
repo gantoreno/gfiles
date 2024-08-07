@@ -8,6 +8,8 @@
 
 My developer journey led me to an almost 100% terminal-based way of working (and living), for this reason, I organized all my config files in this dotfiles repo, in order to keep track of my settings, programs, themes & more. Feel free to use whatever you want!
 
+![.github/screenshot.png](./github/screenshot.png)
+
 **NOTE:** This is a macOS-based setup in terms of paths & package managers, keep this in mind before trying to directly clone & setup all my configurations.
 
 ## Tools
@@ -20,9 +22,9 @@ As a command-line user, most of my tools are terminal-based, therefore I can gro
 
 ### Terminal emulator
 
-For my terminal emulator, I use [iTerm2](https://iterm2.com/), the macOS terminal replacement, along with a custom-made [Material Theme Darker](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme) color palette.
+For my terminal emulator, I use [Ghostty](https://github.com/ghostty-org), by [Mitchell Hashimoto](https://mitchellh.com/ghostty), along with a custom-made [One Dark](https://github.com/navarasu/onedark.nvim) color palette.
 
-I also use [Zsh](https://www.zsh.org/) as my main interactive shell, rocking [Spaceship](https://github.com/spaceship-prompt/spaceship-prompt) as my prompt, and other plugins such as:
+I also use [Zsh](https://www.zsh.org/) as my main interactive shell, rocking [Starship](https://starship.rs/) as my prompt, and other plugins such as:
 
 - [`zsh-z`](https://github.com/agkozak/zsh-z) - Jump quickly to directories that you have visited "frecently".
 - [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like autosuggestions for Zsh.
