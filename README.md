@@ -40,6 +40,7 @@ Editing is not the only thing to do when it comes to terminals, this are the set
 
 - [`brew`](https://brew.sh/index_es) - Homebrew is the easiest and most flexible way to install the UNIX tools Apple didn’t include with macOS.
 - [`eza`](https://github.com/eza-community/eza) - A modern, maintained replacement for `ls` (formerly `exa`).
+- [`tmux`](https://github.com/tmux/tmux) - A terminal multiplexer.
 - [`fnm`](https://github.com/Schniz/fnm#shell-setup) - Fast and simple Node.js version manager, built in Rust.
 - [`lazygit`](https://github.com/jesseduffield/lazygit) - The simple terminal UI for Git commands.
 - [`macfetch`](https://github.com/gantoreno/macfetch) - A macOS Neofetch alternative written in Rust.
