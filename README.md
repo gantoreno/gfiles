@@ -38,23 +38,12 @@ I use [Neovim](https://neovim.io/) as one of my main text-editor for everything 
 
 Editing is not the only thing to do when it comes to terminals, this are the set of utilities I use on a daily basis to perform tasks regarding version control, project management, connectivity & more:
 
-- [`lazygit`](https://github.com/jesseduffield/lazygit) - The simple terminal UI for Git commands.
-- [`fnm`](https://github.com/Schniz/fnm#shell-setup) - Fast and simple Node.js version manager, built in Rust.
-  - [`node`](https://nodejs.org/es/) - Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.
-  - [`npm`](https://www.npmjs.com/) - The free NPM registry has become the center of JavaScript code sharing, and with more than one million packages, the largest software registry in the world.
 - [`brew`](https://brew.sh/index_es) - Homebrew is the easiest and most flexible way to install the UNIX tools Apple didn’t include with macOS.
 - [`eza`](https://github.com/eza-community/eza) - A modern, maintained replacement for `ls` (formerly `exa`).
+- [`fnm`](https://github.com/Schniz/fnm#shell-setup) - Fast and simple Node.js version manager, built in Rust.
+- [`lazygit`](https://github.com/jesseduffield/lazygit) - The simple terminal UI for Git commands.
 - [`macfetch`](https://github.com/gantoreno/macfetch) - A macOS Neofetch alternative written in Rust.
-
-## Inspiration
-
-All my doftfiles have some bit of inspiration on other repos I've encountered throughout my days, you should definitely check out the following:
-
-- Kutsan Kaplan's [dotfiles](https://github.com/kutsan/dotfiles).
-- Lukas Reineke's [config files](https://github.com/lukas-reineke/dotfiles).
-- Luke Smith's [void rice](https://github.com/LukeSmithxyz).
-- Christian Chiarulli's [LunarVim](https://github.com/ChristianChiarulli/LunarVim).
-- Takuya Matsuyama's [public dotfiles](https://github.com/craftzdog/dotfiles-public).
+- [`zsh-z`](https://github.com/agkozak/zsh-z) - A native Zsh port of z.sh with added features.
 
 ## License
 
