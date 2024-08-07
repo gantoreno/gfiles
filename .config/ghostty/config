@@ -1,10 +1,8 @@
 # Font
-font-family = Maple Mono NF
+font-family = Cascadia Code NF
 font-size = 12
 
-font-codepoint-map = U+23FB-U+F1AF0=JetBrainsMono Nerd Font Mono
-
-adjust-cell-height = 15%
+adjust-cell-height = 40%
 
 # Cursor
 cursor-style = block
@@ -15,7 +13,10 @@ window-height = 25
 
 window-step-resize = true
 
-window-padding-balance = true
+# window-padding-balance = true
+
+window-padding-x = 5,5
+window-padding-y = 0,2
 
 # Shell
 shell-integration-features = true
