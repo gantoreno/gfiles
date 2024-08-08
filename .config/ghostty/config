@@ -1,8 +1,10 @@
 # Font
-font-family = Cascadia Code NF
+font-family = Maple Mono NF
 font-size = 12
 
-adjust-cell-height = 40%
+font-codepoint-map = U+23FB-U+F1AF0=JetBrainsMono Nerd Font Mono
+
+adjust-cell-height = 20%
 
 # Cursor
 cursor-style = block
