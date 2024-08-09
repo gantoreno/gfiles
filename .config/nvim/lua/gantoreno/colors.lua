@@ -7,7 +7,7 @@ require('catppuccin').setup({
       rosewater = '#e0e0e0',
       flamingo = '#ff9f9a',
       pink = '#ffa9c9',
-      mauve = '#95b9d0',
+      mauve = '#df95cf',
       lavender = '#a990c9',
       red = '#ff6960',
       maroon = '#f98080',
@@ -61,7 +61,7 @@ require('catppuccin').setup({
         ['@markup.link.url'] = { fg = mocha.green, style = {} },
         ['@markup.link.markdown_inline'] = { style = {} },
 
-        ['@markup.raw'] = { fg = mocha.blue },
+        ['@markup.raw'] = { fg = mocha.sky },
         ['@markup.strong'] = { fg = mocha.lavender },
 
         ['@keyword.function'] = { fg = mocha.blue },
@@ -69,6 +69,7 @@ require('catppuccin').setup({
         ['@function.builtin'] = { fg = mocha.yellow },
 
         ['@parameter'] = { fg = mocha.yellow },
+        ['@variable.parameter'] = { link = '@parameter' },
 
         ['@string.escape'] = { fg = mocha.lavender, style = {} },
       }
