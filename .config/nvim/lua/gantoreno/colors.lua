@@ -41,13 +41,15 @@ require('catppuccin').setup({
         NvimTreeEndOfBuffer = { fg = mocha.foundation },
         TreesitterContextBottom = { style = {} },
         TreesitterContextLineNumberBottom = { style = {} },
+        ['@markup.link.url'] = { fg = mocha.green, style = {} },
+        ['@string.special.url'] = { fg = mocha.green, style = {} },
       }
     end,
   },
   integrations = {
     indent_blankline = {
       enabled = true,
-      scope_color = 'mantle', -- catppuccin color (eg. `lavender`) Default: text
+      scope_color = 'mantle',
     },
   },
 })
