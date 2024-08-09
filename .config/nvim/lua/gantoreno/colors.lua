@@ -36,13 +36,26 @@ require('catppuccin').setup({
   highlight_overrides = {
     mocha = function(mocha)
       return {
+        TabLineSel = { fg = mocha.text },
         WinSeparator = { fg = mocha.surface0 },
         NvimTreeNormal = { bg = mocha.foundation },
         NvimTreeEndOfBuffer = { fg = mocha.foundation },
         TreesitterContextBottom = { style = {} },
         TreesitterContextLineNumberBottom = { style = {} },
-        ['@markup.link.url'] = { fg = mocha.green, style = {} },
+
+        ['@constructor.lua'] = { link = '@punctuation.bracket' },
+
         ['@string.special.url'] = { fg = mocha.green, style = {} },
+
+        ['@markup.link.url'] = { fg = mocha.green, style = {} },
+        ['@markup.link.markdown_inline'] = { style = {} },
+
+        ['@markup.raw'] = { fg = mocha.blue },
+        ['@markup.strong'] = { fg = mocha.lavender },
+
+        ['@keyword.function'] = { fg = mocha.blue },
+
+        ['@function.builtin'] = { fg = mocha.yellow },
       }
     end,
   },
