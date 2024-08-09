@@ -10,6 +10,7 @@ api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, { pattern = '*.mdx', comman
 api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, { pattern = '.env*', command = 'setlocal ft=config' })
 
 api.nvim_create_autocmd({ 'BufWritePost' }, { pattern = '*', command = 'FormatWrite' })
+api.nvim_create_autocmd({ 'BufWritePre' }, { pattern = '*', command = 'ColorizerReloadAllBuffers' })
 
 api.nvim_create_autocmd('QuitPre', {
   callback = function()

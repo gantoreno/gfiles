@@ -1,17 +1,37 @@
 local cmd = vim.cmd
 
-require('onedark').setup({
-  code_style = {
-    keywords = 'italic',
+require('catppuccin').setup({
+  flavour = 'mocha',
+  color_overrides = {
+    mocha = {
+      rosewater = '#ffc9c9',
+      flamingo = '#ff9f9a',
+      pink = '#ffa9c9',
+      mauve = '#df95cf',
+      lavender = '#a990c9',
+      red = '#ff6960',
+      maroon = '#f98080',
+      peach = '#f9905f',
+      yellow = '#f9bd69',
+      green = '#b0d080',
+      teal = '#a0dfa0',
+      sky = '#a0d0c0',
+      sapphire = '#95b9d0',
+      blue = '#89a0e0',
+      text = '#e0e0e0',
+      subtext1 = '#d5d5d5',
+      subtext0 = '#bdbdbd',
+      overlay2 = '#929292',
+      overlay1 = '#7c7c7c',
+      overlay0 = '#666666',
+      surface2 = '#505050',
+      surface1 = '#3a3a3a',
+      surface0 = '#252525',
+      base = '#151515',
+      mantle = '#191919',
+      crust = '#080808',
+    },
   },
-  highlights = {
-    NvimTreeWinSeparator = { bg = '#232326', fg = '#232326' },
-    TabLineSel = { fg = '#9d9fa5', bg = '#38383d' },
-    ['@tag.delimiter'] = { fg = '#9d9fa5' },
-    ['@tag.attribute'] = { fg = '#D19A66' },
-    ['@tag'] = { fg = '#dcb672' },
-  },
-  style = 'warmer',
 })
 
-cmd('colorscheme onedark')
+cmd('colorscheme catppuccin')
