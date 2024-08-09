@@ -7,7 +7,7 @@ require('catppuccin').setup({
       rosewater = '#e0e0e0',
       flamingo = '#ff9f9a',
       pink = '#ffa9c9',
-      mauve = '#df95cf',
+      mauve = '#95b9d0',
       lavender = '#a990c9',
       red = '#ff6960',
       maroon = '#f98080',
@@ -40,6 +40,7 @@ require('catppuccin').setup({
         TabLineSel = { fg = mocha.text },
         CursorLineNr = { fg = mocha.subtext0 },
         WinSeparator = { fg = mocha.surface0 },
+        Special = { fg = mocha.blue },
 
         NvimTreeNormal = { bg = mocha.bedrock },
         NvimTreeGitFileDirtyHL = { fg = mocha.yellow },
@@ -66,6 +67,8 @@ require('catppuccin').setup({
         ['@keyword.function'] = { fg = mocha.blue },
 
         ['@function.builtin'] = { fg = mocha.yellow },
+
+        ['@parameter'] = { fg = mocha.yellow },
 
         ['@string.escape'] = { fg = mocha.lavender, style = {} },
       }
