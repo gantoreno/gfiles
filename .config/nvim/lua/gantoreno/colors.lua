@@ -4,7 +4,7 @@ require('catppuccin').setup({
   flavour = 'mocha',
   color_overrides = {
     mocha = {
-      rosewater = '#ffc9c9',
+      rosewater = '#e0e0e0',
       flamingo = '#ff9f9a',
       pink = '#ffa9c9',
       mauve = '#df95cf',
