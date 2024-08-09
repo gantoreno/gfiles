@@ -35,7 +35,7 @@ require('catppuccin').setup({
   highlight_overrides = {
     mocha = function(mocha)
       return {
-        VertSplit = { fg = mocha.mantle },
+        WinSeparator = { fg = mocha.surface0 },
         NvimTreeEndOfBuffer = { fg = mocha.mantle },
         TreesitterContextBottom = { style = {} },
         TreesitterContextLineNumberBottom = { style = {} },
