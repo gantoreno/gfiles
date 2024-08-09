@@ -32,6 +32,11 @@ require('catppuccin').setup({
       crust = '#080808',
     },
   },
+  highlight_overrides = {
+    mocha = {
+      NvimTreeEndOfBuffer = { fg = '#191919' },
+    },
+  },
 })
 
 cmd('colorscheme catppuccin')
