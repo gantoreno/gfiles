@@ -29,6 +29,7 @@ require('catppuccin').setup({
       surface0 = '#252525',
       base = '#151515',
       mantle = '#191919',
+      foundation = '#111111',
       crust = '#080808',
     },
   },
@@ -36,7 +37,8 @@ require('catppuccin').setup({
     mocha = function(mocha)
       return {
         WinSeparator = { fg = mocha.surface0 },
-        NvimTreeEndOfBuffer = { fg = mocha.mantle },
+        NvimTreeNormal = { bg = mocha.foundation },
+        NvimTreeEndOfBuffer = { fg = mocha.foundation },
         TreesitterContextBottom = { style = {} },
         TreesitterContextLineNumberBottom = { style = {} },
       }
