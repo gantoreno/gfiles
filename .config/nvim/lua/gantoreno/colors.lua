@@ -56,6 +56,8 @@ require('catppuccin').setup({
         ['@keyword.function'] = { fg = mocha.blue },
 
         ['@function.builtin'] = { fg = mocha.yellow },
+
+        ['@string.escape'] = { fg = mocha.lavender, style = {} },
       }
     end,
   },
