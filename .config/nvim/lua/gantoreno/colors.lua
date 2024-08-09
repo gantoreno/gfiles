@@ -33,8 +33,19 @@ require('catppuccin').setup({
     },
   },
   highlight_overrides = {
-    mocha = {
-      NvimTreeEndOfBuffer = { fg = '#191919' },
+    mocha = function(mocha)
+      return {
+        VertSplit = { fg = mocha.mantle },
+        NvimTreeEndOfBuffer = { fg = mocha.mantle },
+        TreesitterContextBottom = { style = {} },
+        TreesitterContextLineNumberBottom = { style = {} },
+      }
+    end,
+  },
+  integrations = {
+    indent_blankline = {
+      enabled = true,
+      scope_color = 'mantle', -- catppuccin color (eg. `lavender`) Default: text
     },
   },
 })
