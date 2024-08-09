@@ -36,10 +36,18 @@ require('catppuccin').setup({
   highlight_overrides = {
     mocha = function(mocha)
       return {
+        Visual = { link = 'CursorLine', style = {} },
         TabLineSel = { fg = mocha.text },
+        CursorLineNr = { fg = mocha.subtext0 },
         WinSeparator = { fg = mocha.surface0 },
+
         NvimTreeNormal = { bg = mocha.foundation },
+        NvimTreeGitFileDirtyHL = { fg = mocha.yellow },
+        NvimTreeGitDirtyIcon = { link = 'NvimTreeGitFileDirtyHL' },
+        NvimTreeGitFolderNewHL = { fg = mocha.green },
+        NvimTreeGitNewIcon = { link = 'NvimTreeGitFolderNewHL' },
         NvimTreeEndOfBuffer = { fg = mocha.foundation },
+
         TreesitterContextBottom = { style = {} },
         TreesitterContextLineNumberBottom = { style = {} },
 
