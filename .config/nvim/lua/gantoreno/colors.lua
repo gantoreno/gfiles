@@ -46,6 +46,8 @@ require('catppuccin').setup({
         NvimTreeGitDirtyIcon = { link = 'NvimTreeGitFileDirtyHL' },
         NvimTreeGitFolderNewHL = { fg = mocha.green },
         NvimTreeGitNewIcon = { link = 'NvimTreeGitFolderNewHL' },
+        NvimTreeGitFolderDeletedHL = { fg = mocha.red },
+        NvimTreeGitDeletedIcon = { link = 'NvimTreeGitFolderDeletedHL' },
         NvimTreeEndOfBuffer = { fg = mocha.foundation },
 
         TreesitterContextBottom = { style = {} },
