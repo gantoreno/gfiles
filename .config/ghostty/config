@@ -4,7 +4,7 @@ font-size = 12
 
 font-codepoint-map = U+23FB-U+F1AF0=JetBrainsMono Nerd Font Mono
 
-adjust-cell-height = 20%
+adjust-cell-height = 15%
 
 # Cursor
 cursor-style = block
@@ -15,10 +15,7 @@ window-height = 25
 
 window-step-resize = true
 
-# window-padding-balance = true
-
-window-padding-x = 5,5
-window-padding-y = 0,2
+window-padding-balance = true
 
 # Shell
 shell-integration-features = true
@@ -32,40 +29,40 @@ keybind = alt+left=esc:b
 keybind = alt+right=esc:f
 
 # Colors
-background = #151515
-foreground = #e0e0e0
+background = #232326
+foreground= #9d9fa5
 
-selection-foreground = #e0e0e0
-selection-background = #1f1f1f
+selection-foreground = #9d9fa5
+selection-background = #2c2d31
 
 # Black
-palette = 0=#080808
-palette = 8=#505050
+palette = 0=#101012
+palette = 8=#59595d
 
 # Red
-palette = 1=#ff6960
-palette = 9=#ff6960
+palette = 1=#df5d67
+palette = 9=#df5d67
 
 # Green
-palette =  2=#b0d080
-palette = 10=#b0d080
+palette = 2=#90b473
+palette = 10=#90b473
 
 # Yellow
-palette =  3=#f9bd69
-palette = 11=#f9bd69
+palette = 3=#dcb672
+palette = 11=#dcb672
 
 # Blue
-palette =  4=#89a0e0
-palette = 12=#89a0e0
+palette = 4=#58a5e4
+palette = 12=#58a5e4
 
 # Magenta
-palette =  5=#a990c9
-palette = 13=#a990c9
+palette = 5=#bc6fd1
+palette = 13=#bc6fd1
 
 # Cyan
-palette =  6=#95b9d0
-palette = 14=#95b9d0
+palette = 6=#52a8b4
+palette = 14=#52a8b4
 
 # White
-palette =  7=#e0e0e0
-palette = 15=#e0e0e0
+palette = 7=#9d9fa5
+palette = 15=#9d9fa5

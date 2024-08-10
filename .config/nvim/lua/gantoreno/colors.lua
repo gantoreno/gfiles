@@ -1,86 +1,17 @@
 local cmd = vim.cmd
 
-require('catppuccin').setup({
-  flavour = 'mocha',
-  color_overrides = {
-    mocha = {
-      rosewater = '#e0e0e0',
-      flamingo = '#ff9f9a',
-      pink = '#ffa9c9',
-      mauve = '#df95cf',
-      lavender = '#a990c9',
-      red = '#ff6960',
-      maroon = '#f98080',
-      peach = '#f9905f',
-      yellow = '#f9bd69',
-      green = '#b0d080',
-      teal = '#a0dfa0',
-      sky = '#a0d0c0',
-      sapphire = '#95b9d0',
-      blue = '#89a0e0',
-      text = '#e0e0e0',
-      subtext1 = '#d5d5d5',
-      subtext0 = '#bdbdbd',
-      overlay2 = '#929292',
-      overlay1 = '#7c7c7c',
-      overlay0 = '#666666',
-      surface2 = '#505050',
-      surface1 = '#3a3a3a',
-      surface0 = '#252525',
-      base = '#151515',
-      mantle = '#191919',
-      bedrock = '#111111',
-      crust = '#080808',
-    },
+require('onedark').setup({
+  code_style = {
+    keywords = 'italic',
   },
-  highlight_overrides = {
-    mocha = function(mocha)
-      return {
-        Visual = { link = 'CursorLine', style = {} },
-        TabLineSel = { fg = mocha.text },
-        CursorLineNr = { fg = mocha.subtext0 },
-        WinSeparator = { fg = mocha.surface0 },
-        Special = { fg = mocha.blue },
-
-        NvimTreeNormal = { bg = mocha.bedrock },
-        NvimTreeGitFileDirtyHL = { fg = mocha.yellow },
-        NvimTreeGitDirtyIcon = { link = 'NvimTreeGitFileDirtyHL' },
-        NvimTreeGitFolderNewHL = { fg = mocha.green },
-        NvimTreeGitNewIcon = { link = 'NvimTreeGitFolderNewHL' },
-        NvimTreeGitFolderDeletedHL = { fg = mocha.red },
-        NvimTreeGitDeletedIcon = { link = 'NvimTreeGitFolderDeletedHL' },
-        NvimTreeEndOfBuffer = { fg = mocha.bedrock },
-
-        TreesitterContextBottom = { style = {} },
-        TreesitterContextLineNumberBottom = { style = {} },
-
-        ['@constructor.lua'] = { link = '@punctuation.bracket' },
-
-        ['@string.special.url'] = { fg = mocha.green, style = {} },
-
-        ['@markup.link.url'] = { fg = mocha.green, style = {} },
-        ['@markup.link.markdown_inline'] = { style = {} },
-
-        ['@markup.raw'] = { fg = mocha.sky },
-        ['@markup.strong'] = { fg = mocha.lavender },
-
-        ['@keyword.function'] = { fg = mocha.blue },
-
-        ['@function.builtin'] = { fg = mocha.yellow },
-
-        ['@parameter'] = { fg = mocha.yellow },
-        ['@variable.parameter'] = { link = '@parameter' },
-
-        ['@string.escape'] = { fg = mocha.lavender, style = {} },
-      }
-    end,
+  highlights = {
+    NvimTreeWinSeparator = { bg = '#232326', fg = '#232326' },
+    TabLineSel = { fg = '#9d9fa5', bg = '#38383d' },
+    ['@tag.delimiter'] = { fg = '#9d9fa5' },
+    ['@tag.attribute'] = { fg = '#D19A66' },
+    ['@tag'] = { fg = '#dcb672' },
   },
-  integrations = {
-    indent_blankline = {
-      enabled = true,
-      scope_color = 'mantle',
-    },
-  },
+  style = 'warmer',
 })
 
-cmd('colorscheme catppuccin')
+cmd('colorscheme onedark')

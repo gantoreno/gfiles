@@ -22,7 +22,7 @@ As a command-line user, most of my tools are terminal-based, therefore I can gro
 
 ### Terminal emulator
 
-For my terminal emulator, I use [Ghostty](https://github.com/ghostty-org), by [Mitchell Hashimoto](https://mitchellh.com/ghostty), along with a custom-made [Catppuccin](https://github.com/catppuccin/nvim) color palette.
+For my terminal emulator, I use [Ghostty](https://github.com/ghostty-org), by [Mitchell Hashimoto](https://mitchellh.com/ghostty), along with a custom-made [One Dark](https://github.com/navarasu/onedark.nvim) color palette.
 
 I also use [Zsh](https://www.zsh.org/) as my main interactive shell, rocking [Starship](https://starship.rs/) as my prompt, and other plugins such as:
 
