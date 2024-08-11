@@ -19,9 +19,6 @@ function ToGrayscale(hex)
 end
 
 require('onedark').setup({
-  code_style = {
-    keywords = 'italic',
-  },
   colors = {
     black = ToGrayscale('#101012'),
     bg0 = ToGrayscale('#232326'),
