@@ -64,6 +64,8 @@ require('onedark').setup({
     ['@tag.delimiter'] = { fg = '$fg' },
     ['@tag.attribute'] = { fg = '$orange' },
     ['@tag'] = { fg = '$yellow' },
+
+    ['@constructor.lua'] = { fg = '$light_grey' },
   },
   style = 'warmer',
 })

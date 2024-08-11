@@ -45,6 +45,7 @@ api.nvim_create_autocmd('LspAttach', {
     local opts = { buffer = evt.buf }
 
     keymap.set('n', 'K', lsp.buf.hover, opts)
+    keymap.set('n', 'r', lsp.buf.rename, opts)
     keymap.set('n', '.', lsp.buf.code_action, opts)
     keymap.set('n', 'gd', lsp.buf.definition, opts)
     keymap.set('n', 'gD', lsp.buf.declaration, opts)
