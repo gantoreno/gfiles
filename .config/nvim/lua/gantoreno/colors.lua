@@ -1,34 +1,18 @@
 local cmd = vim.cmd
 
-function ToGrayscale(hex)
-  -- Remove the '#' if it's present
-  hex = hex:gsub('#', '')
-
-  -- Convert the hex color to RGB
-  local r = tonumber(hex:sub(1, 2), 16)
-  local g = tonumber(hex:sub(3, 4), 16)
-  local b = tonumber(hex:sub(5, 6), 16)
-
-  -- Calculate the grayscale value using the luminance formula
-  local gray = math.floor(0.299 * r + 0.587 * g + 0.114 * b)
-
-  -- Convert the grayscale value back to hex
-  local grayscaleHex = string.format('#%02X%02X%02X', gray, gray, gray)
-
-  return grayscaleHex
-end
+local tograyscale = require('gantoreno.utils.colors').tograyscale
 
 require('onedark').setup({
   colors = {
-    black = ToGrayscale('#101012'),
-    bg0 = ToGrayscale('#232326'),
-    bg1 = ToGrayscale('#2c2d31'),
-    bg2 = ToGrayscale('#35363b'),
-    bg3 = ToGrayscale('#37383d'),
-    bg_d = ToGrayscale('#1b1c1e'),
+    black = tograyscale('#101012'),
+    bg0 = tograyscale('#232326'),
+    bg1 = tograyscale('#2c2d31'),
+    bg2 = tograyscale('#35363b'),
+    bg3 = tograyscale('#37383d'),
+    bg_d = tograyscale('#1b1c1e'),
     bg_blue = '#68aee8',
     bg_yellow = '#e2c792',
-    fg = ToGrayscale('#a7aab0'),
+    fg = tograyscale('#a7aab0'),
     purple = '#bb70d2',
     green = '#8fb573',
     orange = '#c49060',
@@ -36,8 +20,8 @@ require('onedark').setup({
     yellow = '#dbb671',
     cyan = '#51a8b3',
     red = '#de5d68',
-    grey = ToGrayscale('#5a5b5e'),
-    light_grey = ToGrayscale('#818387'),
+    grey = tograyscale('#5a5b5e'),
+    light_grey = tograyscale('#818387'),
     dark_cyan = '#2b5d63',
     dark_red = '#833b3b',
     dark_yellow = '#7c5c20',
