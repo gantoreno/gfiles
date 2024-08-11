@@ -10,7 +10,9 @@ My developer journey led me to an almost 100% terminal-based way of working (and
 
 ![./.github/screenshot.png](./.github/screenshot.png)
 
-**NOTE:** This is a macOS-based setup in terms of paths & package managers, keep this in mind before trying to directly clone & setup all my configurations.
+> [!NOTE]
+>
+> This is a macOS-based setup in terms of paths & package managers, keep this in mind before trying to directly clone & setup all my configurations.
 
 ## Tools
 
