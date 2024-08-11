@@ -13,7 +13,7 @@ cursor-style = block
 window-width = 85
 window-height = 25
 
-window-step-resize = true
+window-step-resize = false
 
 window-padding-balance = true
 
