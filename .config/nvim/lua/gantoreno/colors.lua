@@ -59,7 +59,7 @@ require('onedark').setup({
     TelescopePreviewTitle = { fg = '$fg' },
     TelescopePromptTitle = { fg = '$fg' },
 
-    NormalFloat = { fg = '$fg', bg = 'none' },
+    FloatermBorder = { fg = '$fg', bg = 'none' },
 
     ['@tag.delimiter'] = { fg = '$fg' },
     ['@tag.attribute'] = { fg = '$orange' },
