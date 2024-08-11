@@ -9,7 +9,7 @@ require('onedark').setup({
     bg1 = tograyscale('#2c2d31'),
     bg2 = tograyscale('#35363b'),
     bg3 = tograyscale('#37383d'),
-    bg_d = tograyscale('#1b1c1e'),
+    bg_d = tograyscale('#1e1e1d'),
     bg_blue = '#68aee8',
     bg_yellow = '#e2c792',
     fg = tograyscale('#a7aab0'),
