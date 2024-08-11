@@ -9,6 +9,8 @@ adjust-cell-height = 15%
 # Cursor
 cursor-style = block
 
+mouse-hide-while-typing = true
+
 # Window
 window-width = 85
 window-height = 25
@@ -16,6 +18,7 @@ window-height = 25
 window-step-resize = false
 
 window-padding-balance = true
+window-padding-color = background
 
 # Shell
 shell-integration-features = true
