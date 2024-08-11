@@ -50,6 +50,17 @@ require('onedark').setup({
   highlights = {
     NvimTreeWinSeparator = { bg = '$bg0', fg = '$bg0' },
     TabLineSel = { fg = '$fg', bg = '$bg3' },
+
+    TelescopeResultsBorder = { fg = '$fg' },
+    TelescopePreviewBorder = { fg = '$fg' },
+    TelescopePromptBorder = { fg = '$fg' },
+
+    TelescopeResultsTitle = { fg = '$fg' },
+    TelescopePreviewTitle = { fg = '$fg' },
+    TelescopePromptTitle = { fg = '$fg' },
+
+    NormalFloat = { fg = '$fg', bg = 'none' },
+
     ['@tag.delimiter'] = { fg = '$fg' },
     ['@tag.attribute'] = { fg = '$orange' },
     ['@tag'] = { fg = '$yellow' },
