@@ -12,6 +12,7 @@ local servers = {
   'astro',
   'clangd',
   'eslint',
+  'elixirls',
   'jsonls',
   'lua_ls',
   'rust_analyzer',
@@ -26,13 +27,17 @@ for _, server in ipairs(servers) do
           globals = { 'vim' },
         },
       },
-      document_formatting = false
+      document_formatting = false,
     },
     on_attach = function(client, bufnr)
       client.capabilities = cmp_lsp.default_capabilities()
     end,
   })
 end
+
+lspconfig['elixirls'].setup({
+  cmd = { '/opt/homebrew/bin/elixir-ls' },
+})
 
 api.nvim_create_autocmd('LspAttach', {
   group = api.nvim_create_augroup('UserLspConfig', {}),

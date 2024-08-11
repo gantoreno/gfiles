@@ -1,4 +1,5 @@
 local prettier = require('formatter.defaults.prettier')
+local mixformat = require('formatter.defaults.mixformat')
 
 local stylua = { exe = 'stylua', args = { '--indent-width', '2', '-' }, stdin = true }
 
@@ -10,5 +11,6 @@ require('formatter').setup({
     javascriptreact = { prettier },
     typescriptreact = { prettier },
     lua = { stylua },
+    elixir = { mixformat },
   },
 })
