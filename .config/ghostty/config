@@ -17,6 +17,9 @@ window-height = 25
 
 window-step-resize = false
 
+window-padding-x = 5,5
+window-padding-y = 0,2
+
 window-padding-balance = false
 window-padding-color = background
 
