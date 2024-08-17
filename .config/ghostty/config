@@ -26,9 +26,6 @@ window-padding-color = background
 # Shell
 shell-integration-features = true
 
-# Keybinds
-# macos-option-as-alt = left
-
 keybind = cmd+right=text:\x05
 keybind = cmd+left=text:\x01
 keybind = alt+left=esc:b

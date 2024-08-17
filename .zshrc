@@ -23,7 +23,10 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # Keybinds
-bindkey -e
+bindkey -v
+
+bindkey ^R history-incremental-search-backward
+bindkey ^S history-incremental-search-forward
 
 # Aliases
 alias g="git"
