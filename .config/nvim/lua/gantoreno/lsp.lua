@@ -13,6 +13,7 @@ local servers = {
   'clangd',
   'eslint',
   'elixirls',
+  'gopls',
   'jsonls',
   'lua_ls',
   'rust_analyzer',
