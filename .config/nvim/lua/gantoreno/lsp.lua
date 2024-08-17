@@ -17,6 +17,7 @@ local servers = {
   'jsonls',
   'lua_ls',
   'rust_analyzer',
+  'templ',
   'tsserver',
 }
 
