@@ -33,6 +33,7 @@ return packer.startup(function(use)
 
   -- Colorscheme
   use('navarasu/onedark.nvim')
+  use('~/Developer/Personal/nvim-gabriel')
 
   -- Editor tools
   use('tpope/vim-surround')
