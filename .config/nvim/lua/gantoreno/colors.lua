@@ -56,4 +56,4 @@ require('onedark').setup({
   style = 'warmer',
 })
 
-cmd('colorscheme gabriel')
+cmd('colorscheme onedark')
