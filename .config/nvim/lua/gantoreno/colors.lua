@@ -42,6 +42,7 @@ require('onedark').setup({
     TelescopeResultsTitle = { fg = '$grey' },
     TelescopePreviewTitle = { fg = '$grey' },
     TelescopePromptTitle = { fg = '$grey' },
+    TelescopeMatching = { fg = '$yellow', bold = true },
 
     FloatermBorder = { fg = '$grey', bg = 'none' },
 
