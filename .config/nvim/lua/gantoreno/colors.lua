@@ -14,7 +14,7 @@ require('onedark').setup({
     fg = '#d7d7d7',
     purple = '#afa2c8',
     green = '#acbf87',
-    orange = '#d6bd87',
+    orange = '#D7A085',
     blue = '#8f9dc8',
     yellow = '#d6bd87',
     cyan = '#a9d3da',
@@ -54,7 +54,7 @@ require('onedark').setup({
 
     ['@tag'] = { fg = '$yellow' },
     ['@tag.attribute'] = { fg = '$orange' },
-    ['@tag.delimiter'] = { fg = '$light_grey' },
+    ['@tag.delimiter'] = { fg = '$cyan' },
 
     ['@operator'] = { fg = '$cyan' },
 
