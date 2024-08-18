@@ -66,6 +66,8 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 export EDITOR="nvim"
 
+export LS_COLORS="Exfxcxdxbxegedabagacad"
+
 # Haskell
 [ -f "/Users/gabrielmoreno/.ghcup/env" ] && source "/Users/gabrielmoreno/.ghcup/env"
 
