@@ -32,40 +32,40 @@ keybind = alt+left=esc:b
 keybind = alt+right=esc:f
 
 # Colors
-background = #1e1e1e
-foreground= #a4a4a4
+background = #1a1a1a
+foreground= #d7d7d7
 
-selection-foreground = #a4a4a4
-selection-background = #282828
+selection-foreground = #d7d7d7
+selection-background = #212121
 
 # Black
-palette = 0=#0b0b0b
+palette = 0=#0c0c0c
 palette = 8=#565656
 
 # Red
-palette = 1=#df5d67
-palette = 9=#df5d67
+palette = 1=#d88382
+palette = 9=#d88382
 
 # Green
-palette = 2=#90b473
-palette = 10=#90b473
+palette =  2=#acbf87
+palette = 10=#acbf87
 
 # Yellow
-palette = 3=#dcb672
-palette = 11=#dcb672
+palette =  3=#d6bd87
+palette = 11=#d6bd87
 
 # Blue
-palette = 4=#58a5e4
-palette = 12=#58a5e4
+palette =  4=#8f9dc8
+palette = 12=#8f9dc8
 
 # Magenta
-palette = 5=#bc6fd1
-palette = 13=#bc6fd1
+palette =  5=#afa2c8
+palette = 13=#afa2c8
 
 # Cyan
-palette = 6=#52a8b4
-palette = 14=#52a8b4
+palette =  6=#a9d3da
+palette = 14=#a9d3da
 
 # White
-palette = 7=#a4a4a4
-palette = 15=#a4a4a4
+palette =  7=#d7d7d7
+palette = 15=#d7d7d7
