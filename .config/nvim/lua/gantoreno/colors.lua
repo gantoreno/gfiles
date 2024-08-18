@@ -31,8 +31,9 @@ require('onedark').setup({
     diff_text = '#323f66',
   },
   highlights = {
-    NvimTreeWinSeparator = { bg = '$bg0', fg = '$bg0' },
+    NormalFloat = { bg = '$bg1_5' },
     TabLineSel = { fg = '$fg', bg = '$bg3' },
+    Visual = { bg = '$bg1_5' },
 
     TelescopeResultsBorder = { fg = '$grey' },
     TelescopePreviewBorder = { fg = '$grey' },
@@ -47,12 +48,13 @@ require('onedark').setup({
     IblIndent = { fg = '$bg2' },
     IblScope = { fg = '$grey' },
 
-    TreeSitterContext = { bg = '$bg1' },
-    NormalFloat = { bg = '$bg1_5' },
+    NvimTreeRootFolder = { fg = '$yellow' },
+    NvimTreeWinSeparator = { bg = '$bg0', fg = '$bg0' },
 
-    Visual = { bg = '$bg1_5' },
+    TreeSitterContext = { bg = '$bg1' },
 
     ['@tag'] = { fg = '$yellow' },
+    ['@tag.astro'] = { fg = '$red' },
     ['@tag.attribute'] = { fg = '$orange' },
     ['@tag.delimiter'] = { fg = '$cyan' },
 
@@ -61,6 +63,8 @@ require('onedark').setup({
     ['@constructor.lua'] = { fg = '$light_grey' },
 
     ['@keyword.import'] = { fg = '$cyan' },
+
+    ['@punctuation.special'] = { fg = '$cyan' },
   },
   style = 'warmer',
 })
