@@ -28,8 +28,8 @@ map('n', '<leader>ss', ':Inspect<CR>', { silent = true })
 map('n', '<leader><left>', ':tabprev<CR>', { silent = true })
 map('n', '<leader><right>', ':tabnext<CR>', { silent = true })
 
-map('n', '<C-p>', ":lua require('telescope.builtin').find_files({ hidden = true })<CR>", { silent = true })
-map('n', '<C-g>', ":lua require('telescope.builtin').live_grep({ hidden = true })<CR>", { silent = true })
+map('n', '<C-p>', ":Telescope find_files<CR>", { silent = true })
+map('n', '<C-g>', ":Telescope live_grep<CR>", { silent = true })
 
 map('n', '<C-n>', ':NvimTreeToggle<CR>', { silent = true })
 
