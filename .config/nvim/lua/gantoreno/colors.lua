@@ -57,6 +57,9 @@ require('onedark').setup({
     ['@type'] = { fg = '$cyan' },
 
     ['@tag'] = { fg = '$blue' },
+    ['@tag.jsx'] = { fg = '$cyan' },
+    ['@tag.tsx'] = { fg = '$cyan' },
+    ['@tag.astro'] = { fg = '$blue' },
     ['@tag.builtin'] = { fg = '$blue' },
     ['@tag.attribute'] = { fg = '$purple' },
     ['@tag.delimiter'] = { fg = '$light_grey' },
