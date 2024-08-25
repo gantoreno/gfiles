@@ -42,14 +42,14 @@ require('onedark').setup({
     TelescopeResultsTitle = { fg = '$grey' },
     TelescopePreviewTitle = { fg = '$grey' },
     TelescopePromptTitle = { fg = '$grey' },
-    TelescopeMatching = { fg = '$yellow', bold = true },
+    TelescopeMatching = { fg = '$yellow' },
 
     FloatermBorder = { fg = '$grey', bg = 'none' },
 
     IblIndent = { fg = '$bg2' },
     IblScope = { fg = '$grey' },
 
-    NvimTreeRootFolder = { fg = '$yellow' },
+    NvimTreeRootFolder = { fg = '$purple' },
     NvimTreeWinSeparator = { bg = '$bg0', fg = '$bg0' },
 
     TreeSitterContext = { bg = '$bg1' },
@@ -65,12 +65,14 @@ require('onedark').setup({
     ['@tag.delimiter'] = { fg = '$light_grey' },
 
     ['@constructor.lua'] = { fg = '$light_grey' },
-    ['@constructor.javascript'] = { fg = '$cyan', bold = false },
-    ['@constructor.typescript'] = { fg = '$cyan', bold = false },
+    ['@constructor.javascript'] = { fg = '$cyan' },
+    ['@constructor.typescript'] = { fg = '$cyan' },
 
     ['@operator'] = { fg = '$light_grey' },
 
     ['@punctuation.special'] = { fg = '$light_grey' },
+
+    ['@markup.link'] = { fg = '$cyan', fmt = 'underline' },
   },
   style = 'warmer',
 })
