@@ -54,18 +54,20 @@ require('onedark').setup({
 
     TreeSitterContext = { bg = '$bg1' },
 
-    ['@tag'] = { fg = '$yellow' },
-    ['@tag.astro'] = { fg = '$red' },
-    ['@tag.attribute'] = { fg = '$orange' },
-    ['@tag.delimiter'] = { fg = '$cyan' },
+    ['@type'] = { fg = '$cyan' },
 
-    ['@operator'] = { fg = '$cyan' },
+    ['@tag'] = { fg = '$cyan' },
+    ['@tag.astro'] = { fg = '$blue' },
+    ['@tag.attribute'] = { fg = '$purple' },
+    ['@tag.delimiter'] = { fg = '$light_grey' },
 
     ['@constructor.lua'] = { fg = '$light_grey' },
+    ['@constructor.javascript'] = { fg = '$cyan', bold = false },
+    ['@constructor.typescript'] = { fg = '$cyan', bold = false },
 
-    ['@keyword.import'] = { fg = '$cyan' },
+    ['@operator'] = { fg = '$light_grey' },
 
-    ['@punctuation.special'] = { fg = '$cyan' },
+    ['@punctuation.special'] = { fg = '$light_grey' },
   },
   style = 'warmer',
 })
