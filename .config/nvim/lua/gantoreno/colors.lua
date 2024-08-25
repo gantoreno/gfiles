@@ -8,7 +8,7 @@ require('onedark').setup({
     bg1_5 = '#282828',
     bg2 = '#2f2f2f',
     bg3 = '#363636',
-    bg_d = '#171717',
+    bg_d = '#131313',
     bg_blue = '#8f9dc8',
     bg_yellow = '#d6bd87',
     fg = '#d7d7d7',
