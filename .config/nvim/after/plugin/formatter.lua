@@ -9,9 +9,16 @@ local stylua = function()
   }
 end
 
-local go = function()
+local goimports = function()
   return {
     exe = 'goimports',
+    stdin = true,
+  }
+end
+
+local rustfmt = function()
+  return {
+    exe = 'rustfmt',
     stdin = true,
   }
 end
@@ -24,7 +31,8 @@ require('formatter').setup({
     javascriptreact = { prettier },
     typescriptreact = { prettier },
     elixir = { mixformat },
-    go = { go },
+    go = { goimports },
     lua = { stylua },
+    rust = { rustfmt },
   },
 })
