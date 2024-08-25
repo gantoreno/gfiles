@@ -56,11 +56,10 @@ require('onedark').setup({
 
     ['@type'] = { fg = '$cyan' },
 
-    ['@tag'] = { fg = '$cyan' },
-    ['@tag.astro'] = { fg = '$blue' },
+    ['@tag'] = { fg = '$blue' },
+    ['@tag.builtin'] = { fg = '$blue' },
     ['@tag.attribute'] = { fg = '$purple' },
     ['@tag.delimiter'] = { fg = '$light_grey' },
-    ['@tag.builtin'] = { fg = '$blue' },
 
     ['@constructor.lua'] = { fg = '$light_grey' },
     ['@constructor.javascript'] = { fg = '$cyan', bold = false },
