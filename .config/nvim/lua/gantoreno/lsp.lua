@@ -18,7 +18,7 @@ local servers = {
   'lua_ls',
   'rust_analyzer',
   'templ',
-  'tsserver',
+  'ts_ls',
 }
 
 for _, server in ipairs(servers) do
