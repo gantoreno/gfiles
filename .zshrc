@@ -1,9 +1,6 @@
 # Unicode language support
 export LC_ALL=en_US.UTF-8
 
-# TMUX
-[[ -z "$TMUX" ]] && exec tmux -u
-
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -11,7 +8,6 @@ ZSH_THEME="starship"
 
 plugins=(
   git
-  zsh-syntax-highlighting
   z
 )
 
@@ -25,10 +21,6 @@ bindkey ^S history-incremental-search-forward
 
 # Aliases
 alias g="git"
-
-alias ls="eza"
-
-alias vim="nvim"
 
 alias lzg="lazygit"
 
@@ -55,10 +47,6 @@ export PATH="$PATH:$HOME/.scripts"
 export PATH="$PATH:$HOME/.cargo/bin"
 
 export HOMEBREW_NO_AUTO_UPDATE=1
-
-export EDITOR="nvim"
-
-export LS_COLORS="Exfxcxdxbxegedabagacad"
 
 # Haskell
 [ -f "/Users/gabrielmoreno/.ghcup/env" ] && source "/Users/gabrielmoreno/.ghcup/env"
@@ -92,7 +80,4 @@ export AWS_SDK_LOAD_CONFIG=1
 
 # Python
 export PYTHON="/opt/homebrew/bin/python3"
-
-# Fetch
-macfetch
 

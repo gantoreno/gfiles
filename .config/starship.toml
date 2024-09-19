@@ -6,12 +6,9 @@ add_newline = true
 
 command_timeout = 2000
 
-[directory]
-style = 'bold blue'
-
 [bun]
 symbol = '🍞 '
 
-# Disable the package module, hiding it from the prompt completely
-[package]
-disabled = true
+[git_branch]
+symbol = '🌳 '
+
