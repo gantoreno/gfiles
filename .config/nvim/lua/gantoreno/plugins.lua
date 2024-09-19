@@ -33,6 +33,7 @@ return packer.startup(function(use)
 
   -- Colorscheme
   use('navarasu/onedark.nvim')
+  use('~/Developer/Personal/nvim-departure')
 
   -- Editor tools
   use('tpope/vim-surround')
@@ -59,7 +60,7 @@ return packer.startup(function(use)
   use('christoomey/vim-tmux-navigator')
 
   -- Symbols
-  use('nvim-tree/nvim-web-devicons')
+  -- use('nvim-tree/nvim-web-devicons')
 
   -- Language utilities
   use('onsails/lspkind.nvim')

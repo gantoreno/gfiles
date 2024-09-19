@@ -7,11 +7,10 @@ export LC_ALL=en_US.UTF-8
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="starship"
+ZSH_THEME="departure"
 
 plugins=(
   git
-  zsh-syntax-highlighting
   z
 )
 
@@ -25,8 +24,6 @@ bindkey ^S history-incremental-search-forward
 
 # Aliases
 alias g="git"
-
-alias ls="eza"
 
 alias vim="nvim"
 
@@ -58,7 +55,8 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 export EDITOR="nvim"
 
-export LS_COLORS="Exfxcxdxbxegedabagacad"
+export LSCOLORS=""
+export LS_COLORS=""
 
 # Haskell
 [ -f "/Users/gabrielmoreno/.ghcup/env" ] && source "/Users/gabrielmoreno/.ghcup/env"
@@ -92,7 +90,4 @@ export AWS_SDK_LOAD_CONFIG=1
 
 # Python
 export PYTHON="/opt/homebrew/bin/python3"
-
-# Fetch
-macfetch
 
