@@ -32,7 +32,7 @@ return packer.startup(function(use)
   use('wbthomason/packer.nvim')
 
   -- Colorscheme
-  use('catppuccin/nvim')
+  use('folke/tokyonight.nvim')
 
   -- Editor tools
   use('tpope/vim-surround')

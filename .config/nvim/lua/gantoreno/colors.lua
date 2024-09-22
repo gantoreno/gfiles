@@ -1,7 +1,5 @@
 local cmd = vim.cmd
 
-require('catppuccin').setup({
-  flavour = 'mocha',
-})
+require('tokyonight').setup({})
 
-cmd('colorscheme catppuccin')
+cmd('colorscheme tokyonight-night')
