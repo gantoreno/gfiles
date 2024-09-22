@@ -37,4 +37,10 @@ cmp.setup({
       end
     end, { 'i', 's' }),
   },
+  formatting = {
+    fields = { 'kind', 'abbr' },
+    format = lspkind.cmp_format({
+      mode = 'symbol',
+    }),
+  },
 })
