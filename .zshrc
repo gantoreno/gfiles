@@ -93,6 +93,3 @@ export AWS_SDK_LOAD_CONFIG=1
 # Python
 export PYTHON="/opt/homebrew/bin/python3"
 
-# Fetch
-macfetch
-
