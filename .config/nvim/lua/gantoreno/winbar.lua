@@ -11,8 +11,8 @@ local winbar_ignore_filetypes = {
   NvimTree = true,
 }
 
-local winbar_special_filetypes = {
-  floaterm = true,
+local winbar_ignore_buftypes = {
+  nofile = true,
 }
 
 function Winbar()
@@ -46,8 +46,11 @@ api.nvim_create_autocmd('BufWinEnter', {
   pattern = '*',
   callback = function()
     local filetype = bo.filetype
+    local buftype = bo.buftype
 
-    if winbar_ignore_filetypes[filetype] or filetype == '' then
+    local disabled = winbar_ignore_filetypes[filetype] or winbar_ignore_buftypes[buftype] or filetype == ''
+
+    if disabled then
       return
     end
 
