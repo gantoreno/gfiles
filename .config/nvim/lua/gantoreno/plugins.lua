@@ -33,6 +33,7 @@ return packer.startup(function(use)
 
   -- Colorscheme
   use('folke/tokyonight.nvim')
+  use('marko-cerovac/material.nvim')
 
   -- Editor tools
   use('tpope/vim-surround')

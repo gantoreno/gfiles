@@ -33,7 +33,7 @@ keybind = alt+right=esc:f
 
 # Colors
 
-theme = tokyonight
+theme = MaterialOcean
 
 # palette = 0=#45475a
 # palette = 1=#f38ba8
