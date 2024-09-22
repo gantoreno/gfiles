@@ -32,7 +32,6 @@ return packer.startup(function(use)
   use('wbthomason/packer.nvim')
 
   -- Colorscheme
-  use('folke/tokyonight.nvim')
   use('marko-cerovac/material.nvim')
 
   -- Editor tools
@@ -63,6 +62,7 @@ return packer.startup(function(use)
   use('nvim-tree/nvim-web-devicons')
 
   -- Language utilities
+  use('SmiteshP/nvim-navic')
   use('onsails/lspkind.nvim')
   use('neovim/nvim-lspconfig')
   use({

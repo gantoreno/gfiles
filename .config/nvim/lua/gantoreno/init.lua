@@ -12,6 +12,7 @@ require('gantoreno.completion')
 
 -- UI
 require('gantoreno.colors')
+require('gantoreno.winbar')
 
 -- Options
 require('gantoreno.options')
