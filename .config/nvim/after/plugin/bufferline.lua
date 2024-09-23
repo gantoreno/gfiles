@@ -6,8 +6,13 @@ require('bufferline').setup({
         filetype = 'NvimTree',
         text = 'File Explorer',
         text_align = 'left',
-        separator = false,
+        separator = true,
       },
+    },
+  },
+  highlights = {
+    offset_separator = {
+      link = 'NvimTreeWinSeparator',
     },
   },
 })
