@@ -54,6 +54,7 @@ return packer.startup(function(use)
     'nvim-telescope/telescope.nvim',
     requires = 'nvim-lua/plenary.nvim',
   })
+  use({ 'akinsho/bufferline.nvim', tag = '*', requires = 'nvim-tree/nvim-web-devicons' })
 
   -- Navigation
   use('christoomey/vim-tmux-navigator')
