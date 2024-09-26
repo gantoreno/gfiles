@@ -28,8 +28,9 @@ map('n', '<leader>ss', ':Inspect<CR>', { silent = true })
 map('n', '<leader><left>', ':tabprev<CR>', { silent = true })
 map('n', '<leader><right>', ':tabnext<CR>', { silent = true })
 
-map('n', '<C-p>', ":Telescope find_files<CR>", { silent = true })
-map('n', '<C-g>', ":Telescope live_grep<CR>", { silent = true })
+map('n', '<C-p>', ':Telescope find_files<CR>', { silent = true })
+map('n', '<C-g>', ':Telescope live_grep<CR>', { silent = true })
+map('n', '<C-s>', ':Telescope git_branches<CR>', { nowait = true, silent = true })
 
 map('n', '<C-n>', ':NvimTreeToggle<CR>', { silent = true })
 
@@ -37,8 +38,6 @@ map('n', '<C-t>', ':FloatermToggle<CR>', { silent = true })
 
 map('n', '<C-c>', ':CommentToggle<cr>', { silent = true })
 map('v', '<C-c>', ':CommentToggle<cr>', { silent = true })
-
-map('n', '<C-s>', ':CloakToggle<cr>', { silent = true })
 
 map(
   'n',
