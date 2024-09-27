@@ -2,7 +2,7 @@
 font-family = JetBrains Mono
 font-size = 12
 
-adjust-cell-height = 20%
+adjust-cell-height = 15%
 
 # Cursor
 cursor-style = block
