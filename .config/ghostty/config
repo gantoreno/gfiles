@@ -30,6 +30,7 @@ keybind = cmd+right=text:\x05
 keybind = cmd+left=text:\x01
 keybind = alt+left=esc:b
 keybind = alt+right=esc:f
+keybind = alt+r=reload_config
 
 # Colors
 
