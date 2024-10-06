@@ -7,6 +7,7 @@ local servers = {
   'jsonls',
   'lua_ls',
   'rust_analyzer',
+  'tailwindcss',
   'templ',
   'ts_ls',
 }
