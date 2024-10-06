@@ -9,19 +9,7 @@ local lspconfig = require('lspconfig')
 
 local navic = require('nvim-navic')
 
--- Setup language servers.
-local servers = {
-  'astro',
-  'clangd',
-  'eslint',
-  'elixirls',
-  'gopls',
-  'jsonls',
-  'lua_ls',
-  'rust_analyzer',
-  'templ',
-  'ts_ls',
-}
+local servers = require('gantoreno.lsp.servers')
 
 for _, server in ipairs(servers) do
   lspconfig[server].setup({

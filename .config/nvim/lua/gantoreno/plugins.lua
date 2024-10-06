@@ -42,6 +42,7 @@ return packer.startup(function(use)
 
   -- UI elements
   use('voldikss/vim-floaterm')
+  use('windwp/nvim-ts-autotag')
   use('lewis6991/gitsigns.nvim')
   use('nvim-tree/nvim-tree.lua')
   use('nvim-lualine/lualine.nvim')
@@ -70,6 +71,12 @@ return packer.startup(function(use)
   use('SmiteshP/nvim-navic')
   use('onsails/lspkind.nvim')
   use('neovim/nvim-lspconfig')
+  use({
+    'williamboman/mason-lspconfig.nvim',
+    requires = {
+      'williamboman/mason.nvim',
+    },
+  })
   use({
     'nvim-treesitter/nvim-treesitter',
     requires = {
