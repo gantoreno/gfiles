@@ -93,3 +93,9 @@ export AWS_SDK_LOAD_CONFIG=1
 # Python
 export PYTHON="/opt/homebrew/bin/python3"
 
+tmux_window_id=$(tmux display-message -p "#I")
+tmux_pane_id=$(tmux display-message -p "#P")
+
+if [[ $tmux_window_id == '0' && $tmux_pane_id == '0' ]]; then
+  macfetch
+fi
