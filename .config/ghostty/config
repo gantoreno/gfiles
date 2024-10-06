@@ -33,30 +33,27 @@ keybind = alt+right=esc:f
 keybind = alt+r=reload_config
 
 # Colors
+palette = 0=#090b10
+palette = 1=#dc6068
+palette = 2=#abcf76
+palette = 3=#e6b455
+palette = 4=#6e98eb
+palette = 5=#b480d6
+palette = 6=#71c6e7
+palette = 7=#eeffff
+palette = 8=#464b5d
+palette = 9=#f07178
+palette = 10=#c3e88d
+palette = 11=#ffcb6b
+palette = 12=#82aaff
+palette = 13=#c792ea
+palette = 14=#89ddff
+palette = 15=#eeffff
 
-theme = MaterialOcean
+background = #0f111a
+foreground = #a6accd
 
-# palette = 0=#45475a
-# palette = 1=#f38ba8
-# palette = 2=#a6e3a1
-# palette = 3=#f9e2af
-# palette = 4=#89b4fa
-# palette = 5=#f5c2e7
-# palette = 6=#94e2d5
-# palette = 7=#bac2de
-# palette = 8=#585b70
-# palette = 9=#f38ba8
-# palette = 10=#a6e3a1
-# palette = 11=#f9e2af
-# palette = 12=#89b4fa
-# palette = 13=#f5c2e7
-# palette = 14=#94e2d5
-# palette = 15=#a6adc8
+cursor-color = #ffcc00
 
-# background = #1e1e2e
-# foreground = #cdd6f4
-
-# cursor-color = #f5e0dc
-
-# selection-background = #353749
-# selection-foreground = #cdd6f4
+selection-background = #1f2233
+selection-foreground = #a6accd
