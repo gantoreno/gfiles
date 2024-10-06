@@ -16,11 +16,11 @@ require('lualine').setup({
           end
 
           local icon, fg = get_icon_color(current_file, current_file_extension, { default = true })
-          local bg = fn.synIDattr(fn.synIDtrans(fn.hlID('StatusLine')), 'bg')
+          local bg = fn.synIDattr(fn.synIDtrans(fn.hlID('lualine_c_normal')), 'bg')
 
           api.nvim_set_hl(0, 'LualineIconColor', { fg = fg, bg = bg })
 
-          return '%#LualineIconColor#' .. icon .. ' %#StatusLine#' .. current_file
+          return '%#LualineIconColor#' .. icon .. ' %#lualine_c_normal#' .. current_file .. ' '
         end,
         padding = {
           left = 1,
