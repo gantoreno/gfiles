@@ -36,16 +36,13 @@ return packer.startup(function(use)
 
   -- Editor tools
   use('tpope/vim-surround')
-  use('itchyny/vim-gitbranch')
   use('windwp/nvim-autopairs')
   use('terrortylor/nvim-comment')
-  use('windwp/nvim-ts-autotag')
   use('mhartington/formatter.nvim')
 
   -- UI elements
-  use('lewis6991/gitsigns.nvim')
   use('voldikss/vim-floaterm')
-  use('akinsho/toggleterm.nvim')
+  use('lewis6991/gitsigns.nvim')
   use('nvim-tree/nvim-tree.lua')
   use('nvim-lualine/lualine.nvim')
   use('norcalli/nvim-colorizer.lua')
@@ -89,9 +86,6 @@ return packer.startup(function(use)
       'saadparwaiz1/cmp_luasnip',
     },
   })
-
-  -- Environment variables
-  use('laytan/cloak.nvim')
 
   if packer_bootstrap then
     packer.sync()
