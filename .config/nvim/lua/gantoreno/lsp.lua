@@ -11,8 +11,25 @@ local navic = require('nvim-navic')
 
 local servers = require('gantoreno.lsp.servers')
 
+local border = {
+  { '', 'FloatBorder' },
+  { '', 'FloatBorder' },
+  { ' ', 'FloatBorder' },
+  { ' ', 'FloatBorder' },
+  { '', 'FloatBorder' },
+  { '', 'FloatBorder' },
+  { '', 'FloatBorder' },
+  { ' ', 'FloatBorder' },
+}
+
+local handlers = {
+  ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+  ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+}
+
 for _, server in ipairs(servers) do
   lspconfig[server].setup({
+    handlers = handlers,
     settings = {
       Lua = {
         diagnostics = {
