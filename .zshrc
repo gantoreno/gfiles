@@ -44,6 +44,8 @@ alias tmuxconfig="vim $HOME/Developer/Personal/gfiles/.tmux.conf"
 alias ghosttyconfig="vim $HOME/Developer/Personal/gfiles/.config/ghostty/config"
 alias starshipconfig="vim $HOME/Developer/Personal/gfiles/.config/starship.toml"
 alias aerospaceconfig="vim $HOME/Developer/Personal/gfiles/.config/aerospace/aerospace.toml"
+alias yabaiconfig="vim $HOME/Developer/Personal/gfiles/.config/yabai/yabairc"
+alias skhdconfig="vim $HOME/Developer/Personal/gfiles/.config/skhd/skhdrc"
 
 alias :wq="exit"
 
