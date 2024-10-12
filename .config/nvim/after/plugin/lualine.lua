@@ -5,6 +5,14 @@ local get_icon_color = require('nvim-web-devicons').get_icon_color
 
 require('lualine').setup({
   sections = {
+    lualine_b = {
+      'branch',
+      {
+        'diff',
+        colored = true,
+        symbols = { added = ' ', modified = ' ', removed = ' ' },
+      },
+    },
     lualine_c = {
       {
         function()
