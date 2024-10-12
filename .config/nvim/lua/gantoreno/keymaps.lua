@@ -37,7 +37,7 @@ map('n', '<leader>nn', ':NvimTreeToggle<CR>', { silent = true })
 map('n', '<leader>tt', ':FloatermToggle<CR>', { silent = true })
 
 map('n', '<leader>cc', ':CommentToggle<cr>', { silent = true })
-map('v', '<C-_>er>cc', ':CommentToggle<cr>', { silent = true })
+map('v', '<leader>cc', ':CommentToggle<cr>', { silent = true })
 
 map(
   'n',

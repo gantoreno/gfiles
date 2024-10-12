@@ -49,8 +49,14 @@ api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+local a = ''
 -- Icons
-diagnostic.config({})
+diagnostic.config({
+  float = {
+    border = 'rounded',
+    padding = { 0, 1 },
+  },
+})
 
 local signs = {
   Error = '',
