@@ -43,6 +43,7 @@ return packer.startup(function(use)
   -- UI elements
   use('voldikss/vim-floaterm')
   use('windwp/nvim-ts-autotag')
+  use('stevearc/dressing.nvim')
   use('lewis6991/gitsigns.nvim')
   use('nvim-tree/nvim-tree.lua')
   use('nvim-lualine/lualine.nvim')
