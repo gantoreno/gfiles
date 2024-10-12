@@ -55,5 +55,5 @@ foreground = #aaaaaa
 
 cursor-color = #ffcc00
 
-selection-background = #
+selection-background = #2f2f2f
 selection-foreground = #aaaaaa

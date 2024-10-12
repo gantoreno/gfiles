@@ -9,7 +9,10 @@ require('material').setup({
     floating_windows = true,
   },
   styles = {
-    comments = { bold = false, italic = true },
+    comments = {
+      bold = false,
+      italic = false,
+    },
   },
   plugins = {
     'indent-blankline',
