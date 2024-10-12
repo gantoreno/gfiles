@@ -40,24 +40,12 @@ api.nvim_create_autocmd('LspAttach', {
   callback = function(evt)
     local opts = { buffer = evt.buf }
 
-    keymap.set('n', 'K', lsp.buf.hover, opts)
-    keymap.set('n', 'r', lsp.buf.rename, opts)
-    keymap.set('n', '.', lsp.buf.code_action, opts)
-    keymap.set('n', 'gd', lsp.buf.definition, opts)
-    keymap.set('n', 'gD', lsp.buf.declaration, opts)
-    keymap.set('n', ';', function()
-      vim.diagnostic.open_float(0, {
-        scope = 'cursor',
-        focusable = false,
-        close_events = {
-          'CursorMoved',
-          'CursorMovedI',
-          'BufHidden',
-          'InsertCharPre',
-          'WinLeave',
-        },
-      })
-    end, opts)
+    keymap.set('n', '<leader>hs', lsp.buf.hover, opts)
+    keymap.set('n', '<leader>rs', lsp.buf.rename, opts)
+    keymap.set('n', '<leader>hd', vim.diagnostic.open_float, opts)
+    keymap.set('n', '<leader>ca', lsp.buf.code_action, opts)
+    keymap.set('n', '<leader>gd', lsp.buf.definition, opts)
+    keymap.set('n', '<leader>gD', lsp.buf.declaration, opts)
   end,
 })
 
