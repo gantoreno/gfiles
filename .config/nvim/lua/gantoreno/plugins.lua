@@ -32,7 +32,7 @@ return packer.startup(function(use)
   use('wbthomason/packer.nvim')
 
   -- Colorscheme
-  use('marko-cerovac/material.nvim')
+  use('~/Developer/Personal/material.nvim')
 
   -- Editor tools
   use('tpope/vim-surround')

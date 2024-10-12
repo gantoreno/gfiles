@@ -33,27 +33,27 @@ keybind = alt+right=esc:f
 keybind = alt+r=reload_config
 
 # Colors
-palette = 0=#090b10
+palette = 0=#090909
 palette = 1=#dc6068
 palette = 2=#abcf76
 palette = 3=#e6b455
 palette = 4=#6e98eb
 palette = 5=#b480d6
 palette = 6=#71c6e7
-palette = 7=#eeffff
-palette = 8=#464b5d
+palette = 7=#f1ffff
+palette = 8=#373737
 palette = 9=#f07178
 palette = 10=#c3e88d
 palette = 11=#ffcb6b
 palette = 12=#82aaff
 palette = 13=#c792ea
 palette = 14=#89ddff
-palette = 15=#eeffff
+palette = 15=#f1ffff
 
-background = #0f111a
-foreground = #a6accd
+background = #111111
+foreground = #aaaaaa
 
 cursor-color = #ffcc00
 
-selection-background = #1f2233
-selection-foreground = #a6accd
+selection-background = #
+selection-foreground = #aaaaaa

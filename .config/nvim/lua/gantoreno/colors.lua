@@ -1,6 +1,6 @@
 local cmd = vim.cmd
 
-vim.g.material_style = 'deep ocean'
+vim.g.material_style = 'darker'
 
 require('material').setup({
   contrast = {
@@ -78,4 +78,4 @@ require('material').setup({
   end)(),
 })
 
-cmd('colorscheme material-deep-ocean')
+cmd('colorscheme material')

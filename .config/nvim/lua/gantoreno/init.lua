@@ -10,10 +10,10 @@ require('gantoreno.plugins')
 require('gantoreno.lsp')
 require('gantoreno.completion')
 
--- UI
-require('gantoreno.colors')
-
 -- Options
 require('gantoreno.options')
 require('gantoreno.autocommands')
 require('gantoreno.keymaps')
+
+-- UI
+require('gantoreno.colors')
