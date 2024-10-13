@@ -98,6 +98,7 @@ which_key.add({
     mode = 'n',
   },
 })
+
 -- NvimTree
 which_key.add({
   { '<leader>n', group = 'NvimTree', icon = { icon = '', color = 'red' } },
@@ -107,5 +108,17 @@ which_key.add({
     desc = 'Toggle',
     icon = { icon = '', color = 'red' },
     mode = 'n',
+  },
+})
+
+-- NvimTree
+which_key.add({
+  { '<leader>c', group = 'Comment', icon = { icon = '', color = 'gray' } },
+  {
+    '<leader>cc',
+    ':CommentToggle<cr>',
+    desc = 'Code',
+    icon = { icon = '', color = 'gray' },
+    mode = { 'n', 'v' },
   },
 })
