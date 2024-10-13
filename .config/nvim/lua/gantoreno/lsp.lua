@@ -1,13 +1,9 @@
-local api = vim.api
 local fn = vim.fn
-local keymap = vim.keymap
-local lsp = vim.lsp
 local diagnostic = vim.diagnostic
 
+local navic = require('nvim-navic')
 local cmp_lsp = require('cmp_nvim_lsp')
 local lspconfig = require('lspconfig')
-
-local navic = require('nvim-navic')
 
 local servers = require('gantoreno.lsp.servers')
 
@@ -31,25 +27,6 @@ for _, server in ipairs(servers) do
   })
 end
 
-lspconfig['elixirls'].setup({
-  cmd = { '/opt/homebrew/bin/elixir-ls' },
-})
-
-api.nvim_create_autocmd('LspAttach', {
-  group = api.nvim_create_augroup('UserLspConfig', {}),
-  callback = function(evt)
-    local opts = { buffer = evt.buf }
-
-    keymap.set('n', '<leader>hs', lsp.buf.hover, opts)
-    keymap.set('n', '<leader>rs', lsp.buf.rename, opts)
-    keymap.set('n', '<leader>hd', vim.diagnostic.open_float, opts)
-    keymap.set('n', '<leader>ca', lsp.buf.code_action, opts)
-    keymap.set('n', '<leader>gd', lsp.buf.definition, opts)
-    keymap.set('n', '<leader>gD', lsp.buf.declaration, opts)
-  end,
-})
-
-local a = ''
 -- Icons
 diagnostic.config({
   float = {
@@ -61,7 +38,7 @@ diagnostic.config({
 local signs = {
   Error = '',
   Warn = '',
-  Hint = '',
+  Hint = '',
   Info = '',
 }
 

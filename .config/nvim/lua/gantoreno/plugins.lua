@@ -36,6 +36,7 @@ return packer.startup(function(use)
 
   -- Editor tools
   use('tpope/vim-surround')
+  use('folke/which-key.nvim')
   use('windwp/nvim-autopairs')
   use('terrortylor/nvim-comment')
   use('mhartington/formatter.nvim')

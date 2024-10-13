@@ -1,53 +1,51 @@
-local api = vim.api
-local tbl_extend = vim.tbl_extend
+local which_key = require('which-key')
 
--- Functions
-local function map(mode, lhs, rhs, opts)
-  local options = { noremap = true }
+-- Generic
+which_key.add({
+  -- Tabs
+  { '<leader><left>', '<cmd>tabprev<cr>', desc = 'Previous tab' },
+  { '<leader><right>', '<cmd>tabnext<cr>', desc = 'Next tab' },
 
-  if opts then
-    options = tbl_extend('force', options, opts)
-  end
+  -- Lazygit
+  {
+    '<leader>lzg',
+    '<cmd>FloatermNew --wintype=float --width=0.8 --height=0.8 --position=center lazygit<cr>',
+    desc = 'Lazygit',
+  },
+})
 
-  api.nvim_set_keymap(mode, lhs, rhs, options)
-end
+-- Find
+which_key.add({
+  { '<leader>f', group = 'Find' },
+  { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'Files', mode = 'n' },
+  { '<leader>ft', '<cmd>Telescope live_grep<cr>', desc = 'Text', mode = 'n' },
+  { '<leader>fb', '<cmd>Telescope git_branches<cr>', desc = 'Branches', mode = 'n' },
+})
 
--- Mappings
-map('n', '<C-h>', '<C-\\><C-n><C-w>h', { silent = true })
-map('n', '<C-j>', '<C-\\><C-n><C-w>j', { silent = true })
-map('n', '<C-k>', '<C-\\><C-n><C-w>k', { silent = true })
-map('n', '<C-l>', '<C-\\><C-n><C-w>l', { silent = true })
+-- Goto
+which_key.add({
+  { '<leader>g', group = 'Goto' },
+  { '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<cr>', desc = 'Definition', mode = 'n' },
+  { '<leader>gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', desc = 'Declaration', mode = 'n' },
+})
 
-map('t', '<C-h>', '<C-\\><C-n><C-w>h', { silent = true })
-map('t', '<C-j>', '<C-\\><C-n><C-w>j', { silent = true })
-map('t', '<C-k>', '<C-\\><C-n><C-w>k', { silent = true })
-map('t', '<C-l>', '<C-\\><C-n><C-w>l', { silent = true })
+-- Hover
+which_key.add({
+  { '<leader>s', group = 'Symbol' },
+  { '<leader>sa', '<cmd>lua vim.lsp.buf.code_action()<cr>', desc = 'Actions', mode = 'n' },
+  { '<leader>sr', '<cmd>lua vim.lsp.buf.rename()<cr>', desc = 'Rename', mode = 'n' },
+  { '<leader>ss', '<cmd>lua vim.lsp.buf.hover()<cr>', desc = 'Symbol', mode = 'n' },
+  { '<leader>sd', '<cmd>lua vim.diagnostic.open_float()<cr>', desc = 'Diagnostics', mode = 'n' },
+})
 
-map('n', '<leader>ss', ':Inspect<CR>', { silent = true })
+-- Terminal
+which_key.add({
+  { '<leader>t', group = 'Floaterm' },
+  { '<leader>tt', '<cmd>FloatermToggle<cr>', desc = 'Toggle', mode = 'n' },
+})
 
-map('n', '<leader><left>', ':tabprev<CR>', { silent = true })
-map('n', '<leader><right>', ':tabnext<CR>', { silent = true })
-
-map('n', '<leader>ff', ':Telescope find_files<CR>', { silent = true })
-map('n', '<leader>lg', ':Telescope live_grep<CR>', { silent = true })
-map('n', '<leader>gb', ':Telescope git_branches<CR>', { nowait = true, silent = true })
-
-map('n', '<leader>nn', ':NvimTreeToggle<CR>', { silent = true })
-
-map('n', '<leader>tt', ':FloatermToggle<CR>', { silent = true })
-
-map('n', '<leader>cc', ':CommentToggle<cr>', { silent = true })
-map('v', '<leader>cc', ':CommentToggle<cr>', { silent = true })
-
-map(
-  'n',
-  '<leader>lzg',
-  ':FloatermNew --wintype=float --width=0.8 --height=0.8 --position=center lazygit<CR>',
-  { silent = true }
-)
-map(
-  'n',
-  '<leader>glg',
-  ':FloatermNew --wintype=float --width=0.8 --height=0.8 --position=center git log --graph --oneline<CR>',
-  { silent = true }
-)
+-- NvimTree
+which_key.add({
+  { '<leader>n', group = 'NvimTree' },
+  { '<leader>nn', '<cmd>NvimTreeToggle<cr>', desc = 'Toggle', mode = 'n' },
+})
