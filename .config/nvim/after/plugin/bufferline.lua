@@ -1,6 +1,12 @@
-require('bufferline').setup({
+local bufferline = require('bufferline')
+
+bufferline.setup({
   options = {
     mode = 'tabs',
+    style_preset = {
+      bufferline.style_preset.no_bold,
+      bufferline.style_preset.no_italic,
+    },
     offsets = {
       {
         filetype = 'NvimTree',
