@@ -33,6 +33,8 @@ require('material').setup({
     local e = colors.editor
 
     return {
+      BufferLineOffset = { fg = colors.main.purple, bg = e.bg_alt, bold = true },
+
       Winbar = { bg = e.bg },
       WinbarNC = { bg = e.bg },
 
