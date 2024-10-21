@@ -3,6 +3,10 @@ local luasnip = require('luasnip')
 local lspkind = require('lspkind')
 
 cmp.setup({
+  window = {
+    documentation = cmp.config.window.bordered(),
+    completion = cmp.config.window.bordered(),
+  },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'luasnip' },

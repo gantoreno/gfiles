@@ -6,7 +6,6 @@ require('material').setup({
   contrast = {
     terminal = true,
     sidebars = true,
-    floating_windows = true,
   },
   styles = {
     comments = {
