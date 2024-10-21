@@ -4,7 +4,6 @@ vim.g.material_style = 'darker'
 
 require('material').setup({
   contrast = {
-    terminal = true,
     sidebars = true,
   },
   styles = {
