@@ -12,6 +12,9 @@ require('bufferline').setup({
     },
   },
   highlights = {
+    fill = {
+      link = 'NvimTreeNormal',
+    },
     offset_separator = {
       link = 'NvimTreeWinSeparator',
     },
