@@ -2,7 +2,7 @@
 font-family = JetBrains Mono
 font-size = 12
 
-adjust-cell-height = 5%
+adjust-cell-height = 20%
 
 # Cursor
 cursor-style = block
@@ -10,8 +10,8 @@ cursor-style = block
 mouse-hide-while-typing = true
 
 # Window
-window-width = 90
-window-height = 30
+window-width = 85
+window-height = 25
 
 window-step-resize = false
 
