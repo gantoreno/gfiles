@@ -1,4 +1,5 @@
 local which_key = require('which-key')
+
 -- Generic
 which_key.add({
   -- Tabs
@@ -12,6 +13,7 @@ which_key.add({
     icon = { icon = '', color = 'cyan' },
   },
 })
+
 -- Find
 which_key.add({
   { '<leader>f', group = 'Find' },
@@ -36,7 +38,15 @@ which_key.add({
     icon = { icon = '', color = 'cyan' },
     mode = 'n',
   },
+  {
+    '<leader>fh',
+    '<cmd>Telescope highlights<cr>',
+    desc = 'Highlights',
+    icon = { icon = '󰌁', color = 'purple' },
+    mode = 'n',
+  },
 })
+
 -- Goto
 which_key.add({
   { '<leader>g', group = 'Goto', icon = { icon = '', color = 'azure' } },
@@ -55,6 +65,7 @@ which_key.add({
     mode = 'n',
   },
 })
+
 -- Hover
 which_key.add({
   { '<leader>s', group = 'Symbol', icon = { icon = '', color = 'blue' } },
@@ -87,6 +98,7 @@ which_key.add({
     mode = 'n',
   },
 })
+
 -- Terminal
 which_key.add({
   { '<leader>t', group = 'Floaterm', icon = { icon = '', color = 'green' } },

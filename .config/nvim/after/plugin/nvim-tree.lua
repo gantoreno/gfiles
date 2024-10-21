@@ -26,11 +26,11 @@ require('nvim-tree').setup({
     },
   },
   view = {
-    signcolumn = 'no',
+    signcolumn = 'yes',
     width = {
       min = '33%',
-      max = 40
-    }
+      max = 40,
+    },
   },
   filters = {
     dotfiles = false,

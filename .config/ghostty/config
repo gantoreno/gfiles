@@ -1,8 +1,6 @@
 # Font
-font-family = MonoLisa
+font-family = JetBrains Mono
 font-size = 12
-
-# font-codepoint-map = U+23FB-U+F1AF0=JetBrainsMono Nerd Font Mono
 
 adjust-cell-height = 5%
 

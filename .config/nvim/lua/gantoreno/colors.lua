@@ -37,7 +37,7 @@ require('material').setup({
       Winbar = { bg = e.bg },
       WinbarNC = { bg = e.bg },
 
-      NvimTreeWinSeparator = { fg = e.bg },
+      NvimTreeWinSeparator = { fg = e.bg_alt, bg = e.bg_alt },
 
       TelescopePromptTitle = { link = 'NormalFloat' },
       TelescopePromptBorder = { link = 'NormalFloat' },

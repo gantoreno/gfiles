@@ -7,6 +7,7 @@ require('bufferline').setup({
         text = 'File Explorer',
         text_align = 'left',
         separator = true,
+        highlight = 'NvimTreeNormal',
       },
     },
   },
