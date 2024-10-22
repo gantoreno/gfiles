@@ -26,7 +26,7 @@ bindkey ^S history-incremental-search-forward
 # Aliases
 alias g="git"
 
-alias ls="eza"
+alias ls="eza --icons"
 
 alias vim="nvim"
 
