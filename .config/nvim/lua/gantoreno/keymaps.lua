@@ -123,6 +123,18 @@ which_key.add({
   },
 })
 
+-- Comment
+which_key.add({
+  { '<leader>c', group = 'Comment', icon = { icon = '', color = 'gray' } },
+  {
+    '<leader>cc',
+    ':CommentToggle<cr>',
+    desc = 'Code',
+    icon = { icon = '', color = 'gray' },
+    mode = { 'n', 'v' },
+  },
+})
+
 -- Organize
 which_key.add({
   { '<leader>o', group = 'Organize', icon = { icon = '󰒺', color = 'orange' } },
