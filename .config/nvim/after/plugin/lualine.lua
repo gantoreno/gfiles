@@ -28,7 +28,7 @@ require('lualine').setup({
 
           api.nvim_set_hl(0, 'LualineIconColor', { fg = fg, bg = bg })
 
-          return '%#LualineIconColor#' .. icon .. ' %#lualine_c_normal#' .. current_file .. ' '
+          return '%#LualineIconColor#' .. icon .. ' %#lualine_c_normal#' .. current_file
         end,
         padding = {
           left = 1,
@@ -47,7 +47,7 @@ require('lualine').setup({
     },
   },
   options = {
-    component_separators = { left = '', right = '' },
-    section_separators = { left = '', right = '' },
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
   },
 })
