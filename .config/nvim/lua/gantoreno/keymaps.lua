@@ -123,14 +123,14 @@ which_key.add({
   },
 })
 
--- NvimTree
+-- Organize
 which_key.add({
-  { '<leader>c', group = 'Comment', icon = { icon = '', color = 'gray' } },
+  { '<leader>o', group = 'Organize', icon = { icon = '󰒺', color = 'orange' } },
   {
-    '<leader>cc',
-    ':CommentToggle<cr>',
-    desc = 'Code',
-    icon = { icon = '', color = 'gray' },
+    '<leader>oi',
+    ':OrganizeImports<cr>',
+    desc = 'Imports',
+    icon = { icon = '󰒺', color = 'orange' },
     mode = { 'n', 'v' },
   },
 })

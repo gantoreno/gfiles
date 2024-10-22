@@ -1,4 +1,5 @@
 local fn = vim.fn
+local lsp = vim.lsp
 local diagnostic = vim.diagnostic
 
 local navic = require('nvim-navic')
@@ -26,6 +27,23 @@ for _, server in ipairs(servers) do
     end,
   })
 end
+
+lspconfig['ts_ls'].setup({
+  commands = {
+    OrganizeImports = {
+      function()
+        local params = {
+          command = '_typescript.organizeImports',
+          arguments = { vim.api.nvim_buf_get_name(0) },
+          title = '',
+        }
+
+        lsp.buf.execute_command(params)
+      end,
+      description = 'Organize Imports',
+    },
+  },
+})
 
 -- Icons
 diagnostic.config({
