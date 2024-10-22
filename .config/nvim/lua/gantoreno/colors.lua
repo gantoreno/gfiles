@@ -41,13 +41,15 @@ require('material').setup({
       NvimTreeWinSeparator = { fg = e.bg_alt, bg = e.bg_alt },
 
       TelescopePromptTitle = { link = 'NormalFloat' },
-      TelescopePromptBorder = { link = 'NormalFloat' },
+      TelescopePromptBorder = { link = 'FloatBorder' },
 
       TelescopeResultsTitle = { link = 'NormalFloat' },
-      TelescopeResultsBorder = { link = 'NormalFloat' },
+      TelescopeResultsBorder = { link = 'FloatBorder' },
 
       TelescopePreviewTitle = { link = 'NormalFloat' },
-      TelescopePreviewBorder = { link = 'NormalFloat' },
+      TelescopePreviewBorder = { link = 'FloatBorder' },
+
+      FloatermBorder = { link = 'FloatBorder' },
 
       NavicIconsFile = { fg = e.title, bg = e.selection },
       NavicIconsModule = { link = 'NavicIconsFile' },
