@@ -1,7 +1,7 @@
 require('nvim-navic').setup({
   highlight = true,
-  depth_limit = 2,
-  depth_limit_indicator = '…',
+  safe_output = true,
+  separator = ' › ',
   icons = {
     File = ' ',
     Module = ' ',

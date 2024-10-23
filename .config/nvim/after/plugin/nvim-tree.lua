@@ -1,6 +1,3 @@
-local fn = vim.fn
-local api = vim.api
-
 require('nvim-tree').setup({
   actions = {
     open_file = { quit_on_open = true },

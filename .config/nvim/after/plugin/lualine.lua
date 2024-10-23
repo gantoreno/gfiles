@@ -35,19 +35,11 @@ require('lualine').setup({
           right = 0,
         },
       },
-      {
-        'navic',
-        color_correction = nil,
-        navic_opts = nil,
-        padding = {
-          left = 1,
-          right = 0,
-        },
-      },
     },
   },
   options = {
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
+    globalstatus = false,
   },
 })
