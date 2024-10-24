@@ -1,6 +1,8 @@
 require('nvim-tree').setup({
   actions = {
-    open_file = { quit_on_open = true },
+    open_file = {
+      quit_on_open = true,
+    },
     file_popup = {
       open_win_config = {
         border = 'rounded',
@@ -8,9 +10,20 @@ require('nvim-tree').setup({
     },
   },
   renderer = {
-    group_empty = true,
+    group_empty = false,
     highlight_git = true,
     special_files = {},
+    indent_markers = {
+      enable = true,
+      inline_arrows = true,
+      icons = {
+        corner = '└',
+        edge = '│',
+        item = '│',
+        bottom = '─',
+        none = '│',
+      },
+    },
   },
   update_focused_file = {
     enable = true,
@@ -23,7 +36,7 @@ require('nvim-tree').setup({
     },
   },
   view = {
-    signcolumn = 'yes',
+    signcolumn = 'no',
     width = {
       min = '33%',
       max = 40,
