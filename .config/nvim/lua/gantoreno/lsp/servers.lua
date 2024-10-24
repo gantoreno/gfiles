@@ -11,6 +11,7 @@ local servers = {
   'tailwindcss',
   'templ',
   'ts_ls',
+  'zls',
 }
 
 return servers

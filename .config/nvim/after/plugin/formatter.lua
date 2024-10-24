@@ -1,5 +1,6 @@
 local prettier = require('formatter.defaults.prettier')
 local mixformat = require('formatter.defaults.mixformat')
+local zigfmt = require('formatter.defaults.zigfmt')
 
 local stylua = function()
   return {
@@ -34,5 +35,6 @@ require('formatter').setup({
     go = { goimports },
     lua = { stylua },
     rust = { rustfmt },
+    zig = { zigfmt },
   },
 })
