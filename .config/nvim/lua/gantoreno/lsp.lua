@@ -17,7 +17,7 @@ for _, server in ipairs(servers) do
       },
       document_formatting = false,
     },
-    on_attach = function(client, bufnr)
+    on_attach = function(client)
       client.capabilities = cmp_lsp.default_capabilities()
     end,
   })
