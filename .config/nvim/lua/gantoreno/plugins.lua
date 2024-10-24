@@ -1,7 +1,5 @@
 local fn = vim.fn
 
-local packer = require('packer')
-
 local ensure_packer = function()
   local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
@@ -17,6 +15,7 @@ local ensure_packer = function()
 end
 
 local packer_bootstrap = ensure_packer()
+local packer = require('packer')
 
 -- Configure packer
 packer.init({
