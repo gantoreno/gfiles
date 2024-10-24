@@ -1,7 +1,18 @@
 require('noice').setup({
   presets = {
-    command_palette = true,
     lsp_doc_border = true,
+  },
+  cmdline = {
+    enabled = false,
+  },
+  messages = {
+    enabled = false,
+  },
+  popmenu = {
+    enabled = false,
+  },
+  notify = {
+    enabled = false,
   },
   lsp = {
     hover = {
@@ -18,7 +29,9 @@ require('noice').setup({
         event = 'notify',
         find = 'No information available',
       },
-      opts = { skip = true },
+      opts = {
+        skip = true,
+      },
     },
   },
 })
