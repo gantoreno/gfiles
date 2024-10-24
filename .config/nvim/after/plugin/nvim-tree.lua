@@ -1,6 +1,5 @@
 local bo = vim.bo
 
-local fn = vim.fn
 local api = vim.api
 
 require('nvim-tree').setup({
