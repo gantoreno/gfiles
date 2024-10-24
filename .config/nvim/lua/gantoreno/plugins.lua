@@ -73,7 +73,6 @@ return packer.startup(function(use)
   use('nvim-tree/nvim-web-devicons')
 
   -- Language utilities
-  use('SmiteshP/nvim-navic')
   use('onsails/lspkind.nvim')
   use('neovim/nvim-lspconfig')
   use({

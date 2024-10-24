@@ -17,4 +17,3 @@ require('gantoreno.keymaps')
 
 -- UI
 require('gantoreno.colors')
-require('gantoreno.breadcrumbs')

@@ -2,7 +2,6 @@ local fn = vim.fn
 local lsp = vim.lsp
 local diagnostic = vim.diagnostic
 
-local navic = require('nvim-navic')
 local cmp_lsp = require('cmp_nvim_lsp')
 local lspconfig = require('lspconfig')
 
@@ -19,10 +18,6 @@ for _, server in ipairs(servers) do
       document_formatting = false,
     },
     on_attach = function(client, bufnr)
-      if client.server_capabilities.documentSymbolProvider then
-        navic.attach(client, bufnr)
-      end
-
       client.capabilities = cmp_lsp.default_capabilities()
     end,
   })
