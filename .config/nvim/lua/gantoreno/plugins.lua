@@ -64,6 +64,7 @@ return packer.startup(function(use)
     'MeanderingProgrammer/render-markdown.nvim',
     requires = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
   })
+  use({ 'akinsho/bufferline.nvim', tag = '*', requires = 'nvim-tree/nvim-web-devicons' })
 
   -- Navigation
   use('christoomey/vim-tmux-navigator')
