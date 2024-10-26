@@ -1,3 +1,6 @@
+local fn = vim.fn
+local loop = vim.loop
+
 local bufferline = require('bufferline')
 
 bufferline.setup({
@@ -10,7 +13,9 @@ bufferline.setup({
     offsets = {
       {
         filetype = 'NvimTree',
-        text = ' File Explorer',
+        text = function()
+          return fn.fnamemodify(loop.cwd(), ':~:s?$?/..?')
+        end,
         text_align = 'left',
         separator = true,
         highlight = 'BufferLineOffset',

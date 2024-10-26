@@ -13,15 +13,19 @@ require('nvim-tree').setup({
     group_empty = false,
     highlight_git = true,
     special_files = {},
-    indent_markers = {
-      enable = true,
-      inline_arrows = true,
-      icons = {
-        corner = '└',
-        edge = '│',
-        item = '│',
-        bottom = '─',
-        none = '│',
+    root_folder_label = false,
+    icons = {
+      glyphs = {
+        folder = {
+          arrow_closed = '󰅂',
+          arrow_open = '󰅀',
+          default = '',
+          open = '',
+          empty = '',
+          empty_open = '',
+          symlink = '',
+          symlink_open = '',
+        },
       },
     },
   },
