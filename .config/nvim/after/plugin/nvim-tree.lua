@@ -1,5 +1,7 @@
 local bo = vim.bo
+local wo = vim.wo
 
+local fn = vim.fn
 local api = vim.api
 
 require('nvim-tree').setup({
@@ -64,7 +66,16 @@ api.nvim_create_autocmd('BufWinEnter', {
     if filetype == 'NvimTree' then
       local directory = vim.fn.fnamemodify(vim.loop.cwd(), ':~:s?$?/..?')
 
-      vim.wo.winbar = '%#NvimTreeIndentMarker# %#@markup.heading.3# ' .. directory
+      local fg = fn.synIDattr(fn.synIDtrans(fn.hlID('@markup.heading.3')), 'fg')
+      local bg = fn.synIDattr(fn.synIDtrans(fn.hlID('NvimTreeNormal')), 'bg')
+
+      local marker_fg = fn.synIDattr(fn.synIDtrans(fn.hlID('NvimTreeIndentMarker')), 'fg')
+      local marker_bg = fn.synIDattr(fn.synIDtrans(fn.hlID('NvimTreeNormal')), 'bg')
+
+      api.nvim_set_hl(0, 'NvimTreeWinBar', { fg = fg, bg = bg, bold = true })
+      api.nvim_set_hl(0, 'NvimTreeWinBarMarker', { fg = marker_fg, bg = marker_bg, bold = true })
+
+      wo.winbar = '%#NvimTreeWinBarMarker# %#NvimTreeWinBar# ' .. directory
     end
   end,
 })
