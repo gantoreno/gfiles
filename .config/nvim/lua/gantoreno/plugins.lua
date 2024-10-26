@@ -73,6 +73,7 @@ return packer.startup(function(use)
   use('nvim-tree/nvim-web-devicons')
 
   -- Language utilities
+  use('SmiteshP/nvim-navic')
   use('onsails/lspkind.nvim')
   use('neovim/nvim-lspconfig')
   use({
@@ -83,10 +84,6 @@ return packer.startup(function(use)
   })
   use({
     'nvim-treesitter/nvim-treesitter',
-    requires = {
-      'nvim-treesitter/playground',
-      'nvim-treesitter/nvim-treesitter-context',
-    },
     run = ':TSUpdate',
   })
   use({
