@@ -155,6 +155,8 @@ return {
 
         vim.fn.sign_define(texthl, { text = text, texthl = texthl, linehl = linehl })
       end
+
+      require('lspconfig.ui.windows').default_options.border = 'rounded'
     end,
   },
   {
