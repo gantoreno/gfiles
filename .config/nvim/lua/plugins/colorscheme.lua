@@ -112,6 +112,10 @@ return {
             NavicText = { fg = e.fg, bg = 'None' },
             NavicSeparator = { link = 'NavicText' },
 
+            DiffAdd = { bg = blend(m.green, e.bg) },
+            DiffChange = { bg = blend(m.blue, e.bg) },
+            DiffDelete = { bg = blend(m.red, e.bg) },
+
             ['@markup.heading.1'] = { fg = m.cyan, bold = true },
             RenderMarkdownH1 = { fg = m.cyan, bold = true },
             RenderMarkdownH1Bg = { bg = blend(m.cyan, e.bg) },

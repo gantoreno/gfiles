@@ -66,6 +66,24 @@ which_key.add({
   },
 })
 
+which_key.add({
+  { '<leader>h', group = 'Hunk', icon = { icon = '', color = 'orange' } },
+  {
+    '<leader>hp',
+    '<cmd>Gitsigns preview_hunk<cr>',
+    desc = 'Preview',
+    icon = { icon = '', color = 'yellow' },
+    mode = 'n',
+  },
+  {
+    '<leader>hi',
+    '<cmd>Gitsigns preview_hunk_inline<cr>',
+    desc = 'Preview (inline)',
+    icon = { icon = '', color = 'red' },
+    mode = 'n',
+  },
+})
+
 -- Hover
 which_key.add({
   { '<leader>s', group = 'Symbol', icon = { icon = '', color = 'blue' } },
