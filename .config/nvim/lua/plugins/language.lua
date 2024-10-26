@@ -93,6 +93,8 @@ return {
   {
     'neovim/nvim-lspconfig',
     config = function()
+      require('lspconfig.ui.windows').default_options.border = 'rounded'
+
       local navic = require('nvim-navic')
       local cmp_lsp = require('cmp_nvim_lsp')
       local lspconfig = require('lspconfig')
@@ -155,8 +157,6 @@ return {
 
         vim.fn.sign_define(texthl, { text = text, texthl = texthl, linehl = linehl })
       end
-
-      require('lspconfig.ui.windows').default_options.border = 'rounded'
     end,
   },
   {
