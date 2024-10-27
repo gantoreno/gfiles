@@ -4,5 +4,9 @@ return {
     keys = {
       { '<leader>lzg', '<cmd>FloatermNew --width=0.8 --height=0.8 --wintype=float lazygit<cr>' },
     },
+    config = function()
+      vim.g.floaterm_title = ' Floaterm '
+      vim.g.floaterm_titleposition = 'center'
+    end,
   },
 }
