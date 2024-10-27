@@ -1,4 +1,5 @@
 local servers = {
+  'lua_ls',
   'ts_ls',
 }
 
@@ -15,6 +16,9 @@ return {
   },
   {
     'neovim/nvim-lspconfig',
+    keys = {
+      { 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', desc = 'Hover' },
+    },
     config = function()
       for _, server in ipairs(servers) do
         require('lspconfig')[server].setup({})
