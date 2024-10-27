@@ -1,17 +1,17 @@
 local servers = {
-  'ts_ls'
+  'ts_ls',
 }
 
 return {
   {
     'williamboman/mason.nvim',
-    opts = {}
+    opts = {},
   },
   {
     'williamboman/mason-lspconfig.nvim',
     opts = {
-      ensure_installed = servers
-    }
+      ensure_installed = servers,
+    },
   },
   {
     'neovim/nvim-lspconfig',
@@ -19,6 +19,6 @@ return {
       for _, server in ipairs(servers) do
         require('lspconfig')[server].setup({})
       end
-    end
-  }
+    end,
+  },
 }
