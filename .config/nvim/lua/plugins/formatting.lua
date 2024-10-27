@@ -10,6 +10,13 @@ return {
         lua = { 'stylua' },
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
       },
+      formatters = {
+        injected = {
+          options = {
+            ignore_errors = true,
+          },
+        },
+      },
     },
   },
 }
