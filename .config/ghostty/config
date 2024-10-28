@@ -31,27 +31,27 @@ keybind = alt+right=esc:f
 keybind = cmd+r=reload_config
 
 # Colors
-palette = 0=#090909
-palette = 1=#dc6068
-palette = 2=#abcf76
-palette = 3=#e6b455
-palette = 4=#6e98eb
-palette = 5=#b480d6
-palette = 6=#71c6e7
-palette = 7=#efefef
-palette = 8=#373737
-palette = 9=#f07178
-palette = 10=#c3e88d
-palette = 11=#ffcb6b
-palette = 12=#82aaff
-palette = 13=#c792ea
-palette = 14=#89ddff
-palette = 15=#efefef
+palette = 0=#101010
+palette = 1=#ff9da4
+palette = 2=#d1f1a9
+palette = 3=#f5d595
+palette = 4=#bbdaff
+palette = 5=#ebbbff
+palette = 6=#c0e9ff
+palette = 7=#d0d0d0
+palette = 8=#151515
+palette = 9=#ff9da4
+palette = 10=#d1f1a9
+palette = 11=#f5d595
+palette = 12=#bbdaff
+palette = 13=#ebbbff
+palette = 14=#c0e9ff
+palette = 15=#f5f5f5
 
-background = #111111
-foreground = #aaaaaa
+background = #151515
+foreground = #d0d0d0
 
-cursor-color = #ffcc00
+cursor-color = #f5f5f5
 
-selection-background = #2f2f2f
-selection-foreground = #aaaaaa
+selection-background = #2e2e2e
+selection-foreground = #d0d0d0
