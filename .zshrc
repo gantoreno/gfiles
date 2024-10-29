@@ -4,7 +4,7 @@ export LC_ALL=en_US.UTF-8
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="starship"
+ZSH_THEME="robbyrussell"
 
 plugins=(
   git
