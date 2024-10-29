@@ -26,6 +26,7 @@ vim.o.clipboard = 'unnamedplus'
 vim.o.shiftwidth = 2
 vim.o.softtabstop = 2
 vim.o.showtabline = 2
+vim.o.laststatus = 3
 
 vim.o.smartindent = true
 vim.o.cursorline = true

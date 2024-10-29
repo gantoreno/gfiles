@@ -1,29 +1,51 @@
 local modes = {
   ['n'] = { 'NORMAL', 'StatuslineModeNormal' },
   ['no'] = { 'NORMAL', 'StatuslineModeNormal' },
-  ['v'] = { 'VISUAL', 'StatuslineModeNormal' },
-  ['V'] = { 'VISUAL LINE', 'StatuslineModeNormal' },
-  [''] = { 'VISUAL BLOCK', 'StatuslineModeNormal' },
-  ['s'] = { 'SELECT', 'StatuslineModeNormal' },
-  ['S'] = { 'SELECT LINE', 'StatuslineModeNormal' },
-  [''] = { 'SELECT BLOCK', 'StatuslineModeNormal' },
-  ['i'] = { 'INSERT', 'StatuslineModeNormal' },
-  ['ic'] = { 'INSERT', 'StatuslineModeNormal' },
-  ['R'] = { 'REPLACE', 'StatuslineModeNormal' },
-  ['Rv'] = { 'VISUAL REPLACE', 'StatuslineModeNormal' },
-  ['c'] = { 'COMMAND', 'StatuslineModeNormal' },
-  ['cv'] = { 'VIM EX', 'StatuslineModeNormal' },
-  ['ce'] = { 'EX', 'StatuslineModeNormal' },
-  ['r'] = { 'PROMPT', 'StatuslineModeNormal' },
-  ['rm'] = { 'MOAR', 'StatuslineModeNormal' },
-  ['r?'] = { 'CONFIRM', 'StatuslineModeNormal' },
-  ['!'] = { 'SHELL', 'StatuslineModeNormal' },
-  ['t'] = { 'TERMINAL', 'StatuslineModeNormal' },
+  ['v'] = { 'VISUAL', 'StatuslineModeVisual' },
+  ['V'] = { 'VISUAL LINE', 'StatuslineModeVisual' },
+  [''] = { 'VISUAL BLOCK', 'StatuslineModeVisual' },
+  ['s'] = { 'SELECT', 'StatuslineModeSelect' },
+  ['S'] = { 'SELECT LINE', 'StatuslineModeSelect' },
+  [''] = { 'SELECT BLOCK', 'StatuslineModeSelect' },
+  ['i'] = { 'INSERT', 'StatuslineModeInsert' },
+  ['ic'] = { 'INSERT', 'StatuslineModeInsert' },
+  ['R'] = { 'REPLACE', 'StatuslineModeReplace' },
+  ['Rv'] = { 'VISUAL REPLACE', 'StatuslineModeReplace' },
+  ['c'] = { 'COMMAND', 'StatuslineModeCommand' },
+  ['cv'] = { 'VIM EX', 'StatuslineModeEx' },
+  ['ce'] = { 'EX', 'StatuslineModeEx' },
+  ['r'] = { 'PROMPT', 'StatuslineModePrompt' },
+  ['rm'] = { 'MOAR', 'StatuslineModeUnknown' },
+  ['r?'] = { 'CONFIRM', 'StatuslineModeUnknown' },
+  ['!'] = { 'SHELL', 'StatuslineModeTerminal' },
+  ['t'] = { 'TERMINAL', 'StatuslineModeTerminal' },
 }
 
+local function with_highlight_group(text, hl, opts)
+  local opts = opts or {}
+
+  local lpadding = opts['padding'][1] or 0
+  local rpadding = opts['padding'][2] or 0
+
+  return '%#' .. hl .. '#' .. string.rep(' ', lpadding) .. text .. string.rep(' ', rpadding) .. '%##'
+end
+
 function Statusline()
-  local mode = modes[vim.api.nvim_get_mode().mode]
-  return ' ' .. mode[1] .. ' ' .. mode[2]
+  local info = modes[vim.api.nvim_get_mode().mode]
+  local mode = info[1]
+  local hl = info[2]
+
+  local filename = vim.fn.expand('%:t')
+  local filetype = vim.bo.filetype
+
+  local icon = require('nvim-web-devicons').get_icon(filename, filetype) or '󰦨'
+
+  if filename == '' then
+    filename = 'No name'
+  end
+
+  return with_highlight_group(' ' .. mode, hl, { padding = { 1, 1 } })
+    .. with_highlight_group(icon .. ' ' .. filename, 'StatuslineSecondarySegment', { padding = { 1, 1 } })
 end
 
 vim.o.statusline = '%{%v:lua.Statusline()%}'
