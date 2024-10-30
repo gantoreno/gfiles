@@ -22,12 +22,14 @@ vim.opt.rtp:prepend(lazypath)
 vim.o.mouse = 'a'
 vim.o.signcolumn = 'yes'
 vim.o.clipboard = 'unnamedplus'
+vim.o.fillchars = vim.o.fillchars .. 'eob: '
 
 vim.o.shiftwidth = 2
 vim.o.softtabstop = 2
 vim.o.showtabline = 2
 vim.o.laststatus = 3
 
+vim.o.hidden = true
 vim.o.smartindent = true
 vim.o.cursorline = true
 vim.o.expandtab = true

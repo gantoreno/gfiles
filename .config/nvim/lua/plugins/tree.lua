@@ -1,7 +1,9 @@
 return {
   {
     'nvim-tree/nvim-tree.lua',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+    },
     keys = {
       { '<leader>nn', '<cmd>NvimTreeToggle<cr>', desc = 'NvimTree' },
     },
@@ -11,6 +13,9 @@ return {
         disable_netrw = true,
         hijack_cursor = true,
         sync_root_with_cwd = true,
+        renderer = {
+          root_folder_label = false,
+        },
         update_focused_file = {
           enable = true,
           update_root = false,
