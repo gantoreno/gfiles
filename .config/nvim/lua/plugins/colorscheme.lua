@@ -65,10 +65,11 @@ return {
           local e = colors.editor
 
           return {
-            BufferLineOffset = { fg = colors.main.purple, bg = e.bg_alt, bold = true },
+            BufferLineOffset = { fg = m.purple, bg = e.bg_alt, bold = true },
 
             Winbar = { bg = e.bg },
             WinbarNC = { bg = e.bg },
+            PmenuThumb = { bg = e.border },
 
             NvimTreeWinSeparator = { fg = e.bg_alt, bg = e.bg_alt },
 
