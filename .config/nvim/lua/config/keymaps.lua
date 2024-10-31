@@ -45,6 +45,13 @@ which_key.add({
     icon = { icon = '󰌁', color = 'purple' },
     mode = 'n',
   },
+  {
+    '<leader>far',
+    '<cmd>lua require("grug-far").open({ transient = true })<cr>',
+    desc = 'And Replace',
+    icon = { icon = '', color = 'orange' },
+    mode = 'n',
+  },
 })
 
 -- Goto
