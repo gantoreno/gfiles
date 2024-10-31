@@ -79,6 +79,13 @@ which_key.add({
     '<leader>hi',
     '<cmd>Gitsigns preview_hunk_inline<cr>',
     desc = 'Preview (inline)',
+    icon = { icon = '', color = 'cyan' },
+    mode = 'n',
+  },
+  {
+    '<leader>hr',
+    '<cmd>Gitsigns reset_hunk<cr>',
+    desc = 'Reset',
     icon = { icon = '', color = 'red' },
     mode = 'n',
   },
