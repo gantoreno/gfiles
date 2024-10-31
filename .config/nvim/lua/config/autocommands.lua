@@ -9,6 +9,14 @@ vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, { pattern = '.env*', co
 vim.api.nvim_create_autocmd({ 'BufWritePost' }, { pattern = '*', command = 'FormatWrite' })
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, { pattern = '*', command = 'ColorizerReloadAllBuffers' })
 
+vim.api.nvim_create_autocmd({ 'FileType' }, {
+  group = vim.api.nvim_create_augroup('grug-far-keybindings', { clear = true }),
+  pattern = { 'grug-far' },
+  callback = function()
+    vim.api.nvim_buf_set_keymap(0, 'n', '<s-enter>', '<localleader>o<localleader>c', {})
+  end,
+})
+
 vim.api.nvim_create_autocmd('QuitPre', {
   callback = function()
     local invalid_win = {}
