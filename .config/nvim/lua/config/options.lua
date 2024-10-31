@@ -22,6 +22,7 @@ vim.o.clipboard = 'unnamedplus'
 vim.o.signcolumn = 'yes'
 vim.o.encoding = 'utf-8'
 vim.o.fileencoding = 'utf-8'
+vim.o.fillchars = vim.o.fillchars .. 'eob: '
 
 vim.o.mouse = vim.o.mouse .. 'a'
 vim.o.shortmess = vim.o.shortmess .. 'astWAIc'
