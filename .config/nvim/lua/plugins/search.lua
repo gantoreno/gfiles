@@ -14,15 +14,6 @@ return {
           live_grep = { hidden = true },
         },
         defaults = {
-          prompt_prefix = ' ',
-          selection_caret = ' ',
-          entry_prefix = ' ',
-          preview = true,
-          mappings = {
-            i = {
-              ['<esc>'] = require('telescope.actions').close,
-            },
-          },
           file_ignore_patterns = {
             'node_modules',
             '.git',
