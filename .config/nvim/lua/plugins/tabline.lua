@@ -17,9 +17,6 @@ return {
           offsets = {
             {
               filetype = 'NvimTree',
-              text = function()
-                return vim.fn.fnamemodify(vim.loop.cwd(), ':~:s?$?/..?')
-              end,
               text_align = 'left',
               separator = true,
               highlight = 'BufferLineOffset',

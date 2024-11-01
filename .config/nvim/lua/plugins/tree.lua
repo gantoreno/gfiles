@@ -20,9 +20,6 @@ return {
             },
           },
         },
-        renderer = {
-          root_folder_label = false,
-        },
         update_focused_file = {
           enable = true,
         },
@@ -30,7 +27,6 @@ return {
           sync = {
             open = true,
             close = true,
-            ignore = {},
           },
         },
         view = {
