@@ -1,8 +1,8 @@
 # Font
-font-family = JetBrains Mono
+font-family = Cascadia Code
 font-size = 12
 
-adjust-cell-height = 15%
+adjust-cell-height = 30%
 
 # Cursor
 cursor-style = block

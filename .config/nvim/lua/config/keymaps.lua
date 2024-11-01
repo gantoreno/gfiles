@@ -10,7 +10,13 @@ which_key.add({
     '<leader>lzg',
     '<cmd>FloatermNew --wintype=float --width=0.8 --height=0.8 --position=center lazygit<cr>',
     desc = 'Lazygit',
-    icon = { icon = '', color = 'cyan' },
+    icon = { icon = '󰊢', color = 'orange' },
+  },
+  {
+    '<leader>lzd',
+    '<cmd>FloatermNew --wintype=float --width=0.8 --height=0.8 --position=center lazydocker<cr>',
+    desc = 'Lazydocker',
+    icon = { icon = '', color = 'blue' },
   },
 })
 
