@@ -21,9 +21,6 @@ return {
           },
         },
         renderer = {
-          group_empty = false,
-          highlight_git = true,
-          special_files = {},
           root_folder_label = false,
         },
         update_focused_file = {

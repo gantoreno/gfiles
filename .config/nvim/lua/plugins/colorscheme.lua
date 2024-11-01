@@ -30,6 +30,7 @@ return {
   {
     dir = '~/Developer/Personal/material.nvim',
     dev = true,
+    lazy = false,
     priority = 1000,
     config = function()
       vim.g.material_style = 'darker'
