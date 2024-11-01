@@ -33,26 +33,20 @@ return {
         },
         mapping = {
           -- Navigation
-          ['<C-j>'] = cmp.mapping.select_next_item(),
-          ['<C-k>'] = cmp.mapping.select_prev_item(),
-          ['<C-e>'] = cmp.mapping({
+          ['<down>'] = cmp.mapping.select_next_item(),
+          ['<up>'] = cmp.mapping.select_prev_item(),
+          ['<left>'] = cmp.mapping({
+            i = cmp.mapping.abort(),
+            c = cmp.mapping.close(),
+          }),
+          ['<esc>'] = cmp.mapping({
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
           }),
 
           -- Interaction
-          ['<Cr>'] = cmp.mapping.confirm({ select = true }),
-          ['<Tab>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_next_item()
-            elseif luasnip.expandable() then
-              luasnip.expand()
-            elseif luasnip.expand_or_jumpable() then
-              luasnip.expand_or_jump()
-            else
-              fallback()
-            end
-          end, { 'i', 's' }),
+          ['<cr>'] = cmp.mapping.confirm({ select = true }),
+          ['<tab>'] = cmp.mapping.confirm({ select = true }),
         },
         formatting = {
           fields = { 'kind', 'abbr' },
