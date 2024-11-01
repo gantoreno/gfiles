@@ -16,12 +16,15 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end
 
-vim.g.mapleader = ' '
-vim.g.maplocalleader = '\\'
+require('config.options')
 
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   ui = { border = 'rounded' },
   spec = { import = 'plugins' },
+  install = { colorscheme = { 'tokyonight-night' } },
 })
+
+require('config.autocommands')
+require('config.keymaps')

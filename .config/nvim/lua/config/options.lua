@@ -26,3 +26,6 @@ vim.o.fillchars = vim.o.fillchars .. 'eob: '
 
 vim.o.mouse = vim.o.mouse .. 'a'
 vim.o.shortmess = vim.o.shortmess .. 'astWAIc'
+
+vim.g.mapleader = ' '
+vim.g.maplocalleader = '\\'
