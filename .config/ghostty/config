@@ -1,5 +1,5 @@
 # Font
-font-family = MonoLisa
+font-family = JetBrains Mono
 font-size = 12
 
 adjust-cell-height = 15%
@@ -31,27 +31,29 @@ keybind = alt+right=esc:f
 keybind = cmd+r=reload_config
 
 # Colors
-palette = 0=#090909
-palette = 1=#dc6068
-palette = 2=#abcf76
-palette = 3=#e6b455
-palette = 4=#6e98eb
-palette = 5=#b480d6
-palette = 6=#71c6e7
-palette = 7=#efefef
-palette = 8=#373737
-palette = 9=#f07178
-palette = 10=#c3e88d
-palette = 11=#ffcb6b
-palette = 12=#82aaff
-palette = 13=#c792ea
-palette = 14=#89ddff
-palette = 15=#efefef
+theme = tokyonight
 
-background = #111111
-foreground = #aaaaaa
+# palette = 0=#090909
+# palette = 1=#dc6068
+# palette = 2=#abcf76
+# palette = 3=#e6b455
+# palette = 4=#6e98eb
+# palette = 5=#b480d6
+# palette = 6=#71c6e7
+# palette = 7=#efefef
+# palette = 8=#373737
+# palette = 9=#f07178
+# palette = 10=#c3e88d
+# palette = 11=#ffcb6b
+# palette = 12=#82aaff
+# palette = 13=#c792ea
+# palette = 14=#89ddff
+# palette = 15=#efefef
 
-cursor-color = #ffcc00
+# background = #111111
+# foreground = #aaaaaa
 
-selection-background = #2f2f2f
-selection-foreground = #aaaaaa
+# cursor-color = #ffcc00
+
+# selection-background = #2f2f2f
+# selection-foreground = #aaaaaa

@@ -31,6 +31,7 @@ alias ls="eza --icons"
 alias vim="nvim"
 
 alias lzg="lazygit"
+alias lzd="lazydocker"
 
 alias gck="git checkout"
 alias gcp="git cherry-pick"

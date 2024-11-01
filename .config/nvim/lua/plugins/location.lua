@@ -54,11 +54,13 @@ return {
         end
 
         local icon, fg = get_icon_color(current_file, current_file_extension, { default = true })
-        local bg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID('Winbar')), 'bg')
+        local bg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID('Normal')), 'bg')
 
+        vim.api.nvim_set_hl(0, 'Winbar', { bg = bg })
+        vim.api.nvim_set_hl(0, 'WinbarNC', { bg = bg })
         vim.api.nvim_set_hl(0, 'BreadcrumbsIconColor', { fg = fg, bg = bg })
 
-        return ' %#BreadcrumbsIconColor#'
+        return '%#BreadcrumbsIconColor# '
           .. icon
           .. ' %#Winbar#'
           .. current_file
@@ -69,17 +71,17 @@ return {
         pattern = '*',
         callback = function()
           local filetype = vim.bo.filetype
+          local buftype = vim.bo.buftype
 
-          local window_config = vim.api.nvim_win_get_config(0).relative
           local window_name = vim.api.nvim_buf_get_name(0)
-          local window_option = vim.api.nvim_buf_get_option(0, 'buftype')
+          local window_config = vim.api.nvim_win_get_config(0).relative
 
           if
             winbar_ignore_filetypes[filetype]
             or filetype == ''
-            or window_config ~= ''
+            or buftype ~= ''
             or window_name == ''
-            or window_option ~= ''
+            or window_config ~= ''
           then
             return
           end
