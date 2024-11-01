@@ -15,9 +15,6 @@ return {
         window = {
           documentation = cmp.config.window.bordered(),
           completion = cmp.config.window.bordered(),
-          scrollbar = {
-            winhighlight = 'PmenuSbar:CmpSbPmenuSbar,Scrollbar:CmpSbScrollbar,PmenuThumb:CmpSbPmenuThumb',
-          },
         },
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
