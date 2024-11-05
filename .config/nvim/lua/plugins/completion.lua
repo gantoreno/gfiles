@@ -1,5 +1,8 @@
 return {
   {
+    'github/copilot.vim',
+  },
+  {
     'hrsh7th/nvim-cmp',
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
@@ -15,6 +18,9 @@ return {
         window = {
           documentation = cmp.config.window.bordered(),
           completion = cmp.config.window.bordered(),
+        },
+        experimental = {
+          ghost_text = true,
         },
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
