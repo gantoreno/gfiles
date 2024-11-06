@@ -47,7 +47,7 @@ return {
     config = function()
       require('lspconfig.ui.windows').default_options.border = 'rounded'
 
-      local navic = require('nvim-navic')
+      -- local navic = require('nvim-navic')
       local cmp_lsp = require('cmp_nvim_lsp')
       local lspconfig = require('lspconfig')
 
@@ -62,9 +62,9 @@ return {
             document_formatting = false,
           },
           on_attach = function(client, bufnr)
-            if client.server_capabilities.documentSymbolProvider then
-              navic.attach(client, bufnr)
-            end
+            -- if client.server_capabilities.documentSymbolProvider then
+            --   navic.attach(client, bufnr)
+            -- end
 
             client.capabilities = cmp_lsp.default_capabilities()
           end,

@@ -69,6 +69,8 @@ return {
 
               hl.PmenuSel = { bg = c.ui.selection }
 
+              hl.IncSearch = { link = '@diff.delta' }
+
               hl.BufferlineCloseButtonVisible = { fg = c.ui.red }
               hl.BufferlineCloseButtonSelected = { fg = c.ui.red }
 
