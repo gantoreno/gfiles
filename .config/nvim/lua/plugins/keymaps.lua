@@ -1,6 +1,8 @@
 return {
   {
     'folke/which-key.nvim',
+    lazy = false,
+    priority = 2000,
     opts = {
       win = {
         width = 0.999,
