@@ -17,7 +17,10 @@ return {
       cmp.setup({
         window = {
           documentation = cmp.config.window.bordered(),
-          completion = cmp.config.window.bordered(),
+          completion = {
+            border = 'rounded',
+            winhighlight = 'Normal:NormalFloat',
+          },
         },
         experimental = {
           ghost_text = true,

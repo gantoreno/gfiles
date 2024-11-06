@@ -58,7 +58,7 @@ return {
 
         vim.api.nvim_set_hl(0, 'Winbar', { bg = bg })
         vim.api.nvim_set_hl(0, 'WinbarNC', { bg = bg })
-        vim.api.nvim_set_hl(0, 'BreadcrumbsIconColor', { fg = fg, bg = bg })
+        vim.api.nvim_set_hl(0, 'BreadcrumbsIconColor', { bg = bg })
 
         return '%#BreadcrumbsIconColor# '
           .. icon

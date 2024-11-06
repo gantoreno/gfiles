@@ -50,7 +50,7 @@ palette = 13=#f5bdfd
 palette = 14=#8de2db
 palette = 15=#d1d3dd
 
-background = #1b1d22
+background = #1a1d23
 foreground = #adb0b0
 
 cursor-color = #adb0b0

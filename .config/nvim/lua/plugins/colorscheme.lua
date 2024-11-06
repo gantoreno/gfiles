@@ -25,9 +25,7 @@ return {
           cyan = '#00B298',
           blue = '#50A4E9',
           purple = '#CC83E3',
-
           accent = '#50A4E9',
-
           tabline = '#111317',
           winbar = '#797D87',
           tool = '#16181D',
@@ -50,7 +48,9 @@ return {
       }
 
       require('astrotheme').setup({
-        style = { inactive = false },
+        style = {
+          inactive = false,
+        },
         palettes = {
           astrodark = {
             ui = c.ui,
@@ -64,9 +64,15 @@ return {
               hl.NvimTreeIndentMarker = { fg = c.ui.border }
               hl.BufferlineCloseButton = { fg = c.ui.red }
 
+              hl.Floaterm = { bg = c.ui.split }
+              hl.FloatermNormal = { bg = c.ui.split }
+
+              hl.PmenuSel = { bg = c.ui.selection }
+
               hl.BufferlineCloseButtonVisible = { fg = c.ui.red }
               hl.BufferlineCloseButtonSelected = { fg = c.ui.red }
 
+              hl.TelescopePromptTitle = { link = 'TelescopeResultsNormal' }
               hl.TelescopePromptNormal = { link = 'TelescopeResultsNormal' }
               hl.TelescopePromptBorder = { link = 'TelescopeResultsBorder' }
             end,
@@ -79,7 +85,7 @@ return {
       local astrotheme = {
         normal = {
           a = { fg = c.ui.base, bg = c.syntax.blue, gui = 'bold' },
-          b = { fg = c.ui.purple, bg = c.ui.selection },
+          b = { fg = c.ui.text_active, bg = c.ui.selection },
           c = { fg = c.ui.text_active, bg = c.ui.statusline },
         },
         insert = { a = { fg = c.ui.base, bg = c.ui.green, gui = 'bold' } },
