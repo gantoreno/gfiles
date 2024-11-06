@@ -33,27 +33,27 @@ keybind = cmd+r=reload_config
 # Colors
 theme = tokyonight
 
-# palette = 0=#090909
-# palette = 1=#dc6068
-# palette = 2=#abcf76
-# palette = 3=#e6b455
-# palette = 4=#6e98eb
-# palette = 5=#b480d6
-# palette = 6=#71c6e7
-# palette = 7=#efefef
-# palette = 8=#373737
-# palette = 9=#f07178
-# palette = 10=#c3e88d
-# palette = 11=#ffcb6b
-# palette = 12=#82aaff
-# palette = 13=#c792ea
-# palette = 14=#89ddff
-# palette = 15=#efefef
+palette = 0=#111317
+palette = 1=#ef8a8d
+palette = 2=#93bf6b
+palette = 3=#d7ad45
+palette = 4=#74b5f9
+palette = 5=#d39aec
+palette = 6=#6dbfb8
+palette = 7=#9c9fa8
+palette = 8=#34363a
+palette = 9=#f2aaaf
+palette = 10=#b6e18d
+palette = 11=#f7d061
+palette = 12=#96d8fb
+palette = 13=#f5bdfd
+palette = 14=#8de2db
+palette = 15=#d1d3dd
 
-# background = #111111
-# foreground = #aaaaaa
+background = #1b1d22
+foreground = #adb0b0
 
-# cursor-color = #ffcc00
+cursor-color = #adb0b0
 
-# selection-background = #2f2f2f
-# selection-foreground = #aaaaaa
+selection-background = #2b2e36
+selection-foreground = #adb0b0

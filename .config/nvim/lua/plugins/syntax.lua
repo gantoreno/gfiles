@@ -1,5 +1,12 @@
 return {
   {
+    'norcalli/nvim-colorizer.lua',
+    event = 'BufReadPre',
+    opts = {
+      '*',
+    },
+  },
+  {
     'nvim-treesitter/nvim-treesitter',
     build = function()
       require('nvim-treesitter.install').update({ with_sync = true })
