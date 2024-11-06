@@ -64,8 +64,8 @@ return {
               hl.NvimTreeIndentMarker = { fg = c.ui.border }
               hl.BufferlineCloseButton = { fg = c.ui.red }
 
-              hl.Floaterm = { bg = c.ui.split }
-              hl.FloatermNormal = { bg = c.ui.split }
+              hl.Floaterm = { bg = c.ui.float }
+              hl.FloatermNormal = { bg = c.ui.float }
 
               hl.PmenuSel = { bg = c.ui.selection }
 
