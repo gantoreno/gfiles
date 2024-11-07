@@ -68,9 +68,13 @@ return {
               hl.FloatermNormal = { bg = c.ui.float }
 
               hl.PmenuSel = { bg = c.ui.selection }
+              hl.PmenuThumb = { bg = c.ui.border }
 
               hl.IncSearch = { link = '@diff.delta' }
 
+              hl.BufferlineBackground = { bg = c.ui.tabline }
+              hl.BufferlineSeparator = { fg = c.ui.split, bg = c.ui.tabline }
+              hl.BufferlineBackground = { bg = c.ui.tabline }
               hl.BufferlineCloseButtonVisible = { fg = c.ui.red }
               hl.BufferlineCloseButtonSelected = { fg = c.ui.red }
 

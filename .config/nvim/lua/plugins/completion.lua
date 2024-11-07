@@ -16,7 +16,10 @@ return {
 
       cmp.setup({
         window = {
-          documentation = cmp.config.window.bordered(),
+          documentation = {
+            border = 'rounded',
+            winhighlight = 'Normal:NormalFLoat',
+          },
           completion = {
             border = 'rounded',
             winhighlight = 'Normal:NormalFloat',
