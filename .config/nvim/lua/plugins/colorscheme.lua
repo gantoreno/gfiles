@@ -59,6 +59,13 @@ return {
         highlights = {
           astrodark = {
             modify_hl_groups = function(hl, c)
+              hl.Operator = { fg = c.syntax.red }
+
+              hl.PmenuSel = { bg = c.ui.selection }
+              hl.PmenuThumb = { bg = c.ui.border }
+
+              hl.IncSearch = { link = '@diff.delta' }
+
               hl.NvimTreeRootFolder = { fg = c.syntax.blue }
               hl.NvimTreeWinSeparator = { fg = c.ui.split, bg = c.ui.split }
               hl.NvimTreeIndentMarker = { fg = c.ui.border }
@@ -66,11 +73,6 @@ return {
 
               hl.Floaterm = { bg = c.ui.float }
               hl.FloatermNormal = { bg = c.ui.float }
-
-              hl.PmenuSel = { bg = c.ui.selection }
-              hl.PmenuThumb = { bg = c.ui.border }
-
-              hl.IncSearch = { link = '@diff.delta' }
 
               hl.BufferlineBackground = { bg = c.ui.tabline }
               hl.BufferlineSeparator = { fg = c.ui.split, bg = c.ui.tabline }
