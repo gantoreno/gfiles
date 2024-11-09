@@ -71,7 +71,7 @@ return {
 
         return table.concat({
           ' ' .. (has_parent_folders and parent_folders_string or ''),
-          '%#BreadcrumbsIconColor#' .. icon .. '%#Winbar#' .. current_file,
+          '%#BreadcrumbsIconColor#' .. icon .. '%#Winbar# ' .. current_file,
           location == '' and '…' or location,
         }, ' › ')
       end
