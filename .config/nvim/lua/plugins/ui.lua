@@ -14,8 +14,16 @@ return {
     },
     opts = {
       presets = {
-        command_palette = true,
         lsp_doc_border = true,
+      },
+      cmdline = {
+        enabled = false,
+      },
+      notify = {
+        enabled = false,
+      },
+      messages = {
+        enabled = false,
       },
       lsp = {
         hover = {
@@ -23,17 +31,6 @@ return {
             border = {
               padding = { 0, 0 },
             },
-          },
-        },
-      },
-      routes = {
-        {
-          filter = {
-            event = 'notify',
-            find = 'No information available',
-          },
-          opts = {
-            skip = true,
           },
         },
       },
