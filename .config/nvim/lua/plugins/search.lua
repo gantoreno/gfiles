@@ -14,6 +14,9 @@ return {
           live_grep = { hidden = true },
         },
         defaults = {
+          prompt_prefix = '   ',
+          selection_caret = ' ',
+          entry_prefix = ' ',
           file_ignore_patterns = {
             'node_modules',
             '.git',
