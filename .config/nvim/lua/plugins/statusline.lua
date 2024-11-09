@@ -102,7 +102,7 @@ return {
         lualine_z = {
           {
             function()
-              return '%p %%'
+              return '%p%%'
             end,
             color = 'lualine_b_normal',
             icon = {
