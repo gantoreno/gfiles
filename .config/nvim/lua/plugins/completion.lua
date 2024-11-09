@@ -3,6 +3,14 @@ return {
     'github/copilot.vim',
   },
   {
+    'onsails/lspkind.nvim',
+    config = function()
+      require('lspkind').setup({
+        preset = 'codicons',
+      })
+    end,
+  },
+  {
     'hrsh7th/nvim-cmp',
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
@@ -22,7 +30,7 @@ return {
           },
           completion = {
             border = 'rounded',
-            winhighlight = 'Normal:NormalFloat',
+            winhighlight = 'Normal:NormalFloat,CursorLine:CmpItemSel',
           },
         },
         experimental = {
@@ -63,19 +71,11 @@ return {
           ['<tab>'] = cmp.mapping.confirm({ select = true }),
         },
         formatting = {
-          fields = { 'kind', 'abbr' },
+          fields = { 'abbr', 'kind' },
           format = lspkind.cmp_format({
-            mode = 'symbol',
+            mode = 'symbol_text',
           }),
         },
-      })
-    end,
-  },
-  {
-    'onsails/lspkind.nvim',
-    config = function()
-      require('lspkind').setup({
-        preset = 'codicons',
       })
     end,
   },
