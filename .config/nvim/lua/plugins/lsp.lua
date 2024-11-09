@@ -61,11 +61,7 @@ return {
             },
             document_formatting = false,
           },
-          on_attach = function(client, bufnr)
-            -- if client.server_capabilities.documentSymbolProvider then
-            --   navic.attach(client, bufnr)
-            -- end
-
+          on_attach = function(client)
             client.capabilities = cmp_lsp.default_capabilities()
           end,
         })
@@ -89,18 +85,12 @@ return {
       })
 
       -- Icons
-      vim.diagnostic.config({
-        float = {
-          border = 'rounded',
-          padding = { 0, 1 },
-        },
-      })
-
       local signs = {
-        Error = '',
-        Warn = '',
-        Hint = '',
-        Info = '',
+        Error = '',
+        Warn = '',
+        Hint = '󰛩',
+        Info = '',
+        Prefix = '',
       }
 
       for type, text in pairs(signs) do
@@ -109,6 +99,16 @@ return {
 
         vim.fn.sign_define(texthl, { text = text, texthl = texthl, linehl = linehl })
       end
+
+      vim.diagnostic.config({
+        float = {
+          border = 'rounded',
+          padding = { 0, 1 },
+        },
+        virtual_text = {
+          prefix = signs.Prefix .. ' ',
+        },
+      })
     end,
   },
 }
