@@ -31,29 +31,27 @@ keybind = alt+right=esc:f
 keybind = cmd+r=reload_config
 
 # Colors
-theme = tokyonight
+palette =  0=#111317
+palette =  1=#EF8A8D
+palette =  2=#93BF6B
+palette =  3=#D7AD45
+palette =  4=#74B5F9
+palette =  5=#D39AEC
+palette =  6=#6DBFB8
+palette =  7=#9C9FA8
+palette =  8=#34363A
+palette =  9=#F2AAAF
+palette = 10=#B6E18D
+palette = 11=#F7D061
+palette = 12=#96D8FB
+palette = 13=#F5BDFD
+palette = 14=#8DE2DB
+palette = 15=#D1D3DD
 
-palette = 0=#111317
-palette = 1=#ef8a8d
-palette = 2=#93bf6b
-palette = 3=#d7ad45
-palette = 4=#74b5f9
-palette = 5=#d39aec
-palette = 6=#6dbfb8
-palette = 7=#9c9fa8
-palette = 8=#34363a
-palette = 9=#f2aaaf
-palette = 10=#b6e18d
-palette = 11=#f7d061
-palette = 12=#96d8fb
-palette = 13=#f5bdfd
-palette = 14=#8de2db
-palette = 15=#d1d3dd
+background = #1C1d21
+foreground = #C8CBD0
 
-background = #1a1d23
-foreground = #adb0b0
+cursor-color = #C8CBD0
 
-cursor-color = #adb0b0
-
-selection-background = #2b2e36
-selection-foreground = #adb0b0
+selection-background = #2A2D32
+selection-foreground = #C8CBD0

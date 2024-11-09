@@ -33,13 +33,6 @@ return {
           },
         },
       })
-
-      local c = require('astrotheme.palettes.astrodark')
-
-      -- Sometimes you just have to force things
-      vim.api.nvim_set_hl(0, 'BufferlineCloseButton', { fg = c.ui.red, bg = c.ui.tabline })
-      vim.api.nvim_set_hl(0, 'BufferlineCloseButtonVisible', { fg = c.ui.red, bg = c.ui.tabline })
-      vim.api.nvim_set_hl(0, 'BufferlineCloseButtonSelected', { fg = c.ui.red, bg = c.ui.base })
     end,
   },
 }
