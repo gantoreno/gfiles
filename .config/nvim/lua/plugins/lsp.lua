@@ -61,7 +61,11 @@ return {
             },
             document_formatting = false,
           },
-          on_attach = function(client)
+          on_attach = function(client, bufnr)
+            if client.server_capabilities.documentSymbolProvider then
+              require('nvim-navic').attach(client, bufnr)
+            end
+
             client.capabilities = cmp_lsp.default_capabilities()
           end,
         })

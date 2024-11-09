@@ -23,6 +23,16 @@ return {
         indent_markers = {
           enable = true,
         },
+        icons = {
+          glyphs = {
+            folder = {
+              default = '',
+              open = '',
+              empty = '',
+              empty_open = '',
+            },
+          },
+        },
       },
       update_focused_file = {
         enable = true,

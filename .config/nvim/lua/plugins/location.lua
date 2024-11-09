@@ -1,7 +1,6 @@
 return {
   {
     'SmiteshP/nvim-navic',
-    enabled = false,
     config = function()
       local navic = require('nvim-navic')
       local get_icon_color = require('nvim-web-devicons').get_icon_color
@@ -59,7 +58,7 @@ return {
 
         vim.api.nvim_set_hl(0, 'Winbar', { bg = bg })
         vim.api.nvim_set_hl(0, 'WinbarNC', { bg = bg })
-        vim.api.nvim_set_hl(0, 'BreadcrumbsIconColor', { bg = bg })
+        vim.api.nvim_set_hl(0, 'BreadcrumbsIconColor', { fg = fg, bg = bg })
 
         return '%#BreadcrumbsIconColor# '
           .. icon
