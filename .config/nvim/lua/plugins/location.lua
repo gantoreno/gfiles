@@ -60,11 +60,24 @@ return {
         vim.api.nvim_set_hl(0, 'WinbarNC', { bg = bg })
         vim.api.nvim_set_hl(0, 'BreadcrumbsIconColor', { fg = fg, bg = bg })
 
-        return '%#BreadcrumbsIconColor# '
+        local parent_folders = {}
+
+        for i in string.gmatch(vim.fn.expand('%:h:r'), '([^/]+)') do
+          table.insert(parent_folders, i)
+        end
+
+        local parent_folders_string = table.concat(parent_folders, ' › ')
+        local has_parent_folders = parent_folders_string ~= '' and parent_folders_string ~= '.'
+
+        return ' '
+          .. (has_parent_folders and (parent_folders_string .. ' › ') or '')
+          .. '%#BreadcrumbsIconColor#'
           .. icon
-          .. ' %#Winbar#'
+          .. ' '
+          .. '%#Winbar#'
           .. current_file
-          .. (location == '' and '' or ' › ' .. location)
+          .. ' › '
+          .. (location == '' and '…' or location)
       end
 
       vim.api.nvim_create_autocmd('BufWinEnter', {
