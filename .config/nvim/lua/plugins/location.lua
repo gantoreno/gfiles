@@ -69,15 +69,11 @@ return {
         local parent_folders_string = table.concat(parent_folders, ' › ')
         local has_parent_folders = parent_folders_string ~= '' and parent_folders_string ~= '.'
 
-        return ' '
-          .. (has_parent_folders and (parent_folders_string .. ' › ') or '')
-          .. '%#BreadcrumbsIconColor#'
-          .. icon
-          .. ' '
-          .. '%#Winbar#'
-          .. current_file
-          .. ' › '
-          .. (location == '' and '…' or location)
+        return table.concat({
+          ' ' .. (has_parent_folders and parent_folders_string or ''),
+          '%#BreadcrumbsIconColor#' .. icon .. '%#Winbar#' .. current_file,
+          location == '' and '…' or location,
+        }, ' › ')
       end
 
       vim.api.nvim_create_autocmd('BufWinEnter', {
