@@ -21,10 +21,19 @@ require('config.options')
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  ui = { border = 'rounded' },
-  spec = { import = 'plugins' },
-  checker = { enabled = true },
-  install = { colorscheme = { 'tokyonight-night' } },
+  ui = {
+    border = 'rounded',
+    backdrop = 100,
+  },
+  spec = {
+    import = 'plugins',
+  },
+  checker = {
+    enabled = true,
+  },
+  install = {
+    colorscheme = { 'tokyonight-night' },
+  },
 })
 
 require('config.autocommands')

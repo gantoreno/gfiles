@@ -32,20 +32,27 @@ keybind = cmd+r=reload_config
 
 # Colors
 palette =  0=#111317
-palette =  1=#EF8A8D
-palette =  2=#93BF6B
-palette =  3=#D7AD45
-palette =  4=#74B5F9
-palette =  5=#D39AEC
-palette =  6=#6DBFB8
-palette =  7=#9C9FA8
 palette =  8=#34363A
-palette =  9=#F2AAAF
-palette = 10=#B6E18D
-palette = 11=#F7D061
-palette = 12=#96D8FB
-palette = 13=#F5BDFD
-palette = 14=#8DE2DB
+
+palette =  1=#ff9da4
+palette =  9=#ff9da4
+
+palette =  2=#d1f1a9
+palette = 10=#d1f1a9
+
+palette =  3=#f5d595
+palette = 11=#f5d595
+
+palette =  4=#bbdaff
+palette = 12=#bbdaff
+
+palette =  5=#ebbbff
+palette = 13=#ebbbff
+
+palette =  6=#bbffff
+palette = 14=#bbffff
+
+palette =  7=#9C9FA8
 palette = 15=#D1D3DD
 
 background = #1C1d21
