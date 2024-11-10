@@ -26,7 +26,11 @@ return {
         enabled = false,
       },
       lsp = {
+        progress = {
+          enabled = false,
+        },
         hover = {
+          silent = true,
           opts = {
             border = {
               padding = { 0, 0 },
