@@ -1,27 +1,22 @@
 # Unicode language support
 export LC_ALL=en_US.UTF-8
 
-# Oh My Zsh
-export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME="robbyrussell"
-
-plugins=(
-  git
-  z
-)
-
-source $ZSH/oh-my-zsh.sh
-
 # Keybinds
 bindkey -v
 
 bindkey ^R history-incremental-search-backward
 bindkey ^S history-incremental-search-forward
 
-# Aliases
-alias g="git"
+# Options
+setopt prompt_subst
 
+# Plugins
+source "$HOME/.zsh/plugins/zsh-z/zsh-z.plugin.zsh"
+
+# Theme
+source "$HOME/.zsh/themes/default.zsh-theme"
+
+# Aliases
 alias lzg="lazygit"
 
 alias gck="git checkout"
@@ -36,8 +31,6 @@ alias tmuxconfig="vim $HOME/Developer/Personal/gfiles/.tmux.conf"
 alias ghosttyconfig="vim $HOME/Developer/Personal/gfiles/.config/ghostty/config"
 alias starshipconfig="vim $HOME/Developer/Personal/gfiles/.config/starship.toml"
 alias aerospaceconfig="vim $HOME/Developer/Personal/gfiles/.config/aerospace/aerospace.toml"
-
-alias :wq="exit"
 
 # Evals
 eval "$(fnm env --use-on-cd)"
