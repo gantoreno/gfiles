@@ -55,10 +55,10 @@ palette = 14=#bbffff
 palette =  7=#9C9FA8
 palette = 15=#D1D3DD
 
-background = #1C1d21
-foreground = #C8CBD0
+background = #1E1E1E
+foreground = #CCCCCC
 
-cursor-color = #C8CBD0
+cursor-color = #CCCCCC
 
-selection-background = #2A2D32
-selection-foreground = #C8CBD0
+selection-background = #333333
+selection-foreground = #CCCCCC
