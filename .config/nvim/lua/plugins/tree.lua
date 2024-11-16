@@ -20,6 +20,7 @@ return {
         },
       },
       renderer = {
+        highlight_git = 'all',
         indent_markers = {
           enable = true,
         },
