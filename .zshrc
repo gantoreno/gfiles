@@ -10,11 +10,17 @@ bindkey ^S history-incremental-search-forward
 # Options
 setopt prompt_subst
 
-# Plugins
-source "$HOME/.zsh/plugins/zsh-z/zsh-z.plugin.zsh"
+# Oh My Zsh
+export ZSH="$HOME/.oh-my-zsh"
 
-# Theme
-source "$HOME/.zsh/themes/default.zsh-theme"
+ZSH_THEME="robbyrussell"
+
+plugins=(
+  git
+  z
+)
+
+source "$ZSH/oh-my-zsh.sh"
 
 # Aliases
 alias lzg="lazygit"
