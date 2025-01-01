@@ -22,9 +22,9 @@ window-padding-balance = false
 window-padding-color = background
 
 # Icon
-macos-icon = custom-style
-macos-icon-ghost-color = #1e1e1e
-macos-icon-screen-color = #fafafa
+# macos-icon = custom-style
+# macos-icon-ghost-color = #1e1e1e
+# macos-icon-screen-color = #fafafa
 
 # Shell
 shell-integration-features = true
