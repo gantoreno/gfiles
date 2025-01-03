@@ -17,6 +17,9 @@ vimcmd_replace_one_symbol = '[➜](bold purple)'
 vimcmd_replace_symbol = '[➜](bold purple)'
 vimcmd_visual_symbol = '[➜](bold yellow)'
 
+[nodejs]
+symbol = '🐝 '
+
 [git_branch]
 symbol = '🌳 '
 

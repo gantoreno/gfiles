@@ -13,7 +13,7 @@ setopt prompt_subst
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME="starship"
 
 plugins=(
   git
