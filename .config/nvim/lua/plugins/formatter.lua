@@ -31,6 +31,8 @@ return {
       require('formatter').setup({
         logging = true,
         filetype = {
+          json = { prettier },
+          jsonc = { prettier },
           javascript = { prettier },
           typescript = { prettier },
           javascriptreact = { prettier },
