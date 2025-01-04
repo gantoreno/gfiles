@@ -33,7 +33,7 @@ keybind = alt+right=esc:f
 
 # Colors
 palette =  0=#141414
-palette =  8=#282828
+palette =  8=#666666
 
 palette =  1=#ff838b
 palette =  9=#ff838b
