@@ -5,6 +5,7 @@ local servers = {
   'eslint',
   'elixirls',
   'gopls',
+  'intelephense',
   'jsonls',
   'lua_ls',
   'rust_analyzer',

@@ -2,8 +2,9 @@ return {
   {
     'mhartington/formatter.nvim',
     config = function()
-      local prettier = require('formatter.defaults.prettier')
       local mixformat = require('formatter.defaults.mixformat')
+      local phpcfb = require('formatter.defaults.phpcbf')
+      local prettier = require('formatter.defaults.prettier')
       local zigfmt = require('formatter.defaults.zigfmt')
 
       local stylua = function()
@@ -40,6 +41,7 @@ return {
           elixir = { mixformat },
           go = { goimports },
           lua = { stylua },
+          php = { phpcfb },
           rust = { rustfmt },
           zig = { zigfmt },
         },
