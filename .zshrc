@@ -18,11 +18,19 @@ ZSH_THEME="starship"
 plugins=(
   git
   z
+  zsh-syntax-highlighting
 )
 
 source "$ZSH/oh-my-zsh.sh"
 
+# Editor
+export EDITOR="nvim"
+
 # Aliases
+alias ls="eza"
+
+alias vim="nvim"
+
 alias lzg="lazygit"
 
 alias gck="git checkout"
@@ -80,3 +88,5 @@ export AWS_SDK_LOAD_CONFIG=1
 # Python
 export PYTHON="/opt/homebrew/bin/python3"
 
+# Fetch
+macfetch
