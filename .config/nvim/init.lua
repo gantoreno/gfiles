@@ -107,6 +107,7 @@ require('lazy').setup({
         use_icons = true,
       })
 
+      ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_location = function()
         return '%2l:%-2v'
       end
@@ -155,18 +156,34 @@ require('lazy').setup({
 
   -- File tree
   {
-    'nvim-neo-tree/neo-tree.nvim',
-    branch = 'v3.x',
+    'nvim-tree/nvim-tree.lua',
     dependencies = {
-      'nvim-lua/plenary.nvim',
       'nvim-tree/nvim-web-devicons',
-      'MunifTanjim/nui.nvim',
     },
-    cmd = 'Neotree',
     keys = {
-      { '<C-e>', '<cmd>Neotree toggle<cr>', desc = 'Toggle NvimTree' },
+      { '\\', '<cmd>NvimTreeToggle<cr>', desc = 'Toggle NvimTree' },
     },
-    opts = {},
+    opts = {
+      actions = {
+        open_file = {
+          quit_on_open = true,
+        },
+      },
+      renderer = {
+        indent_markers = {
+          enable = true,
+        },
+      },
+      tab = {
+        sync = {
+          open = true,
+          close = true,
+        },
+      },
+      update_focused_file = {
+        enable = true,
+      },
+    },
   },
 
   -- Treesitter
@@ -309,6 +326,7 @@ require('lazy').setup({
         ensure_installed = ensure_installed,
       })
 
+      ---@diagnostic disable-next-line: missing-fields
       require('mason-lspconfig').setup({
         handlers = {
           function(server_name)
