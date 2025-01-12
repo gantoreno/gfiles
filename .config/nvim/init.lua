@@ -112,13 +112,6 @@ require('lazy').setup({
         return '%2l:%-2v'
       end
 
-      -- Tabline
-      local tabline = require('mini.tabline')
-
-      tabline.setup({
-        show_icons = true,
-      })
-
       -- Comments
       local comment = require('mini.comment')
 
@@ -161,7 +154,7 @@ require('lazy').setup({
       'nvim-tree/nvim-web-devicons',
     },
     keys = {
-      { '\\', '<cmd>NvimTreeToggle<cr>', desc = 'Toggle NvimTree' },
+      { '<C-n>', '<cmd>NvimTreeToggle<cr>', desc = 'Toggle NvimTree' },
     },
     opts = {
       actions = {
@@ -376,13 +369,13 @@ require('lazy').setup({
           completeopt = 'menu,menuone,noinsert',
         },
         mapping = cmp.mapping.preset.insert({
-          ['<C-n>'] = cmp.mapping.select_next_item(),
-          ['<C-p>'] = cmp.mapping.select_prev_item(),
+          ['<C-j>'] = cmp.mapping.select_next_item(),
+          ['<C-k>'] = cmp.mapping.select_prev_item(),
 
           ['<C-b>'] = cmp.mapping.scroll_docs(-4),
           ['<C-f>'] = cmp.mapping.scroll_docs(4),
 
-          ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+          ['<cr>'] = cmp.mapping.confirm({ select = true }),
 
           ['<C-space>'] = cmp.mapping.complete({}),
 
