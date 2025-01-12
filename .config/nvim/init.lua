@@ -44,8 +44,8 @@ vim.schedule(function()
 end)
 
 -- Keymaps
-vim.keymap.set('n', '<leader><left>', '<cmd>bprev<cr>', { desc = 'Previous buffer' })
-vim.keymap.set('n', '<leader><left>', '<cmd>bprev<cr>', { desc = 'Previous buffer' })
+vim.keymap.set('n', '<leader><left>', '<cmd>tabprev<cr>', { desc = 'Previous tab' })
+vim.keymap.set('n', '<leader><right>', '<cmd>tabnext<cr>', { desc = 'Next tab' })
 
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })

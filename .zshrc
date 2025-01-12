@@ -13,23 +13,33 @@ setopt prompt_subst
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="starship"
+if [[ $TERM_PROGRAM == 'ghostty' ]]; then
+  ZSH_THEME="starship"
+else
+  ZSH_THEME="robbyrussell"
+fi
 
 plugins=(
   git
   z
-  zsh-syntax-highlighting
 )
+
+if [[ $TERM_PROGRAM == 'ghostty' ]]; then
+  plugins=($plugins zsh-syntax-highlighting)
+fi
 
 source "$ZSH/oh-my-zsh.sh"
 
 # Editor
-export EDITOR="nvim"
+if [[ $TERM_PROGRAM == 'ghostty' ]]; then
+  export EDITOR="nvim"
+fi
 
 # Aliases
-alias ls="eza"
-
-alias vim="nvim"
+if [[ $TERM_PROGRAM == 'ghostty' ]]; then
+  alias ls="eza"
+  alias vim="nvim"
+fi
 
 alias lzg="lazygit"
 
@@ -89,4 +99,6 @@ export AWS_SDK_LOAD_CONFIG=1
 export PYTHON="/opt/homebrew/bin/python3"
 
 # Fetch
-macfetch
+if [[ $TERM_PROGRAM == 'ghostty' ]]; then
+  macfetch
+fi
