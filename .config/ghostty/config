@@ -1,4 +1,4 @@
-theme = tokyonight
+theme = catppuccin-mocha
 
 cursor-style = block
 shell-integration-features = no-cursor

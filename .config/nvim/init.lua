@@ -44,8 +44,8 @@ vim.schedule(function()
 end)
 
 -- Keymaps
-vim.keymap.set('n', '<leader><left>', '<cmd>tabprev<cr>', { desc = 'Previous tab' })
-vim.keymap.set('n', '<leader><right>', '<cmd>tabnext<cr>', { desc = 'Next tab' })
+vim.keymap.set('n', '<leader><left>', '<cmd>tabprev<cr>', { desc = 'Left tab' })
+vim.keymap.set('n', '<leader><right>', '<cmd>tabnext<cr>', { desc = 'Right tab' })
 
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
@@ -57,7 +57,10 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- Highlights
 vim.api.nvim_set_hl(0, 'CopilotSuggestion', { link = 'Comment' })
 
--- Plugins
+-- NvChad UI
+vim.g.base46_cache = vim.fn.stdpath('data') .. '/base46_cache/'
+
+-- Lazy
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -75,10 +78,23 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- Colorscheme
   {
-    'folke/tokyonight.nvim',
+    'catppuccin/nvim',
     lazy = false,
     config = function()
-      vim.cmd('colorscheme tokyonight-night')
+      -- vim.cmd('colorscheme catppuccin-mocha')
+    end,
+  },
+  {
+    'nvchad/ui',
+    config = function()
+      require('nvchad')
+    end,
+  },
+  {
+    'nvchad/base46',
+    lazy = true,
+    build = function()
+      require('base46').load_all_highlights()
     end,
   },
 
@@ -101,16 +117,16 @@ require('lazy').setup({
     'echasnovski/mini.nvim',
     config = function()
       -- Statusline
-      local statusline = require('mini.statusline')
-
-      statusline.setup({
-        use_icons = true,
-      })
-
+      -- local statusline = require('mini.statusline')
+      --
+      -- statusline.setup({
+      --   use_icons = true,
+      -- })
+      --
       ---@diagnostic disable-next-line: duplicate-set-field
-      statusline.section_location = function()
-        return '%2l:%-2v'
-      end
+      -- statusline.section_location = function()
+      --   return '%2l:%-2v'
+      -- end
 
       -- Comments
       local comment = require('mini.comment')
@@ -449,3 +465,8 @@ require('lazy').setup({
     'github/copilot.vim',
   },
 })
+
+-- NvChad UI
+for _, v in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
+  dofile(vim.g.base46_cache .. v)
+end
