@@ -52,7 +52,7 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [q]uickfix list' })
 
 -- Highlights
 vim.api.nvim_set_hl(0, 'CopilotSuggestion', { link = 'Comment' })
@@ -136,7 +136,9 @@ require('lazy').setup({
   },
   {
     'MeanderingProgrammer/render-markdown.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' },
+    dependencies = {
+      'echasnovski/mini.nvim',
+    },
     opts = {},
   },
 
@@ -220,7 +222,21 @@ require('lazy').setup({
       { '<C-p>', '<cmd>Telescope find_files<cr>', desc = 'Find files' },
     },
     opts = {
-      defaults = {},
+      pickers = {
+        find_files = { hidden = true },
+        live_grep = { hidden = true },
+      },
+      defaults = {
+        file_ignore_patterns = {
+          'node_modules',
+          '.git',
+          'build',
+          'static',
+          'out',
+          '.oh%-my%-zsh',
+          '.tmux/',
+        },
+      },
     },
   },
 
@@ -234,7 +250,10 @@ require('lazy').setup({
     ft = 'lua',
     opts = {
       library = {
-        { path = 'luvit-meta/library', words = { 'vim%.uv' } },
+        {
+          path = 'luvit-meta/library',
+          words = { 'vim%.uv' },
+        },
       },
     },
   },
@@ -257,15 +276,15 @@ require('lazy').setup({
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
 
-          map('gd', require('telescope.builtin').lsp_definitions, 'Goto definition')
-          map('gr', require('telescope.builtin').lsp_references, 'Goto references')
-          map('gI', require('telescope.builtin').lsp_implementations, 'Goto implementations')
-          map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Document diagnostics')
-          map('<leader>ds', require('telescope.builtin').lsp_document_symbols, 'Document symbols')
-          map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace symbols')
-          map('<leader>rn', vim.lsp.buf.rename, 'Rename')
-          map('<leader>ca', vim.lsp.buf.code_action, 'Code action')
-          map('<leader>gD', vim.lsp.buf.declaration, 'Goto declaration')
+          map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [d]efinition')
+          map('gr', require('telescope.builtin').lsp_references, '[G]oto [r]eferences')
+          map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [i]mplementations')
+          map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Document [d]iagnostics')
+          map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [s]ymbols')
+          map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [s]ymbols')
+          map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+          map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [a]ctions')
+          map('<leader>gD', vim.lsp.buf.declaration, '[G]oto [d]eclaration')
 
           local client = vim.lsp.get_client_by_id(event.data.client_id)
 
@@ -294,6 +313,7 @@ require('lazy').setup({
       })
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
+
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
       local servers = {
@@ -311,6 +331,7 @@ require('lazy').setup({
       }
 
       local ensure_installed = vim.tbl_keys(servers or {})
+
       vim.list_extend(ensure_installed, {
         'stylua',
       })
@@ -324,6 +345,7 @@ require('lazy').setup({
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
+
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilites or {})
 
             require('lspconfig')[server_name].setup(server)
@@ -415,7 +437,7 @@ require('lazy').setup({
           require('conform').format({ async = true, lsp_format = 'fallback' })
         end,
         mode = '',
-        desc = 'Format buffer',
+        desc = '[F]ormat buffer',
       },
     },
     opts = {
