@@ -35,23 +35,23 @@ keybind = alt+right=esc:f
 palette =  0=#141414
 palette =  8=#666666
 
-palette =  1=#ff838b
-palette =  9=#ff838b
+palette =  1=#f38ba8
+palette =  9=#f38ba8
 
-palette =  2=#87c05f
-palette = 10=#87c05f
+palette =  2=#a6e3a1
+palette = 10=#a6e3a1
 
-palette =  3=#dfab25
-palette = 11=#dfab25
+palette =  3=#f9e2af
+palette = 11=#f9e2af
 
-palette =  4=#5eb7ff
-palette = 12=#5eb7ff
+palette =  4=#89b4fa
+palette = 12=#89b4fa
 
-palette =  5=#dd97f1
-palette = 13=#dd97f1
+palette =  5=#cba6f7
+palette = 13=#cba6f7
 
-palette =  6=#4ac2b8
-palette = 14=#4ac2b8
+palette =  6=#94e2d5
+palette = 14=#94e2d5
 
 palette =  7=#cccccc
 palette = 15=#cccccc

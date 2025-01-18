@@ -21,7 +21,7 @@ return {
       options = {
         theme = 'earthbound',
         component_separators = { left = '', right = '' },
-        section_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
       },
       sections = {
         lualine_a = {
@@ -33,9 +33,13 @@ return {
         lualine_b = {
           {
             function()
-              return ' '
+              local bg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID('UltraVisual')), 'bg')
+              local fg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID('lualine_b_normal')), 'bg')
+
+              vim.api.nvim_set_hl(0, 'lualine_a_2_angle', { fg = fg, bg = bg })
+
+              return '%#lualine_a_2_angle#'
             end,
-            color = 'UltraVisual',
             padding = 0,
           },
           {
@@ -90,24 +94,33 @@ return {
         lualine_y = {
           {
             function()
-              return vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
+              local root = vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
+
+              local fg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID('lualine_a_replace')), 'bg')
+              local bg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID('lualine_c_normal')), 'bg')
+
+              vim.api.nvim_set_hl(0, 'lualine_y_icon', { fg = fg, bg = bg })
+
+              return '%#lualine_y_icon#%#lualine_a_replace#'
+                .. icons.directory
+                .. '%#lualine_b_normal# '
+                .. root
+                .. ' '
             end,
-            icon = {
-              icons.directory,
-              color = 'lualine_a_replace',
-            },
+            padding = 0,
           },
         },
         lualine_z = {
           {
             function()
-              return '%p%%'
+              local fg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID('lualine_a_insert')), 'bg')
+              local bg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID('lualine_b_normal')), 'bg')
+
+              vim.api.nvim_set_hl(0, 'lualine_z_icon', { fg = fg, bg = bg })
+
+              return '%#lualine_z_icon#%#lualine_a_insert#' .. icons.lines .. '%#lualine_b_normal#' .. ' %p%% '
             end,
-            color = 'lualine_b_normal',
-            icon = {
-              icons.lines,
-              color = 'lualine_a_insert',
-            },
+            padding = 0,
           },
         },
       },
