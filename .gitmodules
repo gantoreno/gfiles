@@ -2,3 +2,6 @@
   path = .oh-my-zsh
   url = https://github.com/ohmyzsh/ohmyzsh
 
+[submodule ".zsh/pure"]
+	path = .zsh/pure
+	url = https://github.com/sindresorhus/pure
