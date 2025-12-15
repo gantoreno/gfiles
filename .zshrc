@@ -19,12 +19,6 @@ setopt prompt_subst
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 
-if [[ $TERM_PROGRAM == 'tmux' ]]; then
-  ZSH_THEME="starship"
-else
-  ZSH_THEME="robbyrussell"
-fi
-
 plugins=(
   git
   z
@@ -36,12 +30,17 @@ fi
 
 source "$ZSH/oh-my-zsh.sh"
 
-# Editor
-alias code="cursor"
+# Prompt
+fpath+=($HOME/.zsh/pure)
 
+autoload -U promptinit && promptinit
+
+prompt pure
+
+# Editor
 export EDITOR="cursor"
 
-if [[ $TERM_PROGRAM == 'tmux' ]]; then
+if [[ $SUB_TERM_PROGRAM == 'ghostty' ]]; then
   export EDITOR="nvim"
 fi
 
@@ -112,3 +111,20 @@ export PYTHON="/opt/homebrew/bin/python3"
 if [[ $TERM_PROGRAM == 'tmux' ]]; then
   macfetch
 fi
+
+# Sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export PATH="/Users/gabrielmoreno/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/Users/gabrielmoreno/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# Claude & Vertex
+export CLAUDE_CODE_USE_VERTEX=1
+export CLOUD_ML_REGION=global
+export ANTHROPIC_VERTEX_PROJECT_ID=devbox-437222
+export VERTEX_REGION_CLAUDE_3_5_HAIKU=us-east5
+

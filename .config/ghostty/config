@@ -1,4 +1,6 @@
-theme = tokyonight
+# Theme
+theme = Tokyonight Night
 
-cursor-style = block
-shell-integration-features = no-cursor
+# Font
+font-family = TX-02-Data
+
