@@ -4,6 +4,21 @@ if [[ $TERM_PROGRAM == 'ghostty' ]]; then
   fi
 fi
 
+# Fetch
+if [[ $TERM_PROGRAM == 'tmux' ]]; then
+  macfetch 2> /dev/null || echo "Macfetch not installed, skipping...\n"
+fi
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ $TERM_PROGRAM == 'tmux' ]]; then;
+  if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+  fi
+fi
+
+
 # Unicode language support
 export LC_ALL=en_US.UTF-8
 
@@ -18,6 +33,8 @@ setopt prompt_subst
 
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
+
+export ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
   git
@@ -35,7 +52,7 @@ fpath+=($HOME/.zsh/pure)
 
 autoload -U promptinit && promptinit
 
-prompt pure
+# prompt pure
 
 # Editor
 export EDITOR="cursor"
@@ -107,11 +124,6 @@ export AWS_SDK_LOAD_CONFIG=1
 # Python
 export PYTHON="/opt/homebrew/bin/python3"
 
-# Fetch
-if [[ $TERM_PROGRAM == 'tmux' ]]; then
-  macfetch
-fi
-
 # Sdkman
 export SDKMAN_DIR="$HOME/.sdkman"
 
@@ -127,4 +139,7 @@ export CLAUDE_CODE_USE_VERTEX=1
 export CLOUD_ML_REGION=global
 export ANTHROPIC_VERTEX_PROJECT_ID=devbox-437222
 export VERTEX_REGION_CLAUDE_3_5_HAIKU=us-east5
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
