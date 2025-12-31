@@ -9,16 +9,6 @@ if [[ $TERM_PROGRAM == 'tmux' ]]; then
   macfetch 2> /dev/null || echo "Macfetch not installed, skipping...\n"
 fi
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ $TERM_PROGRAM == 'tmux' ]]; then;
-  if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-  fi
-fi
-
-
 # Unicode language support
 export LC_ALL=en_US.UTF-8
 
@@ -34,7 +24,7 @@ setopt prompt_subst
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 
-export ZSH_THEME="powerlevel10k/powerlevel10k"
+export ZSH_THEME="pure"
 
 plugins=(
   git
@@ -46,13 +36,6 @@ if [[ $TERM_PROGRAM == 'tmux' ]]; then
 fi
 
 source "$ZSH/oh-my-zsh.sh"
-
-# Prompt
-fpath+=($HOME/.zsh/pure)
-
-autoload -U promptinit && promptinit
-
-# prompt pure
 
 # Editor
 export EDITOR="cursor"
