@@ -58,12 +58,12 @@ alias gca="git commit --amend"
 alias glg="git log    --graph --oneline"
 alias gsp="git status --porcelain"
 
-alias zshconfig="vim $HOME/Developer/Personal/gfiles/.zshrc"
-alias vimconfig="vim $HOME/Developer/Personal/gfiles/.config/nvim/init.lua"
-alias tmuxconfig="vim $HOME/Developer/Personal/gfiles/.tmux.conf"
-alias ghosttyconfig="vim $HOME/Developer/Personal/gfiles/.config/ghostty/config"
-alias starshipconfig="vim $HOME/Developer/Personal/gfiles/.config/starship.toml"
-alias aerospaceconfig="vim $HOME/Developer/Personal/gfiles/.config/aerospace/aerospace.toml"
+alias zshconfig="vim $HOME/Developer/gantoreno/gfiles/.zshrc"
+alias vimconfig="vim $HOME/Developer/gantoreno/gfiles/.config/nvim/init.lua"
+alias tmuxconfig="vim $HOME/Developer/gantoreno/gfiles/.tmux.conf"
+alias ghosttyconfig="vim $HOME/Developer/gantoreno/gfiles/.config/ghostty/config"
+alias starshipconfig="vim $HOME/Developer/gantoreno/gfiles/.config/starship.toml"
+alias aerospaceconfig="vim $HOME/Developer/gantoreno/gfiles/.config/aerospace/aerospace.toml"
 
 # Evals
 eval "$(fnm env --use-on-cd)"
