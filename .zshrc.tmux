@@ -1,13 +1,3 @@
-# Oh My Zsh
-export ZSH_THEME="pure"
-
-plugins=(
-  $plugins
-  zsh-syntax-highlighting
-)
-
-source "$ZSH/oh-my-zsh.sh"
-
 # Fetch
 if (( $+commands[macfetch] )); then
   macfetch
@@ -20,3 +10,12 @@ export EDITOR="nvim"
 alias ls="eza"
 alias vim="nvim"
 
+# Oh My Zsh
+export ZSH_THEME="pure"
+
+plugins=(
+  $plugins
+  zsh-syntax-highlighting
+)
+
+source "$ZSH/oh-my-zsh.sh"

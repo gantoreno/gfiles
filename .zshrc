@@ -16,18 +16,6 @@ bindkey ^S history-incremental-search-forward
 # Options
 setopt prompt_subst
 
-# Oh My Zsh
-export ZSH="$HOME/.oh-my-zsh"
-
-export ZSH_THEME="robbyrussell"
-
-plugins=(
-  git
-  z
-)
-
-source "$ZSH/oh-my-zsh.sh"
-
 # Editor
 export EDITOR="cursor"
 
@@ -105,6 +93,19 @@ export CLOUD_ML_REGION=global
 export ANTHROPIC_VERTEX_PROJECT_ID=devbox-437222
 export VERTEX_REGION_CLAUDE_3_5_HAIKU=us-east5
 
+# Oh My Zsh
+export ZSH="$HOME/.oh-my-zsh"
+
+export ZSH_THEME="robbyrussell"
+
+plugins=(
+  git
+  z
+)
+
+# If inside tmux, pass over oh-my-zsh initialization
 if [[ $TERM_PROGRAM == 'tmux' ]]; then
   source "$HOME/.zshrc.tmux"
+else
+  source "$ZSH/oh-my-zsh.sh"
 fi
