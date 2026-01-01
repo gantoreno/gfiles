@@ -2,8 +2,7 @@
 export ZSH_THEME="pure"
 
 plugins=(
-  git
-  z
+  $plugins
   zsh-syntax-highlighting
 )
 
