@@ -4,11 +4,6 @@ if [[ $TERM_PROGRAM == 'ghostty' ]]; then
   fi
 fi
 
-# Fetch
-if [[ $TERM_PROGRAM == 'tmux' ]]; then
-  macfetch 2> /dev/null || echo "Macfetch not installed, skipping...\n"
-fi
-
 # Unicode language support
 export LC_ALL=en_US.UTF-8
 
@@ -24,32 +19,19 @@ setopt prompt_subst
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 
-export ZSH_THEME="pure"
+export ZSH_THEME="robbyrussell"
 
 plugins=(
   git
   z
 )
 
-if [[ $TERM_PROGRAM == 'tmux' ]]; then
-  plugins=($plugins zsh-syntax-highlighting)
-fi
-
 source "$ZSH/oh-my-zsh.sh"
 
 # Editor
 export EDITOR="cursor"
 
-if [[ $SUB_TERM_PROGRAM == 'ghostty' ]]; then
-  export EDITOR="nvim"
-fi
-
 # Aliases
-if [[ $TERM_PROGRAM == 'tmux' ]]; then
-  alias ls="eza"
-  alias vim="nvim"
-fi
-
 alias lzg="lazygit"
 
 alias gck="git checkout"
@@ -123,3 +105,6 @@ export CLOUD_ML_REGION=global
 export ANTHROPIC_VERTEX_PROJECT_ID=devbox-437222
 export VERTEX_REGION_CLAUDE_3_5_HAIKU=us-east5
 
+if [[ $TERM_PROGRAM == 'tmux' ]]; then
+  source "$HOME/.zshrc.tmux"
+fi
