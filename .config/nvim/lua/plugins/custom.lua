@@ -1,4 +1,14 @@
 return {
+  -- Colorscheme
+  {
+    dir = "/Users/gabrielmoreno/Developer/gantoreno/nvim-cursor",
+    name = "cursor",
+    dev = true,
+    lazy = false,
+    priority = 1000,
+  },
+
+  -- LazyVim
   {
     "LazyVim/LazyVim",
     opts = {
