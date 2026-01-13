@@ -35,8 +35,19 @@ alias ghosttyconfig="vim $HOME/Developer/gantoreno/gfiles/.config/ghostty/config
 alias starshipconfig="vim $HOME/Developer/gantoreno/gfiles/.config/starship.toml"
 alias aerospaceconfig="vim $HOME/Developer/gantoreno/gfiles/.config/aerospace/aerospace.toml"
 
-# Evals
+# FNM
 eval "$(fnm env --use-on-cd)"
+
+# Direnv
+eval "$(direnv hook zsh)"
+
+_direnv_hook() {
+  eval "$(direnv export zsh)"
+
+  if [ -f .envrc.functions ] && [ -n "$DIRENV_DIR" ]; then
+    source .envrc.functions
+  fi
+}
 
 # Exports
 export PATH="$PATH:$HOME/.scripts"
@@ -109,3 +120,6 @@ if [[ $TERM_PROGRAM == 'tmux' ]]; then
 else
   source "$ZSH/oh-my-zsh.sh"
 fi
+
+# Avoid auto cd
+setopt noautocd
