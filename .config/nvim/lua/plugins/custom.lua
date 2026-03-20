@@ -8,11 +8,25 @@ return {
     priority = 1000,
   },
 
+  -- Tokyonight
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
+    },
+  },
+
   -- LazyVim
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "cursor",
+      colorscheme = "tokyonight-night",
     },
   },
 

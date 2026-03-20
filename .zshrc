@@ -19,22 +19,6 @@ setopt prompt_subst
 # Editor
 export EDITOR="cursor"
 
-# Aliases
-alias lzg="lazygit"
-
-alias gck="git checkout"
-alias gcp="git cherry-pick"
-alias gca="git commit --amend"
-alias glg="git log    --graph --oneline"
-alias gsp="git status --porcelain"
-
-alias zshconfig="vim $HOME/Developer/gantoreno/gfiles/.zshrc"
-alias vimconfig="vim $HOME/Developer/gantoreno/gfiles/.config/nvim/init.lua"
-alias tmuxconfig="vim $HOME/Developer/gantoreno/gfiles/.tmux.conf"
-alias ghosttyconfig="vim $HOME/Developer/gantoreno/gfiles/.config/ghostty/config"
-alias starshipconfig="vim $HOME/Developer/gantoreno/gfiles/.config/starship.toml"
-alias aerospaceconfig="vim $HOME/Developer/gantoreno/gfiles/.config/aerospace/aerospace.toml"
-
 # FNM
 eval "$(fnm env --use-on-cd)"
 
@@ -52,6 +36,8 @@ _direnv_hook() {
 # Exports
 export PATH="$PATH:$HOME/.scripts"
 export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.composer/vendor/bin"
+export PATH="$PATH:$HOME/Library/Python/3.9/bin"
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 
@@ -97,12 +83,13 @@ export PATH="/Users/gabrielmoreno/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/Users/gabrielmoreno/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
 # Claude & Vertex
-export CLAUDE_CODE_USE_VERTEX=1
-export CLOUD_ML_REGION=global
-export ANTHROPIC_VERTEX_PROJECT_ID=devbox-437222
-export VERTEX_REGION_CLAUDE_3_5_HAIKU=us-east5
+export CLAUDE_CODE_USE_VERTEX=
+#export CLOUD_ML_REGION=global
+#export ANTHROPIC_VERTEX_PROJECT_ID=devbox-437222
+#export VERTEX_REGION_CLAUDE_3_5_HAIKU=us-east5
 
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
@@ -123,3 +110,24 @@ fi
 
 # Avoid auto cd
 setopt noautocd
+
+# Aliases
+alias cc="claude"
+alias oc="opencode"
+
+alias lzg="lazygit"
+
+alias gck="git checkout"
+alias gcp="git cherry-pick"
+alias gca="git commit --amend"
+alias glg="git log    --graph --oneline"
+alias gsp="git status --porcelain"
+
+alias zshconfig="vim $HOME/Developer/gantoreno/gfiles/.zshrc"
+alias vimconfig="vim $HOME/Developer/gantoreno/gfiles/.config/nvim/init.lua"
+alias tmuxconfig="vim $HOME/Developer/gantoreno/gfiles/.tmux.conf"
+alias ghosttyconfig="vim $HOME/Developer/gantoreno/gfiles/.config/ghostty/config"
+alias opencodeconfig="vim $HOME/Developer/gantoreno/gfiles/.config/opencode/opencode.json"
+alias starshipconfig="vim $HOME/Developer/gantoreno/gfiles/.config/starship.toml"
+alias aerospaceconfig="vim $HOME/Developer/gantoreno/gfiles/.config/aerospace/aerospace.toml"
+
