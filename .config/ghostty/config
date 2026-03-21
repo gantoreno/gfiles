@@ -4,3 +4,7 @@ theme = Tokyonight Night
 # Font
 font-family = TX-02-Data
 
+# Window
+window-width = 90
+window-height = 35
+
