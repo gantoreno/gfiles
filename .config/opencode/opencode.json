@@ -18,5 +18,16 @@
     }
   },
   "model": "ollama/qwen3:1.7b-8k",
-  "small_model": "ollama/qwen3:1.7b-8k"
+  "small_model": "ollama/qwen3:1.7b-8k",
+  "mcp": {
+    "pencil": {
+      "command": [
+        "/Users/gabrielmoreno/.pencil/mcp/visual_studio_code/out/mcp-server-darwin-arm64",
+        "--app",
+        "visual_studio_code"
+      ],
+      "enabled": true,
+      "type": "local"
+    }
+  }
 }

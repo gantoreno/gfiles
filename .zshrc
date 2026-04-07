@@ -86,10 +86,10 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
 # Claude & Vertex
-export CLAUDE_CODE_USE_VERTEX=
-#export CLOUD_ML_REGION=global
-#export ANTHROPIC_VERTEX_PROJECT_ID=devbox-437222
-#export VERTEX_REGION_CLAUDE_3_5_HAIKU=us-east5
+# export CLAUDE_CODE_USE_VERTEX=
+# export CLOUD_ML_REGION=global
+# export ANTHROPIC_VERTEX_PROJECT_ID=devbox-437222
+# export VERTEX_REGION_CLAUDE_3_5_HAIKU=us-east5
 
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
