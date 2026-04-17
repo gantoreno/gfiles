@@ -1,10 +1,21 @@
 # Theme
-theme = Tokyonight Night
+theme = Wombat
+
+# Cursor
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
 
 # Font
-font-family = TX-02-Data
+font-family = SF Mono
+font-size = 12
 
 # Window
 window-width = 90
 window-height = 35
 
+# Colors
+background = 171717
+foreground = dddddd
+
+palette = 7=dddddd

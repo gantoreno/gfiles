@@ -2,7 +2,7 @@
 # https://github.com/gantoreno/nvim-cursor
 
 # Background and Foreground
-background = 181818
+background = 141414
 foreground = e4e4e4
 
 # Cursor

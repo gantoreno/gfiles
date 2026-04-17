@@ -1,8 +1,8 @@
-if [[ $TERM_PROGRAM == 'ghostty' ]]; then
-  if [[ -z $TMUX ]]; then
-    exec tmux
-  fi
-fi
+# if [[ $TERM_PROGRAM == 'ghostty' ]]; then
+#   if [[ -z $TMUX ]]; then
+#     exec tmux
+#   fi
+# fi
 
 # Unicode language support
 export LC_ALL=en_US.UTF-8
@@ -94,7 +94,7 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 
-export ZSH_THEME="robbyrussell"
+export ZSH_THEME="starship"
 
 plugins=(
   git
