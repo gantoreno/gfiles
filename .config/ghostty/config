@@ -1,21 +1,4 @@
-# Theme
-theme = Wombat
-
-# Cursor
-cursor-style = block
-cursor-style-blink = false
-shell-integration-features = no-cursor
-
-# Font
-font-family = SF Mono
-font-size = 12
-
 # Window
 window-width = 90
-window-height = 35
+window-height = 34
 
-# Colors
-background = 171717
-foreground = dddddd
-
-palette = 7=dddddd
