@@ -106,6 +106,8 @@ fi
 setopt noautocd
 
 # Aliases
+alias vim="nvim"
+
 alias cc="claude"
 alias oc="opencode"
 

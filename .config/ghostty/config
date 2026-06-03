@@ -1,10 +1,5 @@
-# Theme
-# theme = Vesper
+bell-features = system,audio,attention
 
-# Font
-# font-family = Geist Mono
-
-# Window
 window-width = 90
 window-height = 34
 

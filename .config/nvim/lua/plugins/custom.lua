@@ -1,13 +1,4 @@
 return {
-  -- Colorscheme
-  {
-    dir = "/Users/gabrielmoreno/Developer/gantoreno/nvim-cursor",
-    name = "cursor",
-    dev = true,
-    lazy = false,
-    priority = 1000,
-  },
-
   -- Tokyonight
   {
     "folke/tokyonight.nvim",
@@ -22,11 +13,44 @@ return {
     },
   },
 
+  {
+    "navarasu/onedark.nvim",
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      require("onedark").setup({
+        highlights = {
+          ["@tag.jsx"] = { fg = "$blue" },
+          ["@tag.tsx"] = { fg = "$blue" },
+          ["@tag.delimiter.jsx"] = { fg = "$light_grey" },
+          ["@tag.delimiter.tsx"] = { fg = "$light_grey" },
+          ["@tag.attribute.jsx"] = { fg = "$yellow" },
+          ["@tag.attribute.tsx"] = { fg = "$yellow" },
+          ["@constructor.jsx"] = { fg = "$blue" },
+          ["@constructor.tsx"] = { fg = "$blue" },
+          ["@operator.jsx"] = { fg = "$purple" },
+          ["@operator.tsx"] = { fg = "$purple" },
+          ["@property.jsx"] = { fg = "$fg" },
+          ["@property.tsx"] = { fg = "$fg" },
+          ["@variable.parameter.jsx"] = { fg = "$fg" },
+          ["@variable.parameter.tsx"] = { fg = "$fg" },
+          ["@parameter.jsx"] = { fg = "$fg" },
+          ["@parameter.tsx"] = { fg = "$fg" },
+
+          SnacksIndentScope = { fg = "$light_grey", fmt = "nocombine" },
+          SnacksIndentChunk = { fg = "$light_grey", fmt = "nocombine" },
+          IblScope = { fg = "$light_grey", fmt = "nocombine" },
+          IndentBlanklineContextChar = { fg = "$light_grey", fmt = "nocombine" },
+        },
+      })
+      require("onedark").load()
+    end,
+  },
+
   -- LazyVim
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight-night",
+      colorscheme = "onedark",
     },
   },
 
