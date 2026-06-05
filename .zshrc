@@ -1,9 +1,3 @@
-# if [[ $TERM_PROGRAM == 'ghostty' ]]; then
-#   if [[ -z $TMUX ]]; then
-#     exec tmux
-#   fi
-# fi
-
 # Unicode language support
 export LC_ALL=en_US.UTF-8
 
@@ -17,7 +11,7 @@ bindkey ^S history-incremental-search-forward
 setopt prompt_subst
 
 # Editor
-export EDITOR="cursor"
+export EDITOR="code"
 
 # FNM
 eval "$(fnm env --use-on-cd)"
@@ -88,27 +82,19 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 
-export ZSH_THEME="starship"
+export ZSH_THEME="github-codespaces"
 
 plugins=(
   git
   z
-  zsh-syntax-highlighting
 )
 
-# If inside tmux, pass over oh-my-zsh initialization
-if [[ $TERM_PROGRAM == 'tmux' ]]; then
-  source "$HOME/.zshrc.tmux"
-else
-  source "$ZSH/oh-my-zsh.sh"
-fi
+source "$ZSH/oh-my-zsh.sh"
 
 # Avoid auto cd
 setopt noautocd
 
 # Aliases
-alias vim="nvim"
-
 alias cc="claude"
 alias oc="opencode"
 
