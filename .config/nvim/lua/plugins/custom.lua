@@ -15,9 +15,38 @@ return {
 
   {
     "navarasu/onedark.nvim",
-    priority = 1000, -- make sure to load this before all the other start plugins
+    priority = 1000,
     config = function()
+      -- Colors derived from Ghostty's Default Style Dark theme
       require("onedark").setup({
+        colors = {
+          black = "#1d1f21",
+          bg0 = "#282c34",
+          bg1 = "#353a44",
+          bg2 = "#404651",
+          bg3 = "#4b5260",
+          bg_d = "#1d1f21",
+          bg_blue = "#7aa6da",
+          bg_yellow = "#e7c547",
+          fg = "#ffffff",
+          purple = "#b294bb",
+          green = "#b6bd68",
+          orange = "#f0c674",
+          blue = "#82a2be",
+          yellow = "#f0c674",
+          cyan = "#8abeb7",
+          red = "#cc6566",
+          grey = "#666666",
+          light_grey = "#c4c8c6",
+          dark_cyan = "#4f8f8a",
+          dark_red = "#9f4e51",
+          dark_yellow = "#b49350",
+          dark_purple = "#896f91",
+          diff_add = "#303826",
+          diff_delete = "#3a2d31",
+          diff_change = "#293847",
+          diff_text = "#3b5068",
+        },
         highlights = {
           ["@tag.jsx"] = { fg = "$blue" },
           ["@tag.tsx"] = { fg = "$blue" },
@@ -36,10 +65,10 @@ return {
           ["@parameter.jsx"] = { fg = "$fg" },
           ["@parameter.tsx"] = { fg = "$fg" },
 
-          SnacksIndentScope = { fg = "$light_grey", fmt = "nocombine" },
-          SnacksIndentChunk = { fg = "$light_grey", fmt = "nocombine" },
-          IblScope = { fg = "$light_grey", fmt = "nocombine" },
-          IndentBlanklineContextChar = { fg = "$light_grey", fmt = "nocombine" },
+          SnacksIndentScope = { fg = "$cyan", fmt = "nocombine" },
+          SnacksIndentChunk = { fg = "$cyan", fmt = "nocombine" },
+          IblScope = { fg = "$cyan", fmt = "nocombine" },
+          IndentBlanklineContextChar = { fg = "$cyan", fmt = "nocombine" },
         },
       })
       require("onedark").load()
