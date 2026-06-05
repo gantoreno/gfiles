@@ -93,6 +93,7 @@ export ZSH_THEME="starship"
 plugins=(
   git
   z
+  zsh-syntax-highlighting
 )
 
 # If inside tmux, pass over oh-my-zsh initialization
