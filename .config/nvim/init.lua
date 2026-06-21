@@ -117,6 +117,7 @@ local mason = require("mason")
 mason.setup()
 
 vim.lsp.enable({
+  "clangd",
   "lua_ls",
   "ts_ls"
 })
