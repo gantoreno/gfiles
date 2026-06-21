@@ -82,7 +82,7 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 
-export ZSH_THEME="github-codespaces"
+export ZSH_THEME="robbyrussell"
 
 plugins=(
   git
@@ -95,6 +95,8 @@ source "$ZSH/oh-my-zsh.sh"
 setopt noautocd
 
 # Aliases
+alias vim="nvim"
+
 alias cc="claude"
 alias oc="opencode"
 
