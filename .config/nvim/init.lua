@@ -105,10 +105,20 @@ vim.keymap.set('n', ']h', function()
 end)
 
 vim.keymap.set('n', '<leader>ff', function()
-  mini.pick.builtin.files()
+  mini.pick.builtin.cli({
+    command = {
+      'rg',
+      '--files',
+      '--hidden',
+      '--glob', '!.git/*',
+    }
+  })
 end)
 vim.keymap.set('n', '<leader>fg', function()
-  mini.pick.builtin.grep({ pattern = vim.fn.expand("<cword>") })
+  mini.pick.builtin.grep({
+    pattern = vim.fn.expand("<cword>"),
+    tool = "rg"
+  })
 end)
 
 -- LSP

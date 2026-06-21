@@ -73,6 +73,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+# Ripgrep
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+
 export PATH="/Users/gabrielmoreno/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/Users/gabrielmoreno/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 export PATH="$HOME/.local/bin:$PATH"
