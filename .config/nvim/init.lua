@@ -103,10 +103,15 @@ mini.statusline.setup()
 
 mini.notify.make_notify()
 
+vim.keymap.set('n', 'H', function()
+  vim.cmd('bprev')
+end, { desc = 'Switch to previous buffer' })
+vim.keymap.set('n', 'L', function()
+  vim.cmd('bprev')
+end, { desc = 'Switch to next buffer' })
 vim.keymap.set('n', '<leader>bd', function()
   require('mini.bufremove').delete(0, false)
 end, { desc = 'Delete current buffer' })
-
 vim.keymap.set('n', '<leader>bD', function()
   require('mini.bufremove').delete(0, true)
 end, { desc = 'Force delete current buffer' })
@@ -279,7 +284,6 @@ require('conform').setup({
     sh = { 'shfmt' },
   },
   format_on_save = {
-    timeout_ms = 500,
     lsp_format = 'fallback',
   },
 })
