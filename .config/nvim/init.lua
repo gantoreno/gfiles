@@ -51,6 +51,7 @@ local mini_packages = {
   'diff',
   'files',
   'git',
+  'icons',
   'comment',
   'completion',
   'indentscope',
@@ -80,6 +81,7 @@ mini.files.setup({
     go_in_plus = '<CR>',
   },
 })
+mini.icons.setup()
 mini.completion.setup({
   lsp_completion = {
     auto_setup = true,
@@ -100,6 +102,18 @@ mini.pick.setup()
 mini.notify.setup()
 mini.tabline.setup()
 mini.statusline.setup()
+
+vim.cmd([[
+  highlight! link MiniTablineCurrent Normal
+  highlight! link MiniTablineModifiedCurrent Normal
+  highlight! link MiniTablineVisible CursorLine
+  highlight! link MiniTablineModifiedVisible CursorLine
+  highlight! link MiniTablineHidden CursorLine
+  highlight! link MiniTablineModifiedHidden CursorLine
+  highlight! link MiniTablineFill CursorLine
+  highlight! link MiniTablineTrunc CursorLine
+  highlight! link MiniTablineTabpagesection CursorLine
+]])
 
 mini.notify.make_notify()
 
