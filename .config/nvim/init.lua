@@ -131,7 +131,7 @@ vim.keymap.set('n', ']h', function()
   mini.diff.goto_hunk('next')
 end)
 
-vim.keymap.set('n', '<leader>ff', function()
+mini.find_files = function()
   mini.pick.builtin.cli({
     command = {
       'rg',
@@ -141,13 +141,18 @@ vim.keymap.set('n', '<leader>ff', function()
       '!.git/*',
     },
   })
-end)
-vim.keymap.set('n', '<leader>fg', function()
+end
+
+mini.live_grep = function()
   mini.pick.builtin.grep({
     pattern = vim.fn.expand('<cword>'),
     tool = 'rg',
   })
-end)
+end
+
+vim.keymap.set('n', '<leader>ff', mini.find_files)
+vim.keymap.set('n', '<leader><leader>', mini.find_files)
+vim.keymap.set('n', '<leader>fg', mini.live_grep)
 
 -- /////////////////////
 -- LazyGit
