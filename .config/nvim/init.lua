@@ -1,6 +1,4 @@
--- /////////////////////
--- Config
--- /////////////////////
+-- Config {{{
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
@@ -17,15 +15,17 @@ vim.opt.signcolumn = 'yes'
 vim.opt.winborder = 'rounded'
 vim.opt.completeopt = { 'menuone', 'noselect', 'fuzzy', 'nosort' }
 
+vim.opt.foldmethod = 'marker'
+vim.opt.foldmarker = '{{{,}}}'
+
 vim.opt.shortmess:append('c')
 vim.opt.mouse:append('a')
 vim.opt.clipboard:append('unnamedplus')
 
 vim.g.mapleader = ' '
+-- }}}
 
--- /////////////////////
--- Plugins
--- /////////////////////
+-- Plugins {{{
 vim.pack.add({
   'https://github.com/nvim-mini/mini.nvim',
   'https://github.com/kdheepak/lazygit.nvim',
@@ -41,11 +41,10 @@ vim.pack.add({
   'https://github.com/nvim-treesitter/nvim-treesitter',
 })
 
-vim.keymap.set('n', '<leader>o', ':update<CR> :source<CR>')
+vim.keymap.set('n', '<leader>u', ':update<CR> :source<CR>')
+-- }}}
 
--- /////////////////////
--- Mini
--- /////////////////////
+-- Mini {{{
 local mini_packages = {
   'bufremove',
   'diff',
@@ -167,17 +166,15 @@ end
 vim.keymap.set('n', '<leader>ff', mini.find_files)
 vim.keymap.set('n', '<leader><leader>', mini.find_files)
 vim.keymap.set('n', '<leader>fg', mini.live_grep)
+-- }}}
 
--- /////////////////////
--- LazyGit
--- /////////////////////
+-- LazyGit {{{
 vim.keymap.set('n', '<leader>gg', function()
   vim.cmd('LazyGit')
 end)
+-- }}}
 
--- /////////////////////
--- LSP
--- /////////////////////
+-- LSP {{{
 local mason = require('mason')
 local mason_lspconfig = require('mason-lspconfig')
 local mason_tool_installer = require('mason-tool-installer')
@@ -267,10 +264,9 @@ vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
     })
   end,
 })
+-- }}}
 
--- /////////////////////
--- Linting
--- /////////////////////
+-- Linting {{{
 local lint = require('lint')
 
 lint.linters_by_ft = {
@@ -283,10 +279,9 @@ vim.api.nvim_create_autocmd('BufWritePost', {
     lint.try_lint()
   end,
 })
+-- }}}
 
--- /////////////////////
--- Formatting
--- /////////////////////
+-- Formatting {{{
 require('conform').setup({
   formatters_by_ft = {
     clojure = { 'cljfmt' },
@@ -306,13 +301,13 @@ require('conform').setup({
     lsp_format = 'fallback',
   },
 })
+-- }}}
 
--- /////////////////////
--- Treesitter
--- /////////////////////
+-- Treesitter {{{
 local treesitter = require('nvim-treesitter')
 
 treesitter.setup({
   install_dir = vim.fn.stdpath('data') .. '/site',
   ensure_installed = 'all',
 })
+-- }}}
