@@ -71,7 +71,7 @@ return {
           IndentBlanklineContextChar = { fg = "$cyan", fmt = "nocombine" },
         },
       })
-      require("onedark").load()
+      -- require("onedark").load()
     end,
   },
 
@@ -79,7 +79,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "onedark",
+      colorscheme = "tokyonight-night",
     },
   },
 

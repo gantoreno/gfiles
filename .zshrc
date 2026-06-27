@@ -88,13 +88,20 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 
-export ZSH_THEME="starship"
+if [[ $TERM_PROGRAM == 'ghostty' ]]; then
+  export ZSH_THEME="starship"
+else
+  export ZSH_THEME="robbyrussell"
+fi
 
 plugins=(
   git
   z
-  zsh-syntax-highlighting
 )
+
+if [[ $TERM_PROGRAM == 'ghostty' ]]; then
+  plugins+=(zsh-syntax-highlighting)
+fi
 
 # If inside tmux, pass over oh-my-zsh initialization
 if [[ $TERM_PROGRAM == 'tmux' ]]; then
@@ -107,7 +114,9 @@ fi
 setopt noautocd
 
 # Aliases
-alias vim="nvim"
+if [[ $TERM_PROGRAM == 'ghostty' ]]; then
+  alias vim="nvim"
+fi
 
 alias cc="claude"
 alias oc="opencode"
