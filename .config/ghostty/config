@@ -1,3 +1,5 @@
+font-family = TX-02-Data
+
 theme = TokyoNight Night
 
 bell-features = system,audio,attention
