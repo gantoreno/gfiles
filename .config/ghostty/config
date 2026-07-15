@@ -1,3 +1,5 @@
+theme = Tokyonight Night
+
 bell-features = system,audio,attention
 
 window-width = 90

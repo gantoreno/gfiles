@@ -27,6 +27,9 @@ _direnv_hook() {
   fi
 }
 
+# Zoxide
+eval "$(zoxide init zsh)"
+
 # Exports
 export PATH="$PATH:$HOME/.scripts"
 export PATH="$PATH:$HOME/.cargo/bin"
@@ -82,11 +85,10 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 
-export ZSH_THEME="github-codespaces"
+export ZSH_THEME="starship"
 
 plugins=(
   git
-  z
 )
 
 source "$ZSH/oh-my-zsh.sh"
@@ -95,6 +97,8 @@ source "$ZSH/oh-my-zsh.sh"
 setopt noautocd
 
 # Aliases
+alias vim="nvim"
+
 alias cc="claude"
 alias oc="opencode"
 
