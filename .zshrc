@@ -85,7 +85,7 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 
-export ZSH_THEME="starship"
+export ZSH_THEME="robbyrussell"
 
 plugins=(
   git
