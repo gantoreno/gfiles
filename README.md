@@ -24,13 +24,9 @@ As a command-line user, most of my tools are terminal-based, therefore I can gro
 
 ### Terminal emulator
 
-For my terminal emulator, I use [Ghostty](https://github.com/ghostty-org), by [Mitchell Hashimoto](https://mitchellh.com/ghostty), along with a custom-made [One Dark](https://github.com/navarasu/onedark.nvim) color palette.
+For my terminal emulator, I use [Ghostty](https://github.com/ghostty-org), by [Mitchell Hashimoto](https://mitchellh.com/ghostty), with the Tokyo Night color palette.
 
-I also use [Zsh](https://www.zsh.org/) as my main interactive shell, rocking [Starship](https://starship.rs/) as my prompt, and other plugins such as:
-
-- [`zsh-z`](https://github.com/agkozak/zsh-z) - Jump quickly to directories that you have visited "frecently".
-- [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions) - Fish-like autosuggestions for Zsh.
-- [`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting) - Fish shell like syntax highlighting for Zsh.
+I also use [Zsh](https://www.zsh.org/) as my main interactive shell with [Oh My Zsh](https://ohmyz.sh/) and its Robby Russell theme.
 
 ### Editor
 

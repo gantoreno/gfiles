@@ -38,11 +38,8 @@ export PATH="$PATH:$HOME/Library/Python/3.9/bin"
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-# Haskell
-[ -f "/Users/gabrielmoreno/.ghcup/env" ] && source "/Users/gabrielmoreno/.ghcup/env"
-
 # Bun completions
-[ -s "/Users/gabrielmoreno/.bun/_bun" ] && source "/Users/gabrielmoreno/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # XDG
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -54,16 +51,9 @@ export PATH="$HOME/go/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# Deno
-export DENO_INSTALL="/Users/gabrielmoreno/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
-
 # PNPM
 export PNPM_HOME="$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
-
-# SST
-export PATH=/Users/gabrielmoreno/.sst/bin:$PATH
 
 # AWS
 export AWS_SDK_LOAD_CONFIG=1
@@ -76,9 +66,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-export PATH="/Users/gabrielmoreno/.config/herd-lite/bin:$PATH"
-export PHP_INI_SCAN_DIR="/Users/gabrielmoreno/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="$HOME/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
@@ -115,6 +104,3 @@ alias vimconfig="vim $HOME/Developer/gantoreno/gfiles/.config/nvim/init.lua"
 alias tmuxconfig="vim $HOME/Developer/gantoreno/gfiles/.tmux.conf"
 alias ghosttyconfig="vim $HOME/Developer/gantoreno/gfiles/.config/ghostty/config"
 alias opencodeconfig="vim $HOME/Developer/gantoreno/gfiles/.config/opencode/opencode.json"
-alias starshipconfig="vim $HOME/Developer/gantoreno/gfiles/.config/starship.toml"
-alias aerospaceconfig="vim $HOME/Developer/gantoreno/gfiles/.config/aerospace/aerospace.toml"
-
