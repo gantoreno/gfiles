@@ -1,49 +1,73 @@
 <p align="center">
-  <img src=".github/icon.png" width="150" />
+  <img src=".github/icon.png" width="150" alt="Gfiles icon" />
 </p>
 
 # Gfiles
 
-![https://img.shields.io/github/issues/gantoreno/gfiles](https://img.shields.io/github/issues/gantoreno/gfiles) ![https://img.shields.io/github/forks/gantoreno/gfiles](https://img.shields.io/github/forks/gantoreno/gfiles) ![https://img.shields.io/github/stars/gantoreno/gfiles](https://img.shields.io/github/stars/gantoreno/gfiles) ![https://img.shields.io/github/license/gantoreno/gfiles](https://img.shields.io/github/license/gantoreno/gfiles) ![https://raw.githubusercontent.com/sindresorhus/awesome/main/media/badge.svg](https://raw.githubusercontent.com/sindresorhus/awesome/main/media/badge.svg)
+[![Issues](https://img.shields.io/github/issues/gantoreno/gfiles)](https://github.com/gantoreno/gfiles/issues)
+[![Forks](https://img.shields.io/github/forks/gantoreno/gfiles)](https://github.com/gantoreno/gfiles/network/members)
+[![Stars](https://img.shields.io/github/stars/gantoreno/gfiles)](https://github.com/gantoreno/gfiles/stargazers)
+[![License](https://img.shields.io/github/license/gantoreno/gfiles)](LICENSE.md)
 
-My developer journey led me to an almost 100% terminal-based way of working (and living), for this reason, I organized all my config files in this dotfiles repo, in order to keep track of my settings, programs, themes & more. Feel free to use whatever you want!
+My personal macOS dotfiles for a small, terminal-first development environment. The repository is intentionally focused on the configuration I actively use, with Git as the source of truth and symlinks connecting it to my home directory.
 
-![./.github/screenshot.png](./.github/screenshot.png)
+![Gfiles setup](.github/screenshot.png)
 
 > [!NOTE]
 >
-> This is a macOS-based setup in terms of paths & package managers, keep this in mind before trying to directly clone & setup all my configurations.
+> This is a personal setup, not a universal installer. It assumes macOS, Homebrew-style paths, and a clone at `~/Developer/gantoreno/gfiles`. Review the files before using them on another machine.
 
-## Tools
+## Setup
 
-As a command-line user, most of my tools are terminal-based, therefore I can group all of them in 3 major categories:
+- **Terminal:** [Ghostty](https://ghostty.org/) with Tokyo Night
+- **Shell:** [Zsh](https://www.zsh.org/) with [Oh My Zsh](https://ohmyz.sh/) and the Robby Russell theme
+- **Multiplexer:** [tmux](https://github.com/tmux/tmux) with [TPM](https://github.com/tmux-plugins/tpm), tmux-sensible, and [tmux-powerkit](https://github.com/gantoreno/tmux-powerkit)
+- **Editor:** [Neovim](https://neovim.io/) with [LazyVim](https://www.lazyvim.org/), Tokyo Night, tmux navigation, and Sidekick
+- **AI tooling:** [OpenCode](https://opencode.ai/) backed by a local [Ollama](https://ollama.com/) model
 
-- My **terminal emulator**.
-- My **editor**.
-- My **utilities**.
+The shell configuration initializes `fnm`, `direnv`, and `zoxide`, and includes paths for the language and package tooling installed on my machine.
 
-### Terminal emulator
+## Tracked configuration
 
-For my terminal emulator, I use [Ghostty](https://github.com/ghostty-org), by [Mitchell Hashimoto](https://mitchellh.com/ghostty), with the Tokyo Night color palette.
+| Source | Home location | Purpose |
+| --- | --- | --- |
+| `.zshenv` | `~/.zshenv` | Early shell environment and Cargo setup |
+| `.zshrc` | `~/.zshrc` | Interactive shell, PATH, plugins, and aliases |
+| `.oh-my-zsh` | `~/.oh-my-zsh` | Pinned Oh My Zsh submodule |
+| `.tmux.conf` | `~/.tmux.conf` | tmux behavior, navigation, and theme |
+| `.config/ghostty` | `~/.config/ghostty` | Terminal appearance and window defaults |
+| `.config/nvim` | `~/.config/nvim` | LazyVim configuration and plugin lockfile |
+| `.config/opencode` | `~/.config/opencode` | OpenCode provider, model, and MCP configuration |
 
-I also use [Zsh](https://www.zsh.org/) as my main interactive shell with [Oh My Zsh](https://ohmyz.sh/) and its Robby Russell theme.
+## Installation
 
-### Editor
+Clone the repository with its submodule:
 
-I use [Neovim](https://neovim.io/) as one of my main text-editor for everything regarding scripting & fast editing. I use Microsoft's [VSCode](https://code.visualstudio.com/) as well for more heavy-weight development environments.
+```sh
+git clone --recurse-submodules https://github.com/gantoreno/gfiles.git \
+  "$HOME/Developer/gantoreno/gfiles"
+```
 
-### Utilities
+Back up or remove any existing files at the destinations below, then create the symlinks:
 
-Editing is not the only thing to do when it comes to terminals, this are the set of utilities I use on a daily basis to perform tasks regarding version control, project management, connectivity & more:
+```sh
+GFILES="$HOME/Developer/gantoreno/gfiles"
 
-- [`brew`](https://brew.sh/index_es) - Homebrew is the easiest and most flexible way to install the UNIX tools Apple didn’t include with macOS.
-- [`eza`](https://github.com/eza-community/eza) - A modern, maintained replacement for `ls` (formerly `exa`).
-- [`tmux`](https://github.com/tmux/tmux) - A terminal multiplexer.
-- [`fnm`](https://github.com/Schniz/fnm#shell-setup) - Fast and simple Node.js version manager, built in Rust.
-- [`lazygit`](https://github.com/jesseduffield/lazygit) - The simple terminal UI for Git commands.
-- [`macfetch`](https://github.com/gantoreno/macfetch) - A macOS Neofetch alternative written in Rust.
-- [`zsh-z`](https://github.com/agkozak/zsh-z) - A native Zsh port of z.sh with added features.
+mkdir -p "$HOME/.config"
+
+ln -s "$GFILES/.zshenv" "$HOME/.zshenv"
+ln -s "$GFILES/.zshrc" "$HOME/.zshrc"
+ln -s "$GFILES/.oh-my-zsh" "$HOME/.oh-my-zsh"
+ln -s "$GFILES/.tmux.conf" "$HOME/.tmux.conf"
+ln -s "$GFILES/.config/ghostty" "$HOME/.config/ghostty"
+ln -s "$GFILES/.config/nvim" "$HOME/.config/nvim"
+ln -s "$GFILES/.config/opencode" "$HOME/.config/opencode"
+```
+
+Install the tmux plugins from inside tmux with `prefix + I`. LazyVim installs its plugins when Neovim starts.
+
+The OpenCode configuration contains a machine-specific Pencil MCP executable path. Update or disable that entry before using the configuration elsewhere.
 
 ## License
 
-Licensed under the [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.html) license.
+Licensed under the [GNU GPLv3](LICENSE.md).
