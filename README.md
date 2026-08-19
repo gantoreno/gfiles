@@ -11,8 +11,6 @@
 
 My personal macOS dotfiles for a small, terminal-first development environment. The repository is intentionally focused on the configuration I actively use, with Git as the source of truth and symlinks connecting it to my home directory.
 
-![Gfiles setup](.github/screenshot.png)
-
 > [!NOTE]
 >
 > This is a personal setup, not a universal installer. It assumes macOS, Homebrew-style paths, and a clone at `~/Developer/gantoreno/gfiles`. Review the files before using them on another machine.
