@@ -104,3 +104,8 @@ alias vimconfig="vim $HOME/Developer/gantoreno/gfiles/.config/nvim/init.lua"
 alias tmuxconfig="vim $HOME/Developer/gantoreno/gfiles/.tmux.conf"
 alias ghosttyconfig="vim $HOME/Developer/gantoreno/gfiles/.config/ghostty/config"
 alias opencodeconfig="vim $HOME/Developer/gantoreno/gfiles/.config/opencode/opencode.json"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/gabrielmoreno/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
