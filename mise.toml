@@ -1,0 +1,30 @@
+min_version = "2026.9.5"
+
+# Mise's native Homebrew installer works on Apple Silicon and Linux x64/arm64.
+# Existing Homebrew installations satisfy these entries without upgrading them.
+[bootstrap.packages]
+"brew:git" = "latest"
+"brew:zsh" = "latest"
+"brew:tmux" = "latest"
+"brew:neovim" = "latest"
+"brew:bc" = "latest"
+"brew:ollama" = "latest"
+
+[dotfiles]
+"~/.zshenv" = "zsh/.zshenv"
+"~/.zshrc" = "zsh/.zshrc"
+"~/.oh-my-zsh" = "zsh/.oh-my-zsh"
+"~/.tmux.conf" = "tmux/.tmux.conf"
+"~/.config/nvim" = "nvim/.config/nvim"
+"~/.config/ghostty" = "ghostty/.config/ghostty"
+"~/.config/opencode" = "opencode/.config/opencode"
+# Make personal tool versions available outside this repository.
+"~/.config/mise/config.toml" = "mise/config.toml"
+
+[tasks.bootstrap]
+description = "Initialize the pinned shell submodule and tmux plugin manager"
+run = "bash scripts/bootstrap.sh"
+
+[tasks.check]
+description = "Check shell syntax and test dotfile migration in a temporary home"
+run = ["zsh -n zsh/.zshrc zsh/.zshenv", "bash -n scripts/bootstrap.sh", "python3 scripts/check.py"]

@@ -8,3 +8,7 @@
 
 # Packer
 nvim/.config/nvim/plugin/packer_compiled.lua
+
+# Machine-local mise overrides
+mise.local.toml
+mise.*.local.toml
