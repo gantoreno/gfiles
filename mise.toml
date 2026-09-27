@@ -4,7 +4,10 @@ min_version = "2026.9.5"
 # Existing Homebrew installations satisfy these entries without upgrading them.
 [bootstrap.packages]
 "brew:git" = "latest"
+"brew:gcc" = "latest"
 "brew:zsh" = "latest"
+"brew:starship" = "latest"
+"brew:fastfetch" = "latest"
 "brew:tmux" = "latest"
 "brew:neovim" = "latest"
 "brew:bc" = "latest"

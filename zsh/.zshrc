@@ -88,3 +88,13 @@ alias vimconfig="vim $HOME/.config/nvim/init.lua"
 alias tmuxconfig="vim $HOME/.tmux.conf"
 alias ghosttyconfig="vim $HOME/.config/ghostty/config"
 alias opencodeconfig="vim $HOME/.config/opencode/opencode.json"
+
+# Forge's startup summary and prompt. Initialize after Oh My Zsh.
+if [[ "$HOST" == forge ]]; then
+  if (( $+commands[fastfetch] )); then
+    fastfetch
+  fi
+  if (( $+commands[starship] )); then
+    eval "$(starship init zsh)"
+  fi
+fi

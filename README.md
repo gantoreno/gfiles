@@ -23,7 +23,7 @@ My personal macOS and Linux dotfiles for a small, terminal-first development env
 - **Editor:** [Neovim](https://neovim.io/) with [LazyVim](https://www.lazyvim.org/), Tokyo Night, tmux navigation, and Sidekick
 - **AI tooling:** Codex CLI, Claude Code, and [OpenCode](https://opencode.ai/) backed by a local [Ollama](https://ollama.com/) model
 
-The shell activates mise and zoxide. Mise selects the Node, Python, Go, Java, Bun, and pnpm versions; fnm, SDKMAN activation, and direnv hooks are no longer needed.
+The shell activates mise and zoxide. On the host named `forge`, it also runs Fastfetch at startup and uses the Starship prompt; other hosts keep the Robby Russell theme. Mise selects the Node, Python, Go, Java, Bun, and pnpm versions; fnm, SDKMAN activation, and direnv hooks are no longer needed.
 
 ## Tracked configuration
 
@@ -61,7 +61,9 @@ The native `brew:` package installer is built into mise and supports both target
 
 ## Tools and updates
 
-The declared tools cover the terminal environment in this repository: language runtimes, pnpm, lazygit, zoxide, ripgrep, fd, fzf, GitHub CLI, Codex CLI, Claude Code, and OpenCode, plus Git, Zsh, tmux, Neovim, bc, and Ollama as native packages. Neovim is installed by `mise bootstrap` through `brew:neovim`, and its configuration is linked to `~/.config/nvim`. Existing Neovim installations, including Homebrew HEAD builds, are preserved. OpenCode uses the same `@opencode/cli` npm distribution as the original setup. This is a curated tool list, not a snapshot of every application installed on the Mac.
+The declared tools cover the terminal environment in this repository: language runtimes, pnpm, lazygit, zoxide, ripgrep, fd, fzf, GitHub CLI, Codex CLI, Claude Code, and OpenCode, plus Git, GCC, Zsh, Starship, Fastfetch, tmux, Neovim, bc, and Ollama as native packages. Neovim is installed by `mise bootstrap` through `brew:neovim`, and its configuration is linked to `~/.config/nvim`. Existing Neovim installations, including Homebrew HEAD builds, are preserved. OpenCode uses the same `@opencode/cli` npm distribution as the original setup. This is a curated tool list, not a snapshot of every application installed on the Mac.
+
+On macOS, GNU GCC uses a versioned executable such as `gcc-16`; `/usr/bin/gcc` is Apple Clang. Select the GNU executable explicitly when a build requires it.
 
 From the repository root:
 
