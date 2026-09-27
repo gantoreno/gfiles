@@ -22,3 +22,4 @@ fzf = "0.74.4"
 # Its reviewed postinstall selects and links the platform-specific binary.
 "npm:@opencode/cli" = { version = "2.0.18", allow_low_downloads = true, allow_builds = ["@opencode/cli"] }
 claude-code = "2.1.283"
+codex = "0.157.1"

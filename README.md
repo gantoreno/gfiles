@@ -21,7 +21,7 @@ My personal macOS and Linux dotfiles for a small, terminal-first development env
 - **Shell:** [Zsh](https://www.zsh.org/) with [Oh My Zsh](https://ohmyz.sh/) and the Robby Russell theme
 - **Multiplexer:** [tmux](https://github.com/tmux/tmux) with [TPM](https://github.com/tmux-plugins/tpm), tmux-sensible, and [tmux-powerkit](https://github.com/gantoreno/tmux-powerkit)
 - **Editor:** [Neovim](https://neovim.io/) with [LazyVim](https://www.lazyvim.org/), Tokyo Night, tmux navigation, and Sidekick
-- **AI tooling:** [OpenCode](https://opencode.ai/) backed by a local [Ollama](https://ollama.com/) model
+- **AI tooling:** Codex CLI, Claude Code, and [OpenCode](https://opencode.ai/) backed by a local [Ollama](https://ollama.com/) model
 
 The shell activates mise and zoxide. Mise selects the Node, Python, Go, Java, Bun, and pnpm versions; fnm, SDKMAN activation, and direnv hooks are no longer needed.
 
@@ -61,7 +61,7 @@ The native `brew:` package installer is built into mise and supports both target
 
 ## Tools and updates
 
-The declared tools cover the terminal environment in this repository: language runtimes, pnpm, lazygit, zoxide, ripgrep, fd, fzf, GitHub CLI, Claude Code, and OpenCode, plus Git, Zsh, tmux, Neovim, bc, and Ollama as native packages. OpenCode uses the same `@opencode/cli` npm distribution as the original setup. This is a curated tool list, not a snapshot of every application installed on the Mac.
+The declared tools cover the terminal environment in this repository: language runtimes, pnpm, lazygit, zoxide, ripgrep, fd, fzf, GitHub CLI, Codex CLI, Claude Code, and OpenCode, plus Git, Zsh, tmux, Neovim, bc, and Ollama as native packages. Neovim is installed by `mise bootstrap` through `brew:neovim`, and its configuration is linked to `~/.config/nvim`. Existing Neovim installations, including Homebrew HEAD builds, are preserved. OpenCode uses the same `@opencode/cli` npm distribution as the original setup. This is a curated tool list, not a snapshot of every application installed on the Mac.
 
 From the repository root:
 
