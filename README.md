@@ -9,11 +9,11 @@
 [![Stars](https://img.shields.io/github/stars/gantoreno/gfiles)](https://github.com/gantoreno/gfiles/stargazers)
 [![License](https://img.shields.io/github/license/gantoreno/gfiles)](LICENSE.md)
 
-My personal macOS dotfiles for a small, terminal-first development environment. The repository is intentionally focused on the configuration I actively use, with Git as the source of truth and symlinks connecting it to my home directory.
+My personal macOS dotfiles for a small, terminal-first development environment. The repository is intentionally focused on the configuration I actively use, with Git as the source of truth and [GNU Stow](https://www.gnu.org/software/stow/) managing symlinks into my home directory.
 
 > [!NOTE]
 >
-> This is a personal setup, not a universal installer. It assumes macOS, Homebrew-style paths, and a clone at `~/Developer/gantoreno/gfiles`. Review the files before using them on another machine.
+> This is a personal setup, not a universal installer. It assumes macOS and Homebrew-style paths. The examples use a clone at `~/Developer/gantoreno/gfiles`, but the repository can live elsewhere. Review the files before using them on another machine.
 
 ## Setup
 
@@ -29,38 +29,47 @@ The shell configuration initializes `fnm`, `direnv`, and `zoxide`, and includes 
 
 | Source | Home location | Purpose |
 | --- | --- | --- |
-| `.zshenv` | `~/.zshenv` | Early shell environment and Cargo setup |
-| `.zshrc` | `~/.zshrc` | Interactive shell, PATH, plugins, and aliases |
-| `.oh-my-zsh` | `~/.oh-my-zsh` | Pinned Oh My Zsh submodule |
-| `.tmux.conf` | `~/.tmux.conf` | tmux behavior, navigation, and theme |
-| `.config/ghostty` | `~/.config/ghostty` | Terminal appearance and window defaults |
-| `.config/nvim` | `~/.config/nvim` | LazyVim configuration and plugin lockfile |
-| `.config/opencode` | `~/.config/opencode` | OpenCode provider, model, and MCP configuration |
+| `zsh/.zshenv` | `~/.zshenv` | Early shell environment and Cargo setup |
+| `zsh/.zshrc` | `~/.zshrc` | Interactive shell, PATH, plugins, and aliases |
+| `zsh/.oh-my-zsh` | `~/.oh-my-zsh` | Pinned Oh My Zsh submodule |
+| `tmux/.tmux.conf` | `~/.tmux.conf` | tmux behavior, navigation, and theme |
+| `ghostty/.config/ghostty` | `~/.config/ghostty` | Terminal appearance and window defaults |
+| `nvim/.config/nvim` | `~/.config/nvim` | LazyVim configuration and plugin lockfile |
+| `opencode/.config/opencode` | `~/.config/opencode` | OpenCode provider, model, and MCP configuration |
 
 ## Installation
 
-Clone the repository with its submodule:
+Install Stow and clone the repository with its submodule:
 
 ```sh
+brew install stow
+
 git clone --recurse-submodules https://github.com/gantoreno/gfiles.git \
   "$HOME/Developer/gantoreno/gfiles"
 ```
 
-Back up or remove any existing files at the destinations below, then create the symlinks:
+From the repository root, preview the links, then apply them:
 
 ```sh
-GFILES="$HOME/Developer/gantoreno/gfiles"
-
+cd "$HOME/Developer/gantoreno/gfiles"
 mkdir -p "$HOME/.config"
 
-ln -s "$GFILES/.zshenv" "$HOME/.zshenv"
-ln -s "$GFILES/.zshrc" "$HOME/.zshrc"
-ln -s "$GFILES/.oh-my-zsh" "$HOME/.oh-my-zsh"
-ln -s "$GFILES/.tmux.conf" "$HOME/.tmux.conf"
-ln -s "$GFILES/.config/ghostty" "$HOME/.config/ghostty"
-ln -s "$GFILES/.config/nvim" "$HOME/.config/nvim"
-ln -s "$GFILES/.config/opencode" "$HOME/.config/opencode"
+stow -nv -t "$HOME" zsh tmux nvim ghostty opencode
+stow -v -t "$HOME" zsh tmux nvim ghostty opencode
 ```
+
+Stow reports conflicts with existing files. Back those files up outside the target paths before applying the links. If upgrading from the previous layout, remove only the seven old symlinks listed in the table above after verifying they point into this repository; Stow will recreate them at the new package paths. Do not remove real files or directories containing your configuration.
+
+Each top-level package mirrors its destination within your home directory. Choose only the packages you need, for example `stow -t "$HOME" nvim tmux`. Keeping `~/.config` as a real directory lets other applications store their configuration alongside these packages.
+
+To refresh links after changing a package's layout, or remove a package's links while keeping its files in Git:
+
+```sh
+stow -R -t "$HOME" nvim
+stow -D -t "$HOME" nvim
+```
+
+Run Stow from the repository root and keep the checkout in place while its links are in use. Stow manages links only; install the applications and shell tools separately. The Oh My Zsh submodule still requires `git submodule update --init --recursive` after cloning without `--recurse-submodules`.
 
 Install the tmux plugins from inside tmux with `prefix + I`. LazyVim installs its plugins when Neovim starts.
 
