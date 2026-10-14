@@ -21,6 +21,9 @@ min_version = "2026.9.5"
 "~/.config/nvim" = "nvim/.config/nvim"
 "~/.config/ghostty" = "ghostty/.config/ghostty"
 "~/.config/opencode" = "opencode/.config/opencode"
+# Link only user-authored Claude Code files; ~/.claude also holds sessions and credentials.
+"~/.claude/settings.json" = "claude/.claude/settings.json"
+"~/.claude/hooks" = "claude/.claude/hooks"
 # Make personal tool versions available outside this repository.
 "~/.config/mise/config.toml" = "mise/config.toml"
 

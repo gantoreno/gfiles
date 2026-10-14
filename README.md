@@ -36,6 +36,8 @@ The shell activates mise and zoxide. On the host named `forge`, it also runs Fas
 | `ghostty/.config/ghostty` | `~/.config/ghostty` | Terminal appearance and window defaults |
 | `nvim/.config/nvim` | `~/.config/nvim` | LazyVim configuration and plugin lockfile |
 | `opencode/.config/opencode` | `~/.config/opencode` | OpenCode provider, model, and MCP configuration |
+| `claude/.claude/settings.json` | `~/.claude/settings.json` | Claude Code permissions, plugins, hooks, and preferences |
+| `claude/.claude/hooks` | `~/.claude/hooks` | Claude Code hook scripts, including the herdr session hook |
 | `mise/config.toml` | `~/.config/mise/config.toml` | Personal tool versions and mise settings |
 
 ## Installation
@@ -96,6 +98,8 @@ Existing real files or directories at a target cause a conflict. Back them up ou
 - Install tmux plugins from inside tmux with `prefix + I`. LazyVim installs its plugins when Neovim starts.
 - Ollama's service and models are separate from its CLI installation. The configured `qwen3:1.7b-8k` model must exist on the target machine.
 - The OpenCode configuration contains a machine-specific Pencil MCP executable path. Update or disable that entry on another machine.
+- Claude Code writes `~/.claude/settings.json` itself when you toggle plugins, change permissions, or choose "always allow", so those changes appear as diffs in this repository. Only that file and `hooks/` are linked; sessions, history, credentials, and `settings.local.json` stay machine-local.
+- `claude/.claude/hooks/herdr-agent-state.sh` is managed by herdr and is overwritten when the integration is reinstalled. It exits without doing anything outside a herdr pane.
 - Existing fnm, SDKMAN, and direnv installations are left on disk, but the shell no longer activates them. Language packages installed globally under old runtimes may need reinstalling for mise's runtimes.
 
 ## License
