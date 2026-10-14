@@ -5,3 +5,7 @@ bell-features = system,audio,attention
 window-width = 90
 window-height = 34
 
+working-directory = home
+window-inherit-working-directory = false
+window-save-state = never
+
