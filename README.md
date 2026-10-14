@@ -57,28 +57,29 @@ mise bootstrap
 
 Bootstrap installs the declared native packages and development tools, creates the dotfile links, initializes the pinned Oh My Zsh submodule, and clones TPM if missing. Open a new Zsh shell afterward. To make Zsh your login shell on a new Linux machine, use your distribution's `chsh` instructions after installation.
 
-`mise.toml` declares native packages, dotfile destinations, and setup tasks. `mise/config.toml` declares pinned personal tool versions and is linked into `~/.config/mise/config.toml`, making those defaults available from any directory. Project-specific mise configurations can override those defaults.
+`mise.toml` declares native packages, dotfile destinations, and setup tasks. `mise/config.toml` declares personal tool defaults and is linked into `~/.config/mise/config.toml`, making them available from any directory. Project-specific mise configurations can override those defaults.
 
-The native `brew:` package installer is built into mise and supports both target platforms; a separate Homebrew CLI is not required on Linux. Existing Homebrew packages count as installed. Bootstrap installs missing packages without upgrading existing ones. Prefix creation on Linux may require sudo. Native packages follow their package source's available versions; they are not pinned like the development tools.
+The native `brew:` package installer is built into mise and supports both target platforms; a separate Homebrew CLI is not required on Linux. Existing Homebrew packages count as installed. Bootstrap installs missing packages without upgrading existing ones. Prefix creation on Linux may require sudo. Native packages follow their package source's available versions.
 
 ## Tools and updates
 
-The declared tools cover the terminal environment in this repository: language runtimes, pnpm, lazygit, zoxide, ripgrep, fd, fzf, GitHub CLI, Codex CLI, Claude Code, OpenCode, and Oh My Pi, plus Git, GCC, Zsh, Starship, Fastfetch, tmux, Neovim, bc, and Ollama as native packages. Neovim is installed by `mise bootstrap` through `brew:neovim`, and its configuration is linked to `~/.config/nvim`. Existing Neovim installations, including Homebrew HEAD builds, are preserved. OpenCode uses the same `@opencode/cli` npm distribution as the original setup. This is a curated tool list, not a snapshot of every application installed on the Mac.
+The declared tools cover the terminal environment in this repository: language runtimes, pnpm, Yarn (classic), uv, lazygit, zoxide, ripgrep, fd, fzf, GitHub CLI, herdr, Vercel CLI, 1Password CLI, aws-mfa, Codex CLI, Claude Code, OpenCode, and Oh My Pi, plus Git, GCC, Zsh, Starship, Fastfetch, tmux, Neovim, bc, and Ollama as native packages. Neovim is installed by `mise bootstrap` through `brew:neovim`, and its configuration is linked to `~/.config/nvim`. Existing Neovim installations, including Homebrew HEAD builds, are preserved. OpenCode uses the same `@opencode/cli` npm distribution as the original setup. aws-mfa is installed with the pipx backend, which uses the declared uv. This is a curated tool list, not a snapshot of every application installed on the Mac.
 
 The `brew:gcc` package uses versioned executables on both macOS and Linux, such as `gcc-16` and `g++-16`. It does not provide an unversioned `gcc` command. Check with `gcc-16 --version` (adjust the suffix for the installed major version), and select it for builds with `CC=gcc-16 CXX=g++-16`. On macOS, `/usr/bin/gcc` is Apple Clang.
 
-If the versioned command is also missing, open a new Zsh shell and run `mise bootstrap packages status` from this repository to check whether `brew:gcc` was installed. Run `mise bootstrap` to install missing packages; `mise install` only installs the pinned development tools.
+If the versioned command is also missing, open a new Zsh shell and run `mise bootstrap packages status` from this repository to check whether `brew:gcc` was installed. Run `mise bootstrap` to install missing packages; `mise install` only installs the development tools.
 
 From the repository root:
 
 ```sh
-mise install                      # Install missing pinned development tools
+mise install                      # Install missing development tools
 mise bootstrap packages status    # Inspect native package state
 mise outdated                     # See available development-tool updates
+mise upgrade                      # Install them; old versions are pruned later
 mise run check                    # Syntax and isolated dotfile migration checks
 ```
 
-To add a tool or deliberately change a version, run `mise use --path mise/config.toml --pin TOOL@VERSION`, then review the config diff. Add system packages to `[bootstrap.packages]` in `mise.toml`. Tools are pinned explicitly; package dependencies and native package versions are not fully locked.
+Development tools track `latest`, except Node (`lts`), Java (the `jetbrains-jcef-21` runtime), and Yarn (`1`, classic). Mise resolves these to the newest installed match, so a machine stays on its current versions until `mise upgrade` runs; a fresh machine gets the newest releases available at install time, so two machines can differ. To add a tool, run `mise use --path mise/config.toml TOOL@latest`, then review the config diff. Add system packages to `[bootstrap.packages]` in `mise.toml`.
 
 ## Dotfiles
 

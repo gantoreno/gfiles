@@ -61,8 +61,10 @@ with tempfile.TemporaryDirectory(prefix="gfiles-check-") as temp:
             assert link.resolve() == (repo / source).resolve(), target
         assert sentinel.read_text() == "keep me\n"
 
-    # Personal tools must also load outside the dotfiles checkout.
-    current = json.loads(run("ls", "--current", "--json", cwd=home).stdout)
+    # Personal tools must also load outside the dotfiles checkout. List the
+    # loaded configs rather than resolving "latest", which needs the network.
+    loaded = json.loads(run("config", "ls", "--json", cwd=home).stdout)
+    current = {tool for entry in loaded for tool in entry["tools"]}
     assert set(tools).issubset(current), current
 
     # A fresh machine must be able to start Zsh before optional tools exist.
