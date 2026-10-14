@@ -23,4 +23,4 @@ fzf = "0.74.4"
 "npm:@opencode/cli" = { version = "2.0.18", allow_low_downloads = true, allow_builds = ["@opencode/cli"] }
 claude-code = "2.1.283"
 codex = "0.157.1"
-"github:can1357/oh-my-pi" = "18.10.3"
+"github:can1357/oh-my-pi" = "18.10.4"

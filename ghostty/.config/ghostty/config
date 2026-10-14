@@ -1,4 +1,4 @@
-theme = TokyoNight Night
+theme = light:TokyoNight Day,dark:TokyoNight Night
 
 bell-features = system,audio,attention
 
