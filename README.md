@@ -61,9 +61,11 @@ The native `brew:` package installer is built into mise and supports both target
 
 ## Tools and updates
 
-The declared tools cover the terminal environment in this repository: language runtimes, pnpm, lazygit, zoxide, ripgrep, fd, fzf, GitHub CLI, Codex CLI, Claude Code, and OpenCode, plus Git, GCC, Zsh, Starship, Fastfetch, tmux, Neovim, bc, and Ollama as native packages. Neovim is installed by `mise bootstrap` through `brew:neovim`, and its configuration is linked to `~/.config/nvim`. Existing Neovim installations, including Homebrew HEAD builds, are preserved. OpenCode uses the same `@opencode/cli` npm distribution as the original setup. This is a curated tool list, not a snapshot of every application installed on the Mac.
+The declared tools cover the terminal environment in this repository: language runtimes, pnpm, lazygit, zoxide, ripgrep, fd, fzf, GitHub CLI, Codex CLI, Claude Code, OpenCode, and Oh My Pi, plus Git, GCC, Zsh, Starship, Fastfetch, tmux, Neovim, bc, and Ollama as native packages. Neovim is installed by `mise bootstrap` through `brew:neovim`, and its configuration is linked to `~/.config/nvim`. Existing Neovim installations, including Homebrew HEAD builds, are preserved. OpenCode uses the same `@opencode/cli` npm distribution as the original setup. This is a curated tool list, not a snapshot of every application installed on the Mac.
 
-On macOS, GNU GCC uses a versioned executable such as `gcc-16`; `/usr/bin/gcc` is Apple Clang. Select the GNU executable explicitly when a build requires it.
+The `brew:gcc` package uses versioned executables on both macOS and Linux, such as `gcc-16` and `g++-16`. It does not provide an unversioned `gcc` command. Check with `gcc-16 --version` (adjust the suffix for the installed major version), and select it for builds with `CC=gcc-16 CXX=g++-16`. On macOS, `/usr/bin/gcc` is Apple Clang.
+
+If the versioned command is also missing, open a new Zsh shell and run `mise bootstrap packages status` from this repository to check whether `brew:gcc` was installed. Run `mise bootstrap` to install missing packages; `mise install` only installs the pinned development tools.
 
 From the repository root:
 
