@@ -10,27 +10,36 @@ min_version = "2026.9.5"
 "brew:fastfetch" = "latest"
 "brew:tmux" = "latest"
 "brew:neovim" = "latest"
-"brew:bc" = "latest"
 "brew:ollama" = "latest"
 
-[dotfiles]
-"~/.zshenv" = "zsh/.zshenv"
-"~/.zshrc" = "zsh/.zshrc"
-"~/.oh-my-zsh" = "zsh/.oh-my-zsh"
-"~/.tmux.conf" = "tmux/.tmux.conf"
-"~/.config/nvim" = "nvim/.config/nvim"
-"~/.config/ghostty" = "ghostty/.config/ghostty"
-"~/.config/opencode" = "opencode/.config/opencode"
-# Link only user-authored Claude Code files; ~/.claude also holds sessions and credentials.
-"~/.claude/settings.json" = "claude/.claude/settings.json"
-"~/.claude/hooks" = "claude/.claude/hooks"
-# Make personal tool versions available outside this repository.
-"~/.config/mise/config.toml" = "mise/config.toml"
+# Cloned before dotfiles are linked. Oh My Zsh keeps itself updated.
+[bootstrap.repos]
+"~/.oh-my-zsh" = { url = "https://github.com/ohmyzsh/ohmyzsh" }
+"~/.tmux/plugins/tpm" = { url = "https://github.com/tmux-plugins/tpm" }
 
-[tasks.bootstrap]
-description = "Initialize the pinned shell submodule and tmux plugin manager"
-run = "bash scripts/bootstrap.sh"
+# The repository mirrors ~. Directories are linked whole, so files an
+# application creates in them land in this repository.
+[dotfiles]
+"~/.zshenv" = ".zshenv"
+"~/.zshrc" = ".zshrc"
+"~/.tmux.conf" = ".tmux.conf"
+"~/.config/nvim" = ".config/nvim"
+"~/.config/ghostty" = ".config/ghostty"
+"~/.config/opencode" = ".config/opencode"
+# Make personal tool versions available outside this repository.
+"~/.config/mise/config.toml" = ".config/mise/config.toml"
+# Link only user-authored Claude Code files; ~/.claude also holds sessions and credentials.
+"~/.claude/settings.json" = ".claude/settings.json"
+"~/.claude/hooks" = ".claude/hooks"
+
+# Hooks run on every bootstrap, so each step must be safe to repeat.
+[bootstrap.hooks.post-tools]
+run = [
+  "\"$HOME/.tmux/plugins/tpm/bin/install_plugins\"",
+  # Herdr has no declarative plugin list; install builds with mise's Go.
+  "mise exec -- bash -c 'herdr plugin list | grep -Fq -- \"- herdr.auto-title \" || herdr plugin install kryptamine/herdr-auto-title --yes'",
+]
 
 [tasks.check]
-description = "Check shell syntax and test dotfile migration in a temporary home"
-run = ["zsh -n zsh/.zshrc zsh/.zshenv", "bash -n scripts/bootstrap.sh", "python3 scripts/check.py"]
+description = "Check shell syntax"
+run = "zsh -n .zshrc .zshenv"
