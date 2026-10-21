@@ -28,11 +28,9 @@ export PYTHON=python3
 
 # User-installed commands; mise activation below selects managed tool versions.
 path=("$HOME/.local/bin" "$HOME/.scripts" "$HOME/.cargo/bin"
-      "$HOME/.composer/vendor/bin" "$HOME/go/bin" "$HOME/.bun/bin" $path)
-export BUN_INSTALL="$HOME/.bun"
+      "$HOME/.composer/vendor/bin" "$HOME/go/bin" $path)
 if [[ "$OSTYPE" == darwin* ]]; then
   export PNPM_HOME="$HOME/Library/pnpm"
-  path=("$HOME/Library/Python/3.9/bin" $path)
 else
   export PNPM_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/pnpm"
 fi
@@ -43,7 +41,6 @@ if [[ -d "$HOME/.config/herd-lite/bin" ]]; then
   export PHP_INI_SCAN_DIR="$HOME/.config/herd-lite/bin:${PHP_INI_SCAN_DIR:-}"
 fi
 [[ -d "$HOME/.antigravity/antigravity/bin" ]] && path=("$HOME/.antigravity/antigravity/bin" $path)
-[[ -s "$HOME/.bun/_bun" ]] && source "$HOME/.bun/_bun"
 
 # mise replaces fnm, SDKMAN shell activation, and per-project environment hooks.
 if (( $+commands[mise] )); then

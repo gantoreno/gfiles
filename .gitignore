@@ -6,9 +6,9 @@
 **/.zsh_sessions
 **/.zcompdump
 
-# Packer
-nvim/.config/nvim/plugin/packer_compiled.lua
-
 # Machine-local mise overrides
 mise.local.toml
 mise.*.local.toml
+
+# Claude Code treats .claude/ as project settings when run in this repository
+.claude/settings.local.json
