@@ -43,7 +43,7 @@ The repository mirrors the home directory: each path below is the same here and 
 
 ## Installation
 
-Install **mise 2026.9.5 or newer** and Git first. On macOS, `brew install mise git` is sufficient. On Linux, follow the [mise installation instructions](https://mise.jdx.dev/installing-mise.html) and install Git and the native build prerequisites for your distribution. The standard mise installer puts the executable in `~/.local/bin`; add that directory to `PATH` before continuing.
+Install **mise 2026.10.17 or newer** and Git first; it bundles updated root certificates. On macOS, `brew install mise git` is sufficient. On Linux, follow the [mise installation instructions](https://mise.jdx.dev/installing-mise.html) and install Git and the native build prerequisites for your distribution. The standard mise installer puts the executable in `~/.local/bin`; add that directory to `PATH` before continuing.
 
 ```sh
 git clone https://github.com/gantoreno/gfiles.git \
