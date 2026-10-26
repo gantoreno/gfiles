@@ -5,19 +5,32 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
+      style = "night",
+      light_style = "day",
       transparent = true,
       styles = {
         sidebars = "transparent",
         floats = "transparent",
       },
     },
+    config = function(_, opts)
+      require("tokyonight").setup(opts)
+      vim.api.nvim_create_autocmd("OptionSet", {
+        group = vim.api.nvim_create_augroup("tokyonight_background", { clear = true }),
+        pattern = "background",
+        callback = function()
+          vim.cmd.colorscheme("tokyonight")
+        end,
+      })
+    end,
   },
 
   -- LazyVim
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight-night",
+      -- Follow the background detected from Ghostty's adaptive theme.
+      colorscheme = "tokyonight",
     },
   },
 
