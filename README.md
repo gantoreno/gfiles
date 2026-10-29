@@ -38,6 +38,7 @@ The repository mirrors the home directory: each path below is the same here and 
 | `.config/nvim` | LazyVim configuration and plugin lockfile |
 | `.config/opencode` | OpenCode provider, model, and MCP configuration |
 | `.config/mise/config.toml` | Personal tool versions and mise settings |
+| `.config/herdr/config.toml` | herdr theme, UI, and notification settings |
 | `.claude/settings.json` | Claude Code permissions, plugins, hooks, and preferences |
 | `.claude/hooks` | Claude Code hook scripts, including the herdr session hook |
 
@@ -104,6 +105,7 @@ Existing real files or directories at a target cause a conflict. Back them up ou
 - The OpenCode configuration contains a machine-specific Pencil MCP executable path. Update or disable that entry on another machine.
 - Claude Code writes `~/.claude/settings.json` itself when you toggle plugins, change permissions, or choose "always allow", so those changes appear as diffs in this repository. Only that file and `hooks/` are linked; sessions, history, credentials, and `settings.local.json` stay machine-local. Running Claude Code inside this repository also loads `.claude/settings.json` as project settings; `.claude/settings.local.json` is ignored here.
 - `.claude/hooks/herdr-agent-state.sh` is managed by herdr and is overwritten when the integration is reinstalled. It exits without doing anything outside a herdr pane.
+- Herdr writes `~/.config/herdr/config.toml` itself when you finish onboarding or change options in Settings, so those changes appear as diffs in this repository. Its theme follows the terminal's light/dark appearance (`auto_switch`); choosing a theme manually in Settings turns that off. Only that file is linked; sockets, logs, sessions, and plugins stay machine-local.
 - Herdr has no declarative plugin list, so a bootstrap hook registers herdr-auto-title with `herdr plugin install`, which builds it with mise's Go. Herdr starts plugins only when its server starts; if a server was already running, run `herdr plugin action invoke herdr.auto-title.restart`, and run it again after `herdr plugin update`. The plugin's optional settings go in `~/.config/herdr-auto-title/config.env`, which is not tracked here because the defaults are used.
 - Existing fnm, SDKMAN, and direnv installations are left on disk, but the shell no longer activates them. Language packages installed globally under old runtimes may need reinstalling for mise's runtimes.
 
