@@ -11,6 +11,7 @@ min_version = "2026.10.17"
 "brew:tmux" = "latest"
 "brew:neovim" = "latest"
 "brew:ollama" = "latest"
+"brew:pipx" = "latest"
 
 # Cloned before dotfiles are linked. Oh My Zsh keeps itself updated.
 [bootstrap.repos]
@@ -35,9 +36,6 @@ min_version = "2026.10.17"
 "~/.claude/hooks" = ".claude/hooks"
 # Link only configuration; Oh My Pi sessions, caches, and credentials stay local.
 "~/.omp/agent/config.yml" = ".omp/agent/config.yml"
-"~/.omp/agent/models.yml" = ".omp/agent/models.yml"
-# Disable Ollama cloud features; model weights remain machine-local.
-"~/.ollama/server.json" = ".ollama/server.json"
 
 # Hooks run on every bootstrap, so each step must be safe to repeat.
 [bootstrap.hooks.post-tools]
@@ -52,7 +50,7 @@ description = "Check shell syntax"
 run = "zsh -n .zshrc .zshenv"
 
 [tasks.ollama-coder]
-description = "Download Qwen3.5 4B and create the offline 16K preset (requires current Ollama running)"
+description = "Download Qwen3.5 4B and create the local 16K preset (requires current Ollama running)"
 run = [
   "ollama pull qwen3.5:4b-q4_K_M",
   "ollama create qwen3.5:4b-16k -f .config/ollama/Modelfile.qwen3.5-4b-16k",

@@ -1,7 +1,7 @@
 min_version = "2026.10.17"
 
 [settings]
-idiomatic_version_file_enable_tools = ["node", "python", "java"]
+idiomatic_version_file_enable_tools = ["node", "python", "java", "rust"]
 
 # Personal defaults; project mise.toml files can select other versions.
 # "latest" and prefixes resolve to the newest installed match; run
@@ -11,6 +11,7 @@ idiomatic_version_file_enable_tools = ["node", "python", "java"]
 node = "lts"
 python = "latest"
 go = "latest"
+rust = "latest"
 # Keep the JetBrains JCEF 21 runtime; "latest" would select another vendor.
 java = "jetbrains-jcef-21"
 bun = "latest"

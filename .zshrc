@@ -71,8 +71,8 @@ alias vim="nvim"
 
 alias cc="claude"
 alias oc="opencode"
-# Local coding agent; model and offline defaults are configured under ~/.omp/agent.
-alias ompl="omp --model ollama/qwen3.5:4b-16k --thinking off"
+# Start Oh My Pi with the downloaded local model.
+alias ompl="omp --model ollama/qwen3.5:4b-16k"
 
 alias lzg="lazygit"
 

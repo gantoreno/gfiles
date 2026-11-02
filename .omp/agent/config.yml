@@ -5,53 +5,5 @@ theme:
   dark: titanium
   light: light
 setupVersion: 2
-
-# Keep chat, background work, and recovery on the downloaded local model.
-enabledModels:
-  - ollama/qwen3.5:4b-16k
 modelRoles:
   default: ollama/qwen3.5:4b-16k
-  smol: ollama/qwen3.5:4b-16k
-  slow: ollama/qwen3.5:4b-16k
-  plan: ollama/qwen3.5:4b-16k
-  task: ollama/qwen3.5:4b-16k
-  tiny: ollama/qwen3.5:4b-16k
-  memory: ollama/qwen3.5:4b-16k
-  advisor: ollama/qwen3.5:4b-16k
-  vision: ollama/qwen3.5:4b-16k
-defaultThinkingLevel: off
-retry:
-  modelFallback: false
-compaction:
-  reserveTokens: 4096
-  keepRecentTokens: 4096
-
-# Do not import other apps' MCP connections or plugins into local sessions.
-disabledProviders:
-  - claude
-  - codex
-  - gemini
-  - github
-  - opencode
-  - cursor
-  - windsurf
-  - cline
-  - vscode
-  - claude-plugins
-  - omp-plugins
-  - agent-plugins
-  - mcp-json
-mcp:
-  enableProjectConfig: false
-skills:
-  enabled: false
-web_search:
-  enabled: false
-browser:
-  enabled: false
-startup:
-  checkUpdate: false
-marketplace:
-  autoUpdate: off
-telemetry:
-  otlpExportEnabled: false
