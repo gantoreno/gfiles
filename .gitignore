@@ -12,3 +12,6 @@ mise.*.local.toml
 
 # Claude Code treats .claude/ as project settings when run in this repository
 .claude/settings.local.json
+
+# Oh My Pi runtime locks beside linked configuration
+.omp/agent/*.lock
