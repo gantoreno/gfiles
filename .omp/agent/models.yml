@@ -1,0 +1,14 @@
+# Pin the quantization and runtime context to keep memory use predictable.
+providers:
+  ollama:
+    baseUrl: http://127.0.0.1:11434/v1
+    api: openai-completions
+    auth: none
+    models:
+      - id: qwen3.5:4b-16k
+        name: Qwen3.5 4B (offline, 16K)
+        reasoning: true
+        input: [text, image]
+        contextWindow: 16384
+        maxTokens: 4096
+        cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 }

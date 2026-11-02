@@ -21,7 +21,7 @@ My personal macOS and Linux dotfiles for a small, terminal-first development env
 - **Shell:** [Zsh](https://www.zsh.org/) with [Oh My Zsh](https://ohmyz.sh/) and the Robby Russell theme
 - **Multiplexer:** [tmux](https://github.com/tmux/tmux) with [TPM](https://github.com/tmux-plugins/tpm), tmux-sensible, and [tmux-powerkit](https://github.com/gantoreno/tmux-powerkit)
 - **Editor:** [Neovim](https://neovim.io/) with [LazyVim](https://www.lazyvim.org/), Tokyo Night, tmux navigation, and Sidekick
-- **AI tooling:** Codex CLI, Claude Code, and [OpenCode](https://opencode.ai/) backed by a local [Ollama](https://ollama.com/) model
+- **AI tooling:** Codex CLI, Claude Code, [OpenCode](https://opencode.ai/), and [Oh My Pi](https://github.com/can1357/oh-my-pi) with local [Ollama](https://ollama.com/) models
 
 The shell activates mise and zoxide. On the host named `forge`, it also runs Fastfetch at startup and uses the Starship prompt; other hosts keep the Robby Russell theme. Mise selects the Node, Python, Go, Java, Bun, and pnpm versions; fnm, SDKMAN activation, and direnv hooks are no longer needed.
 
@@ -37,6 +37,10 @@ The repository mirrors the home directory: each path below is the same here and 
 | `.config/ghostty` | Terminal appearance and window defaults |
 | `.config/nvim` | LazyVim configuration and plugin lockfile |
 | `.config/opencode` | OpenCode provider, model, and MCP configuration |
+| `.omp/agent/config.yml` | Oh My Pi appearance and preferences |
+| `.omp/agent/models.yml` | Local Ollama models and context/output limits |
+| `.ollama/server.json` | Disable Ollama cloud features |
+| `.config/ollama/Modelfile.qwen3.5-4b-16k` | Reproducible local coding-model preset |
 | `.config/mise/config.toml` | Personal tool versions and mise settings |
 | `.config/herdr/config.toml` | herdr theme, UI, and notification settings |
 | `.claude/settings.json` | Claude Code permissions, plugins, hooks, and preferences |
@@ -96,6 +100,32 @@ mise bootstrap dotfiles status
 ```
 
 Existing real files or directories at a target cause a conflict. Back them up outside the target path before applying; the normal setup does not force replacements. Existing links pointing elsewhere are replaced. To remove a link while preserving its source, use `mise bootstrap dotfiles unapply '~/.config/nvim'` from the repository root. Keep the checkout in place while its links are in use.
+
+## Offline coding with Oh My Pi
+
+Install a current Ollama release and start its local service. On macOS, an existing Homebrew installation can be updated with `brew upgrade ollama` followed by `brew services restart ollama`. Then, from this repository:
+
+```sh
+mise run ollama-coder
+```
+
+The task downloads Qwen3.5 4B in Q4_K_M quantization (about 3.3 GB) and creates `qwen3.5:4b-16k` with a 16,384-token context window. Downloads require internet access; inference and local file/command tools work offline afterward. Model weights stay in Ollama's machine-local storage.
+
+Open a new shell and run `ompl`, or run `omp` directly. The explicit command is:
+
+```sh
+omp --model ollama/qwen3.5:4b-16k --thinking off
+```
+
+Ollama cloud features are disabled through `.ollama/server.json`. The Oh My Pi configuration selects this local model for chat and background roles, caps responses at 4,096 tokens, and disables model fallback, web search, browser tools, foreign MCP/plugin discovery, project MCP configuration, and startup update checks. Skills are disabled to keep the small model's context focused. Local tools remain available. Shell commands still have the machine's normal network access; run package downloads and other online operations only when connected.
+
+After a session, release the model's memory immediately with:
+
+```sh
+ollama stop qwen3.5:4b-16k
+```
+
+Only `config.yml` and `models.yml` are linked into `~/.omp/agent`; sessions, databases, caches, and credentials stay machine-local. Back up existing real configuration files before first applying the links with `mise bootstrap dotfiles apply`.
 
 ## Machine-specific setup
 
