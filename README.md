@@ -48,6 +48,14 @@ The repository mirrors the home directory: each path below is the same here and 
 
 Install **mise 2026.10.17 or newer** and Git first; it bundles updated root certificates. On macOS, `brew install mise git` is sufficient. On Linux, follow the [mise installation instructions](https://mise.jdx.dev/installing-mise.html) and install Git and the native build prerequisites for your distribution. The standard mise installer puts the executable in `~/.local/bin`; add that directory to `PATH` before continuing.
 
+Node's prebuilt Linux binaries also load `libatomic.so.1`, which minimal Debian and Ubuntu installs omit. Without it, Node fails to install, mise skips the npm-based tools that depend on it (Vercel CLI and OpenCode), and bootstrap stops before its hooks run. Install it first; other distributions package it as `libatomic`:
+
+```sh
+sudo apt install libatomic1
+```
+
+Then clone the repository and bootstrap:
+
 ```sh
 git clone https://github.com/gantoreno/gfiles.git \
   "$HOME/Developer/gantoreno/gfiles"
@@ -59,7 +67,14 @@ mise bootstrap --dry-run
 mise bootstrap
 ```
 
-Bootstrap installs the declared native packages, clones Oh My Zsh and TPM, creates the dotfile links, installs the development tools, and then runs two hooks: TPM installs the tmux plugins, and herdr installs the [herdr-auto-title](https://github.com/kryptamine/herdr-auto-title) plugin if it is not registered. Open a new Zsh shell afterward. To make Zsh your login shell on a new Linux machine, use your distribution's `chsh` instructions after installation.
+Bootstrap installs the declared native packages, clones Oh My Zsh and TPM, creates the dotfile links, installs the development tools, and then runs two hooks: TPM installs the tmux plugins, and herdr installs the [herdr-auto-title](https://github.com/kryptamine/herdr-auto-title) plugin if it is not registered. Open a new Zsh shell afterward.
+
+On Linux, bootstrap does not change your login shell, and the Zsh it installs lives under the Linuxbrew prefix, outside the default `PATH`. Until Zsh is the login shell, `.zshrc` never runs: mise is not activated, so installed tools such as `claude` are not on `PATH`, and the `cc` alias falls through to the system C compiler. Register Zsh as a login shell, select it, and log in again:
+
+```sh
+echo /home/linuxbrew/.linuxbrew/bin/zsh | sudo tee -a /etc/shells
+chsh -s /home/linuxbrew/.linuxbrew/bin/zsh
+```
 
 `mise.toml` declares native packages, cloned repositories, dotfile destinations, and setup hooks. `.config/mise/config.toml` declares personal tool defaults and is linked into `~/.config/mise/config.toml`, making them available from any directory. Project-specific mise configurations can override those defaults.
 
