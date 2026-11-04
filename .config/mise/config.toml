@@ -26,7 +26,12 @@ gh = "latest"
 fd = "latest"
 fzf = "latest"
 herdr = "latest"
-vercel = "latest"
+# Vercel publishes the CLI (58.5.1+) and its @vercel/* dependencies from a
+# private repository, where npm cannot attach provenance, so aube's
+# no-downgrade trust policy rejects them. The CLI's integrity is listed at
+# vercel.com/docs/cli/release-notes/npm/<version>/integrity;
+# see https://github.com/vercel/vercel/issues/17408.
+vercel = { version = "latest", trust_policy_excludes = ["vercel", "@vercel/*"] }
 op = "latest"
 # pipx installs through uv when it is available.
 "pipx:aws-mfa" = "latest"
