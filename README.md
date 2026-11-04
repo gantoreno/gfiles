@@ -23,7 +23,7 @@ My personal macOS and Linux dotfiles for a small, terminal-first development env
 - **Editor:** [Neovim](https://neovim.io/) with [LazyVim](https://www.lazyvim.org/), Tokyo Night, tmux navigation, and Sidekick
 - **AI tooling:** Codex CLI, Claude Code, [OpenCode](https://opencode.ai/), and [Oh My Pi](https://github.com/can1357/oh-my-pi) with local [Ollama](https://ollama.com/) models
 
-The shell activates mise and zoxide. On the host named `forge`, it also runs Fastfetch at startup and uses the Starship prompt; other hosts keep the Robby Russell theme. Mise selects the Node, Python, Go, Rust, Java, Bun, and pnpm versions; fnm, SDKMAN activation, and direnv hooks are no longer needed.
+The shell activates mise and zoxide. On the hosts named `forge` and `atlas`, it also runs Fastfetch at startup and uses the Starship prompt; other hosts keep the Robby Russell theme. Mise selects the Node, Python, Go, Rust, Java, Bun, and pnpm versions; fnm, SDKMAN activation, and direnv hooks are no longer needed.
 
 ## Tracked configuration
 

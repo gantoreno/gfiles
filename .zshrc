@@ -88,8 +88,8 @@ alias tmuxconfig="vim $HOME/.tmux.conf"
 alias ghosttyconfig="vim $HOME/.config/ghostty/config"
 alias opencodeconfig="vim $HOME/.config/opencode/opencode.json"
 
-# Forge's startup summary and prompt. Initialize after Oh My Zsh.
-if [[ "$HOST" == forge ]]; then
+# Remote hosts' startup summary and prompt. Initialize after Oh My Zsh.
+if [[ "$HOST" == (forge|atlas) ]]; then
   if (( $+commands[fastfetch] )); then
     fastfetch
   fi
