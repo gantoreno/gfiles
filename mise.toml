@@ -12,6 +12,9 @@ min_version = "2026.10.17"
 "brew:neovim" = "latest"
 "brew:ollama" = "latest"
 "brew:pipx" = "latest"
+# Linux bottles target Ubuntu 24.04's glibc 2.39; older hosts (Ubuntu 22.04
+# has 2.35) need Homebrew's glibc, which Homebrew would add automatically.
+"brew:glibc" = { os = "linux" }
 
 # Cloned before dotfiles are linked. Oh My Zsh keeps itself updated.
 [bootstrap.repos]
@@ -38,6 +41,12 @@ min_version = "2026.10.17"
 "~/.omp/agent/config.yml" = ".omp/agent/config.yml"
 
 # Hooks run on every bootstrap, so each step must be safe to repeat.
+[bootstrap.hooks.post-packages]
+run = [
+  # Mise skips brewed glibc's locale setup; without it, tmux rejects UTF-8 locales.
+  'G=/home/linuxbrew/.linuxbrew/opt/glibc; [ ! -x "$G/bin/localedef" ] || { mkdir -p "$G/lib/locale" && "$G/bin/localedef" -i en_US -f UTF-8 en_US.UTF-8; }',
+]
+
 [bootstrap.hooks.post-tools]
 run = [
   "\"$HOME/.tmux/plugins/tpm/bin/install_plugins\"",

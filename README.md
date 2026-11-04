@@ -67,7 +67,7 @@ mise bootstrap --dry-run
 mise bootstrap
 ```
 
-Bootstrap installs the declared native packages, clones Oh My Zsh and TPM, creates the dotfile links, installs the development tools, and then runs two hooks: TPM installs the tmux plugins, and herdr installs the [herdr-auto-title](https://github.com/kryptamine/herdr-auto-title) plugin if it is not registered. Open a new Zsh shell afterward.
+Bootstrap installs the declared native packages, clones Oh My Zsh and TPM, creates the dotfile links, installs the development tools, and then runs two hooks: TPM installs the tmux plugins, and herdr installs the [herdr-auto-title](https://github.com/kryptamine/herdr-auto-title) plugin if it is not registered. On Linux, a hook after the native packages also generates the `en_US.UTF-8` locale for Homebrew's glibc. Open a new Zsh shell afterward.
 
 On Linux, bootstrap does not change your login shell, and the Zsh it installs lives under the Linuxbrew prefix, outside the default `PATH`. Until Zsh is the login shell, `.zshrc` never runs: mise is not activated, so installed tools such as `claude` are not on `PATH`, and the `cc` alias falls through to the system C compiler. Register Zsh as a login shell, select it, and log in again:
 
@@ -79,6 +79,8 @@ chsh -s /home/linuxbrew/.linuxbrew/bin/zsh
 `mise.toml` declares native packages, cloned repositories, dotfile destinations, and setup hooks. `.config/mise/config.toml` declares personal tool defaults and is linked into `~/.config/mise/config.toml`, making them available from any directory. Project-specific mise configurations can override those defaults.
 
 The native `brew:` package installer is built into mise and supports both target platforms; a separate Homebrew CLI is not required on Linux. Existing Homebrew packages count as installed. Bootstrap installs missing packages without upgrading existing ones. Prefix creation on Linux may require sudo. Native packages follow their package source's available versions.
+
+Homebrew's Linux bottles are built on Ubuntu 24.04 and can require glibc up to 2.39. On older hosts, such as Ubuntu 22.04 (glibc 2.35), they fail with ``version `GLIBC_2.38' not found``. Homebrew adds its own glibc in that case, but mise's installer does not, so `mise.toml` declares `brew:glibc` on every Linux host. Brewed programs then load Homebrew's glibc through `/home/linuxbrew/.linuxbrew/lib/ld.so`. Mise skips glibc's locale setup step, so the hook generates `en_US.UTF-8`; without it, tmux exits with `invalid LC_ALL, LC_CTYPE or LANG`.
 
 ## Tools and updates
 
