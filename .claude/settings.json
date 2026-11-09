@@ -58,5 +58,6 @@
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
   "inputNeededNotifEnabled": true,
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "theme": "auto"
 }
