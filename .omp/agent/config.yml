@@ -4,6 +4,8 @@ composer:
 theme:
   dark: titanium
   light: light
-setupVersion: 2
+setupVersion: 3
 modelRoles:
   default: ollama/qwen3.5:4b-16k
+update:
+  auto: false
