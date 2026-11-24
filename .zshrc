@@ -26,7 +26,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export AWS_SDK_LOAD_CONFIG=1
 export PYTHON=python3
 
-# User-installed commands; mise activation below selects managed tool versions.
+# User-installed commands; the Oh My Zsh mise plugin below selects managed tool versions.
 path=("$HOME/.local/bin" "$HOME/.scripts" "$HOME/.cargo/bin"
       "$HOME/.composer/vendor/bin" "$HOME/go/bin" $path)
 if [[ "$OSTYPE" == darwin* ]]; then
@@ -42,10 +42,6 @@ if [[ -d "$HOME/.config/herd-lite/bin" ]]; then
 fi
 [[ -d "$HOME/.antigravity/antigravity/bin" ]] && path=("$HOME/.antigravity/antigravity/bin" $path)
 
-# mise replaces fnm, SDKMAN shell activation, and per-project environment hooks.
-if (( $+commands[mise] )); then
-  eval "$(mise activate zsh)"
-fi
 if (( $+commands[zoxide] )); then
   eval "$(zoxide init zsh)"
 fi
@@ -60,7 +56,10 @@ fi
 [[ -d "$HOME/.docker/completions" ]] && fpath=("$HOME/.docker/completions" $fpath)
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_THEME="robbyrussell"
-plugins=(git)
+# The mise plugin activates mise, which replaces fnm, SDKMAN shell activation,
+# and per-project environment hooks. It also regenerates mise's completion
+# whenever the binary changes, such as after `mise self-update`.
+plugins=(git mise)
 [[ -s "$ZSH/oh-my-zsh.sh" ]] && source "$ZSH/oh-my-zsh.sh"
 
 # Avoid auto cd

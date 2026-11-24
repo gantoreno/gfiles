@@ -23,7 +23,7 @@ My personal macOS and Linux dotfiles for a small, terminal-first development env
 - **Editor:** [Neovim](https://neovim.io/) with [LazyVim](https://www.lazyvim.org/), Tokyo Night, tmux navigation, and Sidekick
 - **AI tooling:** Codex CLI, Claude Code, [OpenCode](https://opencode.ai/), and [Oh My Pi](https://github.com/can1357/oh-my-pi) with local [Ollama](https://ollama.com/) models
 
-The shell activates mise and zoxide. On the hosts named `forge` and `atlas`, it also runs Fastfetch at startup and uses the Starship prompt; other hosts keep the Robby Russell theme. Mise selects the Node, Python, Go, Rust, Java, Bun, and pnpm versions; fnm, SDKMAN activation, and direnv hooks are no longer needed.
+The shell activates mise, through the Oh My Zsh plugin, and zoxide. On the hosts named `forge` and `atlas`, it also runs Fastfetch at startup and uses the Starship prompt; other hosts keep the Robby Russell theme. Mise selects the Node, Python, Go, Rust, Java, Bun, and pnpm versions; fnm, SDKMAN activation, and direnv hooks are no longer needed.
 
 ## Tracked configuration
 
@@ -46,7 +46,13 @@ The repository mirrors the home directory: each path below is the same here and 
 
 ## Installation
 
-Install **mise 2026.10.17 or newer** and Git first; it bundles updated root certificates. On macOS, `brew install mise git` is sufficient. On Linux, follow the [mise installation instructions](https://mise.jdx.dev/installing-mise.html) and install Git and the native build prerequisites for your distribution. The standard mise installer puts the executable in `~/.local/bin`; add that directory to `PATH` before continuing.
+Install **mise 2026.10.17 or newer** and Git first; it bundles updated root certificates. Use the standalone installer rather than a package manager, so `mise self-update` can update it:
+
+```sh
+curl https://mise.run | sh
+```
+
+It puts the executable in `~/.local/bin`; add that directory to `PATH` before continuing. On macOS, Git ships with the Xcode Command Line Tools (`xcode-select --install`). On Linux, install Git and the native build prerequisites for your distribution; see the [mise installation instructions](https://mise.jdx.dev/installing-mise.html) for other methods.
 
 Node's prebuilt Linux binaries also load `libatomic.so.1`, which minimal Debian and Ubuntu installs omit. Without it, Node fails to install, mise skips the npm-based tools that depend on it (Vercel CLI and OpenCode), and bootstrap stops before its hooks run. Install it first; other distributions package it as `libatomic`:
 
@@ -99,6 +105,7 @@ mise bootstrap repos update       # Pull Oh My Zsh and TPM
 mise outdated                     # See available development-tool updates
 mise upgrade                      # Install them; old versions are pruned later
 herdr plugin update --yes         # Rebuild herdr plugins from their latest commits
+mise self-update                  # Update mise itself
 mise run check                    # Check shell syntax
 ```
 
