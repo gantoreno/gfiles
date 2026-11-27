@@ -25,7 +25,6 @@ ripgrep = "latest"
 gh = "latest"
 fd = "latest"
 fzf = "latest"
-herdr = "latest"
 # Vercel publishes the CLI (58.5.1+) and its @vercel/* dependencies from a
 # private repository, where npm cannot attach provenance, so aube's
 # no-downgrade trust policy rejects them. The CLI's integrity is listed at

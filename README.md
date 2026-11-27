@@ -40,7 +40,6 @@ The repository mirrors the home directory: each path below is the same here and 
 | `.omp/agent/config.yml` | Oh My Pi appearance and preferences |
 | `.config/ollama/Modelfile.qwen3.5-4b-16k` | Reproducible local coding-model preset |
 | `.config/mise/config.toml` | Personal tool versions and mise settings |
-| `.config/herdr/config.toml` | herdr theme, UI, and notification settings |
 | `.claude/settings.json` | Claude Code permissions, plugins, hooks, and preferences |
 
 ## Installation
@@ -72,7 +71,7 @@ mise bootstrap --dry-run
 mise bootstrap
 ```
 
-Bootstrap installs the declared native packages, clones Oh My Zsh and TPM, creates the dotfile links, installs the development tools, and then runs two hooks: TPM installs the tmux plugins, and herdr installs the [herdr-auto-title](https://github.com/kryptamine/herdr-auto-title) plugin if it is not registered. On Linux, a hook after the native packages also generates the `en_US.UTF-8` locale for Homebrew's glibc. Open a new Zsh shell afterward.
+Bootstrap installs the declared native packages, clones Oh My Zsh and TPM, creates the dotfile links, installs the development tools, and then runs a hook in which TPM installs the tmux plugins. On Linux, a hook after the native packages also generates the `en_US.UTF-8` locale for Homebrew's glibc. Open a new Zsh shell afterward.
 
 On Linux, bootstrap does not change your login shell, and the Zsh it installs lives under the Linuxbrew prefix, outside the default `PATH`. Until Zsh is the login shell, `.zshrc` never runs: mise is not activated, so installed tools such as `claude` are not on `PATH`, and the `cc` alias falls through to the system C compiler. Register Zsh as a login shell, select it, and log in again:
 
@@ -89,7 +88,7 @@ Homebrew's Linux bottles are built on Ubuntu 24.04 and can require glibc up to 2
 
 ## Tools and updates
 
-The declared tools cover the terminal environment in this repository: language runtimes, pnpm, Yarn (classic), uv, lazygit, zoxide, ripgrep, fd, fzf, GitHub CLI, herdr, Vercel CLI, 1Password CLI, aws-mfa, Codex CLI, Claude Code, OpenCode, and Oh My Pi, plus Git, GCC, Zsh, Starship, Fastfetch, tmux, Neovim, and Ollama as native packages. Neovim is installed by `mise bootstrap` through `brew:neovim`, and its configuration is linked to `~/.config/nvim`. Existing Neovim installations, including Homebrew HEAD builds, are preserved. OpenCode uses the same `@opencode/cli` npm distribution as the original setup. aws-mfa is installed with the pipx backend, which uses the declared uv. This is a curated tool list, not a snapshot of every application installed on the Mac.
+The declared tools cover the terminal environment in this repository: language runtimes, pnpm, Yarn (classic), uv, lazygit, zoxide, ripgrep, fd, fzf, GitHub CLI, Vercel CLI, 1Password CLI, aws-mfa, Codex CLI, Claude Code, OpenCode, and Oh My Pi, plus Git, GCC, Zsh, Starship, Fastfetch, tmux, Neovim, and Ollama as native packages. Neovim is installed by `mise bootstrap` through `brew:neovim`, and its configuration is linked to `~/.config/nvim`. Existing Neovim installations, including Homebrew HEAD builds, are preserved. OpenCode uses the same `@opencode/cli` npm distribution as the original setup. aws-mfa is installed with the pipx backend, which uses the declared uv. This is a curated tool list, not a snapshot of every application installed on the Mac.
 
 The `brew:gcc` package uses versioned executables on both macOS and Linux, such as `gcc-16` and `g++-16`. It does not provide an unversioned `gcc` command. Check with `gcc-16 --version` (adjust the suffix for the installed major version), and select it for builds with `CC=gcc-16 CXX=g++-16`. On macOS, `/usr/bin/gcc` is Apple Clang.
 
@@ -103,7 +102,6 @@ mise bootstrap packages status    # Inspect native package state
 mise bootstrap repos update       # Pull Oh My Zsh and TPM
 mise outdated                     # See available development-tool updates
 mise upgrade                      # Install them; old versions are pruned later
-herdr plugin update --yes         # Rebuild herdr plugins from their latest commits
 mise self-update                  # Update mise itself
 mise run check                    # Check shell syntax
 ```
@@ -157,8 +155,6 @@ Only `config.yml` is linked into `~/.omp/agent`; sessions, databases, caches, an
 - Ollama's service and models are separate from its CLI installation. The configured `qwen3:1.7b-8k` model must exist on the target machine.
 - The OpenCode configuration contains a machine-specific Pencil MCP executable path. Update or disable that entry on another machine.
 - Claude Code writes `~/.claude/settings.json` itself when you toggle plugins, change permissions, or choose "always allow", so those changes appear as diffs in this repository. Only that file is linked; sessions, history, credentials, and `settings.local.json` stay machine-local. Running Claude Code inside this repository also loads `.claude/settings.json` as project settings; `.claude/settings.local.json` is ignored here.
-- Herdr writes `~/.config/herdr/config.toml` itself when you finish onboarding or change options in Settings, so those changes appear as diffs in this repository. Its theme follows the terminal's light/dark appearance (`auto_switch`); choosing a theme manually in Settings turns that off. Only that file is linked; sockets, logs, sessions, and plugins stay machine-local.
-- Herdr has no declarative plugin list, so a bootstrap hook registers herdr-auto-title with `herdr plugin install`, which builds it with mise's Go. Herdr starts plugins only when its server starts; if a server was already running, run `herdr plugin action invoke herdr.auto-title.restart`, and run it again after `herdr plugin update`. The plugin's optional settings go in `~/.config/herdr-auto-title/config.env`, which is not tracked here because the defaults are used.
 - Existing fnm, SDKMAN, and direnv installations are left on disk, but the shell no longer activates them. Language packages installed globally under old runtimes may need reinstalling for mise's runtimes.
 
 ## License

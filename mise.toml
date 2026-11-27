@@ -32,8 +32,6 @@ min_version = "2026.10.17"
 "~/.config/opencode" = ".config/opencode"
 # Make personal tool versions available outside this repository.
 "~/.config/mise/config.toml" = ".config/mise/config.toml"
-# Link only config.toml; ~/.config/herdr also holds sockets, logs, sessions, and plugins.
-"~/.config/herdr/config.toml" = ".config/herdr/config.toml"
 # Link only user-authored Claude Code settings; ~/.claude also holds sessions and credentials.
 "~/.claude/settings.json" = ".claude/settings.json"
 # Link only configuration; Oh My Pi sessions, caches, and credentials stay local.
@@ -49,8 +47,6 @@ run = [
 [bootstrap.hooks.post-tools]
 run = [
   "\"$HOME/.tmux/plugins/tpm/bin/install_plugins\"",
-  # Herdr has no declarative plugin list; install builds with mise's Go.
-  "mise exec -- bash -c 'herdr plugin list | grep -Fq -- \"- herdr.auto-title \" || herdr plugin install kryptamine/herdr-auto-title --yes'",
 ]
 
 [tasks.check]
